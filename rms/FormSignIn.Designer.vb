@@ -40,17 +40,18 @@ Partial Class FormSigIn
         Me.ButtonDevelopers = New System.Windows.Forms.Button()
         Me.PanelRms = New System.Windows.Forms.Panel()
         Me.LabelRmsFull = New System.Windows.Forms.Label()
-        Me.LabelRms = New System.Windows.Forms.Label()
         Me.ToolTipSignIn = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelDescription = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelDescription = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ErrorProviderSignIn = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelSignIn.SuspendLayout()
         Me.PanelSignInLabel.SuspendLayout()
         Me.PanelCopyright.SuspendLayout()
         Me.PanelRms.SuspendLayout()
         Me.PanelDescription.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProviderSignIn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelSignIn
@@ -72,10 +73,11 @@ Partial Class FormSigIn
         '
         'ButtonSignIn
         '
+        Me.ButtonSignIn.AutoSize = True
         Me.ButtonSignIn.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSignIn.Location = New System.Drawing.Point(153, 292)
         Me.ButtonSignIn.Name = "ButtonSignIn"
-        Me.ButtonSignIn.Size = New System.Drawing.Size(93, 34)
+        Me.ButtonSignIn.Size = New System.Drawing.Size(93, 36)
         Me.ButtonSignIn.TabIndex = 7
         Me.ButtonSignIn.Text = "Sign in"
         Me.ButtonSignIn.UseVisualStyleBackColor = True
@@ -83,18 +85,18 @@ Partial Class FormSigIn
         'TextPassword
         '
         Me.TextPassword.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextPassword.Location = New System.Drawing.Point(52, 219)
+        Me.TextPassword.Location = New System.Drawing.Point(49, 219)
         Me.TextPassword.Name = "TextPassword"
         Me.TextPassword.Size = New System.Drawing.Size(300, 27)
         Me.TextPassword.TabIndex = 6
-        Me.ToolTipSignIn.SetToolTip(Me.TextPassword, "Enter Password.")
+        Me.ToolTipSignIn.SetToolTip(Me.TextPassword, "Enter password.")
         Me.TextPassword.UseSystemPasswordChar = True
         '
         'LabelPassword
         '
         Me.LabelPassword.AutoSize = True
         Me.LabelPassword.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPassword.Location = New System.Drawing.Point(47, 188)
+        Me.LabelPassword.Location = New System.Drawing.Point(44, 188)
         Me.LabelPassword.Name = "LabelPassword"
         Me.LabelPassword.Size = New System.Drawing.Size(97, 28)
         Me.LabelPassword.TabIndex = 5
@@ -127,7 +129,7 @@ Partial Class FormSigIn
         Me.TextUsername.Name = "TextUsername"
         Me.TextUsername.Size = New System.Drawing.Size(300, 27)
         Me.TextUsername.TabIndex = 2
-        Me.ToolTipSignIn.SetToolTip(Me.TextUsername, "Enter Username.")
+        Me.ToolTipSignIn.SetToolTip(Me.TextUsername, "Enter username.")
         '
         'LabelUsername
         '
@@ -185,7 +187,7 @@ Partial Class FormSigIn
         'ButtonAbout
         '
         Me.ButtonAbout.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAbout.Location = New System.Drawing.Point(1009, 29)
+        Me.ButtonAbout.Location = New System.Drawing.Point(1037, 29)
         Me.ButtonAbout.Name = "ButtonAbout"
         Me.ButtonAbout.Size = New System.Drawing.Size(75, 46)
         Me.ButtonAbout.TabIndex = 2
@@ -195,9 +197,9 @@ Partial Class FormSigIn
         'ButtonDevelopers
         '
         Me.ButtonDevelopers.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDevelopers.Location = New System.Drawing.Point(1090, 29)
+        Me.ButtonDevelopers.Location = New System.Drawing.Point(1125, 29)
         Me.ButtonDevelopers.Name = "ButtonDevelopers"
-        Me.ButtonDevelopers.Size = New System.Drawing.Size(217, 46)
+        Me.ButtonDevelopers.Size = New System.Drawing.Size(182, 46)
         Me.ButtonDevelopers.TabIndex = 3
         Me.ButtonDevelopers.Text = "Meet the Developers"
         Me.ButtonDevelopers.UseVisualStyleBackColor = True
@@ -206,10 +208,9 @@ Partial Class FormSigIn
         '
         Me.PanelRms.BackColor = System.Drawing.SystemColors.Control
         Me.PanelRms.Controls.Add(Me.LabelRmsFull)
-        Me.PanelRms.Controls.Add(Me.LabelRms)
         Me.PanelRms.Controls.Add(Me.ButtonAbout)
         Me.PanelRms.Controls.Add(Me.ButtonDevelopers)
-        Me.PanelRms.Location = New System.Drawing.Point(-5, 22)
+        Me.PanelRms.Location = New System.Drawing.Point(-5, 0)
         Me.PanelRms.Margin = New System.Windows.Forms.Padding(11, 3, 11, 3)
         Me.PanelRms.Name = "PanelRms"
         Me.PanelRms.Size = New System.Drawing.Size(1373, 100)
@@ -218,26 +219,14 @@ Partial Class FormSigIn
         'LabelRmsFull
         '
         Me.LabelRmsFull.AutoSize = True
-        Me.LabelRmsFull.Font = New System.Drawing.Font("Alegreya Sans SC Black", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelRmsFull.Font = New System.Drawing.Font("Helv Children", 38.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelRmsFull.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.LabelRmsFull.Location = New System.Drawing.Point(164, 18)
+        Me.LabelRmsFull.Location = New System.Drawing.Point(41, 24)
         Me.LabelRmsFull.Name = "LabelRmsFull"
-        Me.LabelRmsFull.Size = New System.Drawing.Size(626, 69)
+        Me.LabelRmsFull.Size = New System.Drawing.Size(855, 51)
         Me.LabelRmsFull.TabIndex = 5
-        Me.LabelRmsFull.Text = "| Result Management System"
+        Me.LabelRmsFull.Text = "Result Management System"
         Me.LabelRmsFull.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LabelRms
-        '
-        Me.LabelRms.AutoSize = True
-        Me.LabelRms.Font = New System.Drawing.Font("Fruktur", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelRms.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.LabelRms.Location = New System.Drawing.Point(29, 20)
-        Me.LabelRms.Name = "LabelRms"
-        Me.LabelRms.Size = New System.Drawing.Size(141, 67)
-        Me.LabelRms.TabIndex = 4
-        Me.LabelRms.Text = "rms."
-        Me.LabelRms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PanelDescription
         '
@@ -248,6 +237,15 @@ Partial Class FormSigIn
         Me.PanelDescription.Size = New System.Drawing.Size(906, 346)
         Me.PanelDescription.TabIndex = 5
         '
+        'LabelDescription
+        '
+        Me.LabelDescription.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDescription.Location = New System.Drawing.Point(176, 16)
+        Me.LabelDescription.Name = "LabelDescription"
+        Me.LabelDescription.Size = New System.Drawing.Size(727, 201)
+        Me.LabelDescription.TabIndex = 1
+        Me.LabelDescription.Text = resources.GetString("LabelDescription.Text")
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -257,14 +255,9 @@ Partial Class FormSigIn
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'LabelDescription
+        'ErrorProviderSignIn
         '
-        Me.LabelDescription.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDescription.Location = New System.Drawing.Point(176, 16)
-        Me.LabelDescription.Name = "LabelDescription"
-        Me.LabelDescription.Size = New System.Drawing.Size(727, 201)
-        Me.LabelDescription.TabIndex = 1
-        Me.LabelDescription.Text = resources.GetString("LabelDescription.Text")
+        Me.ErrorProviderSignIn.ContainerControl = Me
         '
         'FormSigIn
         '
@@ -278,8 +271,8 @@ Partial Class FormSigIn
         Me.Font = New System.Drawing.Font("Alegreya Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Name = "FormSigIn"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
         Me.PanelSignIn.ResumeLayout(False)
         Me.PanelSignIn.PerformLayout()
         Me.PanelSignInLabel.ResumeLayout(False)
@@ -290,6 +283,7 @@ Partial Class FormSigIn
         Me.PanelRms.PerformLayout()
         Me.PanelDescription.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProviderSignIn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -309,10 +303,10 @@ Partial Class FormSigIn
     Friend WithEvents ButtonAbout As Button
     Friend WithEvents ButtonDevelopers As Button
     Friend WithEvents PanelRms As Panel
-    Friend WithEvents LabelRms As Label
     Friend WithEvents LabelRmsFull As Label
     Friend WithEvents ToolTipSignIn As ToolTip
     Friend WithEvents PanelDescription As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LabelDescription As Label
+    Friend WithEvents ErrorProviderSignIn As ErrorProvider
 End Class

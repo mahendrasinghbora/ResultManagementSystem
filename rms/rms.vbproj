@@ -47,6 +47,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -72,13 +73,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Admin Module\FormAddUsers.Designer.vb">
+      <DependentUpon>FormAddUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddUsers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="FormSignIn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormSignIn.Designer.vb">
+      <DependentUpon>FormSignIn.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminDashboard.Designer.vb">
+      <DependentUpon>FormAdminDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdminDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,8 +110,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Admin Module\FormAddUsers.resx">
+      <DependentUpon>FormAddUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSignIn.resx">
+      <DependentUpon>FormSignIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminDashboard.resx">
+      <DependentUpon>FormAdminDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

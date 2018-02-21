@@ -27,18 +27,20 @@ Partial Class FormAddUsers
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
-        Me.LabelDashboard = New System.Windows.Forms.Label()
+        Me.LabelAddUsersPanel = New System.Windows.Forms.Label()
         Me.ContextMenuStripUser = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelPage = New System.Windows.Forms.Panel()
+        Me.ButtonDeleteUsers = New System.Windows.Forms.Button()
+        Me.ButtonEditUsers = New System.Windows.Forms.Button()
         Me.PanelAddUsers = New System.Windows.Forms.Panel()
         Me.LabelUserType = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ButtonSelectImage = New System.Windows.Forms.Button()
         Me.LabelThumbnail = New System.Windows.Forms.Label()
         Me.PictureBoxThumbnail = New System.Windows.Forms.PictureBox()
-        Me.TextBoxLastName = New System.Windows.Forms.TextBox()
+        Me.TextLastName = New System.Windows.Forms.TextBox()
         Me.LabelLastName = New System.Windows.Forms.Label()
         Me.ButtonAddUsers = New System.Windows.Forms.Button()
         Me.TextFirstName = New System.Windows.Forms.TextBox()
@@ -62,7 +64,7 @@ Partial Class FormAddUsers
         '
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
-        Me.PanelNavigation.Controls.Add(Me.LabelDashboard)
+        Me.PanelNavigation.Controls.Add(Me.LabelAddUsersPanel)
         Me.PanelNavigation.Location = New System.Drawing.Point(-11, 1)
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
@@ -90,15 +92,15 @@ Partial Class FormAddUsers
         Me.ButtonDashboard.Text = "Dashboard"
         Me.ButtonDashboard.UseVisualStyleBackColor = True
         '
-        'LabelDashboard
+        'LabelAddUsersPanel
         '
-        Me.LabelDashboard.AutoSize = True
-        Me.LabelDashboard.Font = New System.Drawing.Font("Alegreya", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDashboard.Location = New System.Drawing.Point(33, 9)
-        Me.LabelDashboard.Name = "LabelDashboard"
-        Me.LabelDashboard.Size = New System.Drawing.Size(118, 39)
-        Me.LabelDashboard.TabIndex = 0
-        Me.LabelDashboard.Text = "Add Users"
+        Me.LabelAddUsersPanel.AutoSize = True
+        Me.LabelAddUsersPanel.Font = New System.Drawing.Font("Alegreya", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelAddUsersPanel.Location = New System.Drawing.Point(33, 9)
+        Me.LabelAddUsersPanel.Name = "LabelAddUsersPanel"
+        Me.LabelAddUsersPanel.Size = New System.Drawing.Size(118, 39)
+        Me.LabelAddUsersPanel.TabIndex = 0
+        Me.LabelAddUsersPanel.Text = "Add Users"
         '
         'ContextMenuStripUser
         '
@@ -121,11 +123,33 @@ Partial Class FormAddUsers
         '
         'PanelPage
         '
+        Me.PanelPage.Controls.Add(Me.ButtonDeleteUsers)
+        Me.PanelPage.Controls.Add(Me.ButtonEditUsers)
         Me.PanelPage.Controls.Add(Me.PanelAddUsers)
         Me.PanelPage.Location = New System.Drawing.Point(-8, 67)
         Me.PanelPage.Name = "PanelPage"
         Me.PanelPage.Size = New System.Drawing.Size(1366, 662)
         Me.PanelPage.TabIndex = 2
+        '
+        'ButtonDeleteUsers
+        '
+        Me.ButtonDeleteUsers.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonDeleteUsers.Location = New System.Drawing.Point(849, 16)
+        Me.ButtonDeleteUsers.Name = "ButtonDeleteUsers"
+        Me.ButtonDeleteUsers.Size = New System.Drawing.Size(116, 39)
+        Me.ButtonDeleteUsers.TabIndex = 3
+        Me.ButtonDeleteUsers.Text = "Delete Users"
+        Me.ButtonDeleteUsers.UseVisualStyleBackColor = True
+        '
+        'ButtonEditUsers
+        '
+        Me.ButtonEditUsers.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonEditUsers.Location = New System.Drawing.Point(976, 16)
+        Me.ButtonEditUsers.Name = "ButtonEditUsers"
+        Me.ButtonEditUsers.Size = New System.Drawing.Size(102, 39)
+        Me.ButtonEditUsers.TabIndex = 2
+        Me.ButtonEditUsers.Text = "Edit Users"
+        Me.ButtonEditUsers.UseVisualStyleBackColor = True
         '
         'PanelAddUsers
         '
@@ -136,7 +160,7 @@ Partial Class FormAddUsers
         Me.PanelAddUsers.Controls.Add(Me.ButtonSelectImage)
         Me.PanelAddUsers.Controls.Add(Me.LabelThumbnail)
         Me.PanelAddUsers.Controls.Add(Me.PictureBoxThumbnail)
-        Me.PanelAddUsers.Controls.Add(Me.TextBoxLastName)
+        Me.PanelAddUsers.Controls.Add(Me.TextLastName)
         Me.PanelAddUsers.Controls.Add(Me.LabelLastName)
         Me.PanelAddUsers.Controls.Add(Me.ButtonAddUsers)
         Me.PanelAddUsers.Controls.Add(Me.TextFirstName)
@@ -194,6 +218,7 @@ Partial Class FormAddUsers
         '
         Me.PictureBoxThumbnail.BackColor = System.Drawing.Color.Azure
         Me.PictureBoxThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxThumbnail.Image = CType(resources.GetObject("PictureBoxThumbnail.Image"), System.Drawing.Image)
         Me.PictureBoxThumbnail.Location = New System.Drawing.Point(562, 177)
         Me.PictureBoxThumbnail.Name = "PictureBoxThumbnail"
         Me.PictureBoxThumbnail.Size = New System.Drawing.Size(149, 182)
@@ -201,14 +226,13 @@ Partial Class FormAddUsers
         Me.PictureBoxThumbnail.TabIndex = 10
         Me.PictureBoxThumbnail.TabStop = False
         '
-        'TextBoxLastName
+        'TextLastName
         '
-        Me.TextBoxLastName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxLastName.Location = New System.Drawing.Point(52, 242)
-        Me.TextBoxLastName.Name = "TextBoxLastName"
-        Me.TextBoxLastName.Size = New System.Drawing.Size(300, 27)
-        Me.TextBoxLastName.TabIndex = 9
-        Me.TextBoxLastName.UseSystemPasswordChar = True
+        Me.TextLastName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextLastName.Location = New System.Drawing.Point(52, 242)
+        Me.TextLastName.Name = "TextLastName"
+        Me.TextLastName.Size = New System.Drawing.Size(300, 27)
+        Me.TextLastName.TabIndex = 9
         '
         'LabelLastName
         '
@@ -238,7 +262,6 @@ Partial Class FormAddUsers
         Me.TextFirstName.Name = "TextFirstName"
         Me.TextFirstName.Size = New System.Drawing.Size(300, 27)
         Me.TextFirstName.TabIndex = 6
-        Me.TextFirstName.UseSystemPasswordChar = True
         '
         'LabelFirstName
         '
@@ -305,7 +328,6 @@ Partial Class FormAddUsers
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddUsers"
         Me.ShowIcon = False
-        Me.Text = "FormAddUsers"
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
         Me.ContextMenuStripUser.ResumeLayout(False)
@@ -323,7 +345,7 @@ Partial Class FormAddUsers
     Friend WithEvents PanelNavigation As Panel
     Friend WithEvents LabelUsername As Label
     Friend WithEvents ButtonDashboard As Button
-    Friend WithEvents LabelDashboard As Label
+    Friend WithEvents LabelAddUsersPanel As Label
     Friend WithEvents ContextMenuStripUser As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
@@ -336,7 +358,7 @@ Partial Class FormAddUsers
     Friend WithEvents LabelAddUsers As Label
     Friend WithEvents TextUsername As TextBox
     Friend WithEvents LabelAddUsername As Label
-    Friend WithEvents TextBoxLastName As TextBox
+    Friend WithEvents TextLastName As TextBox
     Friend WithEvents LabelLastName As Label
     Friend WithEvents LabelThumbnail As Label
     Friend WithEvents PictureBoxThumbnail As PictureBox
@@ -346,4 +368,6 @@ Partial Class FormAddUsers
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents OpenFileDialogAddUsers As OpenFileDialog
     Friend WithEvents ErrorProviderAddUsers As ErrorProvider
+    Friend WithEvents ButtonDeleteUsers As Button
+    Friend WithEvents ButtonEditUsers As Button
 End Class

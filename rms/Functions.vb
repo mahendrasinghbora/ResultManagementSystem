@@ -14,6 +14,9 @@
         If CallingForm Is Nothing Then
             Throw New ArgumentNullException(NameOf(CallingForm))
         End If
-
+        Dim NewFormAdminDashboard As FormAdminDashboard
+        NewFormAdminDashboard = New FormAdminDashboard()
+        NewFormAdminDashboard.Show()
+        CallingForm.Dispose()
     End Sub
 End Module

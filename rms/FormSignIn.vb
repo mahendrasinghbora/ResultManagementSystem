@@ -60,7 +60,7 @@ Public Class FormSigIn
 
     Private Sub TextUsername_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextUsername.Validating
         If TextUsername.Text = "" Then
-            ErrorProviderSignIn.SetError(TextUsername, "Username can't be empty.")
+            ErrorProviderSignIn.SetError(control:=TextUsername, value:="Username can't be empty.")
             TextUsername.Focus()
         Else
             ErrorProviderSignIn.Dispose()
@@ -69,7 +69,7 @@ Public Class FormSigIn
 
     Private Sub TextPassword_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextPassword.Validating
         If TextPassword.Text = "" Then
-            ErrorProviderSignIn.SetError(TextPassword, "Password can't be empty.")
+            ErrorProviderSignIn.SetError(control:=TextPassword, value:="Password can't be empty.")
         Else
             ErrorProviderSignIn.Dispose()
         End If

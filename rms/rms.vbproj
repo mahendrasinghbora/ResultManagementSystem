@@ -73,6 +73,36 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Module\FormAddColleges.Designer.vb">
+      <DependentUpon>FormAddColleges.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddColleges.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSemesters.Designer.vb">
+      <DependentUpon>FormAddSemesters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSemesters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSessions.Designer.vb">
+      <DependentUpon>FormAddSessions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSessions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSessionwiseSemesters.Designer.vb">
+      <DependentUpon>FormAddSessionwiseSemesters.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSessionwiseSemesters.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddUniversities.Designer.vb">
+      <DependentUpon>FormAddUniversities.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddUniversities.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin Module\FormAddUsers.Designer.vb">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </Compile>
@@ -110,6 +140,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin Module\FormAddColleges.resx">
+      <DependentUpon>FormAddColleges.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddSemesters.resx">
+      <DependentUpon>FormAddSemesters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddSessions.resx">
+      <DependentUpon>FormAddSessions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddSessionwiseSemesters.resx">
+      <DependentUpon>FormAddSessionwiseSemesters.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddUniversities.resx">
+      <DependentUpon>FormAddUniversities.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\FormAddUsers.resx">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </EmbeddedResource>

@@ -19,13 +19,48 @@
     End Sub
 
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
-        LogOut(Me)
+        LogOut(CallingForm:=Me)
     End Sub
 
     Private Sub ButtonOption1_Click(sender As Object, e As EventArgs) Handles ButtonOption1.Click
         Dim NewFormAddUsers As FormAddUsers
         NewFormAddUsers = New FormAddUsers()
         NewFormAddUsers.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption2_Click(sender As Object, e As EventArgs) Handles ButtonOption2.Click
+        Dim NewFormAddUniversities As FormAddUniversities
+        NewFormAddUniversities = New FormAddUniversities()
+        NewFormAddUniversities.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption3_Click(sender As Object, e As EventArgs) Handles ButtonOption3.Click
+        Dim NewFormAddColleges As FormAddColleges
+        NewFormAddColleges = New FormAddColleges()
+        NewFormAddColleges.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption4_Click(sender As Object, e As EventArgs) Handles ButtonOption4.Click
+        Dim NewFormAddSessions As FormAddSessions
+        NewFormAddSessions = New FormAddSessions()
+        NewFormAddSessions.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption5_Click(sender As Object, e As EventArgs) Handles ButtonOption5.Click
+        Dim NewFormAddSemesters As FormAddSemesters
+        NewFormAddSemesters = New FormAddSemesters()
+        NewFormAddSemesters.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption6_Click(sender As Object, e As EventArgs) Handles ButtonOption6.Click
+        Dim NewFormAddSessionwiseSemesters As FormAddSessionwiseSemesters
+        NewFormAddSessionwiseSemesters = New FormAddSessionwiseSemesters()
+        NewFormAddSessionwiseSemesters.Show()
         Dispose()
     End Sub
 End Class

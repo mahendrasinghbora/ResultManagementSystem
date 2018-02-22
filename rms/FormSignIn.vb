@@ -36,23 +36,35 @@ Public Class FormSigIn
         Try
             Con.Open()
             Dim Query As String
-            Query = "SELECT * FROM users WHERE USERNAME='" & TextUsername.Text & "' AND PASSWORD='" & TextPassword.Text & "';"
+            Dim UserStatus As Integer
+            Query = $"SELECT * FROM users WHERE USERNAME='{TextUsername.Text}' AND PASSWORD='{TextPassword.Text}';"
             Command = New MySqlCommand(Query, Con)
             Dim Reader As MySqlDataReader = Command.ExecuteReader
             Dim Count As Integer = 0
-            While Reader.Read
+            While Reader.Read()
                 Count = Count + 1
             End While
             If Count = 1 Then
-                FullUsername = Reader.GetString("FIRST_NAME") & " " & Reader.GetString("LAST_NAME")
-                FormAdminDashboard.Show()
-                Hide()
+                UserStatus = Reader.GetInt16(column:="USER_STATUS_ID")
+                FullUsername = Reader.GetString(column:="FIRST_NAME") & " " & Reader.GetString(column:="LAST_NAME")
+                Reader.Dispose()
+                Query = $"SELECT * FROM user_status WHERE USER_STATUS_ID='{UserStatus}';"
+                Command = New MySqlCommand(Query, Con)
+                Reader = Command.ExecuteReader
+                Reader.Read()
+                If Reader.GetString(column:="USER_TYPE") = "ADMINISTRATOR" Then
+                    FormAdminDashboard.Show()
+                    Hide()
+                Else
+                    FormExamCellDashboard.Show()
+                    Hide()
+                End If
             Else
-                MessageBox.Show(text:="Incorrect username or password.", caption:="Sign In Error", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Stop)
+                    MessageBox.Show(text:="Incorrect username or password.", caption:="Sign In Error", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Stop)
             End If
             Con.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(text:=ex.Message)
         Finally
             Con.Dispose()
         End Try

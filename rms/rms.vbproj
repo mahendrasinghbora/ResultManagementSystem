@@ -73,22 +73,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin Module\FormAddColleges.Designer.vb">
+    <Compile Include="Admin Module\Universities and Colleges\FormAddColleges.Designer.vb">
       <DependentUpon>FormAddColleges.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddColleges.vb">
+    <Compile Include="Admin Module\Universities and Colleges\FormAddColleges.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddCourses.Designer.vb">
+    <Compile Include="Admin Module\Courses and Subjects\FormAddCourses.Designer.vb">
       <DependentUpon>FormAddCourses.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddCourses.vb">
+    <Compile Include="Admin Module\Courses and Subjects\FormAddCourses.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddCoursewiseSubjects.Designer.vb">
+    <Compile Include="Admin Module\Courses and Subjects\FormAddCoursewiseSubjects.Designer.vb">
       <DependentUpon>FormAddCoursewiseSubjects.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddCoursewiseSubjects.vb">
+    <Compile Include="Admin Module\Courses and Subjects\FormAddCoursewiseSubjects.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin Module\FormAddResultCriteria.Designer.vb">
@@ -97,52 +97,82 @@
     <Compile Include="Admin Module\FormAddResultCriteria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddSemesters.Designer.vb">
+    <Compile Include="Admin Module\Sessions and Semesters\FormAddSemesters.Designer.vb">
       <DependentUpon>FormAddSemesters.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddSemesters.vb">
+    <Compile Include="Admin Module\Sessions and Semesters\FormAddSemesters.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddSessions.Designer.vb">
+    <Compile Include="Admin Module\Sessions and Semesters\FormAddSessions.Designer.vb">
       <DependentUpon>FormAddSessions.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddSessions.vb">
+    <Compile Include="Admin Module\Sessions and Semesters\FormAddSessions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddSessionwiseSemesters.Designer.vb">
+    <Compile Include="Admin Module\Sessions and Semesters\FormAddSessionwiseSemesters.Designer.vb">
       <DependentUpon>FormAddSessionwiseSemesters.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddSessionwiseSemesters.vb">
+    <Compile Include="Admin Module\Sessions and Semesters\FormAddSessionwiseSemesters.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddStudents.Designer.vb">
+    <Compile Include="Admin Module\Students\FormAddStudents.Designer.vb">
       <DependentUpon>FormAddStudents.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddStudents.vb">
+    <Compile Include="Admin Module\Students\FormAddStudents.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddSubjects.Designer.vb">
+    <Compile Include="Admin Module\Courses and Subjects\FormAddSubjects.Designer.vb">
       <DependentUpon>FormAddSubjects.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddSubjects.vb">
+    <Compile Include="Admin Module\Courses and Subjects\FormAddSubjects.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddUniversities.Designer.vb">
+    <Compile Include="Admin Module\Universities and Colleges\FormAddUniversities.Designer.vb">
       <DependentUpon>FormAddUniversities.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddUniversities.vb">
+    <Compile Include="Admin Module\Universities and Colleges\FormAddUniversities.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormAddUsers.Designer.vb">
+    <Compile Include="Admin Module\Universities and Colleges\FormEditColleges.Designer.vb">
+      <DependentUpon>FormEditColleges.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Universities and Colleges\FormEditColleges.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\Universities and Colleges\FormEditUniversities.Designer.vb">
+      <DependentUpon>FormEditUniversities.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Universities and Colleges\FormEditUniversities.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\Users\FormAddUsers.Designer.vb">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormAddUsers.vb">
+    <Compile Include="Admin Module\Users\FormAddUsers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\FormViewUserLog.Designer.vb">
+    <Compile Include="Admin Module\Users\FormViewUserLog.Designer.vb">
       <DependentUpon>FormViewUserLog.vb</DependentUpon>
     </Compile>
-    <Compile Include="Admin Module\FormViewUserLog.vb">
+    <Compile Include="Admin Module\Users\FormViewUserLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\Users\FormDeleteUsers.Designer.vb">
+      <DependentUpon>FormDeleteUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Users\FormDeleteUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\Users\FormEditUsers.Designer.vb">
+      <DependentUpon>FormEditUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Users\FormEditUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExamCellDashboard.Designer.vb">
+      <DependentUpon>FormExamCellDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormExamCellDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSignIn.vb">
@@ -176,41 +206,56 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Admin Module\FormAddColleges.resx">
+    <EmbeddedResource Include="Admin Module\Universities and Colleges\FormAddColleges.resx">
       <DependentUpon>FormAddColleges.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddCourses.resx">
+    <EmbeddedResource Include="Admin Module\Courses and Subjects\FormAddCourses.resx">
       <DependentUpon>FormAddCourses.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddCoursewiseSubjects.resx">
+    <EmbeddedResource Include="Admin Module\Courses and Subjects\FormAddCoursewiseSubjects.resx">
       <DependentUpon>FormAddCoursewiseSubjects.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\FormAddResultCriteria.resx">
       <DependentUpon>FormAddResultCriteria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddSemesters.resx">
+    <EmbeddedResource Include="Admin Module\Sessions and Semesters\FormAddSemesters.resx">
       <DependentUpon>FormAddSemesters.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddSessions.resx">
+    <EmbeddedResource Include="Admin Module\Sessions and Semesters\FormAddSessions.resx">
       <DependentUpon>FormAddSessions.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddSessionwiseSemesters.resx">
+    <EmbeddedResource Include="Admin Module\Sessions and Semesters\FormAddSessionwiseSemesters.resx">
       <DependentUpon>FormAddSessionwiseSemesters.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddStudents.resx">
+    <EmbeddedResource Include="Admin Module\Students\FormAddStudents.resx">
       <DependentUpon>FormAddStudents.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddSubjects.resx">
+    <EmbeddedResource Include="Admin Module\Courses and Subjects\FormAddSubjects.resx">
       <DependentUpon>FormAddSubjects.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddUniversities.resx">
+    <EmbeddedResource Include="Admin Module\Universities and Colleges\FormAddUniversities.resx">
       <DependentUpon>FormAddUniversities.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormAddUsers.resx">
+    <EmbeddedResource Include="Admin Module\Universities and Colleges\FormEditColleges.resx">
+      <DependentUpon>FormEditColleges.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\Universities and Colleges\FormEditUniversities.resx">
+      <DependentUpon>FormEditUniversities.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\Users\FormAddUsers.resx">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\FormViewUserLog.resx">
+    <EmbeddedResource Include="Admin Module\Users\FormViewUserLog.resx">
       <DependentUpon>FormViewUserLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\Users\FormDeleteUsers.resx">
+      <DependentUpon>FormDeleteUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\Users\FormEditUsers.resx">
+      <DependentUpon>FormEditUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExamCellDashboard.resx">
+      <DependentUpon>FormExamCellDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignIn.resx">
       <DependentUpon>FormSignIn.vb</DependentUpon>

@@ -28,7 +28,7 @@ Partial Class FormAddUsers
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelAddUsersPanel = New System.Windows.Forms.Label()
-        Me.ContextMenuStripUser = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStripUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelPage = New System.Windows.Forms.Panel()
@@ -52,7 +52,7 @@ Partial Class FormAddUsers
         Me.OpenFileDialogAddUsers = New System.Windows.Forms.OpenFileDialog()
         Me.ErrorProviderAddUsers = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation.SuspendLayout()
-        Me.ContextMenuStripUser.SuspendLayout()
+        Me.ContextMenuStripUsers.SuspendLayout()
         Me.PanelPage.SuspendLayout()
         Me.PanelAddUsers.SuspendLayout()
         CType(Me.PictureBoxThumbnail, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,12 +102,12 @@ Partial Class FormAddUsers
         Me.LabelAddUsersPanel.TabIndex = 0
         Me.LabelAddUsersPanel.Text = "Add Users"
         '
-        'ContextMenuStripUser
+        'ContextMenuStripUsers
         '
-        Me.ContextMenuStripUser.Font = New System.Drawing.Font("Alegreya Sans", 16.0!)
-        Me.ContextMenuStripUser.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditProfileToolStripMenuItem, Me.LogOutToolStripMenuItem})
-        Me.ContextMenuStripUser.Name = "ContextMenuStripUser"
-        Me.ContextMenuStripUser.Size = New System.Drawing.Size(184, 76)
+        Me.ContextMenuStripUsers.Font = New System.Drawing.Font("Alegreya Sans", 16.0!)
+        Me.ContextMenuStripUsers.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditProfileToolStripMenuItem, Me.LogOutToolStripMenuItem})
+        Me.ContextMenuStripUsers.Name = "ContextMenuStripUser"
+        Me.ContextMenuStripUsers.Size = New System.Drawing.Size(184, 76)
         '
         'EditProfileToolStripMenuItem
         '
@@ -330,7 +330,7 @@ Partial Class FormAddUsers
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
-        Me.ContextMenuStripUser.ResumeLayout(False)
+        Me.ContextMenuStripUsers.ResumeLayout(False)
         Me.PanelPage.ResumeLayout(False)
         Me.PanelAddUsers.ResumeLayout(False)
         Me.PanelAddUsers.PerformLayout()
@@ -346,7 +346,7 @@ Partial Class FormAddUsers
     Friend WithEvents LabelUsername As Label
     Friend WithEvents ButtonDashboard As Button
     Friend WithEvents LabelAddUsersPanel As Label
-    Friend WithEvents ContextMenuStripUser As ContextMenuStrip
+    Friend WithEvents ContextMenuStripUsers As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PanelPage As Panel

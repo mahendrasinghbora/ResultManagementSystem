@@ -18,11 +18,11 @@
     End Sub
 
     Private Sub LabelUsername_Click(sender As Object, e As EventArgs) Handles LabelUsername.Click
-        ContextMenuStripUser.Show(LabelUsername, x:=0, y:=LabelUsername.Height)
+        ContextMenuStripUsers.Show(LabelUsername, x:=0, y:=LabelUsername.Height)
     End Sub
 
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
-        LogOut(Me)
+        LogOut(CallingForm:=Me)
     End Sub
 
     Private Sub ButtonSelectImage_Click(sender As Object, e As EventArgs) Handles ButtonSelectImage.Click
@@ -65,5 +65,19 @@
 
     Private Sub ButtonDashboard_Click(sender As Object, e As EventArgs) Handles ButtonDashboard.Click
         AdminDashboard(CallingForm:=Me)
+    End Sub
+
+    Private Sub ButtonEditUsers_Click(sender As Object, e As EventArgs) Handles ButtonEditUsers.Click
+        Dim NewFormEditUsers As FormEditUsers
+        NewFormEditUsers = New FormEditUsers()
+        NewFormEditUsers.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonDeleteUsers_Click(sender As Object, e As EventArgs) Handles ButtonDeleteUsers.Click
+        Dim NewFormDeleteUsers As FormDeleteUsers
+        NewFormDeleteUsers = New FormDeleteUsers()
+        NewFormDeleteUsers.Show()
+        Dispose()
     End Sub
 End Class

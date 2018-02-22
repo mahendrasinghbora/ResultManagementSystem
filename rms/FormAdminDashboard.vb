@@ -63,4 +63,46 @@
         NewFormAddSessionwiseSemesters.Show()
         Dispose()
     End Sub
+
+    Private Sub ButtonOption7_Click(sender As Object, e As EventArgs) Handles ButtonOption7.Click
+        Dim NewFormAddCourses As FormAddCourses
+        NewFormAddCourses = New FormAddCourses()
+        NewFormAddCourses.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption8_Click(sender As Object, e As EventArgs) Handles ButtonOption8.Click
+        Dim NewFormAddSubjects As FormAddSubjects
+        NewFormAddSubjects = New FormAddSubjects()
+        NewFormAddSubjects.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption9_Click(sender As Object, e As EventArgs) Handles ButtonOption9.Click
+        Dim NewFormAddCoursewiseSubjects As FormAddCoursewiseSubjects
+        NewFormAddCoursewiseSubjects = New FormAddCoursewiseSubjects()
+        NewFormAddCoursewiseSubjects.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption10_Click(sender As Object, e As EventArgs) Handles ButtonOption10.Click
+        Dim NewFormAddStudents As FormAddStudents
+        NewFormAddStudents = New FormAddStudents()
+        NewFormAddStudents.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption11_Click(sender As Object, e As EventArgs) Handles ButtonOption11.Click
+        Dim NewFormAddResultCriteria As FormAddResultCriteria
+        NewFormAddResultCriteria = New FormAddResultCriteria()
+        NewFormAddResultCriteria.Show()
+        Dispose()
+    End Sub
+
+    Private Sub ButtonOption12_Click(sender As Object, e As EventArgs) Handles ButtonOption12.Click
+        Dim NewFormViewUserLog As FormViewUserLog
+        NewFormViewUserLog = New FormViewUserLog()
+        NewFormViewUserLog.Show()
+        Dispose()
+    End Sub
 End Class

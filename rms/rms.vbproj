@@ -79,6 +79,24 @@
     <Compile Include="Admin Module\FormAddColleges.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin Module\FormAddCourses.Designer.vb">
+      <DependentUpon>FormAddCourses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddCourses.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddCoursewiseSubjects.Designer.vb">
+      <DependentUpon>FormAddCoursewiseSubjects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddCoursewiseSubjects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddResultCriteria.Designer.vb">
+      <DependentUpon>FormAddResultCriteria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddResultCriteria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin Module\FormAddSemesters.Designer.vb">
       <DependentUpon>FormAddSemesters.vb</DependentUpon>
     </Compile>
@@ -97,6 +115,18 @@
     <Compile Include="Admin Module\FormAddSessionwiseSemesters.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin Module\FormAddStudents.Designer.vb">
+      <DependentUpon>FormAddStudents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddStudents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSubjects.Designer.vb">
+      <DependentUpon>FormAddSubjects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormAddSubjects.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin Module\FormAddUniversities.Designer.vb">
       <DependentUpon>FormAddUniversities.vb</DependentUpon>
     </Compile>
@@ -107,6 +137,12 @@
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </Compile>
     <Compile Include="Admin Module\FormAddUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Module\FormViewUserLog.Designer.vb">
+      <DependentUpon>FormViewUserLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\FormViewUserLog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSignIn.vb">
@@ -143,6 +179,15 @@
     <EmbeddedResource Include="Admin Module\FormAddColleges.resx">
       <DependentUpon>FormAddColleges.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddCourses.resx">
+      <DependentUpon>FormAddCourses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddCoursewiseSubjects.resx">
+      <DependentUpon>FormAddCoursewiseSubjects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddResultCriteria.resx">
+      <DependentUpon>FormAddResultCriteria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\FormAddSemesters.resx">
       <DependentUpon>FormAddSemesters.vb</DependentUpon>
     </EmbeddedResource>
@@ -152,11 +197,20 @@
     <EmbeddedResource Include="Admin Module\FormAddSessionwiseSemesters.resx">
       <DependentUpon>FormAddSessionwiseSemesters.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddStudents.resx">
+      <DependentUpon>FormAddStudents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormAddSubjects.resx">
+      <DependentUpon>FormAddSubjects.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\FormAddUniversities.resx">
       <DependentUpon>FormAddUniversities.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\FormAddUsers.resx">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\FormViewUserLog.resx">
+      <DependentUpon>FormViewUserLog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignIn.resx">
       <DependentUpon>FormSignIn.vb</DependentUpon>

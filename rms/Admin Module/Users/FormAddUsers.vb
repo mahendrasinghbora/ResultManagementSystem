@@ -4,6 +4,7 @@ Imports MySql.Data.MySqlClient
 Public Class FormAddUsers
     Dim Con As MySqlConnection   ' Connection Variable
     Dim Command As MySqlCommand   ' Command Variable
+
     Private Sub FormAddUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FormStyles(CallingForm:=Me, Text:="RMS | Add Users")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color

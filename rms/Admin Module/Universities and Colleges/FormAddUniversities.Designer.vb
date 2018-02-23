@@ -25,16 +25,26 @@ Partial Class FormAddUniversities
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAddUniversities))
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelAddUniversities = New System.Windows.Forms.Label()
         Me.ContextMenuStripAddUniversities = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
+        Me.PanelAddUniversity = New System.Windows.Forms.Panel()
+        Me.ButtonAddUniversity = New System.Windows.Forms.Button()
+        Me.PanelAddUniversityLabel = New System.Windows.Forms.Panel()
+        Me.LabelUniversities = New System.Windows.Forms.Label()
+        Me.TextUniversity = New System.Windows.Forms.TextBox()
+        Me.LabelUniversityName = New System.Windows.Forms.Label()
+        Me.ErrorProviderUniversity = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation.SuspendLayout()
-        Me.ContextMenuStripAddUniversities.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripAddUniversities.SuspendLayout()
+        Me.PanelAddUniversity.SuspendLayout()
+        Me.PanelAddUniversityLabel.SuspendLayout()
+        CType(Me.ErrorProviderUniversity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelNavigation
@@ -47,6 +57,15 @@ Partial Class FormAddUniversities
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 2
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1074, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 7
+        Me.PictureBoxUser.TabStop = False
         '
         'LabelUsername
         '
@@ -99,27 +118,92 @@ Partial Class FormAddUniversities
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
-        'PictureBoxUser
+        'PanelAddUniversity
         '
-        Me.PictureBoxUser.Location = New System.Drawing.Point(1074, 5)
-        Me.PictureBoxUser.Name = "PictureBoxUser"
-        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
-        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxUser.TabIndex = 7
-        Me.PictureBoxUser.TabStop = False
+        Me.PanelAddUniversity.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelAddUniversity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddUniversity.Controls.Add(Me.ButtonAddUniversity)
+        Me.PanelAddUniversity.Controls.Add(Me.PanelAddUniversityLabel)
+        Me.PanelAddUniversity.Controls.Add(Me.TextUniversity)
+        Me.PanelAddUniversity.Controls.Add(Me.LabelUniversityName)
+        Me.PanelAddUniversity.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelAddUniversity.Location = New System.Drawing.Point(425, 191)
+        Me.PanelAddUniversity.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
+        Me.PanelAddUniversity.Name = "PanelAddUniversity"
+        Me.PanelAddUniversity.Size = New System.Drawing.Size(500, 282)
+        Me.PanelAddUniversity.TabIndex = 3
+        '
+        'ButtonAddUniversity
+        '
+        Me.ButtonAddUniversity.AutoSize = True
+        Me.ButtonAddUniversity.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddUniversity.Location = New System.Drawing.Point(176, 213)
+        Me.ButtonAddUniversity.Name = "ButtonAddUniversity"
+        Me.ButtonAddUniversity.Size = New System.Drawing.Size(147, 36)
+        Me.ButtonAddUniversity.TabIndex = 7
+        Me.ButtonAddUniversity.Text = "Add University"
+        Me.ButtonAddUniversity.UseVisualStyleBackColor = True
+        '
+        'PanelAddUniversityLabel
+        '
+        Me.PanelAddUniversityLabel.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelAddUniversityLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddUniversityLabel.Controls.Add(Me.LabelUniversities)
+        Me.PanelAddUniversityLabel.Location = New System.Drawing.Point(-1, -1)
+        Me.PanelAddUniversityLabel.Name = "PanelAddUniversityLabel"
+        Me.PanelAddUniversityLabel.Size = New System.Drawing.Size(500, 78)
+        Me.PanelAddUniversityLabel.TabIndex = 4
+        '
+        'LabelUniversities
+        '
+        Me.LabelUniversities.AutoSize = True
+        Me.LabelUniversities.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUniversities.Location = New System.Drawing.Point(137, 15)
+        Me.LabelUniversities.Name = "LabelUniversities"
+        Me.LabelUniversities.Size = New System.Drawing.Size(225, 46)
+        Me.LabelUniversities.TabIndex = 3
+        Me.LabelUniversities.Text = "Add Universities"
+        '
+        'TextUniversity
+        '
+        Me.TextUniversity.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextUniversity.Location = New System.Drawing.Point(42, 135)
+        Me.TextUniversity.Name = "TextUniversity"
+        Me.TextUniversity.Size = New System.Drawing.Size(414, 27)
+        Me.TextUniversity.TabIndex = 2
+        '
+        'LabelUniversityName
+        '
+        Me.LabelUniversityName.AutoSize = True
+        Me.LabelUniversityName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUniversityName.Location = New System.Drawing.Point(37, 104)
+        Me.LabelUniversityName.Name = "LabelUniversityName"
+        Me.LabelUniversityName.Size = New System.Drawing.Size(213, 28)
+        Me.LabelUniversityName.TabIndex = 1
+        Me.LabelUniversityName.Text = "Name of the University"
+        '
+        'ErrorProviderUniversity
+        '
+        Me.ErrorProviderUniversity.ContainerControl = Me
         '
         'FormAddUniversities
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.PanelAddUniversity)
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddUniversities"
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
-        Me.ContextMenuStripAddUniversities.ResumeLayout(False)
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripAddUniversities.ResumeLayout(False)
+        Me.PanelAddUniversity.ResumeLayout(False)
+        Me.PanelAddUniversity.PerformLayout()
+        Me.PanelAddUniversityLabel.ResumeLayout(False)
+        Me.PanelAddUniversityLabel.PerformLayout()
+        CType(Me.ErrorProviderUniversity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -132,4 +216,11 @@ Partial Class FormAddUniversities
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBoxUser As PictureBox
+    Friend WithEvents PanelAddUniversity As Panel
+    Friend WithEvents ButtonAddUniversity As Button
+    Friend WithEvents PanelAddUniversityLabel As Panel
+    Friend WithEvents LabelUniversities As Label
+    Friend WithEvents TextUniversity As TextBox
+    Friend WithEvents LabelUniversityName As Label
+    Friend WithEvents ErrorProviderUniversity As ErrorProvider
 End Class

@@ -15,7 +15,7 @@ Public Class FormSigIn
         LabelSignIn.ForeColor = Color.FromArgb(255, 255, 255)
         PanelSignInLabel.BackColor = Color.FromArgb(44, 150, 118)
         PanelCopyright.BorderStyle = BorderStyle.FixedSingle
-        ButtonSignIn.Enabled = False   ' SIgn in button- disabled by default.
+        ButtonSignIn.Enabled = False   ' Sign in button- disabled by default.
     End Sub
 
     Private Sub LinkGuideSite_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkGuideSite.LinkClicked

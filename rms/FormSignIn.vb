@@ -1,9 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class FormSigIn
-    Public FullUsername As String   ' FullUsername (Global Variable)
     Dim Con As MySqlConnection   ' Connection Variable
     Dim Command As MySqlCommand   ' Command Variable
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Text = "RMS | Result Management System"
         MinimizeBox = True
@@ -39,7 +40,7 @@ Public Class FormSigIn
             Dim UserStatus As Integer
             Query = $"SELECT * FROM users WHERE USERNAME='{TextUsername.Text}' AND PASSWORD='{TextPassword.Text}';"
             Command = New MySqlCommand(Query, Con)
-            Dim Reader As MySqlDataReader = Command.ExecuteReader
+            Dim Reader As MySqlDataReader = Command.ExecuteReader()
             Dim Count As Integer = 0
             While Reader.Read()
                 Count = Count + 1
@@ -47,12 +48,13 @@ Public Class FormSigIn
             If Count = 1 Then
                 UserStatus = Reader.GetInt16(column:="USER_STATUS_ID")
                 FullUsername = Reader.GetString(column:="FIRST_NAME") & " " & Reader.GetString(column:="LAST_NAME")
+                Username = Reader.GetString(column:="USERNAME")
                 Reader.Dispose()
                 Query = $"SELECT * FROM user_status WHERE USER_STATUS_ID='{UserStatus}';"
-                Command = New MySqlCommand(Query, Con)
-                Reader = Command.ExecuteReader
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
                 Reader.Read()
-                If Reader.GetString(column:="USER_TYPE") = "ADMINISTRATOR" Then
+                If Reader.GetString(column:="USER_TYPE") = "Admin" Then
                     FormAdminDashboard.Show()
                     Hide()
                 Else
@@ -60,8 +62,9 @@ Public Class FormSigIn
                     Hide()
                 End If
             Else
-                    MessageBox.Show(text:="Incorrect username or password.", caption:="Sign In Error", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Stop)
+                MessageBox.Show(text:="Incorrect username or password.", caption:="Sign In Error", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Stop)
             End If
+            Reader.Dispose()
             Con.Close()
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message)

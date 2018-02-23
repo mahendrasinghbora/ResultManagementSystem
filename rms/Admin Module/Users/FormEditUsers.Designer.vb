@@ -31,6 +31,7 @@ Partial Class FormEditUsers
         Me.ContextMenuStripEditUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelPage = New System.Windows.Forms.Panel()
         Me.PanelNavigation.SuspendLayout()
         Me.ContextMenuStripEditUsers.SuspendLayout()
         Me.SuspendLayout()
@@ -96,11 +97,19 @@ Partial Class FormEditUsers
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
+        'PanelPage
+        '
+        Me.PanelPage.Location = New System.Drawing.Point(-8, 65)
+        Me.PanelPage.Name = "PanelPage"
+        Me.PanelPage.Size = New System.Drawing.Size(1366, 664)
+        Me.PanelPage.TabIndex = 3
+        '
         'FormEditUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.PanelPage)
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormEditUsers"
         Me.ShowIcon = False
@@ -118,4 +127,5 @@ Partial Class FormEditUsers
     Friend WithEvents ContextMenuStripEditUsers As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PanelPage As Panel
 End Class

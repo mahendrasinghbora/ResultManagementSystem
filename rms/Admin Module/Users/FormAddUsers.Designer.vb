@@ -35,8 +35,9 @@ Partial Class FormAddUsers
         Me.ButtonDeleteUsers = New System.Windows.Forms.Button()
         Me.ButtonEditUsers = New System.Windows.Forms.Button()
         Me.PanelAddUsers = New System.Windows.Forms.Panel()
+        Me.RadioButtonUserType2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonUserType1 = New System.Windows.Forms.RadioButton()
         Me.LabelUserType = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ButtonSelectImage = New System.Windows.Forms.Button()
         Me.LabelThumbnail = New System.Windows.Forms.Label()
         Me.PictureBoxThumbnail = New System.Windows.Forms.PictureBox()
@@ -155,8 +156,9 @@ Partial Class FormAddUsers
         '
         Me.PanelAddUsers.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PanelAddUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddUsers.Controls.Add(Me.RadioButtonUserType2)
+        Me.PanelAddUsers.Controls.Add(Me.RadioButtonUserType1)
         Me.PanelAddUsers.Controls.Add(Me.LabelUserType)
-        Me.PanelAddUsers.Controls.Add(Me.ComboBox1)
         Me.PanelAddUsers.Controls.Add(Me.ButtonSelectImage)
         Me.PanelAddUsers.Controls.Add(Me.LabelThumbnail)
         Me.PanelAddUsers.Controls.Add(Me.PictureBoxThumbnail)
@@ -175,6 +177,30 @@ Partial Class FormAddUsers
         Me.PanelAddUsers.Size = New System.Drawing.Size(789, 528)
         Me.PanelAddUsers.TabIndex = 1
         '
+        'RadioButtonUserType2
+        '
+        Me.RadioButtonUserType2.AutoSize = True
+        Me.RadioButtonUserType2.Font = New System.Drawing.Font("Alegreya Sans", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonUserType2.Location = New System.Drawing.Point(170, 395)
+        Me.RadioButtonUserType2.Name = "RadioButtonUserType2"
+        Me.RadioButtonUserType2.Size = New System.Drawing.Size(124, 38)
+        Me.RadioButtonUserType2.TabIndex = 18
+        Me.RadioButtonUserType2.TabStop = True
+        Me.RadioButtonUserType2.Text = "Exam Cell"
+        Me.RadioButtonUserType2.UseVisualStyleBackColor = True
+        '
+        'RadioButtonUserType1
+        '
+        Me.RadioButtonUserType1.AutoSize = True
+        Me.RadioButtonUserType1.Font = New System.Drawing.Font("Alegreya Sans", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonUserType1.Location = New System.Drawing.Point(52, 395)
+        Me.RadioButtonUserType1.Name = "RadioButtonUserType1"
+        Me.RadioButtonUserType1.Size = New System.Drawing.Size(96, 38)
+        Me.RadioButtonUserType1.TabIndex = 17
+        Me.RadioButtonUserType1.TabStop = True
+        Me.RadioButtonUserType1.Text = "Admin"
+        Me.RadioButtonUserType1.UseVisualStyleBackColor = True
+        '
         'LabelUserType
         '
         Me.LabelUserType.AutoSize = True
@@ -184,14 +210,6 @@ Partial Class FormAddUsers
         Me.LabelUserType.Size = New System.Drawing.Size(98, 28)
         Me.LabelUserType.TabIndex = 14
         Me.LabelUserType.Text = "User Type"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(52, 394)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(300, 27)
-        Me.ComboBox1.TabIndex = 13
         '
         'ButtonSelectImage
         '
@@ -364,10 +382,11 @@ Partial Class FormAddUsers
     Friend WithEvents PictureBoxThumbnail As PictureBox
     Friend WithEvents ButtonSelectImage As Button
     Friend WithEvents LabelUserType As Label
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents OpenFileDialogAddUsers As OpenFileDialog
     Friend WithEvents ErrorProviderAddUsers As ErrorProvider
     Friend WithEvents ButtonDeleteUsers As Button
     Friend WithEvents ButtonEditUsers As Button
+    Friend WithEvents RadioButtonUserType2 As RadioButton
+    Friend WithEvents RadioButtonUserType1 As RadioButton
 End Class

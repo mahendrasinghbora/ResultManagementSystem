@@ -25,6 +25,7 @@ Partial Class FormAdminDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAdminDashboard))
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.LabelDashboard = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
@@ -56,18 +57,29 @@ Partial Class FormAdminDashboard
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelNavigation.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMenu.SuspendLayout()
         Me.ContextMenuStripUser.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.LabelDashboard)
         Me.PanelNavigation.Location = New System.Drawing.Point(-8, 0)
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 0
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1064, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 3
+        Me.PictureBoxUser.TabStop = False
         '
         'LabelUsername
         '
@@ -420,6 +432,7 @@ Partial Class FormAdminDashboard
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelMenu.ResumeLayout(False)
         Me.ContextMenuStripUser.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -457,4 +470,5 @@ Partial Class FormAdminDashboard
     Friend WithEvents LabelOption11 As Label
     Friend WithEvents ButtonOption8 As Button
     Friend WithEvents LabelOption8 As Label
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

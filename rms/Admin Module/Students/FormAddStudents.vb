@@ -1,13 +1,6 @@
 ﻿Public Class FormAddStudents
     Private Sub FormAddStudents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = "RMS | Add Students"
-        MinimizeBox = True
-        MaximizeBox = True
-        Size = New Size(1366, 768)   ' Default Size- 1368x768 px
-        MaximumSize = New Size(1366, 768)   ' Maximum Size- 1366x768 px
-        MinimumSize = New Size(1366, 768)   ' Minimum Size- 1366x768 px
-        StartPosition = FormStartPosition.CenterScreen   ' Default Start Position- CenterScreen
-        WindowState = FormWindowState.Normal   ' Default Window State- Normal
+        FormStyles(CallingForm:=Me, Text:="RMS | Add Students")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelAddStudents.ForeColor = Color.FromArgb(255, 255, 255)
         LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.

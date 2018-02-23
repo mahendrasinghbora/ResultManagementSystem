@@ -54,4 +54,15 @@ Module Functions
             Con.Dispose()
         End Try
     End Sub
+
+    Public Sub FormStyles(CallingForm As Form, Text As String)
+        CallingForm.Text = Text
+        CallingForm.MinimizeBox = True
+        CallingForm.MaximizeBox = True
+        CallingForm.Size = New Size(1366, 768)   ' Default Size- 1368x768 px
+        CallingForm.MaximumSize = New Size(1366, 768)   ' Maximum Size- 1366x768 px
+        CallingForm.MinimumSize = New Size(1366, 768)   ' Minimum Size- 1366x768 px
+        CallingForm.StartPosition = FormStartPosition.CenterScreen   ' Default Start Position- CenterScreen
+        CallingForm.WindowState = FormWindowState.Maximized   ' Default Window State- Maximized
+    End Sub
 End Module

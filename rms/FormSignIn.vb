@@ -6,14 +6,7 @@ Public Class FormSigIn
     Dim Command As MySqlCommand   ' Command Variable
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = "RMS | Result Management System"
-        MinimizeBox = True
-        MaximizeBox = True
-        Size = New Size(1366, 768)   ' Default Size- 1368x768 px
-        MaximumSize = New Size(1366, 768)   ' Maximum Size- 1366x768 px
-        MinimumSize = New Size(1366, 768)   ' Minimum Size- 1366x768 px
-        StartPosition = FormStartPosition.CenterScreen   ' Default Start Position- CenterScreen
-        WindowState = FormWindowState.Normal   ' Default Window State- Normal
+        FormStyles(CallingForm:=Me, Text:="RMS | Result Management System")   ' Form Styles
         LabelCopyright.Text = "© " & Year(Now) & " Result Management System (rms.)"   ' Copyright text
         TextPassword.MaxLength = 20   ' Maximum Length of Password
         TextUsername.MaxLength = 20   ' Maximum Length of Username
@@ -62,7 +55,7 @@ Public Class FormSigIn
                     Hide()
                 End If
             Else
-                MessageBox.Show(text:="Incorrect username or password.", caption:="Sign In Error", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Stop)
+                MessageBox.Show(text:="Incorrect username or password.", caption:="Sign In Error", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
             End If
             Reader.Dispose()
             Con.Close()

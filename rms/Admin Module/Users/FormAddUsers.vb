@@ -5,14 +5,7 @@ Public Class FormAddUsers
     Dim Con As MySqlConnection   ' Connection Variable
     Dim Command As MySqlCommand   ' Command Variable
     Private Sub FormAddUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = "RMS | Add Users"
-        MinimizeBox = True
-        MaximizeBox = True
-        Size = New Size(1366, 768)   ' Default Size- 1368x768 px
-        MaximumSize = New Size(1366, 768)   ' Maximum Size- 1366x768 px
-        MinimumSize = New Size(1366, 768)   ' Minimum Size- 1366x768 px
-        StartPosition = FormStartPosition.CenterScreen   ' Default Start Position- CenterScreen
-        WindowState = FormWindowState.Normal   ' Default Window State- Normal
+        FormStyles(CallingForm:=Me, Text:="RMS | Add Users")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelAddUsersPanel.ForeColor = Color.FromArgb(255, 255, 255)
         LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.
@@ -21,6 +14,7 @@ Public Class FormAddUsers
         LabelAddUsers.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddUsers.Enabled = False
         RadioButtonUserType1.Select()   ' Admin- Selected by default.
+        UserImage(PictureBoxUser:=PictureBoxUser)   ' User's Thumbnail
     End Sub
 
     Private Sub LabelUsername_Click(sender As Object, e As EventArgs) Handles LabelUsername.Click
@@ -125,7 +119,7 @@ Public Class FormAddUsers
             Dispose()
             MessageBox.Show(text:="User successfully added.", caption:="Success alert", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
         Catch ex As Exception
-            MessageBox.Show(text:=ex.Message)
+            MessageBox.Show(text:="Username already in use. Please choose a different username.", caption:="Duplicate entry alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
         Finally
             Con.Dispose()
         End Try

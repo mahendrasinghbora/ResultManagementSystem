@@ -25,6 +25,7 @@ Partial Class FormAddUsers
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAddUsers))
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelAddUsersPanel = New System.Windows.Forms.Label()
@@ -53,6 +54,7 @@ Partial Class FormAddUsers
         Me.OpenFileDialogAddUsers = New System.Windows.Forms.OpenFileDialog()
         Me.ErrorProviderAddUsers = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripUsers.SuspendLayout()
         Me.PanelPage.SuspendLayout()
         Me.PanelAddUsers.SuspendLayout()
@@ -63,6 +65,7 @@ Partial Class FormAddUsers
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
         Me.PanelNavigation.Controls.Add(Me.LabelAddUsersPanel)
@@ -70,6 +73,15 @@ Partial Class FormAddUsers
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 1
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1066, 7)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 4
+        Me.PictureBoxUser.TabStop = False
         '
         'LabelUsername
         '
@@ -240,7 +252,7 @@ Partial Class FormAddUsers
         Me.PictureBoxThumbnail.Location = New System.Drawing.Point(562, 177)
         Me.PictureBoxThumbnail.Name = "PictureBoxThumbnail"
         Me.PictureBoxThumbnail.Size = New System.Drawing.Size(149, 182)
-        Me.PictureBoxThumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxThumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBoxThumbnail.TabIndex = 10
         Me.PictureBoxThumbnail.TabStop = False
         '
@@ -348,6 +360,7 @@ Partial Class FormAddUsers
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStripUsers.ResumeLayout(False)
         Me.PanelPage.ResumeLayout(False)
         Me.PanelAddUsers.ResumeLayout(False)
@@ -389,4 +402,5 @@ Partial Class FormAddUsers
     Friend WithEvents ButtonEditUsers As Button
     Friend WithEvents RadioButtonUserType2 As RadioButton
     Friend WithEvents RadioButtonUserType1 As RadioButton
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

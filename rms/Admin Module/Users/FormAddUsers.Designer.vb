@@ -76,7 +76,7 @@ Partial Class FormAddUsers
         '
         'PictureBoxUser
         '
-        Me.PictureBoxUser.Location = New System.Drawing.Point(1066, 7)
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1073, 5)
         Me.PictureBoxUser.Name = "PictureBoxUser"
         Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
         Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

@@ -8,13 +8,12 @@ Public Class FormAddUsers
         FormStyles(CallingForm:=Me, Text:="RMS | Add Users")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelAddUsersPanel.ForeColor = Color.FromArgb(255, 255, 255)
-        LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.
         LabelUsername.ForeColor = Color.FromArgb(255, 255, 255)
         PanelAddUsersLabel.BackColor = Color.FromArgb(44, 150, 118)
         LabelAddUsers.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddUsers.Enabled = False
         RadioButtonUserType1.Select()   ' Admin- Selected by default.
-        UserImage(PictureBoxUser:=PictureBoxUser)   ' User's Thumbnail
+        UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
     End Sub
 
     Private Sub LabelUsername_Click(sender As Object, e As EventArgs) Handles LabelUsername.Click

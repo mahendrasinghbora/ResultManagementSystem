@@ -31,12 +31,15 @@ Partial Class FormAddUniversities
         Me.ContextMenuStripAddUniversities = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.PanelNavigation.SuspendLayout()
         Me.ContextMenuStripAddUniversities.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
         Me.PanelNavigation.Controls.Add(Me.LabelAddUniversities)
@@ -96,6 +99,15 @@ Partial Class FormAddUniversities
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1074, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 7
+        Me.PictureBoxUser.TabStop = False
+        '
         'FormAddUniversities
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -107,6 +119,7 @@ Partial Class FormAddUniversities
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
         Me.ContextMenuStripAddUniversities.ResumeLayout(False)
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -118,4 +131,5 @@ Partial Class FormAddUniversities
     Friend WithEvents ContextMenuStripAddUniversities As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

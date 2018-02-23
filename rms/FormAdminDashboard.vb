@@ -3,9 +3,8 @@
         FormStyles(CallingForm:=Me, Text:="RMS | Admin's Dashboard")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelDashboard.ForeColor = Color.FromArgb(255, 255, 255)
-        LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.
         LabelUsername.ForeColor = Color.FromArgb(255, 255, 255)
-        UserImage(PictureBoxUser:=PictureBoxUser)   ' User's Thumbnail
+        UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
     End Sub
 
     Private Sub LabelUsername_Click(sender As Object, e As EventArgs) Handles LabelUsername.Click

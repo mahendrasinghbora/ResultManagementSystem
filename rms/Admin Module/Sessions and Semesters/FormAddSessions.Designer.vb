@@ -28,10 +28,12 @@ Partial Class FormAddSessions
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelAddSessions = New System.Windows.Forms.Label()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStripAddSessions = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelNavigation.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddSessions.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,6 +71,7 @@ Partial Class FormAddSessions
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
         Me.PanelNavigation.Controls.Add(Me.LabelAddSessions)
@@ -76,6 +79,15 @@ Partial Class FormAddSessions
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 4
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1072, 7)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 6
+        Me.PictureBoxUser.TabStop = False
         '
         'ContextMenuStripAddSessions
         '
@@ -106,6 +118,7 @@ Partial Class FormAddSessions
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStripAddSessions.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -118,4 +131,5 @@ Partial Class FormAddSessions
     Friend WithEvents ContextMenuStripAddSessions As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

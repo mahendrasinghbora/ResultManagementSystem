@@ -3,7 +3,7 @@
         FormStyles(CallingForm:=Me, Text:="RMS | Add Sessions")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelAddSessions.ForeColor = Color.FromArgb(255, 255, 255)
-        LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.
+        UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
         LabelUsername.ForeColor = Color.FromArgb(255, 255, 255)
     End Sub
 

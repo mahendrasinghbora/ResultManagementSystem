@@ -39,9 +39,11 @@ Partial Class FormExamCellDashboard
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStripUser.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LogOutToolStripMenuItem
@@ -191,12 +193,22 @@ Partial Class FormExamCellDashboard
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.LabelDashboard)
         Me.PanelNavigation.Location = New System.Drawing.Point(-15, 0)
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 2
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1073, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 4
+        Me.PictureBoxUser.TabStop = False
         '
         'FormExamCellDashboard
         '
@@ -211,6 +223,7 @@ Partial Class FormExamCellDashboard
         Me.PanelMenu.ResumeLayout(False)
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -230,4 +243,5 @@ Partial Class FormExamCellDashboard
     Friend WithEvents LabelUsername As Label
     Friend WithEvents PanelMenu As Panel
     Friend WithEvents PanelNavigation As Panel
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

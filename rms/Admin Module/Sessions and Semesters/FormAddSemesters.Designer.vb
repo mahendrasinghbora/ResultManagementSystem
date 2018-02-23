@@ -27,11 +27,13 @@ Partial Class FormAddSemesters
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelAddSemesters = New System.Windows.Forms.Label()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ContextMenuStripAddSemesters = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelNavigation.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddSemesters.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,6 +59,7 @@ Partial Class FormAddSemesters
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
         Me.PanelNavigation.Controls.Add(Me.LabelAddSemesters)
@@ -64,6 +67,15 @@ Partial Class FormAddSemesters
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 5
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1072, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 6
+        Me.PictureBoxUser.TabStop = False
         '
         'LabelUsername
         '
@@ -82,7 +94,7 @@ Partial Class FormAddSemesters
         Me.ContextMenuStripAddSemesters.Font = New System.Drawing.Font("Alegreya Sans", 16.0!)
         Me.ContextMenuStripAddSemesters.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditProfileToolStripMenuItem, Me.LogOutToolStripMenuItem})
         Me.ContextMenuStripAddSemesters.Name = "ContextMenuStripUser"
-        Me.ContextMenuStripAddSemesters.Size = New System.Drawing.Size(184, 98)
+        Me.ContextMenuStripAddSemesters.Size = New System.Drawing.Size(184, 76)
         '
         'EditProfileToolStripMenuItem
         '
@@ -106,6 +118,7 @@ Partial Class FormAddSemesters
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStripAddSemesters.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -118,4 +131,5 @@ Partial Class FormAddSemesters
     Friend WithEvents ContextMenuStripAddSemesters As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

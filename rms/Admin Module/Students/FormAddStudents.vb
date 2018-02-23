@@ -3,7 +3,7 @@
         FormStyles(CallingForm:=Me, Text:="RMS | Add Students")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelAddStudents.ForeColor = Color.FromArgb(255, 255, 255)
-        LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.
+        UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
         LabelUsername.ForeColor = Color.FromArgb(255, 255, 255)
     End Sub
 

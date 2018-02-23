@@ -26,7 +26,8 @@ Module Functions
         CallingForm.Dispose()
     End Sub
 
-    Public Sub UserImage(PictureBoxUser As PictureBox)
+    Public Sub UserImage(PictureBoxUser As PictureBox, LabelUsername As Label)
+        LabelUsername.Text = FullUsername & "    "   ' Extra spaces to accomodate the dropdown arrow.
         Dim Con As MySqlConnection   ' Connection Variable
         Dim Command As MySqlCommand   ' Command Variable
         Dim ImageByte() As Byte

@@ -31,12 +31,15 @@ Partial Class FormEditUniversities
         Me.ContextMenuStripEditUniversities = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.PanelNavigation.SuspendLayout()
         Me.ContextMenuStripEditUniversities.SuspendLayout()
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelNavigation
         '
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
         Me.PanelNavigation.Controls.Add(Me.LabelEditUniversities)
@@ -82,7 +85,7 @@ Partial Class FormEditUniversities
         Me.ContextMenuStripEditUniversities.Font = New System.Drawing.Font("Alegreya Sans", 16.0!)
         Me.ContextMenuStripEditUniversities.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditProfileToolStripMenuItem, Me.LogOutToolStripMenuItem})
         Me.ContextMenuStripEditUniversities.Name = "ContextMenuStripUser"
-        Me.ContextMenuStripEditUniversities.Size = New System.Drawing.Size(184, 98)
+        Me.ContextMenuStripEditUniversities.Size = New System.Drawing.Size(184, 76)
         '
         'EditProfileToolStripMenuItem
         '
@@ -96,6 +99,15 @@ Partial Class FormEditUniversities
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1074, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 7
+        Me.PictureBoxUser.TabStop = False
+        '
         'FormEditUniversities
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -107,6 +119,7 @@ Partial Class FormEditUniversities
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
         Me.ContextMenuStripEditUniversities.ResumeLayout(False)
+        CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -118,4 +131,5 @@ Partial Class FormEditUniversities
     Friend WithEvents ContextMenuStripEditUniversities As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBoxUser As PictureBox
 End Class

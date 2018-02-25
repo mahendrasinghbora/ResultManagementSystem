@@ -32,9 +32,19 @@ Partial Class FormAddSemesters
         Me.ContextMenuStripAddSemesters = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelAddSemesters = New System.Windows.Forms.Panel()
+        Me.ButtonAddSemester = New System.Windows.Forms.Button()
+        Me.PanelAddSemesterLabel = New System.Windows.Forms.Panel()
+        Me.LabelSemesters = New System.Windows.Forms.Label()
+        Me.TextSemester = New System.Windows.Forms.TextBox()
+        Me.LabelSemesterName = New System.Windows.Forms.Label()
+        Me.ErrorProviderSemester = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddSemesters.SuspendLayout()
+        Me.PanelAddSemesters.SuspendLayout()
+        Me.PanelAddSemesterLabel.SuspendLayout()
+        CType(Me.ErrorProviderSemester, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonDashboard
@@ -108,11 +118,80 @@ Partial Class FormAddSemesters
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
+        'PanelAddSemesters
+        '
+        Me.PanelAddSemesters.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelAddSemesters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddSemesters.Controls.Add(Me.ButtonAddSemester)
+        Me.PanelAddSemesters.Controls.Add(Me.PanelAddSemesterLabel)
+        Me.PanelAddSemesters.Controls.Add(Me.TextSemester)
+        Me.PanelAddSemesters.Controls.Add(Me.LabelSemesterName)
+        Me.PanelAddSemesters.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelAddSemesters.Location = New System.Drawing.Point(425, 223)
+        Me.PanelAddSemesters.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
+        Me.PanelAddSemesters.Name = "PanelAddSemesters"
+        Me.PanelAddSemesters.Size = New System.Drawing.Size(500, 282)
+        Me.PanelAddSemesters.TabIndex = 7
+        '
+        'ButtonAddSemester
+        '
+        Me.ButtonAddSemester.AutoSize = True
+        Me.ButtonAddSemester.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddSemester.Location = New System.Drawing.Point(176, 213)
+        Me.ButtonAddSemester.Name = "ButtonAddSemester"
+        Me.ButtonAddSemester.Size = New System.Drawing.Size(147, 36)
+        Me.ButtonAddSemester.TabIndex = 7
+        Me.ButtonAddSemester.Text = "Add Semester"
+        Me.ButtonAddSemester.UseVisualStyleBackColor = True
+        '
+        'PanelAddSemesterLabel
+        '
+        Me.PanelAddSemesterLabel.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelAddSemesterLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddSemesterLabel.Controls.Add(Me.LabelSemesters)
+        Me.PanelAddSemesterLabel.Location = New System.Drawing.Point(-1, -1)
+        Me.PanelAddSemesterLabel.Name = "PanelAddSemesterLabel"
+        Me.PanelAddSemesterLabel.Size = New System.Drawing.Size(500, 78)
+        Me.PanelAddSemesterLabel.TabIndex = 4
+        '
+        'LabelSemesters
+        '
+        Me.LabelSemesters.AutoSize = True
+        Me.LabelSemesters.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSemesters.Location = New System.Drawing.Point(146, 15)
+        Me.LabelSemesters.Name = "LabelSemesters"
+        Me.LabelSemesters.Size = New System.Drawing.Size(206, 46)
+        Me.LabelSemesters.TabIndex = 3
+        Me.LabelSemesters.Text = "Add Semesters"
+        '
+        'TextSemester
+        '
+        Me.TextSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextSemester.Location = New System.Drawing.Point(42, 135)
+        Me.TextSemester.Name = "TextSemester"
+        Me.TextSemester.Size = New System.Drawing.Size(414, 27)
+        Me.TextSemester.TabIndex = 2
+        '
+        'LabelSemesterName
+        '
+        Me.LabelSemesterName.AutoSize = True
+        Me.LabelSemesterName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSemesterName.Location = New System.Drawing.Point(37, 104)
+        Me.LabelSemesterName.Name = "LabelSemesterName"
+        Me.LabelSemesterName.Size = New System.Drawing.Size(96, 28)
+        Me.LabelSemesterName.TabIndex = 1
+        Me.LabelSemesterName.Text = "Semester"
+        '
+        'ErrorProviderSemester
+        '
+        Me.ErrorProviderSemester.ContainerControl = Me
+        '
         'FormAddSemesters
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.PanelAddSemesters)
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddSemesters"
         Me.ShowIcon = False
@@ -120,6 +199,11 @@ Partial Class FormAddSemesters
         Me.PanelNavigation.PerformLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStripAddSemesters.ResumeLayout(False)
+        Me.PanelAddSemesters.ResumeLayout(False)
+        Me.PanelAddSemesters.PerformLayout()
+        Me.PanelAddSemesterLabel.ResumeLayout(False)
+        Me.PanelAddSemesterLabel.PerformLayout()
+        CType(Me.ErrorProviderSemester, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -132,4 +216,11 @@ Partial Class FormAddSemesters
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBoxUser As PictureBox
+    Friend WithEvents PanelAddSemesters As Panel
+    Friend WithEvents ButtonAddSemester As Button
+    Friend WithEvents PanelAddSemesterLabel As Panel
+    Friend WithEvents LabelSemesters As Label
+    Friend WithEvents TextSemester As TextBox
+    Friend WithEvents LabelSemesterName As Label
+    Friend WithEvents ErrorProviderSemester As ErrorProvider
 End Class

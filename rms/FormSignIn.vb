@@ -85,9 +85,33 @@ Public Class FormSigIn
 
     Private Sub TextPassword_TextChanged(sender As Object, e As EventArgs) Handles TextPassword.TextChanged
         If TextPassword.Text <> "" Then
+            ErrorProviderSignIn.Dispose()
             ButtonSignIn.Enabled = True
         Else
+            ErrorProviderSignIn.SetError(control:=TextPassword, value:="Password can't be empty.")
             ButtonSignIn.Enabled = False
+        End If
+    End Sub
+
+    Private Sub TextUsername_TextChanged(sender As Object, e As EventArgs) Handles TextUsername.TextChanged
+        If TextUsername.Text = "" Then
+            ErrorProviderSignIn.SetError(TextUsername, "Username can't be empty.")
+            TextUsername.Focus()
+            ButtonSignIn.Enabled = False
+        Else
+            If System.Text.RegularExpressions.Regex.IsMatch(input:=TextUsername.Text, pattern:="[^a-zA-Z0-9\._]") Then
+                ErrorProviderSignIn.SetError(TextUsername, "Username can only contain letters, digits, dot and underscore.")
+                ButtonSignIn.Enabled = False
+                TextUsername.Focus()
+            Else
+                If Not System.Text.RegularExpressions.Regex.IsMatch(input:=TextUsername.Text, pattern:="[a-zA-Z]+[0-9\._]*") Then
+                    ErrorProviderSignIn.SetError(TextUsername, "Username must contain atleast one letter.")
+                    ButtonSignIn.Enabled = False
+                    TextUsername.Focus()
+                Else
+                    ErrorProviderSignIn.Dispose()
+                End If
+            End If
         End If
     End Sub
 End Class

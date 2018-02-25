@@ -13,6 +13,7 @@ Public Class FormAddUniversities
         PanelAddUniversityLabel.BackColor = Color.FromArgb(44, 150, 118)
         LabelUniversities.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddUniversity.Enabled = False
+        TextUniversity.MaxLength = 100   ' Maximum Length of University name
     End Sub
 
     Private Sub LabelUsername_Click(sender As Object, e As EventArgs) Handles LabelUsername.Click
@@ -34,7 +35,7 @@ Public Class FormAddUniversities
             ButtonAddUniversity.Enabled = False
         End If
         If System.Text.RegularExpressions.Regex.IsMatch(input:=TextUniversity.Text, pattern:="[^a-zA-Z\.,\s]") Then
-            ErrorProviderUniversity.SetError(control:=TextUniversity, value:="University name can't contain digits or special characters other than a dot(.) and a comma(,).")
+            ErrorProviderUniversity.SetError(control:=TextUniversity, value:="University name can't contain digits or special characters other than a dot (.) and a comma (,).")
             TextUniversity.Focus()
             ButtonAddUniversity.Enabled = False
         End If

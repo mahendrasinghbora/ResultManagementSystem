@@ -25,16 +25,26 @@ Partial Class FormAddCourses
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAddCourses))
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelAddCourses = New System.Windows.Forms.Label()
         Me.ContextMenuStripAddCourses = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
+        Me.PanelAddCourses = New System.Windows.Forms.Panel()
+        Me.ButtonAddCourse = New System.Windows.Forms.Button()
+        Me.PanelAddCourseLabel = New System.Windows.Forms.Panel()
+        Me.LabelCourses = New System.Windows.Forms.Label()
+        Me.TextCourse = New System.Windows.Forms.TextBox()
+        Me.LabelCourseName = New System.Windows.Forms.Label()
+        Me.ErrorProviderCourse = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation.SuspendLayout()
-        Me.ContextMenuStripAddCourses.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripAddCourses.SuspendLayout()
+        Me.PanelAddCourses.SuspendLayout()
+        Me.PanelAddCourseLabel.SuspendLayout()
+        CType(Me.ErrorProviderCourse, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelNavigation
@@ -47,6 +57,15 @@ Partial Class FormAddCourses
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 4
+        '
+        'PictureBoxUser
+        '
+        Me.PictureBoxUser.Location = New System.Drawing.Point(1072, 5)
+        Me.PictureBoxUser.Name = "PictureBoxUser"
+        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
+        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxUser.TabIndex = 4
+        Me.PictureBoxUser.TabStop = False
         '
         'LabelUsername
         '
@@ -99,27 +118,92 @@ Partial Class FormAddCourses
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
-        'PictureBoxUser
+        'PanelAddCourses
         '
-        Me.PictureBoxUser.Location = New System.Drawing.Point(1072, 5)
-        Me.PictureBoxUser.Name = "PictureBoxUser"
-        Me.PictureBoxUser.Size = New System.Drawing.Size(35, 46)
-        Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxUser.TabIndex = 4
-        Me.PictureBoxUser.TabStop = False
+        Me.PanelAddCourses.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelAddCourses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddCourses.Controls.Add(Me.ButtonAddCourse)
+        Me.PanelAddCourses.Controls.Add(Me.PanelAddCourseLabel)
+        Me.PanelAddCourses.Controls.Add(Me.TextCourse)
+        Me.PanelAddCourses.Controls.Add(Me.LabelCourseName)
+        Me.PanelAddCourses.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelAddCourses.Location = New System.Drawing.Point(425, 223)
+        Me.PanelAddCourses.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
+        Me.PanelAddCourses.Name = "PanelAddCourses"
+        Me.PanelAddCourses.Size = New System.Drawing.Size(500, 282)
+        Me.PanelAddCourses.TabIndex = 5
+        '
+        'ButtonAddCourse
+        '
+        Me.ButtonAddCourse.AutoSize = True
+        Me.ButtonAddCourse.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddCourse.Location = New System.Drawing.Point(176, 213)
+        Me.ButtonAddCourse.Name = "ButtonAddCourse"
+        Me.ButtonAddCourse.Size = New System.Drawing.Size(147, 36)
+        Me.ButtonAddCourse.TabIndex = 7
+        Me.ButtonAddCourse.Text = "Add Course"
+        Me.ButtonAddCourse.UseVisualStyleBackColor = True
+        '
+        'PanelAddCourseLabel
+        '
+        Me.PanelAddCourseLabel.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelAddCourseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddCourseLabel.Controls.Add(Me.LabelCourses)
+        Me.PanelAddCourseLabel.Location = New System.Drawing.Point(-1, -1)
+        Me.PanelAddCourseLabel.Name = "PanelAddCourseLabel"
+        Me.PanelAddCourseLabel.Size = New System.Drawing.Size(500, 78)
+        Me.PanelAddCourseLabel.TabIndex = 4
+        '
+        'LabelCourses
+        '
+        Me.LabelCourses.AutoSize = True
+        Me.LabelCourses.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourses.Location = New System.Drawing.Point(162, 15)
+        Me.LabelCourses.Name = "LabelCourses"
+        Me.LabelCourses.Size = New System.Drawing.Size(174, 46)
+        Me.LabelCourses.TabIndex = 3
+        Me.LabelCourses.Text = "Add Courses"
+        '
+        'TextCourse
+        '
+        Me.TextCourse.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextCourse.Location = New System.Drawing.Point(42, 135)
+        Me.TextCourse.Name = "TextCourse"
+        Me.TextCourse.Size = New System.Drawing.Size(414, 27)
+        Me.TextCourse.TabIndex = 2
+        '
+        'LabelCourseName
+        '
+        Me.LabelCourseName.AutoSize = True
+        Me.LabelCourseName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourseName.Location = New System.Drawing.Point(37, 104)
+        Me.LabelCourseName.Name = "LabelCourseName"
+        Me.LabelCourseName.Size = New System.Drawing.Size(183, 28)
+        Me.LabelCourseName.TabIndex = 1
+        Me.LabelCourseName.Text = "Name of the Course"
+        '
+        'ErrorProviderCourse
+        '
+        Me.ErrorProviderCourse.ContainerControl = Me
         '
         'FormAddCourses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.PanelAddCourses)
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddCourses"
         Me.ShowIcon = False
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
-        Me.ContextMenuStripAddCourses.ResumeLayout(False)
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripAddCourses.ResumeLayout(False)
+        Me.PanelAddCourses.ResumeLayout(False)
+        Me.PanelAddCourses.PerformLayout()
+        Me.PanelAddCourseLabel.ResumeLayout(False)
+        Me.PanelAddCourseLabel.PerformLayout()
+        CType(Me.ErrorProviderCourse, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -132,4 +216,11 @@ Partial Class FormAddCourses
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBoxUser As PictureBox
+    Friend WithEvents PanelAddCourses As Panel
+    Friend WithEvents ButtonAddCourse As Button
+    Friend WithEvents PanelAddCourseLabel As Panel
+    Friend WithEvents LabelCourses As Label
+    Friend WithEvents TextCourse As TextBox
+    Friend WithEvents LabelCourseName As Label
+    Friend WithEvents ErrorProviderCourse As ErrorProvider
 End Class

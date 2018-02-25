@@ -13,6 +13,7 @@ Public Class FormAddUsers
         PanelAddUsersLabel.BackColor = Color.FromArgb(44, 150, 118)
         LabelAddUsers.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddUsers.Enabled = False
+        TextUsername.MaxLength = 20   ' Maximum Length of Username
         RadioButtonUserType1.Select()   ' Admin- Selected by default.
         UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
     End Sub
@@ -36,6 +37,7 @@ Public Class FormAddUsers
     Private Sub TextUsername_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextUsername.Validating
         If TextUsername.Text = "" Then
             ErrorProviderAddUsers.SetError(control:=TextUsername, value:="Username can't be empty.")
+            TextUsername.Focus()
         Else
             ErrorProviderAddUsers.Dispose()
         End If
@@ -47,7 +49,7 @@ Public Class FormAddUsers
             TextFirstName.Focus()
         End If
         If System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") Then
-            ErrorProviderAddUsers.SetError(control:=TextFirstName, value:="First name can't contain numbers.")
+            ErrorProviderAddUsers.SetError(control:=TextFirstName, value:="First name can't contain digits.")
             TextFirstName.Focus()
         End If
         If TextFirstName.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") Then
@@ -55,9 +57,18 @@ Public Class FormAddUsers
         End If
     End Sub
 
+    Private Sub TextFirstName_TextChanged(sender As Object, e As EventArgs) Handles TextFirstName.TextChanged
+        If TextFirstName.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") And TextUsername.Text <> "" Then
+            ErrorProviderAddUsers.Dispose()
+            ButtonAddUsers.Enabled = True
+        Else
+            ButtonAddUsers.Enabled = False
+        End If
+    End Sub
+
     Private Sub TextLastName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextLastName.Validating
         If System.Text.RegularExpressions.Regex.IsMatch(TextLastName.Text, "\d+") Then
-            ErrorProviderAddUsers.SetError(control:=TextLastName, value:="Last name can't contain numbers.")
+            ErrorProviderAddUsers.SetError(control:=TextLastName, value:="Last name can't contain digits.")
             TextLastName.Focus()
         Else
             ErrorProviderAddUsers.Dispose()
@@ -84,10 +95,26 @@ Public Class FormAddUsers
 
     Private Sub TextUsername_TextChanged(sender As Object, e As EventArgs) Handles TextUsername.TextChanged
         If TextUsername.Text = "" Then
+            ErrorProviderAddUsers.SetError(TextUsername, "Username can't be empty.")
+            TextUsername.Focus()
             ButtonAddUsers.Enabled = False
         Else
-            ErrorProviderAddUsers.Dispose()
-            ButtonAddUsers.Enabled = True
+            If System.Text.RegularExpressions.Regex.IsMatch(input:=TextUsername.Text, pattern:="[^a-zA-Z0-9\._]") Then
+                ErrorProviderAddUsers.SetError(TextUsername, "Username can only contain letters, digits, dot and underscore.")
+                ButtonAddUsers.Enabled = False
+                TextUsername.Focus()
+            Else
+                If Not System.Text.RegularExpressions.Regex.IsMatch(input:=TextUsername.Text, pattern:="[a-zA-Z]+[0-9\._]*") Then
+                    ErrorProviderAddUsers.SetError(TextUsername, "Username must contain atleast one letter.")
+                    ButtonAddUsers.Enabled = False
+                    TextUsername.Focus()
+                Else
+                    If TextFirstName.Text <> "" Then
+                        ErrorProviderAddUsers.Dispose()
+                        ButtonAddUsers.Enabled = True
+                    End If
+                End If
+            End If
         End If
     End Sub
 

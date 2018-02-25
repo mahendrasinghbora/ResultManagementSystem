@@ -33,13 +33,13 @@ Partial Class FormAddColleges
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelAddColleges = New System.Windows.Forms.Panel()
+        Me.ComboBoxUniversity = New System.Windows.Forms.ComboBox()
+        Me.LabelUniversityName = New System.Windows.Forms.Label()
         Me.ButtonAddCollege = New System.Windows.Forms.Button()
         Me.PanelAddCollegesLabel = New System.Windows.Forms.Panel()
         Me.LabelColleges = New System.Windows.Forms.Label()
         Me.TextCollege = New System.Windows.Forms.TextBox()
         Me.LabelCollegeName = New System.Windows.Forms.Label()
-        Me.LabelUniversityName = New System.Windows.Forms.Label()
-        Me.ComboBoxUniversity = New System.Windows.Forms.ComboBox()
         Me.ErrorProviderCollege = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,11 +131,31 @@ Partial Class FormAddColleges
         Me.PanelAddColleges.Controls.Add(Me.TextCollege)
         Me.PanelAddColleges.Controls.Add(Me.LabelCollegeName)
         Me.PanelAddColleges.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelAddColleges.Location = New System.Drawing.Point(425, 223)
+        Me.PanelAddColleges.Location = New System.Drawing.Point(425, 203)
         Me.PanelAddColleges.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelAddColleges.Name = "PanelAddColleges"
         Me.PanelAddColleges.Size = New System.Drawing.Size(500, 384)
         Me.PanelAddColleges.TabIndex = 4
+        '
+        'ComboBoxUniversity
+        '
+        Me.ComboBoxUniversity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxUniversity.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxUniversity.FormattingEnabled = True
+        Me.ComboBoxUniversity.Location = New System.Drawing.Point(42, 241)
+        Me.ComboBoxUniversity.Name = "ComboBoxUniversity"
+        Me.ComboBoxUniversity.Size = New System.Drawing.Size(414, 31)
+        Me.ComboBoxUniversity.TabIndex = 9
+        '
+        'LabelUniversityName
+        '
+        Me.LabelUniversityName.AutoSize = True
+        Me.LabelUniversityName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUniversityName.Location = New System.Drawing.Point(37, 208)
+        Me.LabelUniversityName.Name = "LabelUniversityName"
+        Me.LabelUniversityName.Size = New System.Drawing.Size(213, 28)
+        Me.LabelUniversityName.TabIndex = 8
+        Me.LabelUniversityName.Text = "Name of the University"
         '
         'ButtonAddCollege
         '
@@ -185,26 +205,6 @@ Partial Class FormAddColleges
         Me.LabelCollegeName.Size = New System.Drawing.Size(188, 28)
         Me.LabelCollegeName.TabIndex = 1
         Me.LabelCollegeName.Text = "Name of the College"
-        '
-        'LabelUniversityName
-        '
-        Me.LabelUniversityName.AutoSize = True
-        Me.LabelUniversityName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelUniversityName.Location = New System.Drawing.Point(37, 208)
-        Me.LabelUniversityName.Name = "LabelUniversityName"
-        Me.LabelUniversityName.Size = New System.Drawing.Size(213, 28)
-        Me.LabelUniversityName.TabIndex = 8
-        Me.LabelUniversityName.Text = "Name of the University"
-        '
-        'ComboBoxUniversity
-        '
-        Me.ComboBoxUniversity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBoxUniversity.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxUniversity.FormattingEnabled = True
-        Me.ComboBoxUniversity.Location = New System.Drawing.Point(42, 241)
-        Me.ComboBoxUniversity.Name = "ComboBoxUniversity"
-        Me.ComboBoxUniversity.Size = New System.Drawing.Size(414, 31)
-        Me.ComboBoxUniversity.TabIndex = 9
         '
         'ErrorProviderCollege
         '

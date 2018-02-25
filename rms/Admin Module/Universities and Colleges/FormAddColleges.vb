@@ -59,12 +59,12 @@ Public Class FormAddColleges
             TextCollege.Focus()
             ButtonAddCollege.Enabled = False
         End If
-        If System.Text.RegularExpressions.Regex.IsMatch(TextCollege.Text, "\d+") Then
-            ErrorProviderCollege.SetError(control:=TextCollege, value:="College name can't contain numbers.")
+        If System.Text.RegularExpressions.Regex.IsMatch(TextCollege.Text, "[^a-zA-Z\.,\s]") Then
+            ErrorProviderCollege.SetError(control:=TextCollege, value:="College name can't contain digits or special characters other than a dot(.) and a comma(,).")
             TextCollege.Focus()
             ButtonAddCollege.Enabled = False
         End If
-        If TextCollege.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextCollege.Text, "\d+") Then
+        If TextCollege.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextCollege.Text, "[^a-zA-Z\.,\s]") Then
             ErrorProviderCollege.Dispose()
             If Count <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
                 ButtonAddCollege.Enabled = True

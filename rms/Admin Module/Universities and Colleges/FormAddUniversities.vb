@@ -33,12 +33,12 @@ Public Class FormAddUniversities
             TextUniversity.Focus()
             ButtonAddUniversity.Enabled = False
         End If
-        If System.Text.RegularExpressions.Regex.IsMatch(TextUniversity.Text, "\d+") Then
-            ErrorProviderUniversity.SetError(control:=TextUniversity, value:="University name can't contain numbers.")
+        If System.Text.RegularExpressions.Regex.IsMatch(input:=TextUniversity.Text, pattern:="[^a-zA-Z\.,\s]") Then
+            ErrorProviderUniversity.SetError(control:=TextUniversity, value:="University name can't contain digits or special characters other than a dot(.) and a comma(,).")
             TextUniversity.Focus()
             ButtonAddUniversity.Enabled = False
         End If
-        If TextUniversity.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextUniversity.Text, "\d+") Then
+        If TextUniversity.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextUniversity.Text, "[^a-zA-Z\.,\s]") Then
             ButtonAddUniversity.Enabled = True
             ErrorProviderUniversity.Dispose()
         End If

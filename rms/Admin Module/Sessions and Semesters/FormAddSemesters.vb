@@ -65,6 +65,5 @@ Public Class FormAddSemesters
         Finally
             Con.Dispose()
         End Try
-
     End Sub
 End Class

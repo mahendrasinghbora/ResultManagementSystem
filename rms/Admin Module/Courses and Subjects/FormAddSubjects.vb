@@ -57,7 +57,7 @@ Public Class FormAddSubjects
             TextSubject.Focus()
             ButtonAddSubject.Enabled = False
         ElseIf Not System.Text.RegularExpressions.Regex.IsMatch(input:=TextSubject.Text, pattern:="[a-zA-Z]+[0-9\._\s]*") Then
-            ErrorProviderSubject.SetError(control:=TextSubject, value:="Subject name must contain one letter.")
+            ErrorProviderSubject.SetError(control:=TextSubject, value:="Subject name must contain atleast one letter.")
             TextSubject.Focus()
             ButtonAddSubject.Enabled = False
         End If

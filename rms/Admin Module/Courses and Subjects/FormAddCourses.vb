@@ -34,7 +34,7 @@ Public Class FormAddCourses
             TextCourse.Focus()
             ButtonAddCourse.Enabled = False
         ElseIf Not System.Text.RegularExpressions.Regex.IsMatch(input:=TextCourse.Text, pattern:="[a-zA-Z]+[0-9\._\s]*") Then
-            ErrorProviderCourse.SetError(control:=TextCourse, value:="Course name must contain one letter.")
+            ErrorProviderCourse.SetError(control:=TextCourse, value:="Course name must contain atleast one letter.")
             TextCourse.Focus()
             ButtonAddCourse.Enabled = False
         End If

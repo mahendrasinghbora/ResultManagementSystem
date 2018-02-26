@@ -14,11 +14,11 @@ Public Class FormAddColleges
         PanelAddCollegesLabel.BackColor = Color.FromArgb(44, 150, 118)
         LabelColleges.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddCollege.Enabled = False
-        UniversitiesFill()   ' To fill combobox with university names
+        FillUniversities()   ' To fill combobox with university names
         TextCollege.MaxLength = 100   ' Maximum Length of College name
     End Sub
 
-    Private Sub UniversitiesFill()
+    Private Sub FillUniversities()
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
         }

@@ -115,4 +115,10 @@ Public Class FormAddSessionwiseSemesters
             Con.Dispose()
         End Try
     End Sub
+
+    Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
+        If CountSemester <> 0 And CountSession <> 0 And ComboBoxSemester.SelectedItem <> Nothing Then
+            ButtonAddSessionwiseSemester.Enabled = True
+        End If
+    End Sub
 End Class

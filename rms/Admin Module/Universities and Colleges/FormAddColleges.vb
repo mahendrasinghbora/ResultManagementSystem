@@ -14,8 +14,8 @@ Public Class FormAddColleges
         PanelAddCollegesLabel.BackColor = Color.FromArgb(44, 150, 118)
         LabelColleges.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddCollege.Enabled = False
-        FillUniversities()   ' To fill combobox with university names
-        TextCollege.MaxLength = 100   ' Maximum Length of College name
+        FillUniversities()   ' To fill combobox with universities
+        TextCollege.MaxLength = 100   ' Maximum Length of Colleges
     End Sub
 
     Private Sub FillUniversities()

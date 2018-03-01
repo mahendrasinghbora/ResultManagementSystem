@@ -252,7 +252,7 @@ Partial Class FormAddUsers
         Me.PictureBoxThumbnail.Location = New System.Drawing.Point(562, 177)
         Me.PictureBoxThumbnail.Name = "PictureBoxThumbnail"
         Me.PictureBoxThumbnail.Size = New System.Drawing.Size(149, 182)
-        Me.PictureBoxThumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxThumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBoxThumbnail.TabIndex = 10
         Me.PictureBoxThumbnail.TabStop = False
         '

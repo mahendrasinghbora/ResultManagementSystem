@@ -14,6 +14,8 @@ Public Class FormAddUsers
         LabelAddUsers.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddUsers.Enabled = False
         TextUsername.MaxLength = 20   ' Maximum Length of Username
+        TextFirstName.MaxLength = 50   ' Maximum Length of First Name
+        TextLastName.MaxLength = 50   ' Maximum Length of Last Name
         RadioButtonUserType1.Select()   ' Admin- Selected by default.
         UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
     End Sub
@@ -126,7 +128,7 @@ Public Class FormAddUsers
         Dim Stream As New MemoryStream
         PictureBoxThumbnail.Image.Save(stream:=Stream, format:=PictureBoxThumbnail.Image.RawFormat)
         Dim UserType As Integer
-        If RadioButtonUserType1.Checked = True Then
+        If RadioButtonUserType1.Checked() = True Then
             UserType = 1
         Else
             UserType = 2

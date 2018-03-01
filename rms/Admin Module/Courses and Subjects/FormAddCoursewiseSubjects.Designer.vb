@@ -33,6 +33,10 @@ Partial Class FormAddCoursewiseSubjects
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelCoursewiseSubjects = New System.Windows.Forms.Panel()
+        Me.ComboBoxSemester = New System.Windows.Forms.ComboBox()
+        Me.LabelSemester = New System.Windows.Forms.Label()
+        Me.ComboBoxSession = New System.Windows.Forms.ComboBox()
+        Me.LabelSession = New System.Windows.Forms.Label()
         Me.ComboBoxCourse = New System.Windows.Forms.ComboBox()
         Me.ComboBoxSubject = New System.Windows.Forms.ComboBox()
         Me.LabelSubject = New System.Windows.Forms.Label()
@@ -40,10 +44,6 @@ Partial Class FormAddCoursewiseSubjects
         Me.PanelAddCoursewiseSubjectsLabel = New System.Windows.Forms.Panel()
         Me.LabelCoursewiseSubjects = New System.Windows.Forms.Label()
         Me.LabelCourse = New System.Windows.Forms.Label()
-        Me.ComboBoxSession = New System.Windows.Forms.ComboBox()
-        Me.LabelSession = New System.Windows.Forms.Label()
-        Me.ComboBoxSemester = New System.Windows.Forms.ComboBox()
-        Me.LabelSemester = New System.Windows.Forms.Label()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddCoursewiseSubjects.SuspendLayout()
@@ -143,6 +143,46 @@ Partial Class FormAddCoursewiseSubjects
         Me.PanelCoursewiseSubjects.Size = New System.Drawing.Size(500, 445)
         Me.PanelCoursewiseSubjects.TabIndex = 7
         '
+        'ComboBoxSemester
+        '
+        Me.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxSemester.FormattingEnabled = True
+        Me.ComboBoxSemester.Location = New System.Drawing.Point(261, 134)
+        Me.ComboBoxSemester.Name = "ComboBoxSemester"
+        Me.ComboBoxSemester.Size = New System.Drawing.Size(195, 31)
+        Me.ComboBoxSemester.TabIndex = 14
+        '
+        'LabelSemester
+        '
+        Me.LabelSemester.AutoSize = True
+        Me.LabelSemester.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSemester.Location = New System.Drawing.Point(255, 98)
+        Me.LabelSemester.Name = "LabelSemester"
+        Me.LabelSemester.Size = New System.Drawing.Size(96, 28)
+        Me.LabelSemester.TabIndex = 13
+        Me.LabelSemester.Text = "Semester"
+        '
+        'ComboBoxSession
+        '
+        Me.ComboBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSession.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxSession.FormattingEnabled = True
+        Me.ComboBoxSession.Location = New System.Drawing.Point(42, 134)
+        Me.ComboBoxSession.Name = "ComboBoxSession"
+        Me.ComboBoxSession.Size = New System.Drawing.Size(195, 31)
+        Me.ComboBoxSession.TabIndex = 12
+        '
+        'LabelSession
+        '
+        Me.LabelSession.AutoSize = True
+        Me.LabelSession.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSession.Location = New System.Drawing.Point(37, 98)
+        Me.LabelSession.Name = "LabelSession"
+        Me.LabelSession.Size = New System.Drawing.Size(79, 28)
+        Me.LabelSession.TabIndex = 11
+        Me.LabelSession.Text = "Session"
+        '
         'ComboBoxCourse
         '
         Me.ComboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -213,46 +253,6 @@ Partial Class FormAddCoursewiseSubjects
         Me.LabelCourse.Size = New System.Drawing.Size(73, 28)
         Me.LabelCourse.TabIndex = 1
         Me.LabelCourse.Text = "Course"
-        '
-        'ComboBoxSession
-        '
-        Me.ComboBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBoxSession.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxSession.FormattingEnabled = True
-        Me.ComboBoxSession.Location = New System.Drawing.Point(42, 134)
-        Me.ComboBoxSession.Name = "ComboBoxSession"
-        Me.ComboBoxSession.Size = New System.Drawing.Size(195, 31)
-        Me.ComboBoxSession.TabIndex = 12
-        '
-        'LabelSession
-        '
-        Me.LabelSession.AutoSize = True
-        Me.LabelSession.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSession.Location = New System.Drawing.Point(37, 98)
-        Me.LabelSession.Name = "LabelSession"
-        Me.LabelSession.Size = New System.Drawing.Size(79, 28)
-        Me.LabelSession.TabIndex = 11
-        Me.LabelSession.Text = "Session"
-        '
-        'ComboBoxSemester
-        '
-        Me.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBoxSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxSemester.FormattingEnabled = True
-        Me.ComboBoxSemester.Location = New System.Drawing.Point(261, 134)
-        Me.ComboBoxSemester.Name = "ComboBoxSemester"
-        Me.ComboBoxSemester.Size = New System.Drawing.Size(195, 31)
-        Me.ComboBoxSemester.TabIndex = 14
-        '
-        'LabelSemester
-        '
-        Me.LabelSemester.AutoSize = True
-        Me.LabelSemester.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSemester.Location = New System.Drawing.Point(255, 98)
-        Me.LabelSemester.Name = "LabelSemester"
-        Me.LabelSemester.Size = New System.Drawing.Size(96, 28)
-        Me.LabelSemester.TabIndex = 13
-        Me.LabelSemester.Text = "Semester"
         '
         'FormAddCoursewiseSubjects
         '

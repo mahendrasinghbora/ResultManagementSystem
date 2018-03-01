@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormSigIn
+Partial Class FormSignIn
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class FormSigIn
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSigIn))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSignIn))
         Me.PanelSignIn = New System.Windows.Forms.Panel()
         Me.ButtonSignIn = New System.Windows.Forms.Button()
         Me.TextPassword = New System.Windows.Forms.TextBox()
@@ -259,7 +259,7 @@ Partial Class FormSigIn
         '
         Me.ErrorProviderSignIn.ContainerControl = Me
         '
-        'FormSigIn
+        'FormSignIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -270,7 +270,7 @@ Partial Class FormSigIn
         Me.Controls.Add(Me.PanelSignIn)
         Me.Font = New System.Drawing.Font("Alegreya Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Name = "FormSigIn"
+        Me.Name = "FormSignIn"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.PanelSignIn.ResumeLayout(False)

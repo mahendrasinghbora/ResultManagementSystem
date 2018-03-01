@@ -1,11 +1,11 @@
 ﻿Imports System.IO
 Imports MySql.Data.MySqlClient
 
-Public Class FormSigIn
+Public Class FormSignIn
     Dim Con As MySqlConnection   ' Connection Variable
     Dim Command As MySqlCommand   ' Command Variable
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormSignIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FormStyles(CallingForm:=Me, Text:="RMS | Result Management System")   ' Form Styles
         LabelCopyright.Text = "© " & Year(Now) & " Result Management System (rms.)"   ' Copyright text
         TextPassword.MaxLength = 20   ' Maximum Length of Password
@@ -31,7 +31,7 @@ Public Class FormSigIn
             Con.Open()
             Dim Query As String
             Dim UserStatus As Integer
-            Query = $"SELECT * FROM users WHERE USERNAME='{TextUsername.Text}' AND PASSWORD='{TextPassword.Text}';"
+            Query = $"SELECT * FROM users WHERE USERNAME='{TextUsername.Text}' AND PASSWORD='{TextPassword.Text}' AND STATUS='1';"
             Command = New MySqlCommand(Query, Con)
             Dim Reader As MySqlDataReader = Command.ExecuteReader()
             Dim Count As Integer = 0

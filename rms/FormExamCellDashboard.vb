@@ -14,4 +14,8 @@
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
         LogOut(CallingForm:=Me)
     End Sub
+
+    Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
+        EditProfile(CallingForm:=Me)
+    End Sub
 End Class

@@ -1,19 +1,18 @@
-﻿Imports System.IO
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
-Public Class FormDeleteUsers
+Public Class FormUnblockUsers
     Dim Con As MySqlConnection   ' Connection Variable
     Dim Command As MySqlCommand   ' Command Variable
 
-    Private Sub FormDeleteUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FormStyles(CallingForm:=Me, Text:="RMS | Block Users")   ' Form Styles
+    Private Sub FormUnblockUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormStyles(CallingForm:=Me, Text:="RMS | Unblock Users")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
-        LabelDeleteUsersPanel.ForeColor = Color.FromArgb(255, 255, 255)
+        LabelUnblockUsersPanel.ForeColor = Color.FromArgb(255, 255, 255)
         UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
         LabelUsername.ForeColor = Color.FromArgb(255, 255, 255)
-        PanelDeleteUsersLabel.BackColor = Color.FromArgb(44, 150, 118)
-        LabelDeleteUsers.ForeColor = Color.FromArgb(255, 255, 255)
-        ButtonDeleteUsers.Enabled = False
+        PanelUnblockUsersLabel.BackColor = Color.FromArgb(44, 150, 118)
+        LabelUnblockUsers.ForeColor = Color.FromArgb(255, 255, 255)
+        ButtonUnblockUser.Enabled = False
         FillUsers()    ' To fill combobox with users
     End Sub
 
@@ -25,7 +24,7 @@ Public Class FormDeleteUsers
         Try
             Con.Open()
             Dim Query As String
-            Query = $"SELECT * FROM users WHERE STATUS='1' AND USERNAME<>'{Username}';"
+            Query = "SELECT * FROM users WHERE STATUS='0';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()
@@ -52,6 +51,17 @@ Public Class FormDeleteUsers
         AdminDashboard(CallingForm:=Me)
     End Sub
 
+    Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
+        EditProfile(CallingForm:=Me)
+    End Sub
+
+    Private Sub ButtonBlockUsers_Click(sender As Object, e As EventArgs) Handles ButtonBlockUsers.Click
+        Dim NewFormDeleteUsers As FormDeleteUsers
+        NewFormDeleteUsers = New FormDeleteUsers()
+        NewFormDeleteUsers.Show()
+        Dispose()
+    End Sub
+
     Private Sub ComboBoxUsername_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxUsername.SelectedIndexChanged
         Con = New MySqlConnection With {
            .ConnectionString = "server=localhost;userid=root;database=rms"
@@ -64,35 +74,17 @@ Public Class FormDeleteUsers
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            TextFirstName.Text = Reader.GetString("FIRST_NAME")
-            TextLastName.Text = Reader.GetString("LAST_NAME")
-            Dim UserStatusID As Integer = Reader.GetInt16("USER_STATUS_ID")
-            If UserStatusID = 1 Then
-                TextUserType.Text = "Admin"
-            Else
-                TextUserType.Text = "Exam Cell"
-            End If
-            Con.Close()
-            Reader.Dispose()
-            Dim ImageByte() As Byte
-            Dim Stream As MemoryStream
-            Dim Adapter As MySqlDataAdapter   ' Data Adapter
-            Dim Table As New DataTable()   ' Data Table
-            Adapter = New MySqlDataAdapter(Command)
-            Adapter.Fill(Table)
-            ImageByte = Table(0)(5)
-            Stream = New MemoryStream(ImageByte)
-            PictureBoxThumbnail.Image = Image.FromStream(stream:=Stream)
+            TextName.Text = Reader.GetString("FIRST_NAME") & " " & Reader.GetString("LAST_NAME")
             Con.Close()
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message)
         Finally
             Con.Dispose()
         End Try
-        ButtonDeleteUsers.Enabled = True
+        ButtonUnblockUser.Enabled = True
     End Sub
 
-    Private Sub ButtonDeleteUsers_Click(sender As Object, e As EventArgs) Handles ButtonDeleteUsers.Click
+    Private Sub ButtonUnblockUser_Click(sender As Object, e As EventArgs) Handles ButtonUnblockUser.Click
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
         }
@@ -100,30 +92,20 @@ Public Class FormDeleteUsers
         Try
             Con.Open()
             Dim Query As String
-            Query = $"UPDATE users SET STATUS='0' WHERE USERNAME='{ComboBoxUsername.SelectedItem}';"
+            Query = $"UPDATE users SET STATUS='1' WHERE USERNAME='{ComboBoxUsername.SelectedItem}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Con.Close()
-            Dim NewFormDeleteUsers As FormDeleteUsers
-            NewFormDeleteUsers = New FormDeleteUsers()
-            NewFormDeleteUsers.Show()
+            Dim NewFormUnblockUsers As FormUnblockUsers
+            NewFormUnblockUsers = New FormUnblockUsers()
+            NewFormUnblockUsers.Show()
             Dispose()
-            MessageBox.Show(text:="User successfully blocked.", caption:="Success alert", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
+            MessageBox.Show(text:="User successfully unblocked.", caption:="Success alert", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message)
         Finally
             Con.Dispose()
         End Try
-    End Sub
 
-    Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
-        EditProfile(CallingForm:=Me)
-    End Sub
-
-    Private Sub ButtonUnblockUsers_Click(sender As Object, e As EventArgs) Handles ButtonUnblockUsers.Click
-        Dim NewFormUnblockUsers As FormUnblockUsers
-        NewFormUnblockUsers = New FormUnblockUsers()
-        NewFormUnblockUsers.Show()
-        Dispose()
     End Sub
 End Class

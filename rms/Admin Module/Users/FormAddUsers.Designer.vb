@@ -147,21 +147,21 @@ Partial Class FormAddUsers
         'ButtonDeleteUsers
         '
         Me.ButtonDeleteUsers.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDeleteUsers.Location = New System.Drawing.Point(849, 16)
+        Me.ButtonDeleteUsers.Location = New System.Drawing.Point(718, 16)
         Me.ButtonDeleteUsers.Name = "ButtonDeleteUsers"
         Me.ButtonDeleteUsers.Size = New System.Drawing.Size(116, 39)
         Me.ButtonDeleteUsers.TabIndex = 3
-        Me.ButtonDeleteUsers.Text = "Delete Users"
+        Me.ButtonDeleteUsers.Text = "Block Users"
         Me.ButtonDeleteUsers.UseVisualStyleBackColor = True
         '
         'ButtonEditUsers
         '
         Me.ButtonEditUsers.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEditUsers.Location = New System.Drawing.Point(976, 16)
+        Me.ButtonEditUsers.Location = New System.Drawing.Point(840, 16)
         Me.ButtonEditUsers.Name = "ButtonEditUsers"
-        Me.ButtonEditUsers.Size = New System.Drawing.Size(102, 39)
+        Me.ButtonEditUsers.Size = New System.Drawing.Size(238, 39)
         Me.ButtonEditUsers.TabIndex = 2
-        Me.ButtonEditUsers.Text = "Edit Users"
+        Me.ButtonEditUsers.Text = "Change Users' Authority"
         Me.ButtonEditUsers.UseVisualStyleBackColor = True
         '
         'PanelAddUsers

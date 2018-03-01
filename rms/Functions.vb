@@ -10,8 +10,8 @@ Module Functions
         If CallingForm Is Nothing Then
             Throw New ArgumentNullException(NameOf(CallingForm))
         End If
-        Dim NewFormSignIn As FormSigIn
-        NewFormSignIn = New FormSigIn()
+        Dim NewFormSignIn As FormSignIn
+        NewFormSignIn = New FormSignIn()
         NewFormSignIn.Show()
         CallingForm.Dispose()
     End Sub
@@ -65,5 +65,15 @@ Module Functions
         CallingForm.MinimumSize = New Size(1366, 768)   ' Minimum Size- 1366x768 px
         CallingForm.StartPosition = FormStartPosition.CenterScreen   ' Default Start Position- CenterScreen
         CallingForm.WindowState = FormWindowState.Maximized   ' Default Window State- Maximized
+    End Sub
+
+    Public Sub EditProfile(CallingForm As Form)
+        If CallingForm Is Nothing Then
+            Throw New ArgumentNullException(NameOf(CallingForm))
+        End If
+        Dim NewFormEditProfile As FormEditProfile
+        NewFormEditProfile = New FormEditProfile()
+        NewFormEditProfile.Show()
+        CallingForm.Dispose()
     End Sub
 End Module

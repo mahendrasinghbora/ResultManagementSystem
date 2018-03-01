@@ -151,6 +151,12 @@
     <Compile Include="Admin Module\Users\FormAddUsers.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin Module\Users\FormUnblockUsers.Designer.vb">
+      <DependentUpon>FormUnblockUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Users\FormUnblockUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin Module\Users\FormViewUserLog.Designer.vb">
       <DependentUpon>FormViewUserLog.vb</DependentUpon>
     </Compile>
@@ -167,6 +173,12 @@
       <DependentUpon>FormEditUsers.vb</DependentUpon>
     </Compile>
     <Compile Include="Admin Module\Users\FormEditUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditProfile.Designer.vb">
+      <DependentUpon>FormEditProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormExamCellDashboard.Designer.vb">
@@ -245,6 +257,9 @@
     <EmbeddedResource Include="Admin Module\Users\FormAddUsers.resx">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\Users\FormUnblockUsers.resx">
+      <DependentUpon>FormUnblockUsers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\Users\FormViewUserLog.resx">
       <DependentUpon>FormViewUserLog.vb</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\Users\FormEditUsers.resx">
       <DependentUpon>FormEditUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditProfile.resx">
+      <DependentUpon>FormEditProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExamCellDashboard.resx">
       <DependentUpon>FormExamCellDashboard.vb</DependentUpon>

@@ -18,4 +18,8 @@
     Private Sub ButtonDashboard_Click(sender As Object, e As EventArgs) Handles ButtonDashboard.Click
         AdminDashboard(CallingForm:=Me)
     End Sub
+
+    Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
+        EditProfile(CallingForm:=Me)
+    End Sub
 End Class

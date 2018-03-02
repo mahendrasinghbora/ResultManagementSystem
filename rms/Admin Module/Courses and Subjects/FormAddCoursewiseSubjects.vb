@@ -147,32 +147,32 @@ Public Class FormAddCoursewiseSubjects
             Con.Open()
             Dim Query As String
             Query = $"SELECT * FROM subjects WHERE SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}';"
-            Command = New MySqlCommand(Query, Con)
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}';"
-            Command = New MySqlCommand(Query, Con)
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim CourseID As String = Reader.GetString(column:="COURSE_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM semesters WHERE SEMESTER = '{ComboBoxSemester.SelectedItem}';"
-            Command = New MySqlCommand(Query, Con)
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim SemesterID As String = Reader.GetString(column:="SEMESTER_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM sessionwise_semesters WHERE SESSION_ID = '{ComboBoxSession.SelectedItem}' AND SEMESTER_ID = '{SemesterID}';"
-            Command = New MySqlCommand(Query, Con)
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim SessionwiseSemesterID As String = Reader.GetString(column:="SESSIONWISE_SEMESTER_ID")
             Reader.Dispose()
             Query = $"INSERT INTO coursewise_Subjects (`COURSE_ID`, `SUBJECT_ID`, `SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES 
 ('{CourseID}', '{SubjectID}', '{SessionwiseSemesterID}', '{Username}');"
-            Command = New MySqlCommand(Query, Con)
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Con.Close()
             Dim NewFormAddCoursewiseSubjects As FormAddCoursewiseSubjects

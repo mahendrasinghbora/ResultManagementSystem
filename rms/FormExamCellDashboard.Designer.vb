@@ -68,7 +68,7 @@ Partial Class FormExamCellDashboard
         'ButtonOption3
         '
         Me.ButtonOption3.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption3.Location = New System.Drawing.Point(758, 139)
+        Me.ButtonOption3.Location = New System.Drawing.Point(771, 139)
         Me.ButtonOption3.Name = "ButtonOption3"
         Me.ButtonOption3.Size = New System.Drawing.Size(180, 40)
         Me.ButtonOption3.TabIndex = 27
@@ -80,7 +80,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption3.BackColor = System.Drawing.Color.White
         Me.LabelOption3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LabelOption3.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption3.Location = New System.Drawing.Point(698, 20)
+        Me.LabelOption3.Location = New System.Drawing.Point(711, 20)
         Me.LabelOption3.Name = "LabelOption3"
         Me.LabelOption3.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption3.TabIndex = 26
@@ -100,7 +100,7 @@ Partial Class FormExamCellDashboard
         'ButtonOption2
         '
         Me.ButtonOption2.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption2.Location = New System.Drawing.Point(430, 139)
+        Me.ButtonOption2.Location = New System.Drawing.Point(442, 139)
         Me.ButtonOption2.Name = "ButtonOption2"
         Me.ButtonOption2.Size = New System.Drawing.Size(180, 40)
         Me.ButtonOption2.TabIndex = 5
@@ -112,7 +112,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption2.BackColor = System.Drawing.Color.White
         Me.LabelOption2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LabelOption2.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption2.Location = New System.Drawing.Point(370, 20)
+        Me.LabelOption2.Location = New System.Drawing.Point(382, 20)
         Me.LabelOption2.Name = "LabelOption2"
         Me.LabelOption2.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption2.TabIndex = 4
@@ -122,7 +122,7 @@ Partial Class FormExamCellDashboard
         'ButtonOption4
         '
         Me.ButtonOption4.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption4.Location = New System.Drawing.Point(1097, 139)
+        Me.ButtonOption4.Location = New System.Drawing.Point(1096, 139)
         Me.ButtonOption4.Name = "ButtonOption4"
         Me.ButtonOption4.Size = New System.Drawing.Size(180, 40)
         Me.ButtonOption4.TabIndex = 3
@@ -134,7 +134,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption4.BackColor = System.Drawing.Color.White
         Me.LabelOption4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LabelOption4.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption4.Location = New System.Drawing.Point(1037, 20)
+        Me.LabelOption4.Location = New System.Drawing.Point(1036, 20)
         Me.LabelOption4.Name = "LabelOption4"
         Me.LabelOption4.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption4.TabIndex = 2
@@ -144,11 +144,11 @@ Partial Class FormExamCellDashboard
         'ButtonOption1
         '
         Me.ButtonOption1.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption1.Location = New System.Drawing.Point(97, 139)
+        Me.ButtonOption1.Location = New System.Drawing.Point(98, 139)
         Me.ButtonOption1.Name = "ButtonOption1"
-        Me.ButtonOption1.Size = New System.Drawing.Size(180, 40)
+        Me.ButtonOption1.Size = New System.Drawing.Size(218, 40)
         Me.ButtonOption1.TabIndex = 1
-        Me.ButtonOption1.Text = "Add Users"
+        Me.ButtonOption1.Text = "Add Marks Information"
         Me.ButtonOption1.UseVisualStyleBackColor = True
         '
         'LabelOption1
@@ -156,12 +156,11 @@ Partial Class FormExamCellDashboard
         Me.LabelOption1.BackColor = System.Drawing.Color.White
         Me.LabelOption1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LabelOption1.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption1.Location = New System.Drawing.Point(37, 20)
+        Me.LabelOption1.Location = New System.Drawing.Point(57, 20)
         Me.LabelOption1.Name = "LabelOption1"
         Me.LabelOption1.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption1.TabIndex = 0
-        Me.LabelOption1.Text = "Add users to the system. A new user can be an admin or someone from the examinati" &
-    "on cell."
+        Me.LabelOption1.Text = "Add information related to the marks of students."
         Me.LabelOption1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'LabelUsername

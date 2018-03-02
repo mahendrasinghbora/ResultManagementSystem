@@ -32,7 +32,7 @@ Public Class FormSignIn
             Dim Query As String
             Dim UserStatus As Integer
             Query = $"SELECT * FROM users WHERE USERNAME='{TextUsername.Text}' AND PASSWORD='{TextPassword.Text}' AND STATUS='1';"
-            Command = New MySqlCommand(Query, Con)
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Dim Reader As MySqlDataReader = Command.ExecuteReader()
             Dim Count As Integer = 0
             While Reader.Read()
@@ -42,6 +42,10 @@ Public Class FormSignIn
                 UserStatus = Reader.GetInt16(column:="USER_STATUS_ID")
                 FullUsername = Reader.GetString(column:="FIRST_NAME") & " " & Reader.GetString(column:="LAST_NAME")
                 Username = Reader.GetString(column:="USERNAME")
+                Reader.Dispose()
+                Query = $"INSERT INTO users_log (`USERNAME`, `LOG_IN_TIME`) VALUES ('{Username}', now());"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
                 Reader.Dispose()
                 Query = $"SELECT * FROM user_status WHERE USER_STATUS_ID='{UserStatus}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)

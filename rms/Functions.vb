@@ -10,6 +10,31 @@ Module Functions
         If CallingForm Is Nothing Then
             Throw New ArgumentNullException(NameOf(CallingForm))
         End If
+        Dim Con As MySqlConnection   ' Connection Variable
+        Dim Command As MySqlCommand   ' Command Variable
+        Con = New MySqlConnection With {
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT LOG_ID FROM users_log WHERE LOG_OUT_TIME IS NULL AND USERNAME='{Username}' ORDER BY LOG_IN_TIME DESC LIMIT 1;"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim LogID As Integer = Reader.GetInt16(column:="LOG_ID")
+            Reader.Dispose()
+            Query = $"UPDATE users_log SET LOG_OUT_TIME=now() WHERE LOG_ID='{LogID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Con.Close()
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
+
         Dim NewFormSignIn As FormSignIn
         NewFormSignIn = New FormSignIn()
         NewFormSignIn.Show()
@@ -36,7 +61,7 @@ Module Functions
         Dim Table As New DataTable()   ' Data Table
         Con = New MySqlConnection With {
            .ConnectionString = "server=localhost;userid=root;database=rms"
-       }
+        }
 
         Try
             Con.Open()

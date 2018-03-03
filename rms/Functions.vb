@@ -4,6 +4,11 @@ Imports MySql.Data.MySqlClient
 Module Functions
     Public FullUsername As String   ' FullUsername (Global Variable)
     Public Username As String
+    Public CourseID As String
+    Public SemesterID As String
+    Public SessionwiseSemesterID As String
+    Public UniversityID As String
+    Public SessionID As String
 
     ' CallingForm- reference of the form from which the procedure is being called.
     Public Sub LogOut(CallingForm As Form)
@@ -99,6 +104,26 @@ Module Functions
         Dim NewFormEditProfile As FormEditProfile
         NewFormEditProfile = New FormEditProfile()
         NewFormEditProfile.Show()
+        CallingForm.Dispose()
+    End Sub
+
+    Public Sub ExamCellDashboard(CallingForm As Form)
+        If CallingForm Is Nothing Then
+            Throw New ArgumentNullException(NameOf(CallingForm))
+        End If
+        Dim NewFormExamCellDashboard As FormExamCellDashboard
+        NewFormExamCellDashboard = New FormExamCellDashboard()
+        NewFormExamCellDashboard.Show()
+        CallingForm.Dispose()
+    End Sub
+
+    Public Sub EditProfileExamCell(CallingForm As Form)
+        If CallingForm Is Nothing Then
+            Throw New ArgumentNullException(NameOf(CallingForm))
+        End If
+        Dim NewFormEditProfileExamCell As FormEditProfileExamCell
+        NewFormEditProfileExamCell = New FormEditProfileExamCell()
+        NewFormEditProfileExamCell.Show()
         CallingForm.Dispose()
     End Sub
 End Module

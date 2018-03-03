@@ -24,151 +24,170 @@ Partial Class FormAddMarks
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAddMarks))
-        Me.ErrorProviderAddUsers = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.LabelAddUsers = New System.Windows.Forms.Label()
-        Me.OpenFileDialogAddUsers = New System.Windows.Forms.OpenFileDialog()
-        Me.PanelAddUsers = New System.Windows.Forms.Panel()
-        Me.TextLastName = New System.Windows.Forms.TextBox()
-        Me.LabelLastName = New System.Windows.Forms.Label()
-        Me.ButtonAddUsers = New System.Windows.Forms.Button()
-        Me.TextFirstName = New System.Windows.Forms.TextBox()
-        Me.LabelFirstName = New System.Windows.Forms.Label()
-        Me.PanelAddUsersLabel = New System.Windows.Forms.Panel()
-        Me.TextUsername = New System.Windows.Forms.TextBox()
-        Me.LabelAddUsername = New System.Windows.Forms.Label()
+        Me.LabelAddMarks = New System.Windows.Forms.Label()
+        Me.PanelAddMarks = New System.Windows.Forms.Panel()
+        Me.ComboBoxSemester = New System.Windows.Forms.ComboBox()
+        Me.LabelSemester = New System.Windows.Forms.Label()
+        Me.ComboBoxSession = New System.Windows.Forms.ComboBox()
+        Me.LabelSession = New System.Windows.Forms.Label()
+        Me.ComboBoxCourse = New System.Windows.Forms.ComboBox()
+        Me.LabelCourse = New System.Windows.Forms.Label()
+        Me.ComboBoxUniversity = New System.Windows.Forms.ComboBox()
+        Me.ButtonAddMarks = New System.Windows.Forms.Button()
+        Me.PanelAddMarksLabel = New System.Windows.Forms.Panel()
+        Me.LabelUniversity = New System.Windows.Forms.Label()
         Me.PanelPage = New System.Windows.Forms.Panel()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
-        Me.LabelAddUsersPanel = New System.Windows.Forms.Label()
+        Me.LabelAddMarksPanel = New System.Windows.Forms.Label()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStripUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.ErrorProviderAddUsers, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelAddUsers.SuspendLayout()
-        Me.PanelAddUsersLabel.SuspendLayout()
+        Me.PanelAddMarks.SuspendLayout()
+        Me.PanelAddMarksLabel.SuspendLayout()
         Me.PanelPage.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripUsers.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ErrorProviderAddUsers
+        'LabelAddMarks
         '
-        Me.ErrorProviderAddUsers.ContainerControl = Me
+        Me.LabelAddMarks.AutoSize = True
+        Me.LabelAddMarks.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelAddMarks.Location = New System.Drawing.Point(237, 15)
+        Me.LabelAddMarks.Name = "LabelAddMarks"
+        Me.LabelAddMarks.Size = New System.Drawing.Size(312, 46)
+        Me.LabelAddMarks.TabIndex = 3
+        Me.LabelAddMarks.Text = "Add Marks Information"
         '
-        'LabelAddUsers
+        'PanelAddMarks
         '
-        Me.LabelAddUsers.AutoSize = True
-        Me.LabelAddUsers.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAddUsers.Location = New System.Drawing.Point(320, 15)
-        Me.LabelAddUsers.Name = "LabelAddUsers"
-        Me.LabelAddUsers.Size = New System.Drawing.Size(146, 46)
-        Me.LabelAddUsers.TabIndex = 3
-        Me.LabelAddUsers.Text = "Add Users"
+        Me.PanelAddMarks.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelAddMarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddMarks.Controls.Add(Me.ComboBoxSemester)
+        Me.PanelAddMarks.Controls.Add(Me.LabelSemester)
+        Me.PanelAddMarks.Controls.Add(Me.ComboBoxSession)
+        Me.PanelAddMarks.Controls.Add(Me.LabelSession)
+        Me.PanelAddMarks.Controls.Add(Me.ComboBoxCourse)
+        Me.PanelAddMarks.Controls.Add(Me.LabelCourse)
+        Me.PanelAddMarks.Controls.Add(Me.ComboBoxUniversity)
+        Me.PanelAddMarks.Controls.Add(Me.ButtonAddMarks)
+        Me.PanelAddMarks.Controls.Add(Me.PanelAddMarksLabel)
+        Me.PanelAddMarks.Controls.Add(Me.LabelUniversity)
+        Me.PanelAddMarks.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanelAddMarks.Location = New System.Drawing.Point(289, 85)
+        Me.PanelAddMarks.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
+        Me.PanelAddMarks.Name = "PanelAddMarks"
+        Me.PanelAddMarks.Size = New System.Drawing.Size(789, 422)
+        Me.PanelAddMarks.TabIndex = 1
         '
-        'OpenFileDialogAddUsers
+        'ComboBoxSemester
         '
-        Me.OpenFileDialogAddUsers.FileName = "OpenFileDialogAddUsers"
+        Me.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxSemester.FormattingEnabled = True
+        Me.ComboBoxSemester.Location = New System.Drawing.Point(436, 256)
+        Me.ComboBoxSemester.Name = "ComboBoxSemester"
+        Me.ComboBoxSemester.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxSemester.TabIndex = 17
         '
-        'PanelAddUsers
+        'LabelSemester
         '
-        Me.PanelAddUsers.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.PanelAddUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelAddUsers.Controls.Add(Me.TextLastName)
-        Me.PanelAddUsers.Controls.Add(Me.LabelLastName)
-        Me.PanelAddUsers.Controls.Add(Me.ButtonAddUsers)
-        Me.PanelAddUsers.Controls.Add(Me.TextFirstName)
-        Me.PanelAddUsers.Controls.Add(Me.LabelFirstName)
-        Me.PanelAddUsers.Controls.Add(Me.PanelAddUsersLabel)
-        Me.PanelAddUsers.Controls.Add(Me.TextUsername)
-        Me.PanelAddUsers.Controls.Add(Me.LabelAddUsername)
-        Me.PanelAddUsers.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelAddUsers.Location = New System.Drawing.Point(289, 85)
-        Me.PanelAddUsers.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
-        Me.PanelAddUsers.Name = "PanelAddUsers"
-        Me.PanelAddUsers.Size = New System.Drawing.Size(789, 528)
-        Me.PanelAddUsers.TabIndex = 1
+        Me.LabelSemester.AutoSize = True
+        Me.LabelSemester.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSemester.Location = New System.Drawing.Point(431, 219)
+        Me.LabelSemester.Name = "LabelSemester"
+        Me.LabelSemester.Size = New System.Drawing.Size(96, 28)
+        Me.LabelSemester.TabIndex = 16
+        Me.LabelSemester.Text = "Semester"
         '
-        'TextLastName
+        'ComboBoxSession
         '
-        Me.TextLastName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextLastName.Location = New System.Drawing.Point(52, 242)
-        Me.TextLastName.Name = "TextLastName"
-        Me.TextLastName.Size = New System.Drawing.Size(300, 27)
-        Me.TextLastName.TabIndex = 9
+        Me.ComboBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSession.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxSession.FormattingEnabled = True
+        Me.ComboBoxSession.Location = New System.Drawing.Point(42, 256)
+        Me.ComboBoxSession.Name = "ComboBoxSession"
+        Me.ComboBoxSession.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxSession.TabIndex = 15
         '
-        'LabelLastName
+        'LabelSession
         '
-        Me.LabelLastName.AutoSize = True
-        Me.LabelLastName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelLastName.Location = New System.Drawing.Point(47, 207)
-        Me.LabelLastName.Name = "LabelLastName"
-        Me.LabelLastName.Size = New System.Drawing.Size(104, 28)
-        Me.LabelLastName.TabIndex = 8
-        Me.LabelLastName.Text = "Last Name"
+        Me.LabelSession.AutoSize = True
+        Me.LabelSession.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSession.Location = New System.Drawing.Point(37, 219)
+        Me.LabelSession.Name = "LabelSession"
+        Me.LabelSession.Size = New System.Drawing.Size(79, 28)
+        Me.LabelSession.TabIndex = 14
+        Me.LabelSession.Text = "Session"
         '
-        'ButtonAddUsers
+        'ComboBoxCourse
         '
-        Me.ButtonAddUsers.AutoSize = True
-        Me.ButtonAddUsers.Font = New System.Drawing.Font("Acme", 16.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddUsers.Location = New System.Drawing.Point(52, 458)
-        Me.ButtonAddUsers.Name = "ButtonAddUsers"
-        Me.ButtonAddUsers.Size = New System.Drawing.Size(124, 39)
-        Me.ButtonAddUsers.TabIndex = 7
-        Me.ButtonAddUsers.Text = "Add User"
-        Me.ButtonAddUsers.UseVisualStyleBackColor = True
+        Me.ComboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxCourse.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxCourse.FormattingEnabled = True
+        Me.ComboBoxCourse.Location = New System.Drawing.Point(431, 149)
+        Me.ComboBoxCourse.Name = "ComboBoxCourse"
+        Me.ComboBoxCourse.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxCourse.TabIndex = 13
         '
-        'TextFirstName
+        'LabelCourse
         '
-        Me.TextFirstName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextFirstName.Location = New System.Drawing.Point(52, 166)
-        Me.TextFirstName.Name = "TextFirstName"
-        Me.TextFirstName.Size = New System.Drawing.Size(300, 27)
-        Me.TextFirstName.TabIndex = 6
+        Me.LabelCourse.AutoSize = True
+        Me.LabelCourse.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourse.Location = New System.Drawing.Point(426, 112)
+        Me.LabelCourse.Name = "LabelCourse"
+        Me.LabelCourse.Size = New System.Drawing.Size(73, 28)
+        Me.LabelCourse.TabIndex = 12
+        Me.LabelCourse.Text = "Course"
         '
-        'LabelFirstName
+        'ComboBoxUniversity
         '
-        Me.LabelFirstName.AutoSize = True
-        Me.LabelFirstName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFirstName.Location = New System.Drawing.Point(47, 131)
-        Me.LabelFirstName.Name = "LabelFirstName"
-        Me.LabelFirstName.Size = New System.Drawing.Size(108, 28)
-        Me.LabelFirstName.TabIndex = 5
-        Me.LabelFirstName.Text = "First Name"
+        Me.ComboBoxUniversity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxUniversity.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxUniversity.FormattingEnabled = True
+        Me.ComboBoxUniversity.Location = New System.Drawing.Point(37, 149)
+        Me.ComboBoxUniversity.Name = "ComboBoxUniversity"
+        Me.ComboBoxUniversity.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxUniversity.TabIndex = 11
         '
-        'PanelAddUsersLabel
+        'ButtonAddMarks
         '
-        Me.PanelAddUsersLabel.BackColor = System.Drawing.SystemColors.Control
-        Me.PanelAddUsersLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelAddUsersLabel.Controls.Add(Me.LabelAddUsers)
-        Me.PanelAddUsersLabel.Location = New System.Drawing.Point(-1, -1)
-        Me.PanelAddUsersLabel.Name = "PanelAddUsersLabel"
-        Me.PanelAddUsersLabel.Size = New System.Drawing.Size(789, 78)
-        Me.PanelAddUsersLabel.TabIndex = 4
+        Me.ButtonAddMarks.AutoSize = True
+        Me.ButtonAddMarks.Font = New System.Drawing.Font("Acme", 16.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddMarks.Location = New System.Drawing.Point(305, 348)
+        Me.ButtonAddMarks.Name = "ButtonAddMarks"
+        Me.ButtonAddMarks.Size = New System.Drawing.Size(177, 39)
+        Me.ButtonAddMarks.TabIndex = 7
+        Me.ButtonAddMarks.Text = "Add Information"
+        Me.ButtonAddMarks.UseVisualStyleBackColor = True
         '
-        'TextUsername
+        'PanelAddMarksLabel
         '
-        Me.TextUsername.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextUsername.Location = New System.Drawing.Point(52, 318)
-        Me.TextUsername.Name = "TextUsername"
-        Me.TextUsername.Size = New System.Drawing.Size(300, 27)
-        Me.TextUsername.TabIndex = 2
+        Me.PanelAddMarksLabel.BackColor = System.Drawing.SystemColors.Control
+        Me.PanelAddMarksLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddMarksLabel.Controls.Add(Me.LabelAddMarks)
+        Me.PanelAddMarksLabel.Location = New System.Drawing.Point(-1, -1)
+        Me.PanelAddMarksLabel.Name = "PanelAddMarksLabel"
+        Me.PanelAddMarksLabel.Size = New System.Drawing.Size(789, 78)
+        Me.PanelAddMarksLabel.TabIndex = 4
         '
-        'LabelAddUsername
+        'LabelUniversity
         '
-        Me.LabelAddUsername.AutoSize = True
-        Me.LabelAddUsername.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAddUsername.Location = New System.Drawing.Point(47, 283)
-        Me.LabelAddUsername.Name = "LabelAddUsername"
-        Me.LabelAddUsername.Size = New System.Drawing.Size(103, 28)
-        Me.LabelAddUsername.TabIndex = 1
-        Me.LabelAddUsername.Text = "Username"
+        Me.LabelUniversity.AutoSize = True
+        Me.LabelUniversity.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUniversity.Location = New System.Drawing.Point(32, 112)
+        Me.LabelUniversity.Name = "LabelUniversity"
+        Me.LabelUniversity.Size = New System.Drawing.Size(103, 28)
+        Me.LabelUniversity.TabIndex = 1
+        Me.LabelUniversity.Text = "University"
         '
         'PanelPage
         '
-        Me.PanelPage.Controls.Add(Me.PanelAddUsers)
+        Me.PanelPage.Controls.Add(Me.PanelAddMarks)
         Me.PanelPage.Location = New System.Drawing.Point(-12, 66)
         Me.PanelPage.Name = "PanelPage"
         Me.PanelPage.Size = New System.Drawing.Size(1366, 662)
@@ -179,7 +198,7 @@ Partial Class FormAddMarks
         Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
         Me.PanelNavigation.Controls.Add(Me.LabelUsername)
         Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
-        Me.PanelNavigation.Controls.Add(Me.LabelAddUsersPanel)
+        Me.PanelNavigation.Controls.Add(Me.LabelAddMarksPanel)
         Me.PanelNavigation.Location = New System.Drawing.Point(-15, 0)
         Me.PanelNavigation.Name = "PanelNavigation"
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
@@ -209,22 +228,22 @@ Partial Class FormAddMarks
         'ButtonDashboard
         '
         Me.ButtonDashboard.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDashboard.Location = New System.Drawing.Point(155, 9)
+        Me.ButtonDashboard.Location = New System.Drawing.Point(290, 9)
         Me.ButtonDashboard.Name = "ButtonDashboard"
         Me.ButtonDashboard.Size = New System.Drawing.Size(102, 39)
         Me.ButtonDashboard.TabIndex = 1
         Me.ButtonDashboard.Text = "Dashboard"
         Me.ButtonDashboard.UseVisualStyleBackColor = True
         '
-        'LabelAddUsersPanel
+        'LabelAddMarksPanel
         '
-        Me.LabelAddUsersPanel.AutoSize = True
-        Me.LabelAddUsersPanel.Font = New System.Drawing.Font("Alegreya", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAddUsersPanel.Location = New System.Drawing.Point(33, 9)
-        Me.LabelAddUsersPanel.Name = "LabelAddUsersPanel"
-        Me.LabelAddUsersPanel.Size = New System.Drawing.Size(118, 39)
-        Me.LabelAddUsersPanel.TabIndex = 0
-        Me.LabelAddUsersPanel.Text = "Add Users"
+        Me.LabelAddMarksPanel.AutoSize = True
+        Me.LabelAddMarksPanel.Font = New System.Drawing.Font("Alegreya", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelAddMarksPanel.Location = New System.Drawing.Point(33, 9)
+        Me.LabelAddMarksPanel.Name = "LabelAddMarksPanel"
+        Me.LabelAddMarksPanel.Size = New System.Drawing.Size(251, 39)
+        Me.LabelAddMarksPanel.TabIndex = 0
+        Me.LabelAddMarksPanel.Text = "Add Marks Information"
         '
         'LogOutToolStripMenuItem
         '
@@ -254,11 +273,10 @@ Partial Class FormAddMarks
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddMarks"
         Me.ShowIcon = False
-        CType(Me.ErrorProviderAddUsers, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelAddUsers.ResumeLayout(False)
-        Me.PanelAddUsers.PerformLayout()
-        Me.PanelAddUsersLabel.ResumeLayout(False)
-        Me.PanelAddUsersLabel.PerformLayout()
+        Me.PanelAddMarks.ResumeLayout(False)
+        Me.PanelAddMarks.PerformLayout()
+        Me.PanelAddMarksLabel.ResumeLayout(False)
+        Me.PanelAddMarksLabel.PerformLayout()
         Me.PanelPage.ResumeLayout(False)
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
@@ -267,26 +285,25 @@ Partial Class FormAddMarks
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents ErrorProviderAddUsers As ErrorProvider
     Friend WithEvents PanelPage As Panel
-    Friend WithEvents PanelAddUsers As Panel
-    Friend WithEvents TextLastName As TextBox
-    Friend WithEvents LabelLastName As Label
-    Friend WithEvents ButtonAddUsers As Button
-    Friend WithEvents TextFirstName As TextBox
-    Friend WithEvents LabelFirstName As Label
-    Friend WithEvents PanelAddUsersLabel As Panel
-    Friend WithEvents LabelAddUsers As Label
-    Friend WithEvents TextUsername As TextBox
-    Friend WithEvents LabelAddUsername As Label
+    Friend WithEvents PanelAddMarks As Panel
+    Friend WithEvents ButtonAddMarks As Button
+    Friend WithEvents PanelAddMarksLabel As Panel
+    Friend WithEvents LabelAddMarks As Label
+    Friend WithEvents LabelUniversity As Label
     Friend WithEvents PanelNavigation As Panel
     Friend WithEvents PictureBoxUser As PictureBox
     Friend WithEvents LabelUsername As Label
     Friend WithEvents ButtonDashboard As Button
-    Friend WithEvents LabelAddUsersPanel As Label
-    Friend WithEvents OpenFileDialogAddUsers As OpenFileDialog
+    Friend WithEvents LabelAddMarksPanel As Label
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStripUsers As ContextMenuStrip
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComboBoxCourse As ComboBox
+    Friend WithEvents LabelCourse As Label
+    Friend WithEvents ComboBoxUniversity As ComboBox
+    Friend WithEvents ComboBoxSemester As ComboBox
+    Friend WithEvents LabelSemester As Label
+    Friend WithEvents ComboBoxSession As ComboBox
+    Friend WithEvents LabelSession As Label
 End Class

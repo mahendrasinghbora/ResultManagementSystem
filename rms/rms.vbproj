@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Module\Courses and Subjects\FormAddCollegewiseCourses.Designer.vb">
+      <DependentUpon>FormAddCollegewiseCourses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Courses and Subjects\FormAddCollegewiseCourses.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin Module\Universities and Colleges\FormAddColleges.Designer.vb">
       <DependentUpon>FormAddColleges.vb</DependentUpon>
     </Compile>
@@ -181,10 +187,22 @@
     <Compile Include="Exam Cell Module\FormAddMarks.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Exam Cell Module\FormAddMarksII.Designer.vb">
+      <DependentUpon>FormAddMarksII.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormAddMarksII.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditProfile.Designer.vb">
       <DependentUpon>FormEditProfile.vb</DependentUpon>
     </Compile>
     <Compile Include="FormEditProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditProfileExamCell.Designer.vb">
+      <DependentUpon>FormEditProfileExamCell.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditProfileExamCell.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormExamCellDashboard.Designer.vb">
@@ -224,6 +242,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin Module\Courses and Subjects\FormAddCollegewiseCourses.resx">
+      <DependentUpon>FormAddCollegewiseCourses.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\Universities and Colleges\FormAddColleges.resx">
       <DependentUpon>FormAddColleges.vb</DependentUpon>
     </EmbeddedResource>
@@ -278,8 +299,14 @@
     <EmbeddedResource Include="Exam Cell Module\FormAddMarks.resx">
       <DependentUpon>FormAddMarks.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Exam Cell Module\FormAddMarksII.resx">
+      <DependentUpon>FormAddMarksII.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfile.resx">
       <DependentUpon>FormEditProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditProfileExamCell.resx">
+      <DependentUpon>FormEditProfileExamCell.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExamCellDashboard.resx">
       <DependentUpon>FormExamCellDashboard.vb</DependentUpon>

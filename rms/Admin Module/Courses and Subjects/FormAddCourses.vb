@@ -76,4 +76,11 @@ Public Class FormAddCourses
     Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
         EditProfile(CallingForm:=Me)
     End Sub
+
+    Private Sub ButtonAddCollegewiseCourses_Click(sender As Object, e As EventArgs) Handles ButtonAddCollegewiseCourses.Click
+        Dim NewFormAddCollegewiseCourses As FormAddCollegewiseCourses
+        NewFormAddCollegewiseCourses = New FormAddCollegewiseCourses()
+        NewFormAddCollegewiseCourses.Show()
+        Dispose()
+    End Sub
 End Class

@@ -16,7 +16,7 @@
     End Sub
 
     Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
-        EditProfile(CallingForm:=Me)
+        EditProfileExamCell(CallingForm:=Me)
     End Sub
 
     Private Sub ButtonOption1_Click(sender As Object, e As EventArgs) Handles ButtonOption1.Click

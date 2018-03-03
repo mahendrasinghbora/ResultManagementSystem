@@ -29,8 +29,8 @@ Public Class FormAddStudents
 
     Private Sub FillColleges()
         Con = New MySqlConnection With {
-                    .ConnectionString = "server=localhost;userid=root;database=rms"
-                }
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
         Dim Reader As MySqlDataReader
         Try
             Con.Open()

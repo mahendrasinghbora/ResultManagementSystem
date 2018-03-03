@@ -250,8 +250,8 @@ Public Class FormAddResultCriteria
             Reader.Read()
             Dim SessionwiseSemesterID As String = Reader.GetString(column:="SESSIONWISE_SEMESTER_ID")
             Reader.Dispose()
-            Query = $"INSERT INTO result_criteria (`MAXIMUM_INTERNAL_MARKS`, `MAXIMUM_EXTERNAL_MARKS`, `PASSING_MARKS`, `UNIVERSITY_ID`,
-`SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES ('{TextInternalMarks.Text}', '{TextExternalMarks.Text}', '{TextPassingMarks.Text}',
+            Query = $"INSERT INTO result_criteria (`MAXIMUM_INTERNAL_MARKS`, `MAXIMUM_EXTERNAL_MARKS`, `PASSING_MARKS`, `PASSING_MARKS_THEORY`, `UNIVERSITY_ID`,
+`SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES ('{TextInternalMarks.Text}', '{TextExternalMarks.Text}', '{TextPassingMarks.Text}', '{TextTheory.Text}',
 '{UniversityID}', '{SessionwiseSemesterID}', '{Username}');"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
@@ -270,5 +270,46 @@ Public Class FormAddResultCriteria
 
     Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
         EditProfile(CallingForm:=Me)
+    End Sub
+
+    Private Sub TextTheory_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextTheory.Validating
+        If TextTheory.Text = "" Then
+            ErrorProviderCriteria.SetError(control:=TextTheory, value:="Passing marks (Theory) can't be empty.")
+            ButtonAddResultCriteria.Enabled = False
+            TextTheory.Focus()
+        End If
+        If TextExternalMarks.Text <> "" And TextTheory.Text <> "" Then
+            If CType(TextTheory.Text, Integer) >= CType(TextExternalMarks.Text, Integer) Then
+                ErrorProviderCriteria.SetError(control:=TextTheory, value:="Passing marks (Theory) must be less than external marks.")
+                ButtonAddResultCriteria.Enabled = False
+                TextTheory.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub TextTheory_TextChanged(sender As Object, e As EventArgs) Handles TextTheory.TextChanged
+        If TextTheory.Text = "" Then
+            ErrorProviderCriteria.SetError(control:=TextTheory, value:="Passing marks (Theory) can't be empty.")
+            ButtonAddResultCriteria.Enabled = False
+        Else
+            If Not System.Text.RegularExpressions.Regex.IsMatch(input:=TextTheory.Text, pattern:="^(\d)+$") Then
+                ErrorProviderCriteria.SetError(control:=TextTheory, value:="Passing marks (Theory) can only contain digits.")
+                ButtonAddResultCriteria.Enabled = False
+            Else
+                If TextExternalMarks.Text <> "" Then
+                    If CType(TextTheory.Text, Integer) >= CType(TextExternalMarks.Text, Integer) Then
+                        ErrorProviderCriteria.SetError(control:=TextTheory, value:="Passing marks (Theory) must be less than external marks.")
+                        ButtonAddResultCriteria.Enabled = False
+                    Else
+                        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
+                    ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
+                    TextExternalMarks.Text <> "" Then
+                            ButtonAddResultCriteria.Enabled = True
+                        End If
+                        ErrorProviderCriteria.Dispose()
+                    End If
+                End If
+            End If
+        End If
     End Sub
 End Class

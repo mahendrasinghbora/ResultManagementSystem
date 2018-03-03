@@ -33,6 +33,8 @@ Partial Class FormAddResultCriteria
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelResultCriteria = New System.Windows.Forms.Panel()
+        Me.TextTheory = New System.Windows.Forms.TextBox()
+        Me.LabelTheory = New System.Windows.Forms.Label()
         Me.TextPassingMarks = New System.Windows.Forms.TextBox()
         Me.LabelPassingMarks = New System.Windows.Forms.Label()
         Me.TextExternalMarks = New System.Windows.Forms.TextBox()
@@ -132,6 +134,8 @@ Partial Class FormAddResultCriteria
         '
         Me.PanelResultCriteria.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PanelResultCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelResultCriteria.Controls.Add(Me.TextTheory)
+        Me.PanelResultCriteria.Controls.Add(Me.LabelTheory)
         Me.PanelResultCriteria.Controls.Add(Me.TextPassingMarks)
         Me.PanelResultCriteria.Controls.Add(Me.LabelPassingMarks)
         Me.PanelResultCriteria.Controls.Add(Me.TextExternalMarks)
@@ -153,21 +157,39 @@ Partial Class FormAddResultCriteria
         Me.PanelResultCriteria.Size = New System.Drawing.Size(655, 522)
         Me.PanelResultCriteria.TabIndex = 8
         '
+        'TextTheory
+        '
+        Me.TextTheory.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTheory.Location = New System.Drawing.Point(350, 403)
+        Me.TextTheory.Name = "TextTheory"
+        Me.TextTheory.Size = New System.Drawing.Size(260, 27)
+        Me.TextTheory.TabIndex = 21
+        '
+        'LabelTheory
+        '
+        Me.LabelTheory.AutoSize = True
+        Me.LabelTheory.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTheory.Location = New System.Drawing.Point(345, 366)
+        Me.LabelTheory.Name = "LabelTheory"
+        Me.LabelTheory.Size = New System.Drawing.Size(312, 25)
+        Me.LabelTheory.TabIndex = 20
+        Me.LabelTheory.Text = "Passing Marks in End Semester Theory"
+        '
         'TextPassingMarks
         '
         Me.TextPassingMarks.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextPassingMarks.Location = New System.Drawing.Point(42, 403)
         Me.TextPassingMarks.Name = "TextPassingMarks"
-        Me.TextPassingMarks.Size = New System.Drawing.Size(568, 27)
+        Me.TextPassingMarks.Size = New System.Drawing.Size(260, 27)
         Me.TextPassingMarks.TabIndex = 19
         '
         'LabelPassingMarks
         '
         Me.LabelPassingMarks.AutoSize = True
-        Me.LabelPassingMarks.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPassingMarks.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPassingMarks.Location = New System.Drawing.Point(37, 366)
         Me.LabelPassingMarks.Name = "LabelPassingMarks"
-        Me.LabelPassingMarks.Size = New System.Drawing.Size(136, 28)
+        Me.LabelPassingMarks.Size = New System.Drawing.Size(124, 25)
         Me.LabelPassingMarks.TabIndex = 18
         Me.LabelPassingMarks.Text = "Passing Marks"
         '
@@ -182,10 +204,10 @@ Partial Class FormAddResultCriteria
         'LabelExternalMarks
         '
         Me.LabelExternalMarks.AutoSize = True
-        Me.LabelExternalMarks.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelExternalMarks.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelExternalMarks.Location = New System.Drawing.Point(344, 277)
         Me.LabelExternalMarks.Name = "LabelExternalMarks"
-        Me.LabelExternalMarks.Size = New System.Drawing.Size(235, 28)
+        Me.LabelExternalMarks.Size = New System.Drawing.Size(213, 25)
         Me.LabelExternalMarks.TabIndex = 16
         Me.LabelExternalMarks.Text = "Maximum External Marks"
         '
@@ -210,10 +232,10 @@ Partial Class FormAddResultCriteria
         'LabelSemester
         '
         Me.LabelSemester.AutoSize = True
-        Me.LabelSemester.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSemester.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelSemester.Location = New System.Drawing.Point(344, 98)
         Me.LabelSemester.Name = "LabelSemester"
-        Me.LabelSemester.Size = New System.Drawing.Size(96, 28)
+        Me.LabelSemester.Size = New System.Drawing.Size(87, 25)
         Me.LabelSemester.TabIndex = 13
         Me.LabelSemester.Text = "Semester"
         '
@@ -230,10 +252,10 @@ Partial Class FormAddResultCriteria
         'LabelSession
         '
         Me.LabelSession.AutoSize = True
-        Me.LabelSession.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSession.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelSession.Location = New System.Drawing.Point(37, 98)
         Me.LabelSession.Name = "LabelSession"
-        Me.LabelSession.Size = New System.Drawing.Size(79, 28)
+        Me.LabelSession.Size = New System.Drawing.Size(72, 25)
         Me.LabelSession.TabIndex = 11
         Me.LabelSession.Text = "Session"
         '
@@ -250,10 +272,10 @@ Partial Class FormAddResultCriteria
         'LabelInternalMarks
         '
         Me.LabelInternalMarks.AutoSize = True
-        Me.LabelInternalMarks.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelInternalMarks.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelInternalMarks.Location = New System.Drawing.Point(37, 277)
         Me.LabelInternalMarks.Name = "LabelInternalMarks"
-        Me.LabelInternalMarks.Size = New System.Drawing.Size(233, 28)
+        Me.LabelInternalMarks.Size = New System.Drawing.Size(210, 25)
         Me.LabelInternalMarks.TabIndex = 8
         Me.LabelInternalMarks.Text = "Maximum Internal Marks"
         '
@@ -291,10 +313,10 @@ Partial Class FormAddResultCriteria
         'LabelUniversity
         '
         Me.LabelUniversity.AutoSize = True
-        Me.LabelUniversity.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUniversity.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUniversity.Location = New System.Drawing.Point(37, 186)
         Me.LabelUniversity.Name = "LabelUniversity"
-        Me.LabelUniversity.Size = New System.Drawing.Size(103, 28)
+        Me.LabelUniversity.Size = New System.Drawing.Size(94, 25)
         Me.LabelUniversity.TabIndex = 1
         Me.LabelUniversity.Text = "University"
         '
@@ -349,4 +371,6 @@ Partial Class FormAddResultCriteria
     Friend WithEvents TextPassingMarks As TextBox
     Friend WithEvents LabelPassingMarks As Label
     Friend WithEvents ErrorProviderCriteria As ErrorProvider
+    Friend WithEvents TextTheory As TextBox
+    Friend WithEvents LabelTheory As Label
 End Class

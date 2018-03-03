@@ -59,6 +59,8 @@ Partial Class FormAddStudents
         Me.TextFather = New System.Windows.Forms.TextBox()
         Me.LabelFather = New System.Windows.Forms.Label()
         Me.ErrorProviderStudent = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ComboBoxCourse = New System.Windows.Forms.ComboBox()
+        Me.LabelCourse = New System.Windows.Forms.Label()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddStudents.SuspendLayout()
@@ -142,6 +144,8 @@ Partial Class FormAddStudents
         '
         Me.PanelAddUsers.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PanelAddUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddUsers.Controls.Add(Me.ComboBoxCourse)
+        Me.PanelAddUsers.Controls.Add(Me.LabelCourse)
         Me.PanelAddUsers.Controls.Add(Me.TextMobile)
         Me.PanelAddUsers.Controls.Add(Me.LabelMobile)
         Me.PanelAddUsers.Controls.Add(Me.TextEmail)
@@ -170,13 +174,13 @@ Partial Class FormAddStudents
         Me.PanelAddUsers.Location = New System.Drawing.Point(167, 100)
         Me.PanelAddUsers.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelAddUsers.Name = "PanelAddUsers"
-        Me.PanelAddUsers.Size = New System.Drawing.Size(1017, 571)
+        Me.PanelAddUsers.Size = New System.Drawing.Size(1017, 590)
         Me.PanelAddUsers.TabIndex = 7
         '
         'TextMobile
         '
         Me.TextMobile.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextMobile.Location = New System.Drawing.Point(694, 438)
+        Me.TextMobile.Location = New System.Drawing.Point(702, 392)
         Me.TextMobile.Name = "TextMobile"
         Me.TextMobile.Size = New System.Drawing.Size(260, 27)
         Me.TextMobile.TabIndex = 32
@@ -185,7 +189,7 @@ Partial Class FormAddStudents
         '
         Me.LabelMobile.AutoSize = True
         Me.LabelMobile.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMobile.Location = New System.Drawing.Point(690, 403)
+        Me.LabelMobile.Location = New System.Drawing.Point(697, 357)
         Me.LabelMobile.Name = "LabelMobile"
         Me.LabelMobile.Size = New System.Drawing.Size(147, 28)
         Me.LabelMobile.TabIndex = 31
@@ -194,7 +198,7 @@ Partial Class FormAddStudents
         'TextEmail
         '
         Me.TextEmail.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEmail.Location = New System.Drawing.Point(694, 350)
+        Me.TextEmail.Location = New System.Drawing.Point(702, 313)
         Me.TextEmail.Name = "TextEmail"
         Me.TextEmail.Size = New System.Drawing.Size(260, 27)
         Me.TextEmail.TabIndex = 30
@@ -203,7 +207,7 @@ Partial Class FormAddStudents
         '
         Me.LabelEmail.AutoSize = True
         Me.LabelEmail.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelEmail.Location = New System.Drawing.Point(690, 315)
+        Me.LabelEmail.Location = New System.Drawing.Point(697, 279)
         Me.LabelEmail.Name = "LabelEmail"
         Me.LabelEmail.Size = New System.Drawing.Size(62, 28)
         Me.LabelEmail.TabIndex = 29
@@ -212,7 +216,7 @@ Partial Class FormAddStudents
         'TextAddress
         '
         Me.TextAddress.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextAddress.Location = New System.Drawing.Point(373, 350)
+        Me.TextAddress.Location = New System.Drawing.Point(378, 392)
         Me.TextAddress.Multiline = True
         Me.TextAddress.Name = "TextAddress"
         Me.TextAddress.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
@@ -223,7 +227,7 @@ Partial Class FormAddStudents
         '
         Me.LabelAddress.AutoSize = True
         Me.LabelAddress.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAddress.Location = New System.Drawing.Point(368, 315)
+        Me.LabelAddress.Location = New System.Drawing.Point(378, 357)
         Me.LabelAddress.Name = "LabelAddress"
         Me.LabelAddress.Size = New System.Drawing.Size(84, 28)
         Me.LabelAddress.TabIndex = 27
@@ -235,16 +239,16 @@ Partial Class FormAddStudents
         Me.ComboBoxCollege.DropDownWidth = 325
         Me.ComboBoxCollege.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCollege.FormattingEnabled = True
-        Me.ComboBoxCollege.Location = New System.Drawing.Point(52, 150)
+        Me.ComboBoxCollege.Location = New System.Drawing.Point(131, 94)
         Me.ComboBoxCollege.Name = "ComboBoxCollege"
-        Me.ComboBoxCollege.Size = New System.Drawing.Size(260, 31)
+        Me.ComboBoxCollege.Size = New System.Drawing.Size(335, 31)
         Me.ComboBoxCollege.TabIndex = 26
         '
         'LabelCollege
         '
         Me.LabelCollege.AutoSize = True
         Me.LabelCollege.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCollege.Location = New System.Drawing.Point(47, 110)
+        Me.LabelCollege.Location = New System.Drawing.Point(50, 95)
         Me.LabelCollege.Name = "LabelCollege"
         Me.LabelCollege.Size = New System.Drawing.Size(78, 28)
         Me.LabelCollege.TabIndex = 24
@@ -255,7 +259,7 @@ Partial Class FormAddStudents
         Me.DateTimePickerDOB.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePickerDOB.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerDOB.Location = New System.Drawing.Point(694, 263)
+        Me.DateTimePickerDOB.Location = New System.Drawing.Point(701, 204)
         Me.DateTimePickerDOB.Name = "DateTimePickerDOB"
         Me.DateTimePickerDOB.Size = New System.Drawing.Size(260, 30)
         Me.DateTimePickerDOB.TabIndex = 23
@@ -265,7 +269,7 @@ Partial Class FormAddStudents
         '
         Me.LabelDOB.AutoSize = True
         Me.LabelDOB.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDOB.Location = New System.Drawing.Point(690, 232)
+        Me.LabelDOB.Location = New System.Drawing.Point(697, 171)
         Me.LabelDOB.Name = "LabelDOB"
         Me.LabelDOB.Size = New System.Drawing.Size(125, 28)
         Me.LabelDOB.TabIndex = 22
@@ -274,7 +278,7 @@ Partial Class FormAddStudents
         'TextMother
         '
         Me.TextMother.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextMother.Location = New System.Drawing.Point(373, 267)
+        Me.TextMother.Location = New System.Drawing.Point(378, 313)
         Me.TextMother.Name = "TextMother"
         Me.TextMother.Size = New System.Drawing.Size(260, 27)
         Me.TextMother.TabIndex = 21
@@ -283,7 +287,7 @@ Partial Class FormAddStudents
         '
         Me.LabelMother.AutoSize = True
         Me.LabelMother.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMother.Location = New System.Drawing.Point(368, 232)
+        Me.LabelMother.Location = New System.Drawing.Point(378, 279)
         Me.LabelMother.Name = "LabelMother"
         Me.LabelMother.Size = New System.Drawing.Size(146, 28)
         Me.LabelMother.TabIndex = 20
@@ -293,7 +297,7 @@ Partial Class FormAddStudents
         '
         Me.RadioButtonGender3.AutoSize = True
         Me.RadioButtonGender3.Font = New System.Drawing.Font("Alegreya Sans", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonGender3.Location = New System.Drawing.Point(52, 427)
+        Me.RadioButtonGender3.Location = New System.Drawing.Point(55, 469)
         Me.RadioButtonGender3.Name = "RadioButtonGender3"
         Me.RadioButtonGender3.Size = New System.Drawing.Size(87, 38)
         Me.RadioButtonGender3.TabIndex = 19
@@ -305,7 +309,7 @@ Partial Class FormAddStudents
         '
         Me.RadioButtonGender2.AutoSize = True
         Me.RadioButtonGender2.Font = New System.Drawing.Font("Alegreya Sans", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonGender2.Location = New System.Drawing.Point(52, 390)
+        Me.RadioButtonGender2.Location = New System.Drawing.Point(55, 432)
         Me.RadioButtonGender2.Name = "RadioButtonGender2"
         Me.RadioButtonGender2.Size = New System.Drawing.Size(100, 38)
         Me.RadioButtonGender2.TabIndex = 18
@@ -317,7 +321,7 @@ Partial Class FormAddStudents
         '
         Me.RadioButtonGender1.AutoSize = True
         Me.RadioButtonGender1.Font = New System.Drawing.Font("Alegreya Sans", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonGender1.Location = New System.Drawing.Point(52, 350)
+        Me.RadioButtonGender1.Location = New System.Drawing.Point(55, 392)
         Me.RadioButtonGender1.Name = "RadioButtonGender1"
         Me.RadioButtonGender1.Size = New System.Drawing.Size(80, 38)
         Me.RadioButtonGender1.TabIndex = 17
@@ -329,7 +333,7 @@ Partial Class FormAddStudents
         '
         Me.LabelUserType.AutoSize = True
         Me.LabelUserType.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelUserType.Location = New System.Drawing.Point(47, 315)
+        Me.LabelUserType.Location = New System.Drawing.Point(50, 357)
         Me.LabelUserType.Name = "LabelUserType"
         Me.LabelUserType.Size = New System.Drawing.Size(77, 28)
         Me.LabelUserType.TabIndex = 14
@@ -338,7 +342,7 @@ Partial Class FormAddStudents
         'TextLastName
         '
         Me.TextLastName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextLastName.Location = New System.Drawing.Point(694, 154)
+        Me.TextLastName.Location = New System.Drawing.Point(378, 206)
         Me.TextLastName.Name = "TextLastName"
         Me.TextLastName.Size = New System.Drawing.Size(260, 27)
         Me.TextLastName.TabIndex = 9
@@ -347,7 +351,7 @@ Partial Class FormAddStudents
         '
         Me.LabelLastName.AutoSize = True
         Me.LabelLastName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelLastName.Location = New System.Drawing.Point(690, 110)
+        Me.LabelLastName.Location = New System.Drawing.Point(378, 171)
         Me.LabelLastName.Name = "LabelLastName"
         Me.LabelLastName.Size = New System.Drawing.Size(104, 28)
         Me.LabelLastName.TabIndex = 8
@@ -357,7 +361,7 @@ Partial Class FormAddStudents
         '
         Me.ButtonAddStudent.AutoSize = True
         Me.ButtonAddStudent.Font = New System.Drawing.Font("Acme", 16.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddStudent.Location = New System.Drawing.Point(437, 517)
+        Me.ButtonAddStudent.Location = New System.Drawing.Point(437, 530)
         Me.ButtonAddStudent.Name = "ButtonAddStudent"
         Me.ButtonAddStudent.Size = New System.Drawing.Size(140, 39)
         Me.ButtonAddStudent.TabIndex = 7
@@ -367,7 +371,7 @@ Partial Class FormAddStudents
         'TextFirstName
         '
         Me.TextFirstName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextFirstName.Location = New System.Drawing.Point(373, 154)
+        Me.TextFirstName.Location = New System.Drawing.Point(55, 206)
         Me.TextFirstName.Name = "TextFirstName"
         Me.TextFirstName.Size = New System.Drawing.Size(260, 27)
         Me.TextFirstName.TabIndex = 6
@@ -376,7 +380,7 @@ Partial Class FormAddStudents
         '
         Me.LabelFirstName.AutoSize = True
         Me.LabelFirstName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFirstName.Location = New System.Drawing.Point(368, 110)
+        Me.LabelFirstName.Location = New System.Drawing.Point(50, 171)
         Me.LabelFirstName.Name = "LabelFirstName"
         Me.LabelFirstName.Size = New System.Drawing.Size(108, 28)
         Me.LabelFirstName.TabIndex = 5
@@ -405,7 +409,7 @@ Partial Class FormAddStudents
         'TextFather
         '
         Me.TextFather.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextFather.Location = New System.Drawing.Point(52, 266)
+        Me.TextFather.Location = New System.Drawing.Point(55, 313)
         Me.TextFather.Name = "TextFather"
         Me.TextFather.Size = New System.Drawing.Size(260, 27)
         Me.TextFather.TabIndex = 2
@@ -414,7 +418,7 @@ Partial Class FormAddStudents
         '
         Me.LabelFather.AutoSize = True
         Me.LabelFather.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFather.Location = New System.Drawing.Point(47, 231)
+        Me.LabelFather.Location = New System.Drawing.Point(50, 279)
         Me.LabelFather.Name = "LabelFather"
         Me.LabelFather.Size = New System.Drawing.Size(139, 28)
         Me.LabelFather.TabIndex = 1
@@ -423,6 +427,27 @@ Partial Class FormAddStudents
         'ErrorProviderStudent
         '
         Me.ErrorProviderStudent.ContainerControl = Me
+        '
+        'ComboBoxCourse
+        '
+        Me.ComboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxCourse.DropDownWidth = 325
+        Me.ComboBoxCourse.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxCourse.FormattingEnabled = True
+        Me.ComboBoxCourse.Location = New System.Drawing.Point(627, 94)
+        Me.ComboBoxCourse.Name = "ComboBoxCourse"
+        Me.ComboBoxCourse.Size = New System.Drawing.Size(335, 31)
+        Me.ComboBoxCourse.TabIndex = 34
+        '
+        'LabelCourse
+        '
+        Me.LabelCourse.AutoSize = True
+        Me.LabelCourse.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourse.Location = New System.Drawing.Point(551, 95)
+        Me.LabelCourse.Name = "LabelCourse"
+        Me.LabelCourse.Size = New System.Drawing.Size(73, 28)
+        Me.LabelCourse.TabIndex = 33
+        Me.LabelCourse.Text = "Course"
         '
         'FormAddStudents
         '
@@ -481,4 +506,6 @@ Partial Class FormAddStudents
     Friend WithEvents TextEmail As TextBox
     Friend WithEvents LabelEmail As Label
     Friend WithEvents ErrorProviderStudent As ErrorProvider
+    Friend WithEvents ComboBoxCourse As ComboBox
+    Friend WithEvents LabelCourse As Label
 End Class

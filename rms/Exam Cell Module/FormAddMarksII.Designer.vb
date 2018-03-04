@@ -161,7 +161,7 @@ Partial Class FormAddMarksII
         Me.ComboBoxRoll.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxRoll.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxRoll.FormattingEnabled = True
-        Me.ComboBoxRoll.Location = New System.Drawing.Point(976, 80)
+        Me.ComboBoxRoll.Location = New System.Drawing.Point(1028, 80)
         Me.ComboBoxRoll.Name = "ComboBoxRoll"
         Me.ComboBoxRoll.Size = New System.Drawing.Size(235, 31)
         Me.ComboBoxRoll.TabIndex = 13
@@ -170,7 +170,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelRoll.AutoSize = True
         Me.LabelRoll.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelRoll.Location = New System.Drawing.Point(755, 81)
+        Me.LabelRoll.Location = New System.Drawing.Point(807, 81)
         Me.LabelRoll.Name = "LabelRoll"
         Me.LabelRoll.Size = New System.Drawing.Size(218, 28)
         Me.LabelRoll.TabIndex = 12
@@ -181,7 +181,7 @@ Partial Class FormAddMarksII
         Me.ComboBoxCollege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCollege.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCollege.FormattingEnabled = True
-        Me.ComboBoxCollege.Location = New System.Drawing.Point(119, 80)
+        Me.ComboBoxCollege.Location = New System.Drawing.Point(100, 80)
         Me.ComboBoxCollege.Name = "ComboBoxCollege"
         Me.ComboBoxCollege.Size = New System.Drawing.Size(377, 31)
         Me.ComboBoxCollege.TabIndex = 11
@@ -221,7 +221,7 @@ Partial Class FormAddMarksII
         '
         Me.ButtonAddMarks.AutoSize = True
         Me.ButtonAddMarks.Font = New System.Drawing.Font("Acme", 16.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddMarks.Location = New System.Drawing.Point(541, 581)
+        Me.ButtonAddMarks.Location = New System.Drawing.Point(558, 581)
         Me.ButtonAddMarks.Name = "ButtonAddMarks"
         Me.ButtonAddMarks.Size = New System.Drawing.Size(177, 39)
         Me.ButtonAddMarks.TabIndex = 7
@@ -235,14 +235,14 @@ Partial Class FormAddMarksII
         Me.PanelAddMarksLabel.Controls.Add(Me.LabelAddMarks)
         Me.PanelAddMarksLabel.Location = New System.Drawing.Point(-1, -1)
         Me.PanelAddMarksLabel.Name = "PanelAddMarksLabel"
-        Me.PanelAddMarksLabel.Size = New System.Drawing.Size(1260, 78)
+        Me.PanelAddMarksLabel.Size = New System.Drawing.Size(1295, 78)
         Me.PanelAddMarksLabel.TabIndex = 4
         '
         'LabelAddMarks
         '
         Me.LabelAddMarks.AutoSize = True
         Me.LabelAddMarks.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAddMarks.Location = New System.Drawing.Point(473, 15)
+        Me.LabelAddMarks.Location = New System.Drawing.Point(490, 15)
         Me.LabelAddMarks.Name = "LabelAddMarks"
         Me.LabelAddMarks.Size = New System.Drawing.Size(312, 46)
         Me.LabelAddMarks.TabIndex = 3
@@ -252,7 +252,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelCollege.AutoSize = True
         Me.LabelCollege.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCollege.Location = New System.Drawing.Point(44, 81)
+        Me.LabelCollege.Location = New System.Drawing.Point(25, 81)
         Me.LabelCollege.Name = "LabelCollege"
         Me.LabelCollege.Size = New System.Drawing.Size(78, 28)
         Me.LabelCollege.TabIndex = 1
@@ -283,10 +283,10 @@ Partial Class FormAddMarksII
         Me.PanelAddMarks.Controls.Add(Me.PanelAddMarksLabel)
         Me.PanelAddMarks.Controls.Add(Me.LabelCollege)
         Me.PanelAddMarks.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelAddMarks.Location = New System.Drawing.Point(53, 21)
+        Me.PanelAddMarks.Location = New System.Drawing.Point(36, 21)
         Me.PanelAddMarks.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelAddMarks.Name = "PanelAddMarks"
-        Me.PanelAddMarks.Size = New System.Drawing.Size(1260, 630)
+        Me.PanelAddMarks.Size = New System.Drawing.Size(1295, 630)
         Me.PanelAddMarks.TabIndex = 1
         '
         'PanelMarks
@@ -369,15 +369,15 @@ Partial Class FormAddMarksII
         Me.PanelMarks.Controls.Add(Me.LabelSubject4)
         Me.PanelMarks.Controls.Add(Me.LabelSubject1)
         Me.PanelMarks.Controls.Add(Me.LabelSubjectTitle)
-        Me.PanelMarks.Location = New System.Drawing.Point(46, 153)
+        Me.PanelMarks.Location = New System.Drawing.Point(30, 153)
         Me.PanelMarks.Name = "PanelMarks"
-        Me.PanelMarks.Size = New System.Drawing.Size(1167, 422)
+        Me.PanelMarks.Size = New System.Drawing.Size(1233, 422)
         Me.PanelMarks.TabIndex = 20
         '
         'TextResult10
         '
         Me.TextResult10.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult10.Location = New System.Drawing.Point(1046, 380)
+        Me.TextResult10.Location = New System.Drawing.Point(1114, 380)
         Me.TextResult10.Name = "TextResult10"
         Me.TextResult10.ReadOnly = True
         Me.TextResult10.Size = New System.Drawing.Size(102, 27)
@@ -386,7 +386,7 @@ Partial Class FormAddMarksII
         'TextResult8
         '
         Me.TextResult8.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult8.Location = New System.Drawing.Point(1046, 302)
+        Me.TextResult8.Location = New System.Drawing.Point(1114, 302)
         Me.TextResult8.Name = "TextResult8"
         Me.TextResult8.ReadOnly = True
         Me.TextResult8.Size = New System.Drawing.Size(102, 27)
@@ -395,7 +395,7 @@ Partial Class FormAddMarksII
         'TextResult9
         '
         Me.TextResult9.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult9.Location = New System.Drawing.Point(1046, 341)
+        Me.TextResult9.Location = New System.Drawing.Point(1114, 341)
         Me.TextResult9.Name = "TextResult9"
         Me.TextResult9.ReadOnly = True
         Me.TextResult9.Size = New System.Drawing.Size(102, 27)
@@ -404,7 +404,7 @@ Partial Class FormAddMarksII
         'TextResult7
         '
         Me.TextResult7.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult7.Location = New System.Drawing.Point(1046, 263)
+        Me.TextResult7.Location = New System.Drawing.Point(1114, 263)
         Me.TextResult7.Name = "TextResult7"
         Me.TextResult7.ReadOnly = True
         Me.TextResult7.Size = New System.Drawing.Size(102, 27)
@@ -413,7 +413,7 @@ Partial Class FormAddMarksII
         'TextResult5
         '
         Me.TextResult5.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult5.Location = New System.Drawing.Point(1046, 185)
+        Me.TextResult5.Location = New System.Drawing.Point(1114, 185)
         Me.TextResult5.Name = "TextResult5"
         Me.TextResult5.ReadOnly = True
         Me.TextResult5.Size = New System.Drawing.Size(102, 27)
@@ -422,7 +422,7 @@ Partial Class FormAddMarksII
         'TextResult6
         '
         Me.TextResult6.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult6.Location = New System.Drawing.Point(1046, 224)
+        Me.TextResult6.Location = New System.Drawing.Point(1114, 224)
         Me.TextResult6.Name = "TextResult6"
         Me.TextResult6.ReadOnly = True
         Me.TextResult6.Size = New System.Drawing.Size(102, 27)
@@ -431,7 +431,7 @@ Partial Class FormAddMarksII
         'TextResult4
         '
         Me.TextResult4.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult4.Location = New System.Drawing.Point(1046, 146)
+        Me.TextResult4.Location = New System.Drawing.Point(1114, 146)
         Me.TextResult4.Name = "TextResult4"
         Me.TextResult4.ReadOnly = True
         Me.TextResult4.Size = New System.Drawing.Size(102, 27)
@@ -440,7 +440,7 @@ Partial Class FormAddMarksII
         'TextResult2
         '
         Me.TextResult2.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult2.Location = New System.Drawing.Point(1046, 68)
+        Me.TextResult2.Location = New System.Drawing.Point(1114, 68)
         Me.TextResult2.Name = "TextResult2"
         Me.TextResult2.ReadOnly = True
         Me.TextResult2.Size = New System.Drawing.Size(102, 27)
@@ -449,7 +449,7 @@ Partial Class FormAddMarksII
         'TextResult3
         '
         Me.TextResult3.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult3.Location = New System.Drawing.Point(1046, 107)
+        Me.TextResult3.Location = New System.Drawing.Point(1114, 107)
         Me.TextResult3.Name = "TextResult3"
         Me.TextResult3.ReadOnly = True
         Me.TextResult3.Size = New System.Drawing.Size(102, 27)
@@ -458,7 +458,7 @@ Partial Class FormAddMarksII
         'TextResult1
         '
         Me.TextResult1.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextResult1.Location = New System.Drawing.Point(1046, 29)
+        Me.TextResult1.Location = New System.Drawing.Point(1114, 29)
         Me.TextResult1.Name = "TextResult1"
         Me.TextResult1.ReadOnly = True
         Me.TextResult1.Size = New System.Drawing.Size(102, 27)
@@ -468,7 +468,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelResult.AutoSize = True
         Me.LabelResult.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelResult.Location = New System.Drawing.Point(1073, 3)
+        Me.LabelResult.Location = New System.Drawing.Point(1141, 3)
         Me.LabelResult.Name = "LabelResult"
         Me.LabelResult.Size = New System.Drawing.Size(49, 20)
         Me.LabelResult.TabIndex = 78
@@ -477,7 +477,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks10
         '
         Me.TextTotalMarks10.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks10.Location = New System.Drawing.Point(922, 380)
+        Me.TextTotalMarks10.Location = New System.Drawing.Point(990, 380)
         Me.TextTotalMarks10.Name = "TextTotalMarks10"
         Me.TextTotalMarks10.ReadOnly = True
         Me.TextTotalMarks10.Size = New System.Drawing.Size(61, 27)
@@ -486,7 +486,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks9
         '
         Me.TextTotalMarks9.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks9.Location = New System.Drawing.Point(922, 341)
+        Me.TextTotalMarks9.Location = New System.Drawing.Point(990, 341)
         Me.TextTotalMarks9.Name = "TextTotalMarks9"
         Me.TextTotalMarks9.ReadOnly = True
         Me.TextTotalMarks9.Size = New System.Drawing.Size(61, 27)
@@ -495,7 +495,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks8
         '
         Me.TextTotalMarks8.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks8.Location = New System.Drawing.Point(922, 302)
+        Me.TextTotalMarks8.Location = New System.Drawing.Point(990, 302)
         Me.TextTotalMarks8.Name = "TextTotalMarks8"
         Me.TextTotalMarks8.ReadOnly = True
         Me.TextTotalMarks8.Size = New System.Drawing.Size(61, 27)
@@ -504,7 +504,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks7
         '
         Me.TextTotalMarks7.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks7.Location = New System.Drawing.Point(922, 263)
+        Me.TextTotalMarks7.Location = New System.Drawing.Point(990, 263)
         Me.TextTotalMarks7.Name = "TextTotalMarks7"
         Me.TextTotalMarks7.ReadOnly = True
         Me.TextTotalMarks7.Size = New System.Drawing.Size(61, 27)
@@ -513,7 +513,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks6
         '
         Me.TextTotalMarks6.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks6.Location = New System.Drawing.Point(922, 224)
+        Me.TextTotalMarks6.Location = New System.Drawing.Point(990, 224)
         Me.TextTotalMarks6.Name = "TextTotalMarks6"
         Me.TextTotalMarks6.ReadOnly = True
         Me.TextTotalMarks6.Size = New System.Drawing.Size(61, 27)
@@ -522,7 +522,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks5
         '
         Me.TextTotalMarks5.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks5.Location = New System.Drawing.Point(922, 185)
+        Me.TextTotalMarks5.Location = New System.Drawing.Point(990, 185)
         Me.TextTotalMarks5.Name = "TextTotalMarks5"
         Me.TextTotalMarks5.ReadOnly = True
         Me.TextTotalMarks5.Size = New System.Drawing.Size(61, 27)
@@ -531,7 +531,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks4
         '
         Me.TextTotalMarks4.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks4.Location = New System.Drawing.Point(922, 146)
+        Me.TextTotalMarks4.Location = New System.Drawing.Point(990, 146)
         Me.TextTotalMarks4.Name = "TextTotalMarks4"
         Me.TextTotalMarks4.ReadOnly = True
         Me.TextTotalMarks4.Size = New System.Drawing.Size(61, 27)
@@ -540,7 +540,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks2
         '
         Me.TextTotalMarks2.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks2.Location = New System.Drawing.Point(922, 68)
+        Me.TextTotalMarks2.Location = New System.Drawing.Point(990, 68)
         Me.TextTotalMarks2.Name = "TextTotalMarks2"
         Me.TextTotalMarks2.ReadOnly = True
         Me.TextTotalMarks2.Size = New System.Drawing.Size(61, 27)
@@ -549,7 +549,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks3
         '
         Me.TextTotalMarks3.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks3.Location = New System.Drawing.Point(922, 107)
+        Me.TextTotalMarks3.Location = New System.Drawing.Point(990, 107)
         Me.TextTotalMarks3.Name = "TextTotalMarks3"
         Me.TextTotalMarks3.ReadOnly = True
         Me.TextTotalMarks3.Size = New System.Drawing.Size(61, 27)
@@ -558,7 +558,7 @@ Partial Class FormAddMarksII
         'TextTotalMarks1
         '
         Me.TextTotalMarks1.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalMarks1.Location = New System.Drawing.Point(922, 29)
+        Me.TextTotalMarks1.Location = New System.Drawing.Point(990, 29)
         Me.TextTotalMarks1.Name = "TextTotalMarks1"
         Me.TextTotalMarks1.ReadOnly = True
         Me.TextTotalMarks1.Size = New System.Drawing.Size(61, 27)
@@ -568,7 +568,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelTotalMarks.AutoSize = True
         Me.LabelTotalMarks.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTotalMarks.Location = New System.Drawing.Point(910, 3)
+        Me.LabelTotalMarks.Location = New System.Drawing.Point(978, 3)
         Me.LabelTotalMarks.Name = "LabelTotalMarks"
         Me.LabelTotalMarks.Size = New System.Drawing.Size(85, 20)
         Me.LabelTotalMarks.TabIndex = 67
@@ -576,70 +576,70 @@ Partial Class FormAddMarksII
         '
         'TextMarksExternal10
         '
-        Me.TextMarksExternal10.Location = New System.Drawing.Point(781, 380)
+        Me.TextMarksExternal10.Location = New System.Drawing.Point(849, 380)
         Me.TextMarksExternal10.Name = "TextMarksExternal10"
         Me.TextMarksExternal10.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal10.TabIndex = 66
         '
         'TextMarksExternal9
         '
-        Me.TextMarksExternal9.Location = New System.Drawing.Point(781, 341)
+        Me.TextMarksExternal9.Location = New System.Drawing.Point(849, 341)
         Me.TextMarksExternal9.Name = "TextMarksExternal9"
         Me.TextMarksExternal9.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal9.TabIndex = 65
         '
         'TextMarksExternal7
         '
-        Me.TextMarksExternal7.Location = New System.Drawing.Point(781, 263)
+        Me.TextMarksExternal7.Location = New System.Drawing.Point(849, 263)
         Me.TextMarksExternal7.Name = "TextMarksExternal7"
         Me.TextMarksExternal7.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal7.TabIndex = 64
         '
         'TextMarksExternal8
         '
-        Me.TextMarksExternal8.Location = New System.Drawing.Point(781, 302)
+        Me.TextMarksExternal8.Location = New System.Drawing.Point(849, 302)
         Me.TextMarksExternal8.Name = "TextMarksExternal8"
         Me.TextMarksExternal8.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal8.TabIndex = 63
         '
         'TextMarksExternal4
         '
-        Me.TextMarksExternal4.Location = New System.Drawing.Point(781, 146)
+        Me.TextMarksExternal4.Location = New System.Drawing.Point(849, 146)
         Me.TextMarksExternal4.Name = "TextMarksExternal4"
         Me.TextMarksExternal4.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal4.TabIndex = 62
         '
         'TextMarksExternal5
         '
-        Me.TextMarksExternal5.Location = New System.Drawing.Point(781, 185)
+        Me.TextMarksExternal5.Location = New System.Drawing.Point(849, 185)
         Me.TextMarksExternal5.Name = "TextMarksExternal5"
         Me.TextMarksExternal5.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal5.TabIndex = 61
         '
         'TextMarksExternal6
         '
-        Me.TextMarksExternal6.Location = New System.Drawing.Point(781, 224)
+        Me.TextMarksExternal6.Location = New System.Drawing.Point(849, 224)
         Me.TextMarksExternal6.Name = "TextMarksExternal6"
         Me.TextMarksExternal6.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal6.TabIndex = 60
         '
         'TextMarksExternal2
         '
-        Me.TextMarksExternal2.Location = New System.Drawing.Point(781, 68)
+        Me.TextMarksExternal2.Location = New System.Drawing.Point(849, 68)
         Me.TextMarksExternal2.Name = "TextMarksExternal2"
         Me.TextMarksExternal2.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal2.TabIndex = 59
         '
         'TextMarksExternal3
         '
-        Me.TextMarksExternal3.Location = New System.Drawing.Point(781, 107)
+        Me.TextMarksExternal3.Location = New System.Drawing.Point(849, 107)
         Me.TextMarksExternal3.Name = "TextMarksExternal3"
         Me.TextMarksExternal3.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal3.TabIndex = 58
         '
         'TextMarksExternal1
         '
-        Me.TextMarksExternal1.Location = New System.Drawing.Point(781, 29)
+        Me.TextMarksExternal1.Location = New System.Drawing.Point(849, 29)
         Me.TextMarksExternal1.Name = "TextMarksExternal1"
         Me.TextMarksExternal1.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal1.TabIndex = 57
@@ -648,7 +648,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelMarksObtainedExternal.AutoSize = True
         Me.LabelMarksObtainedExternal.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMarksObtainedExternal.Location = New System.Drawing.Point(756, 3)
+        Me.LabelMarksObtainedExternal.Location = New System.Drawing.Point(824, 3)
         Me.LabelMarksObtainedExternal.Name = "LabelMarksObtainedExternal"
         Me.LabelMarksObtainedExternal.Size = New System.Drawing.Size(111, 20)
         Me.LabelMarksObtainedExternal.TabIndex = 56
@@ -656,70 +656,70 @@ Partial Class FormAddMarksII
         '
         'TextMarksInternal10
         '
-        Me.TextMarksInternal10.Location = New System.Drawing.Point(451, 380)
+        Me.TextMarksInternal10.Location = New System.Drawing.Point(519, 380)
         Me.TextMarksInternal10.Name = "TextMarksInternal10"
         Me.TextMarksInternal10.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal10.TabIndex = 55
         '
         'TextMarksInternal9
         '
-        Me.TextMarksInternal9.Location = New System.Drawing.Point(451, 341)
+        Me.TextMarksInternal9.Location = New System.Drawing.Point(519, 341)
         Me.TextMarksInternal9.Name = "TextMarksInternal9"
         Me.TextMarksInternal9.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal9.TabIndex = 54
         '
         'TextMarksInternal7
         '
-        Me.TextMarksInternal7.Location = New System.Drawing.Point(451, 263)
+        Me.TextMarksInternal7.Location = New System.Drawing.Point(519, 263)
         Me.TextMarksInternal7.Name = "TextMarksInternal7"
         Me.TextMarksInternal7.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal7.TabIndex = 53
         '
         'TextMarksInternal8
         '
-        Me.TextMarksInternal8.Location = New System.Drawing.Point(451, 302)
+        Me.TextMarksInternal8.Location = New System.Drawing.Point(519, 302)
         Me.TextMarksInternal8.Name = "TextMarksInternal8"
         Me.TextMarksInternal8.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal8.TabIndex = 52
         '
         'TextMarksInternal4
         '
-        Me.TextMarksInternal4.Location = New System.Drawing.Point(451, 146)
+        Me.TextMarksInternal4.Location = New System.Drawing.Point(519, 146)
         Me.TextMarksInternal4.Name = "TextMarksInternal4"
         Me.TextMarksInternal4.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal4.TabIndex = 51
         '
         'TextMarksInternal5
         '
-        Me.TextMarksInternal5.Location = New System.Drawing.Point(451, 185)
+        Me.TextMarksInternal5.Location = New System.Drawing.Point(519, 185)
         Me.TextMarksInternal5.Name = "TextMarksInternal5"
         Me.TextMarksInternal5.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal5.TabIndex = 50
         '
         'TextMarksInternal6
         '
-        Me.TextMarksInternal6.Location = New System.Drawing.Point(451, 224)
+        Me.TextMarksInternal6.Location = New System.Drawing.Point(519, 224)
         Me.TextMarksInternal6.Name = "TextMarksInternal6"
         Me.TextMarksInternal6.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal6.TabIndex = 49
         '
         'TextMarksInternal2
         '
-        Me.TextMarksInternal2.Location = New System.Drawing.Point(451, 68)
+        Me.TextMarksInternal2.Location = New System.Drawing.Point(519, 68)
         Me.TextMarksInternal2.Name = "TextMarksInternal2"
         Me.TextMarksInternal2.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal2.TabIndex = 48
         '
         'TextMarksInternal3
         '
-        Me.TextMarksInternal3.Location = New System.Drawing.Point(451, 107)
+        Me.TextMarksInternal3.Location = New System.Drawing.Point(519, 107)
         Me.TextMarksInternal3.Name = "TextMarksInternal3"
         Me.TextMarksInternal3.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal3.TabIndex = 47
         '
         'TextMarksInternal1
         '
-        Me.TextMarksInternal1.Location = New System.Drawing.Point(451, 29)
+        Me.TextMarksInternal1.Location = New System.Drawing.Point(519, 29)
         Me.TextMarksInternal1.Name = "TextMarksInternal1"
         Me.TextMarksInternal1.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal1.TabIndex = 46
@@ -728,7 +728,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelMarksObtainedInternal.AutoSize = True
         Me.LabelMarksObtainedInternal.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMarksObtainedInternal.Location = New System.Drawing.Point(426, 3)
+        Me.LabelMarksObtainedInternal.Location = New System.Drawing.Point(494, 3)
         Me.LabelMarksObtainedInternal.Name = "LabelMarksObtainedInternal"
         Me.LabelMarksObtainedInternal.Size = New System.Drawing.Size(111, 20)
         Me.LabelMarksObtainedInternal.TabIndex = 45
@@ -737,7 +737,7 @@ Partial Class FormAddMarksII
         'TextExternal10
         '
         Me.TextExternal10.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal10.Location = New System.Drawing.Point(618, 380)
+        Me.TextExternal10.Location = New System.Drawing.Point(686, 380)
         Me.TextExternal10.Name = "TextExternal10"
         Me.TextExternal10.ReadOnly = True
         Me.TextExternal10.Size = New System.Drawing.Size(61, 27)
@@ -746,7 +746,7 @@ Partial Class FormAddMarksII
         'TextExternal9
         '
         Me.TextExternal9.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal9.Location = New System.Drawing.Point(618, 341)
+        Me.TextExternal9.Location = New System.Drawing.Point(686, 341)
         Me.TextExternal9.Name = "TextExternal9"
         Me.TextExternal9.ReadOnly = True
         Me.TextExternal9.Size = New System.Drawing.Size(61, 27)
@@ -755,7 +755,7 @@ Partial Class FormAddMarksII
         'TextExternal8
         '
         Me.TextExternal8.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal8.Location = New System.Drawing.Point(618, 302)
+        Me.TextExternal8.Location = New System.Drawing.Point(686, 302)
         Me.TextExternal8.Name = "TextExternal8"
         Me.TextExternal8.ReadOnly = True
         Me.TextExternal8.Size = New System.Drawing.Size(61, 27)
@@ -764,7 +764,7 @@ Partial Class FormAddMarksII
         'TextExternal7
         '
         Me.TextExternal7.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal7.Location = New System.Drawing.Point(618, 263)
+        Me.TextExternal7.Location = New System.Drawing.Point(686, 263)
         Me.TextExternal7.Name = "TextExternal7"
         Me.TextExternal7.ReadOnly = True
         Me.TextExternal7.Size = New System.Drawing.Size(61, 27)
@@ -773,7 +773,7 @@ Partial Class FormAddMarksII
         'TextExternal6
         '
         Me.TextExternal6.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal6.Location = New System.Drawing.Point(618, 224)
+        Me.TextExternal6.Location = New System.Drawing.Point(686, 224)
         Me.TextExternal6.Name = "TextExternal6"
         Me.TextExternal6.ReadOnly = True
         Me.TextExternal6.Size = New System.Drawing.Size(61, 27)
@@ -782,7 +782,7 @@ Partial Class FormAddMarksII
         'TextExternal5
         '
         Me.TextExternal5.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal5.Location = New System.Drawing.Point(618, 185)
+        Me.TextExternal5.Location = New System.Drawing.Point(686, 185)
         Me.TextExternal5.Name = "TextExternal5"
         Me.TextExternal5.ReadOnly = True
         Me.TextExternal5.Size = New System.Drawing.Size(61, 27)
@@ -791,7 +791,7 @@ Partial Class FormAddMarksII
         'TextExternal4
         '
         Me.TextExternal4.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal4.Location = New System.Drawing.Point(618, 146)
+        Me.TextExternal4.Location = New System.Drawing.Point(686, 146)
         Me.TextExternal4.Name = "TextExternal4"
         Me.TextExternal4.ReadOnly = True
         Me.TextExternal4.Size = New System.Drawing.Size(61, 27)
@@ -800,7 +800,7 @@ Partial Class FormAddMarksII
         'TextExternal2
         '
         Me.TextExternal2.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal2.Location = New System.Drawing.Point(618, 68)
+        Me.TextExternal2.Location = New System.Drawing.Point(686, 68)
         Me.TextExternal2.Name = "TextExternal2"
         Me.TextExternal2.ReadOnly = True
         Me.TextExternal2.Size = New System.Drawing.Size(61, 27)
@@ -809,7 +809,7 @@ Partial Class FormAddMarksII
         'TextExternal3
         '
         Me.TextExternal3.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal3.Location = New System.Drawing.Point(618, 107)
+        Me.TextExternal3.Location = New System.Drawing.Point(686, 107)
         Me.TextExternal3.Name = "TextExternal3"
         Me.TextExternal3.ReadOnly = True
         Me.TextExternal3.Size = New System.Drawing.Size(61, 27)
@@ -818,7 +818,7 @@ Partial Class FormAddMarksII
         'TextExternal1
         '
         Me.TextExternal1.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternal1.Location = New System.Drawing.Point(618, 29)
+        Me.TextExternal1.Location = New System.Drawing.Point(686, 29)
         Me.TextExternal1.Name = "TextExternal1"
         Me.TextExternal1.ReadOnly = True
         Me.TextExternal1.Size = New System.Drawing.Size(61, 27)
@@ -827,7 +827,7 @@ Partial Class FormAddMarksII
         'TextInternal10
         '
         Me.TextInternal10.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal10.Location = New System.Drawing.Point(288, 380)
+        Me.TextInternal10.Location = New System.Drawing.Point(356, 380)
         Me.TextInternal10.Name = "TextInternal10"
         Me.TextInternal10.ReadOnly = True
         Me.TextInternal10.Size = New System.Drawing.Size(61, 27)
@@ -836,7 +836,7 @@ Partial Class FormAddMarksII
         'TextInternal9
         '
         Me.TextInternal9.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal9.Location = New System.Drawing.Point(288, 341)
+        Me.TextInternal9.Location = New System.Drawing.Point(356, 341)
         Me.TextInternal9.Name = "TextInternal9"
         Me.TextInternal9.ReadOnly = True
         Me.TextInternal9.Size = New System.Drawing.Size(61, 27)
@@ -845,7 +845,7 @@ Partial Class FormAddMarksII
         'TextInternal8
         '
         Me.TextInternal8.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal8.Location = New System.Drawing.Point(288, 302)
+        Me.TextInternal8.Location = New System.Drawing.Point(356, 302)
         Me.TextInternal8.Name = "TextInternal8"
         Me.TextInternal8.ReadOnly = True
         Me.TextInternal8.Size = New System.Drawing.Size(61, 27)
@@ -854,7 +854,7 @@ Partial Class FormAddMarksII
         'TextInternal7
         '
         Me.TextInternal7.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal7.Location = New System.Drawing.Point(288, 263)
+        Me.TextInternal7.Location = New System.Drawing.Point(356, 263)
         Me.TextInternal7.Name = "TextInternal7"
         Me.TextInternal7.ReadOnly = True
         Me.TextInternal7.Size = New System.Drawing.Size(61, 27)
@@ -863,7 +863,7 @@ Partial Class FormAddMarksII
         'TextInternal6
         '
         Me.TextInternal6.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal6.Location = New System.Drawing.Point(288, 224)
+        Me.TextInternal6.Location = New System.Drawing.Point(356, 224)
         Me.TextInternal6.Name = "TextInternal6"
         Me.TextInternal6.ReadOnly = True
         Me.TextInternal6.Size = New System.Drawing.Size(61, 27)
@@ -872,7 +872,7 @@ Partial Class FormAddMarksII
         'TextInternal5
         '
         Me.TextInternal5.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal5.Location = New System.Drawing.Point(288, 185)
+        Me.TextInternal5.Location = New System.Drawing.Point(356, 185)
         Me.TextInternal5.Name = "TextInternal5"
         Me.TextInternal5.ReadOnly = True
         Me.TextInternal5.Size = New System.Drawing.Size(61, 27)
@@ -881,7 +881,7 @@ Partial Class FormAddMarksII
         'TextInternal4
         '
         Me.TextInternal4.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal4.Location = New System.Drawing.Point(288, 146)
+        Me.TextInternal4.Location = New System.Drawing.Point(356, 146)
         Me.TextInternal4.Name = "TextInternal4"
         Me.TextInternal4.ReadOnly = True
         Me.TextInternal4.Size = New System.Drawing.Size(61, 27)
@@ -890,7 +890,7 @@ Partial Class FormAddMarksII
         'TextInternal2
         '
         Me.TextInternal2.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal2.Location = New System.Drawing.Point(288, 68)
+        Me.TextInternal2.Location = New System.Drawing.Point(356, 68)
         Me.TextInternal2.Name = "TextInternal2"
         Me.TextInternal2.ReadOnly = True
         Me.TextInternal2.Size = New System.Drawing.Size(61, 27)
@@ -899,7 +899,7 @@ Partial Class FormAddMarksII
         'TextInternal3
         '
         Me.TextInternal3.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal3.Location = New System.Drawing.Point(288, 107)
+        Me.TextInternal3.Location = New System.Drawing.Point(356, 107)
         Me.TextInternal3.Name = "TextInternal3"
         Me.TextInternal3.ReadOnly = True
         Me.TextInternal3.Size = New System.Drawing.Size(61, 27)
@@ -908,7 +908,7 @@ Partial Class FormAddMarksII
         'TextInternal1
         '
         Me.TextInternal1.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextInternal1.Location = New System.Drawing.Point(288, 29)
+        Me.TextInternal1.Location = New System.Drawing.Point(356, 29)
         Me.TextInternal1.Name = "TextInternal1"
         Me.TextInternal1.ReadOnly = True
         Me.TextInternal1.Size = New System.Drawing.Size(61, 27)
@@ -918,7 +918,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelMaximumExternalMarks.AutoSize = True
         Me.LabelMaximumExternalMarks.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMaximumExternalMarks.Location = New System.Drawing.Point(561, 3)
+        Me.LabelMaximumExternalMarks.Location = New System.Drawing.Point(629, 3)
         Me.LabelMaximumExternalMarks.Name = "LabelMaximumExternalMarks"
         Me.LabelMaximumExternalMarks.Size = New System.Drawing.Size(174, 20)
         Me.LabelMaximumExternalMarks.TabIndex = 25
@@ -928,7 +928,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelMaximumInternalMarks.AutoSize = True
         Me.LabelMaximumInternalMarks.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMaximumInternalMarks.Location = New System.Drawing.Point(233, 3)
+        Me.LabelMaximumInternalMarks.Location = New System.Drawing.Point(301, 3)
         Me.LabelMaximumInternalMarks.Name = "LabelMaximumInternalMarks"
         Me.LabelMaximumInternalMarks.Size = New System.Drawing.Size(171, 20)
         Me.LabelMaximumInternalMarks.TabIndex = 24
@@ -938,7 +938,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject10.AutoSize = True
         Me.LabelSubject10.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject10.Location = New System.Drawing.Point(20, 384)
+        Me.LabelSubject10.Location = New System.Drawing.Point(3, 384)
         Me.LabelSubject10.Name = "LabelSubject10"
         Me.LabelSubject10.Size = New System.Drawing.Size(80, 19)
         Me.LabelSubject10.TabIndex = 23
@@ -948,7 +948,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject7.AutoSize = True
         Me.LabelSubject7.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject7.Location = New System.Drawing.Point(25, 267)
+        Me.LabelSubject7.Location = New System.Drawing.Point(3, 267)
         Me.LabelSubject7.Name = "LabelSubject7"
         Me.LabelSubject7.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject7.TabIndex = 22
@@ -958,7 +958,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject8.AutoSize = True
         Me.LabelSubject8.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject8.Location = New System.Drawing.Point(25, 306)
+        Me.LabelSubject8.Location = New System.Drawing.Point(3, 306)
         Me.LabelSubject8.Name = "LabelSubject8"
         Me.LabelSubject8.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject8.TabIndex = 21
@@ -968,7 +968,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject9.AutoSize = True
         Me.LabelSubject9.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject9.Location = New System.Drawing.Point(25, 345)
+        Me.LabelSubject9.Location = New System.Drawing.Point(3, 345)
         Me.LabelSubject9.Name = "LabelSubject9"
         Me.LabelSubject9.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject9.TabIndex = 20
@@ -978,7 +978,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject6.AutoSize = True
         Me.LabelSubject6.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject6.Location = New System.Drawing.Point(25, 228)
+        Me.LabelSubject6.Location = New System.Drawing.Point(3, 228)
         Me.LabelSubject6.Name = "LabelSubject6"
         Me.LabelSubject6.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject6.TabIndex = 19
@@ -988,7 +988,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject5.AutoSize = True
         Me.LabelSubject5.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject5.Location = New System.Drawing.Point(25, 189)
+        Me.LabelSubject5.Location = New System.Drawing.Point(3, 189)
         Me.LabelSubject5.Name = "LabelSubject5"
         Me.LabelSubject5.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject5.TabIndex = 18
@@ -998,7 +998,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject2.AutoSize = True
         Me.LabelSubject2.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject2.Location = New System.Drawing.Point(25, 72)
+        Me.LabelSubject2.Location = New System.Drawing.Point(3, 72)
         Me.LabelSubject2.Name = "LabelSubject2"
         Me.LabelSubject2.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject2.TabIndex = 17
@@ -1008,7 +1008,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject3.AutoSize = True
         Me.LabelSubject3.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject3.Location = New System.Drawing.Point(25, 111)
+        Me.LabelSubject3.Location = New System.Drawing.Point(3, 111)
         Me.LabelSubject3.Name = "LabelSubject3"
         Me.LabelSubject3.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject3.TabIndex = 16
@@ -1018,7 +1018,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject4.AutoSize = True
         Me.LabelSubject4.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject4.Location = New System.Drawing.Point(25, 150)
+        Me.LabelSubject4.Location = New System.Drawing.Point(3, 150)
         Me.LabelSubject4.Name = "LabelSubject4"
         Me.LabelSubject4.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject4.TabIndex = 15
@@ -1028,7 +1028,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubject1.AutoSize = True
         Me.LabelSubject1.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject1.Location = New System.Drawing.Point(25, 33)
+        Me.LabelSubject1.Location = New System.Drawing.Point(3, 33)
         Me.LabelSubject1.Name = "LabelSubject1"
         Me.LabelSubject1.Size = New System.Drawing.Size(71, 19)
         Me.LabelSubject1.TabIndex = 14
@@ -1038,7 +1038,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSubjectTitle.AutoSize = True
         Me.LabelSubjectTitle.Font = New System.Drawing.Font("Acme", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubjectTitle.Location = New System.Drawing.Point(17, 3)
+        Me.LabelSubjectTitle.Location = New System.Drawing.Point(3, 3)
         Me.LabelSubjectTitle.Name = "LabelSubjectTitle"
         Me.LabelSubjectTitle.Size = New System.Drawing.Size(87, 20)
         Me.LabelSubjectTitle.TabIndex = 13
@@ -1047,7 +1047,7 @@ Partial Class FormAddMarksII
         'TextSemester
         '
         Me.TextSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextSemester.Location = New System.Drawing.Point(1125, 123)
+        Me.TextSemester.Location = New System.Drawing.Point(1177, 123)
         Me.TextSemester.Name = "TextSemester"
         Me.TextSemester.ReadOnly = True
         Me.TextSemester.Size = New System.Drawing.Size(86, 27)
@@ -1057,7 +1057,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSemester.AutoSize = True
         Me.LabelSemester.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSemester.Location = New System.Drawing.Point(1026, 122)
+        Me.LabelSemester.Location = New System.Drawing.Point(1078, 122)
         Me.LabelSemester.Name = "LabelSemester"
         Me.LabelSemester.Size = New System.Drawing.Size(96, 28)
         Me.LabelSemester.TabIndex = 18
@@ -1066,7 +1066,7 @@ Partial Class FormAddMarksII
         'TextSession
         '
         Me.TextSession.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextSession.Location = New System.Drawing.Point(838, 123)
+        Me.TextSession.Location = New System.Drawing.Point(889, 123)
         Me.TextSession.Name = "TextSession"
         Me.TextSession.ReadOnly = True
         Me.TextSession.Size = New System.Drawing.Size(133, 27)
@@ -1076,7 +1076,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelSession.AutoSize = True
         Me.LabelSession.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSession.Location = New System.Drawing.Point(755, 122)
+        Me.LabelSession.Location = New System.Drawing.Point(807, 122)
         Me.LabelSession.Name = "LabelSession"
         Me.LabelSession.Size = New System.Drawing.Size(79, 28)
         Me.LabelSession.TabIndex = 16
@@ -1085,7 +1085,7 @@ Partial Class FormAddMarksII
         'TextName
         '
         Me.TextName.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextName.Location = New System.Drawing.Point(243, 123)
+        Me.TextName.Location = New System.Drawing.Point(224, 123)
         Me.TextName.Name = "TextName"
         Me.TextName.ReadOnly = True
         Me.TextName.Size = New System.Drawing.Size(253, 27)
@@ -1095,7 +1095,7 @@ Partial Class FormAddMarksII
         '
         Me.LabelName.AutoSize = True
         Me.LabelName.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelName.Location = New System.Drawing.Point(44, 122)
+        Me.LabelName.Location = New System.Drawing.Point(25, 122)
         Me.LabelName.Name = "LabelName"
         Me.LabelName.Size = New System.Drawing.Size(193, 28)
         Me.LabelName.TabIndex = 14

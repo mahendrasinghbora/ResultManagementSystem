@@ -30,7 +30,8 @@ Public Class FormAddMarksII
             Con.Open()
             Dim Query As String
             Query = $"SELECT COUNT(SUBJECT_NAME) FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}';"
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -38,7 +39,8 @@ coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURS
             Reader.Dispose()
             If TotalSubjects = 1 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}';"
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
                 Reader.Read()
@@ -109,7 +111,8 @@ coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURS
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 2 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}';"
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
                 Reader.Read()
@@ -117,6 +120,489 @@ coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURS
                 Reader.Read()
                 LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
                 Reader.Dispose()
+                LabelSubject3.Visible = False
+                LabelSubject4.Visible = False
+                LabelSubject5.Visible = False
+                LabelSubject6.Visible = False
+                LabelSubject7.Visible = False
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal3.Visible = False
+                TextInternal4.Visible = False
+                TextInternal5.Visible = False
+                TextInternal6.Visible = False
+                TextInternal7.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal3.Visible = False
+                TextExternal4.Visible = False
+                TextExternal5.Visible = False
+                TextExternal6.Visible = False
+                TextExternal7.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal3.Visible = False
+                TextMarksInternal4.Visible = False
+                TextMarksInternal5.Visible = False
+                TextMarksInternal6.Visible = False
+                TextMarksInternal7.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal3.Visible = False
+                TextMarksExternal4.Visible = False
+                TextMarksExternal5.Visible = False
+                TextMarksExternal6.Visible = False
+                TextMarksExternal7.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks3.Visible = False
+                TextTotalMarks4.Visible = False
+                TextTotalMarks5.Visible = False
+                TextTotalMarks6.Visible = False
+                TextTotalMarks7.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult3.Visible = False
+                TextResult4.Visible = False
+                TextResult5.Visible = False
+                TextResult6.Visible = False
+                TextResult7.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 3 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject4.Visible = False
+                LabelSubject5.Visible = False
+                LabelSubject6.Visible = False
+                LabelSubject7.Visible = False
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal4.Visible = False
+                TextInternal5.Visible = False
+                TextInternal6.Visible = False
+                TextInternal7.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal4.Visible = False
+                TextExternal5.Visible = False
+                TextExternal6.Visible = False
+                TextExternal7.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal4.Visible = False
+                TextMarksInternal5.Visible = False
+                TextMarksInternal6.Visible = False
+                TextMarksInternal7.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal4.Visible = False
+                TextMarksExternal5.Visible = False
+                TextMarksExternal6.Visible = False
+                TextMarksExternal7.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks4.Visible = False
+                TextTotalMarks5.Visible = False
+                TextTotalMarks6.Visible = False
+                TextTotalMarks7.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult4.Visible = False
+                TextResult5.Visible = False
+                TextResult6.Visible = False
+                TextResult7.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 4 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject5.Visible = False
+                LabelSubject6.Visible = False
+                LabelSubject7.Visible = False
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal5.Visible = False
+                TextInternal6.Visible = False
+                TextInternal7.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal5.Visible = False
+                TextExternal6.Visible = False
+                TextExternal7.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal5.Visible = False
+                TextMarksInternal6.Visible = False
+                TextMarksInternal7.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal5.Visible = False
+                TextMarksExternal6.Visible = False
+                TextMarksExternal7.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks5.Visible = False
+                TextTotalMarks6.Visible = False
+                TextTotalMarks7.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult5.Visible = False
+                TextResult6.Visible = False
+                TextResult7.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 5 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject5.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject6.Visible = False
+                LabelSubject7.Visible = False
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal6.Visible = False
+                TextInternal7.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal6.Visible = False
+                TextExternal7.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal6.Visible = False
+                TextMarksInternal7.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal6.Visible = False
+                TextMarksExternal7.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks6.Visible = False
+                TextTotalMarks7.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult6.Visible = False
+                TextResult7.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 6 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject5.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject6.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject7.Visible = False
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal7.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal7.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal7.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal7.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks7.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult7.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 7 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject5.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject6.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject7.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 8 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject5.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject6.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject7.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject8.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 9 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject5.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject6.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject7.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject8.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject9.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+                LabelSubject10.Visible = False
+                TextInternal10.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult10.Visible = False
+            ElseIf TotalSubjects = 10 Then
+                Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
+                Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                LabelSubject1.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject2.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject3.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject4.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject5.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject6.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject7.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject8.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject9.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Read()
+                LabelSubject10.Text = Reader.GetString("SUBJECT_NAME")
+                Reader.Dispose()
+            Else
+                LabelSubject1.Visible = False
+                LabelSubject2.Visible = False
+                LabelSubject3.Visible = False
+                LabelSubject4.Visible = False
+                LabelSubject5.Visible = False
+                LabelSubject6.Visible = False
+                LabelSubject7.Visible = False
+                LabelSubject8.Visible = False
+                LabelSubject9.Visible = False
+                LabelSubject10.Visible = False
+                TextInternal1.Visible = False
+                TextInternal2.Visible = False
+                TextInternal3.Visible = False
+                TextInternal4.Visible = False
+                TextInternal5.Visible = False
+                TextInternal6.Visible = False
+                TextInternal7.Visible = False
+                TextInternal8.Visible = False
+                TextInternal9.Visible = False
+                TextInternal10.Visible = False
+                TextExternal1.Visible = False
+                TextExternal2.Visible = False
+                TextExternal3.Visible = False
+                TextExternal4.Visible = False
+                TextExternal5.Visible = False
+                TextExternal6.Visible = False
+                TextExternal7.Visible = False
+                TextExternal8.Visible = False
+                TextExternal9.Visible = False
+                TextExternal10.Visible = False
+                TextMarksInternal1.Visible = False
+                TextMarksInternal2.Visible = False
+                TextMarksInternal3.Visible = False
+                TextMarksInternal4.Visible = False
+                TextMarksInternal5.Visible = False
+                TextMarksInternal6.Visible = False
+                TextMarksInternal7.Visible = False
+                TextMarksInternal8.Visible = False
+                TextMarksInternal9.Visible = False
+                TextMarksInternal10.Visible = False
+                TextMarksExternal1.Visible = False
+                TextMarksExternal2.Visible = False
+                TextMarksExternal3.Visible = False
+                TextMarksExternal4.Visible = False
+                TextMarksExternal5.Visible = False
+                TextMarksExternal6.Visible = False
+                TextMarksExternal7.Visible = False
+                TextMarksExternal8.Visible = False
+                TextMarksExternal9.Visible = False
+                TextMarksExternal10.Visible = False
+                TextTotalMarks1.Visible = False
+                TextTotalMarks2.Visible = False
+                TextTotalMarks3.Visible = False
+                TextTotalMarks4.Visible = False
+                TextTotalMarks5.Visible = False
+                TextTotalMarks6.Visible = False
+                TextTotalMarks7.Visible = False
+                TextTotalMarks8.Visible = False
+                TextTotalMarks9.Visible = False
+                TextTotalMarks10.Visible = False
+                TextResult1.Visible = False
+                TextResult2.Visible = False
+                TextResult3.Visible = False
+                TextResult4.Visible = False
+                TextResult5.Visible = False
+                TextResult6.Visible = False
+                TextResult7.Visible = False
+                TextResult8.Visible = False
+                TextResult9.Visible = False
+                TextResult10.Visible = False
             End If
             Con.Close()
         Catch ex As Exception
@@ -181,7 +667,7 @@ coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURS
             Con.Open()
             Dim Query As String
             Query = $"SELECT COLLEGE_NAME FROM collegewise_courses, colleges WHERE collegewise_courses.COURSE_ID='{CourseID}' AND
-collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID;;"
+collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND colleges.UNIVERSITY_ID='{UniversityID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()
@@ -214,6 +700,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID;;"
     End Sub
 
     Private Sub ComboBoxCollege_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCollege.SelectedIndexChanged
+        ComboBoxRoll.Items.Clear()   ' To clear the combobox
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
         }
@@ -227,7 +714,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID;;"
             Reader.Read()
             Dim CollegeID As String = Reader.GetString(column:="COLLEGE_ID")
             Reader.Dispose()
-            Query = $"SELECT * FROM students WHERE COLLEGE_ID='{CollegeID}';"
+            Query = $"SELECT * FROM students WHERE COLLEGE_ID='{CollegeID}' AND COURSE_ID='{CourseID}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()

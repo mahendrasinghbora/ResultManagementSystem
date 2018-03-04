@@ -39,7 +39,7 @@ Partial Class FormAddCourses
         Me.TextCourse = New System.Windows.Forms.TextBox()
         Me.LabelCourseName = New System.Windows.Forms.Label()
         Me.ErrorProviderCourse = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.ButtonAddCollegewiseCourses = New System.Windows.Forms.Button()
+        Me.ButtonAddUniversitywiseCourses = New System.Windows.Forms.Button()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddCourses.SuspendLayout()
@@ -187,23 +187,23 @@ Partial Class FormAddCourses
         '
         Me.ErrorProviderCourse.ContainerControl = Me
         '
-        'ButtonAddCollegewiseCourses
+        'ButtonAddUniversitywiseCourses
         '
-        Me.ButtonAddCollegewiseCourses.AutoSize = True
-        Me.ButtonAddCollegewiseCourses.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddCollegewiseCourses.Location = New System.Drawing.Point(707, 176)
-        Me.ButtonAddCollegewiseCourses.Name = "ButtonAddCollegewiseCourses"
-        Me.ButtonAddCollegewiseCourses.Size = New System.Drawing.Size(218, 36)
-        Me.ButtonAddCollegewiseCourses.TabIndex = 8
-        Me.ButtonAddCollegewiseCourses.Text = "Add Courses to Colleges"
-        Me.ButtonAddCollegewiseCourses.UseVisualStyleBackColor = True
+        Me.ButtonAddUniversitywiseCourses.AutoSize = True
+        Me.ButtonAddUniversitywiseCourses.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddUniversitywiseCourses.Location = New System.Drawing.Point(678, 176)
+        Me.ButtonAddUniversitywiseCourses.Name = "ButtonAddUniversitywiseCourses"
+        Me.ButtonAddUniversitywiseCourses.Size = New System.Drawing.Size(247, 36)
+        Me.ButtonAddUniversitywiseCourses.TabIndex = 8
+        Me.ButtonAddUniversitywiseCourses.Text = "Add Courses to Universities"
+        Me.ButtonAddUniversitywiseCourses.UseVisualStyleBackColor = True
         '
         'FormAddCourses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.ButtonAddCollegewiseCourses)
+        Me.Controls.Add(Me.ButtonAddUniversitywiseCourses)
         Me.Controls.Add(Me.PanelAddCourses)
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddCourses"
@@ -237,5 +237,5 @@ Partial Class FormAddCourses
     Friend WithEvents TextCourse As TextBox
     Friend WithEvents LabelCourseName As Label
     Friend WithEvents ErrorProviderCourse As ErrorProvider
-    Friend WithEvents ButtonAddCollegewiseCourses As Button
+    Friend WithEvents ButtonAddUniversitywiseCourses As Button
 End Class

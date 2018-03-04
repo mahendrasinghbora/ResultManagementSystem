@@ -77,10 +77,10 @@ Public Class FormAddCourses
         EditProfile(CallingForm:=Me)
     End Sub
 
-    Private Sub ButtonAddCollegewiseCourses_Click(sender As Object, e As EventArgs) Handles ButtonAddCollegewiseCourses.Click
-        Dim NewFormAddCollegewiseCourses As FormAddCollegewiseCourses
-        NewFormAddCollegewiseCourses = New FormAddCollegewiseCourses()
-        NewFormAddCollegewiseCourses.Show()
+    Private Sub ButtonAddCollegewiseCourses_Click(sender As Object, e As EventArgs) Handles ButtonAddUniversitywiseCourses.Click
+        Dim NewFormAddUniversitywiseCourses As FormAddUniversitywiseCourses
+        NewFormAddUniversitywiseCourses = New FormAddUniversitywiseCourses()
+        NewFormAddUniversitywiseCourses.Show()
         Dispose()
     End Sub
 End Class

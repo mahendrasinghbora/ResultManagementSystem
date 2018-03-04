@@ -79,6 +79,12 @@
     <Compile Include="Admin Module\Courses and Subjects\FormAddCollegewiseCourses.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin Module\Courses and Subjects\FormAddUniversitywiseCourses.Designer.vb">
+      <DependentUpon>FormAddUniversitywiseCourses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Module\Courses and Subjects\FormAddUniversitywiseCourses.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Admin Module\Universities and Colleges\FormAddColleges.Designer.vb">
       <DependentUpon>FormAddColleges.vb</DependentUpon>
     </Compile>
@@ -244,6 +250,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Admin Module\Courses and Subjects\FormAddCollegewiseCourses.resx">
       <DependentUpon>FormAddCollegewiseCourses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Module\Courses and Subjects\FormAddUniversitywiseCourses.resx">
+      <DependentUpon>FormAddUniversitywiseCourses.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\Universities and Colleges\FormAddColleges.resx">
       <DependentUpon>FormAddColleges.vb</DependentUpon>

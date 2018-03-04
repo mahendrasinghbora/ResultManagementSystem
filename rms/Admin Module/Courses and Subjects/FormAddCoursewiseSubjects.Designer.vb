@@ -33,6 +33,8 @@ Partial Class FormAddCoursewiseSubjects
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelCoursewiseSubjects = New System.Windows.Forms.Panel()
+        Me.ComboBoxUniversity = New System.Windows.Forms.ComboBox()
+        Me.LabelUniversity = New System.Windows.Forms.Label()
         Me.ComboBoxSemester = New System.Windows.Forms.ComboBox()
         Me.LabelSemester = New System.Windows.Forms.Label()
         Me.ComboBoxSession = New System.Windows.Forms.ComboBox()
@@ -44,6 +46,7 @@ Partial Class FormAddCoursewiseSubjects
         Me.PanelAddCoursewiseSubjectsLabel = New System.Windows.Forms.Panel()
         Me.LabelCoursewiseSubjects = New System.Windows.Forms.Label()
         Me.LabelCourse = New System.Windows.Forms.Label()
+        Me.ButtonAddUniversitywiseCourses = New System.Windows.Forms.Button()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddCoursewiseSubjects.SuspendLayout()
@@ -126,6 +129,8 @@ Partial Class FormAddCoursewiseSubjects
         '
         Me.PanelCoursewiseSubjects.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PanelCoursewiseSubjects.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelCoursewiseSubjects.Controls.Add(Me.ComboBoxUniversity)
+        Me.PanelCoursewiseSubjects.Controls.Add(Me.LabelUniversity)
         Me.PanelCoursewiseSubjects.Controls.Add(Me.ComboBoxSemester)
         Me.PanelCoursewiseSubjects.Controls.Add(Me.LabelSemester)
         Me.PanelCoursewiseSubjects.Controls.Add(Me.ComboBoxSession)
@@ -137,11 +142,31 @@ Partial Class FormAddCoursewiseSubjects
         Me.PanelCoursewiseSubjects.Controls.Add(Me.PanelAddCoursewiseSubjectsLabel)
         Me.PanelCoursewiseSubjects.Controls.Add(Me.LabelCourse)
         Me.PanelCoursewiseSubjects.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelCoursewiseSubjects.Location = New System.Drawing.Point(425, 200)
+        Me.PanelCoursewiseSubjects.Location = New System.Drawing.Point(425, 136)
         Me.PanelCoursewiseSubjects.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelCoursewiseSubjects.Name = "PanelCoursewiseSubjects"
-        Me.PanelCoursewiseSubjects.Size = New System.Drawing.Size(500, 445)
+        Me.PanelCoursewiseSubjects.Size = New System.Drawing.Size(500, 517)
         Me.PanelCoursewiseSubjects.TabIndex = 7
+        '
+        'ComboBoxUniversity
+        '
+        Me.ComboBoxUniversity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxUniversity.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxUniversity.FormattingEnabled = True
+        Me.ComboBoxUniversity.Location = New System.Drawing.Point(42, 222)
+        Me.ComboBoxUniversity.Name = "ComboBoxUniversity"
+        Me.ComboBoxUniversity.Size = New System.Drawing.Size(414, 31)
+        Me.ComboBoxUniversity.TabIndex = 16
+        '
+        'LabelUniversity
+        '
+        Me.LabelUniversity.AutoSize = True
+        Me.LabelUniversity.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUniversity.Location = New System.Drawing.Point(37, 186)
+        Me.LabelUniversity.Name = "LabelUniversity"
+        Me.LabelUniversity.Size = New System.Drawing.Size(103, 28)
+        Me.LabelUniversity.TabIndex = 15
+        Me.LabelUniversity.Text = "University"
         '
         'ComboBoxSemester
         '
@@ -188,7 +213,7 @@ Partial Class FormAddCoursewiseSubjects
         Me.ComboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCourse.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCourse.FormattingEnabled = True
-        Me.ComboBoxCourse.Location = New System.Drawing.Point(42, 222)
+        Me.ComboBoxCourse.Location = New System.Drawing.Point(42, 298)
         Me.ComboBoxCourse.Name = "ComboBoxCourse"
         Me.ComboBoxCourse.Size = New System.Drawing.Size(414, 31)
         Me.ComboBoxCourse.TabIndex = 10
@@ -198,7 +223,7 @@ Partial Class FormAddCoursewiseSubjects
         Me.ComboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSubject.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSubject.FormattingEnabled = True
-        Me.ComboBoxSubject.Location = New System.Drawing.Point(42, 310)
+        Me.ComboBoxSubject.Location = New System.Drawing.Point(42, 386)
         Me.ComboBoxSubject.Name = "ComboBoxSubject"
         Me.ComboBoxSubject.Size = New System.Drawing.Size(414, 31)
         Me.ComboBoxSubject.TabIndex = 9
@@ -207,7 +232,7 @@ Partial Class FormAddCoursewiseSubjects
         '
         Me.LabelSubject.AutoSize = True
         Me.LabelSubject.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject.Location = New System.Drawing.Point(37, 277)
+        Me.LabelSubject.Location = New System.Drawing.Point(37, 353)
         Me.LabelSubject.Name = "LabelSubject"
         Me.LabelSubject.Size = New System.Drawing.Size(76, 28)
         Me.LabelSubject.TabIndex = 8
@@ -217,7 +242,7 @@ Partial Class FormAddCoursewiseSubjects
         '
         Me.ButtonAddCoursewiseSubject.AutoSize = True
         Me.ButtonAddCoursewiseSubject.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddCoursewiseSubject.Location = New System.Drawing.Point(123, 380)
+        Me.ButtonAddCoursewiseSubject.Location = New System.Drawing.Point(123, 456)
         Me.ButtonAddCoursewiseSubject.Name = "ButtonAddCoursewiseSubject"
         Me.ButtonAddCoursewiseSubject.Size = New System.Drawing.Size(253, 36)
         Me.ButtonAddCoursewiseSubject.TabIndex = 7
@@ -248,17 +273,29 @@ Partial Class FormAddCoursewiseSubjects
         '
         Me.LabelCourse.AutoSize = True
         Me.LabelCourse.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCourse.Location = New System.Drawing.Point(37, 186)
+        Me.LabelCourse.Location = New System.Drawing.Point(37, 262)
         Me.LabelCourse.Name = "LabelCourse"
         Me.LabelCourse.Size = New System.Drawing.Size(73, 28)
         Me.LabelCourse.TabIndex = 1
         Me.LabelCourse.Text = "Course"
+        '
+        'ButtonAddUniversitywiseCourses
+        '
+        Me.ButtonAddUniversitywiseCourses.AutoSize = True
+        Me.ButtonAddUniversitywiseCourses.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonAddUniversitywiseCourses.Location = New System.Drawing.Point(678, 94)
+        Me.ButtonAddUniversitywiseCourses.Name = "ButtonAddUniversitywiseCourses"
+        Me.ButtonAddUniversitywiseCourses.Size = New System.Drawing.Size(247, 36)
+        Me.ButtonAddUniversitywiseCourses.TabIndex = 15
+        Me.ButtonAddUniversitywiseCourses.Text = "Add Courses to Universities"
+        Me.ButtonAddUniversitywiseCourses.UseVisualStyleBackColor = True
         '
         'FormAddCoursewiseSubjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.ButtonAddUniversitywiseCourses)
         Me.Controls.Add(Me.PanelCoursewiseSubjects)
         Me.Controls.Add(Me.PanelNavigation)
         Me.Name = "FormAddCoursewiseSubjects"
@@ -272,6 +309,7 @@ Partial Class FormAddCoursewiseSubjects
         Me.PanelAddCoursewiseSubjectsLabel.ResumeLayout(False)
         Me.PanelAddCoursewiseSubjectsLabel.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -295,4 +333,7 @@ Partial Class FormAddCoursewiseSubjects
     Friend WithEvents LabelSession As Label
     Friend WithEvents ComboBoxSemester As ComboBox
     Friend WithEvents LabelSemester As Label
+    Friend WithEvents ComboBoxUniversity As ComboBox
+    Friend WithEvents LabelUniversity As Label
+    Friend WithEvents ButtonAddUniversitywiseCourses As Button
 End Class

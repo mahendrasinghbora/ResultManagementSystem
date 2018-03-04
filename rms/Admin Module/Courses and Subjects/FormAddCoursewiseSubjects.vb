@@ -7,6 +7,7 @@ Public Class FormAddCoursewiseSubjects
     Dim CountCourse As Integer = 0
     Dim CountSemester As Integer = 0
     Dim CountSession As Integer = 0
+    Dim CountUniversity As Integer = 0
 
     Private Sub FormAddCoursewiseSubjects_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FormStyles(CallingForm:=Me, Text:="RMS | Add Coursewise Subjects")   ' Form Styles
@@ -18,9 +19,33 @@ Public Class FormAddCoursewiseSubjects
         LabelCoursewiseSubjects.ForeColor = Color.FromArgb(255, 255, 255)
         ButtonAddCoursewiseSubject.Enabled = False
         FillSubjects()   ' To fill combobox with subjects
-        FillCourses()   ' To fill combobox with courses
         FillSemesters()   ' To fill combobox with semesters
         FillSessions()   ' To fill combobox with sessions
+        FillUniversities()   ' To fill combobox with universities
+    End Sub
+
+    Private Sub FillUniversities()
+        Con = New MySqlConnection With {
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT * FROM universities;"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            While Reader.Read()
+                CountUniversity = CountUniversity + 1
+                ComboBoxUniversity.Items.Add(Reader.GetString(column:="UNIVERSITY_NAME"))
+            End While
+            Con.Close()
+            Reader.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
     End Sub
 
     Private Sub FillSemesters()
@@ -71,30 +96,6 @@ Public Class FormAddCoursewiseSubjects
         End Try
     End Sub
 
-    Private Sub FillCourses()
-        Con = New MySqlConnection With {
-            .ConnectionString = "server=localhost;userid=root;database=rms"
-        }
-        Dim Reader As MySqlDataReader
-        Try
-            Con.Open()
-            Dim Query As String
-            Query = "SELECT * FROM courses;"
-            Command = New MySqlCommand(Query, Con)
-            Reader = Command.ExecuteReader()
-            While Reader.Read()
-                CountCourse = CountCourse + 1
-                ComboBoxCourse.Items.Add(Reader.GetString(column:="COURSE_NAME"))
-            End While
-            Con.Close()
-            Reader.Dispose()
-        Catch ex As Exception
-            MessageBox.Show(text:=ex.Message)
-        Finally
-            Con.Dispose()
-        End Try
-    End Sub
-
     Private Sub FillSubjects()
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
@@ -133,7 +134,8 @@ Public Class FormAddCoursewiseSubjects
 
     Private Sub ComboBoxSubject_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSubject.SelectedIndexChanged
         If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing Then
+            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
         End If
     End Sub
@@ -151,6 +153,12 @@ Public Class FormAddCoursewiseSubjects
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
+            Reader.Dispose()
+            Query = $"SELECT * FROM universities WHERE UNIVERSITY_NAME = '{ComboBoxUniversity.SelectedItem}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
@@ -170,8 +178,14 @@ Public Class FormAddCoursewiseSubjects
             Reader.Read()
             Dim SessionwiseSemesterID As String = Reader.GetString(column:="SESSIONWISE_SEMESTER_ID")
             Reader.Dispose()
-            Query = $"INSERT INTO coursewise_Subjects (`COURSE_ID`, `SUBJECT_ID`, `SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES 
-('{CourseID}', '{SubjectID}', '{SessionwiseSemesterID}', '{Username}');"
+            Query = $"SELECT * FROM universitywise_courses WHERE UNIVERSITY_ID = '{UniversityID}' AND COURSE_ID = '{CourseID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim UniversitywiseCourseID As String = Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID")
+            Reader.Dispose()
+            Query = $"INSERT INTO coursewise_Subjects (`UNIVERSITYWISE_COURSE_ID`, `SUBJECT_ID`, `SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES 
+('{UniversitywiseCourseID}', '{SubjectID}', '{SessionwiseSemesterID}', '{Username}');"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Con.Close()
@@ -181,7 +195,8 @@ Public Class FormAddCoursewiseSubjects
             Dispose()
             MessageBox.Show(text:="Subject successfully added to the course.", caption:="Success alert", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
         Catch ex As Exception
-            MessageBox.Show(text:="Subject already added to the course.", caption:="Duplicate entry alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
+            MessageBox.Show(text:="Subject already added to the course or selected semester is not available for selected session.",
+                            caption:="Duplicate entry alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
         Finally
             Con.Dispose()
         End Try
@@ -189,26 +204,82 @@ Public Class FormAddCoursewiseSubjects
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
         If CountSubject <> 0 And CountCourse <> 0 And ComboBoxSubject.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing Then
+            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
+        Else
+            ButtonAddCoursewiseSubject.Enabled = False
         End If
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
         If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSubject.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing Then
+            ComboBoxSubject.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
+        Else
+            ButtonAddCoursewiseSubject.Enabled = False
         End If
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
         If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSubject.SelectedItem <> Nothing Then
+            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSubject.SelectedItem <> Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
+        Else
+            ButtonAddCoursewiseSubject.Enabled = False
         End If
     End Sub
 
     Private Sub EditProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditProfileToolStripMenuItem.Click
         EditProfile(CallingForm:=Me)
+    End Sub
+
+    Private Sub ComboBoxUniversity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxUniversity.SelectedIndexChanged
+        ComboBoxCourse.Items.Clear()
+        CountCourse = 0
+        Con = New MySqlConnection With {
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT * FROM universities WHERE UNIVERSITY_NAME = '{ComboBoxUniversity.SelectedItem}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
+            Reader.Dispose()
+            Query = $"SELECT COURSE_NAME FROM universitywise_courses, courses WHERE
+universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UNIVERSITY_ID='{UniversityID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            While Reader.Read()
+                CountCourse = CountCourse + 1
+                ComboBoxCourse.Items.Add(Reader.GetString(column:="COURSE_NAME"))
+            End While
+            Con.Close()
+            Reader.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
+        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxSubject.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
+            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
+            CountUniversity <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+            ButtonAddCoursewiseSubject.Enabled = True
+        Else
+            ButtonAddCoursewiseSubject.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ButtonAddUniversitywiseCourses_Click(sender As Object, e As EventArgs) Handles ButtonAddUniversitywiseCourses.Click
+        Dim NewFormAddUniversitywiseCourses As FormAddUniversitywiseCourses
+        NewFormAddUniversitywiseCourses = New FormAddUniversitywiseCourses()
+        NewFormAddUniversitywiseCourses.Show()
+        Dispose()
     End Sub
 End Class

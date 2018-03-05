@@ -19,7 +19,7 @@ Public Class FormAddMarksII
         LabelUsername.ForeColor = Color.FromArgb(255, 255, 255)
         PanelAddMarksLabel.BackColor = Color.FromArgb(44, 150, 118)
         LabelAddMarks.ForeColor = Color.FromArgb(255, 255, 255)
-        ButtonAddMarks.Enabled = False
+        LabelCourse.ForeColor = Color.FromArgb(255, 255, 255)
         FillColleges()   ' To fill combobox with colleges
         FillData()   ' To fill session and semester
         SetMaximum()   ' To set maximum length of textboxes
@@ -67,7 +67,9 @@ AND SESSIONWISE_SEMESTER_ID = '{SessionwiseSemesterID}';"
             TextExternal9.Text = MaximumExternalMarks
             TextExternal10.Text = MaximumExternalMarks
         Catch ex As Exception
-            MessageBox.Show(text:=ex.Message)
+            MessageBox.Show(text:="No result criteria set for the current session and semester. Please, set a criteria.",
+                            caption:="No Result Criteria alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
+            ButtonAddMarks.Enabled = False
         Finally
             Con.Dispose()
         End Try
@@ -655,6 +657,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult8.Visible = False
                 TextResult9.Visible = False
                 TextResult10.Visible = False
+                ButtonAddMarks.Enabled = False
             End If
             Con.Close()
         Catch ex As Exception
@@ -701,8 +704,20 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Reader = Command.ExecuteReader()
             Reader.Read()
             TextSemester.Text = Reader.GetString(column:="SEMESTER")
-            Con.Close()
             Reader.Dispose()
+            Query = $"SELECT * FROM courses WHERE COURSE_ID='{CourseID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim Course As String = Reader.GetString(column:="COURSE_NAME")
+            Reader.Dispose()
+            Query = $"SELECT * FROM universities WHERE UNIVERSITY_ID='{UniversityID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim University As String = Reader.GetString(column:="UNIVERSITY_NAME")
+            Con.Close()
+            LabelCourse.Text = Course & " (" & University & ")"
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message)
         Finally
@@ -1128,5 +1143,151 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
 
     Private Sub TextMarksExternal10_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal10.Enter
         Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal1_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal1.TextChanged
+        If TextMarksInternal1.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal2_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal2.TextChanged
+        If TextMarksInternal2.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal3_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal3.TextChanged
+        If TextMarksInternal3.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal4_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal4.TextChanged
+        If TextMarksInternal4.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal5_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal5.TextChanged
+        If TextMarksInternal5.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal6_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal6.TextChanged
+        If TextMarksInternal6.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal7_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal7.TextChanged
+        If TextMarksInternal7.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal8_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal8.TextChanged
+        If TextMarksInternal8.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal9_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal9.TextChanged
+        If TextMarksInternal9.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal10_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal10.TextChanged
+        If TextMarksInternal10.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal1_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal1.TextChanged
+        If TextMarksExternal1.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal2_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal2.TextChanged
+        If TextMarksExternal2.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal3_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal3.TextChanged
+        If TextMarksExternal3.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal4_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal4.TextChanged
+        If TextMarksExternal4.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal5_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal5.TextChanged
+        If TextMarksExternal5.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal6_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal6.TextChanged
+        If TextMarksExternal6.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal7_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal7.TextChanged
+        If TextMarksExternal7.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal8_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal8.TextChanged
+        If TextMarksExternal8.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal9_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal9.TextChanged
+        If TextMarksExternal9.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal10_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal10.TextChanged
+        If TextMarksExternal10.Text <> "" Then
+            ErrorProviderAddInformation.Dispose()
+        End If
+    End Sub
+
+    Private Sub ButtonAddMarks_Click(sender As Object, e As EventArgs) Handles ButtonAddMarks.Click
+        If TotalSubjects = 1 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            End If
+        ElseIf TotalSubjects = 2 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            End If
+        End If
     End Sub
 End Class

@@ -216,7 +216,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Dispose()
         Catch ex As Exception
             MessageBox.Show(text:="Selected semester is not available for selected session. Please, add the semester to the session.",
-                            caption:="Duplicate entry alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
+                            caption:="Semester unavailable alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
         Finally
             Con.Dispose()
         End Try

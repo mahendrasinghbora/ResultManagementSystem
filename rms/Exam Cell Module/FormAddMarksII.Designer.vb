@@ -125,6 +125,8 @@ Partial Class FormAddMarksII
         Me.LabelName = New System.Windows.Forms.Label()
         Me.PanelPage = New System.Windows.Forms.Panel()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.ErrorProviderAddInformation = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.LabelCourse = New System.Windows.Forms.Label()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAddMarksLabel.SuspendLayout()
         Me.ContextMenuStripUsers.SuspendLayout()
@@ -132,6 +134,7 @@ Partial Class FormAddMarksII
         Me.PanelMarks.SuspendLayout()
         Me.PanelPage.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
+        CType(Me.ErrorProviderAddInformation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'EditProfileToolStripMenuItem
@@ -232,6 +235,7 @@ Partial Class FormAddMarksII
         '
         Me.PanelAddMarksLabel.BackColor = System.Drawing.SystemColors.Control
         Me.PanelAddMarksLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelAddMarksLabel.Controls.Add(Me.LabelCourse)
         Me.PanelAddMarksLabel.Controls.Add(Me.LabelAddMarks)
         Me.PanelAddMarksLabel.Location = New System.Drawing.Point(-1, -1)
         Me.PanelAddMarksLabel.Name = "PanelAddMarksLabel"
@@ -240,13 +244,13 @@ Partial Class FormAddMarksII
         '
         'LabelAddMarks
         '
-        Me.LabelAddMarks.AutoSize = True
-        Me.LabelAddMarks.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAddMarks.Location = New System.Drawing.Point(490, 15)
+        Me.LabelAddMarks.Font = New System.Drawing.Font("Alegreya Sans", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelAddMarks.Location = New System.Drawing.Point(514, 0)
         Me.LabelAddMarks.Name = "LabelAddMarks"
-        Me.LabelAddMarks.Size = New System.Drawing.Size(312, 46)
+        Me.LabelAddMarks.Size = New System.Drawing.Size(265, 35)
         Me.LabelAddMarks.TabIndex = 3
         Me.LabelAddMarks.Text = "Add Marks Information"
+        Me.LabelAddMarks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LabelCollege
         '
@@ -1180,6 +1184,20 @@ Partial Class FormAddMarksII
         Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
         Me.PanelNavigation.TabIndex = 5
         '
+        'ErrorProviderAddInformation
+        '
+        Me.ErrorProviderAddInformation.ContainerControl = Me
+        '
+        'LabelCourse
+        '
+        Me.LabelCourse.Font = New System.Drawing.Font("Alegreya Sans", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourse.Location = New System.Drawing.Point(-1, 35)
+        Me.LabelCourse.Name = "LabelCourse"
+        Me.LabelCourse.Size = New System.Drawing.Size(1295, 35)
+        Me.LabelCourse.TabIndex = 4
+        Me.LabelCourse.Text = "Course"
+        Me.LabelCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FormAddMarksII
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1191,7 +1209,6 @@ Partial Class FormAddMarksII
         Me.ShowIcon = False
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAddMarksLabel.ResumeLayout(False)
-        Me.PanelAddMarksLabel.PerformLayout()
         Me.ContextMenuStripUsers.ResumeLayout(False)
         Me.PanelAddMarks.ResumeLayout(False)
         Me.PanelAddMarks.PerformLayout()
@@ -1200,6 +1217,7 @@ Partial Class FormAddMarksII
         Me.PanelPage.ResumeLayout(False)
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
+        CType(Me.ErrorProviderAddInformation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1305,4 +1323,6 @@ Partial Class FormAddMarksII
     Friend WithEvents TextResult2 As TextBox
     Friend WithEvents TextResult3 As TextBox
     Friend WithEvents TextResult1 As TextBox
+    Friend WithEvents ErrorProviderAddInformation As ErrorProvider
+    Friend WithEvents LabelCourse As Label
 End Class

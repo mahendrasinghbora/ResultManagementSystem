@@ -68,6 +68,7 @@ Partial Class FormAddCollegewiseCourses
         Me.LabelCollegewiseCourses.Size = New System.Drawing.Size(316, 46)
         Me.LabelCollegewiseCourses.TabIndex = 3
         Me.LabelCollegewiseCourses.Text = "Add Courses to Colleges"
+        Me.LabelCollegewiseCourses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ComboBoxCollege
         '

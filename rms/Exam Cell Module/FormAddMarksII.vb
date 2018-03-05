@@ -30,7 +30,7 @@ Public Class FormAddMarksII
             Con.Open()
             Dim Query As String
             Query = $"SELECT COUNT(SUBJECT_NAME) FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
@@ -39,7 +39,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Reader.Dispose()
             If TotalSubjects = 1 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -111,7 +111,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 2 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -178,7 +178,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 3 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -240,7 +240,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 4 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -297,7 +297,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 5 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -349,7 +349,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 6 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -396,7 +396,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 7 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -438,7 +438,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 8 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -475,7 +475,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 9 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -507,7 +507,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 TextResult10.Visible = False
             ElseIf TotalSubjects = 10 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
-coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.COURSE_ID='{CourseID}' AND 
+coursewise_subjects.SUBJECT_ID=subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}' AND 
 coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
                 Command = New MySqlCommand(cmdText:=Query, connection:=Con)
                 Reader = Command.ExecuteReader()
@@ -714,7 +714,13 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             Reader.Read()
             Dim CollegeID As String = Reader.GetString(column:="COLLEGE_ID")
             Reader.Dispose()
-            Query = $"SELECT * FROM students WHERE COLLEGE_ID='{CollegeID}' AND COURSE_ID='{CourseID}';"
+            Query = $"SELECT * FROM collegewise_courses WHERE COLLEGE_ID = '{CollegeID}' AND UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}';"
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim CollegewiseCourseID As String = Reader.GetString(column:="COLLEGEWISE_COURSE_ID")
+            Reader.Dispose()
+            Query = $"SELECT * FROM students WHERE COLLEGE_ID = '{CollegeID}' AND COLLEGEWISE_COURSE_ID = '{CollegewiseCourseID}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()

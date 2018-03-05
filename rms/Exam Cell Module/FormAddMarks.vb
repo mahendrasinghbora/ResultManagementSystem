@@ -18,7 +18,6 @@ Public Class FormAddMarks
         LabelAddMarks.ForeColor = Color.FromArgb(255, 255, 255)
         FillSessions()   ' To fill combobox with sessions
         FillSemesters()   ' To fill combobox with semesters
-        FillCourses()   ' To fill combobox with courses
         FillUniversities()   ' To fill combobox with universities
         ButtonAddMarks.Enabled = False
     End Sub
@@ -87,30 +86,6 @@ Public Class FormAddMarks
         End Try
     End Sub
 
-    Private Sub FillCourses()
-        Con = New MySqlConnection With {
-            .ConnectionString = "server=localhost;userid=root;database=rms"
-        }
-        Dim Reader As MySqlDataReader
-        Try
-            Con.Open()
-            Dim Query As String
-            Query = "SELECT * FROM courses;"
-            Command = New MySqlCommand(Query, Con)
-            Reader = Command.ExecuteReader()
-            While Reader.Read()
-                CountCourse = CountCourse + 1
-                ComboBoxCourse.Items.Add(Reader.GetString(column:="COURSE_NAME"))
-            End While
-            Con.Close()
-            Reader.Dispose()
-        Catch ex As Exception
-            MessageBox.Show(text:=ex.Message)
-        Finally
-            Con.Dispose()
-        End Try
-    End Sub
-
     Private Sub FillUniversities()
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
@@ -136,9 +111,41 @@ Public Class FormAddMarks
     End Sub
 
     Private Sub ComboBoxUniversity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxUniversity.SelectedIndexChanged
+        ComboBoxCourse.Items.Clear()
+        CountCourse = 0
+        Con = New MySqlConnection With {
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT * FROM universities WHERE UNIVERSITY_NAME = '{ComboBoxUniversity.SelectedItem}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
+            Reader.Dispose()
+            Query = $"SELECT COURSE_NAME FROM universitywise_courses, courses WHERE
+universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UNIVERSITY_ID='{UniversityID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            While Reader.Read()
+                CountCourse = CountCourse + 1
+                ComboBoxCourse.Items.Add(Reader.GetString(column:="COURSE_NAME"))
+            End While
+            Con.Close()
+            Reader.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
         If CountCourse <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxCourse.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
                 ComboBoxSemester.SelectedItem <> Nothing Then
             ButtonAddMarks.Enabled = True
+        Else
+            ButtonAddMarks.Enabled = False
         End If
     End Sub
 

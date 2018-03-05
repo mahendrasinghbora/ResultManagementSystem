@@ -51,6 +51,8 @@ Partial Class FormAddResultCriteria
         Me.LabelResultCriteria = New System.Windows.Forms.Label()
         Me.LabelUniversity = New System.Windows.Forms.Label()
         Me.ErrorProviderCriteria = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ComboBoxCourse = New System.Windows.Forms.ComboBox()
+        Me.LabelCourse = New System.Windows.Forms.Label()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripAddResultCriteria.SuspendLayout()
@@ -134,6 +136,8 @@ Partial Class FormAddResultCriteria
         '
         Me.PanelResultCriteria.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PanelResultCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelResultCriteria.Controls.Add(Me.ComboBoxCourse)
+        Me.PanelResultCriteria.Controls.Add(Me.LabelCourse)
         Me.PanelResultCriteria.Controls.Add(Me.TextTheory)
         Me.PanelResultCriteria.Controls.Add(Me.LabelTheory)
         Me.PanelResultCriteria.Controls.Add(Me.TextPassingMarks)
@@ -151,25 +155,25 @@ Partial Class FormAddResultCriteria
         Me.PanelResultCriteria.Controls.Add(Me.PanelAddResultCriteriaLabel)
         Me.PanelResultCriteria.Controls.Add(Me.LabelUniversity)
         Me.PanelResultCriteria.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelResultCriteria.Location = New System.Drawing.Point(348, 140)
+        Me.PanelResultCriteria.Location = New System.Drawing.Point(302, 140)
         Me.PanelResultCriteria.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelResultCriteria.Name = "PanelResultCriteria"
-        Me.PanelResultCriteria.Size = New System.Drawing.Size(655, 522)
+        Me.PanelResultCriteria.Size = New System.Drawing.Size(746, 522)
         Me.PanelResultCriteria.TabIndex = 8
         '
         'TextTheory
         '
         Me.TextTheory.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTheory.Location = New System.Drawing.Point(350, 403)
+        Me.TextTheory.Location = New System.Drawing.Point(412, 403)
         Me.TextTheory.Name = "TextTheory"
-        Me.TextTheory.Size = New System.Drawing.Size(260, 27)
+        Me.TextTheory.Size = New System.Drawing.Size(286, 27)
         Me.TextTheory.TabIndex = 21
         '
         'LabelTheory
         '
         Me.LabelTheory.AutoSize = True
         Me.LabelTheory.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTheory.Location = New System.Drawing.Point(345, 366)
+        Me.LabelTheory.Location = New System.Drawing.Point(407, 366)
         Me.LabelTheory.Name = "LabelTheory"
         Me.LabelTheory.Size = New System.Drawing.Size(312, 25)
         Me.LabelTheory.TabIndex = 20
@@ -180,7 +184,7 @@ Partial Class FormAddResultCriteria
         Me.TextPassingMarks.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextPassingMarks.Location = New System.Drawing.Point(42, 403)
         Me.TextPassingMarks.Name = "TextPassingMarks"
-        Me.TextPassingMarks.Size = New System.Drawing.Size(260, 27)
+        Me.TextPassingMarks.Size = New System.Drawing.Size(286, 27)
         Me.TextPassingMarks.TabIndex = 19
         '
         'LabelPassingMarks
@@ -196,16 +200,16 @@ Partial Class FormAddResultCriteria
         'TextExternalMarks
         '
         Me.TextExternalMarks.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextExternalMarks.Location = New System.Drawing.Point(350, 314)
+        Me.TextExternalMarks.Location = New System.Drawing.Point(412, 314)
         Me.TextExternalMarks.Name = "TextExternalMarks"
-        Me.TextExternalMarks.Size = New System.Drawing.Size(260, 27)
+        Me.TextExternalMarks.Size = New System.Drawing.Size(286, 27)
         Me.TextExternalMarks.TabIndex = 17
         '
         'LabelExternalMarks
         '
         Me.LabelExternalMarks.AutoSize = True
         Me.LabelExternalMarks.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelExternalMarks.Location = New System.Drawing.Point(344, 277)
+        Me.LabelExternalMarks.Location = New System.Drawing.Point(406, 277)
         Me.LabelExternalMarks.Name = "LabelExternalMarks"
         Me.LabelExternalMarks.Size = New System.Drawing.Size(213, 25)
         Me.LabelExternalMarks.TabIndex = 16
@@ -216,7 +220,7 @@ Partial Class FormAddResultCriteria
         Me.TextInternalMarks.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextInternalMarks.Location = New System.Drawing.Point(42, 314)
         Me.TextInternalMarks.Name = "TextInternalMarks"
-        Me.TextInternalMarks.Size = New System.Drawing.Size(260, 27)
+        Me.TextInternalMarks.Size = New System.Drawing.Size(286, 27)
         Me.TextInternalMarks.TabIndex = 15
         '
         'ComboBoxSemester
@@ -224,16 +228,16 @@ Partial Class FormAddResultCriteria
         Me.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSemester.FormattingEnabled = True
-        Me.ComboBoxSemester.Location = New System.Drawing.Point(350, 134)
+        Me.ComboBoxSemester.Location = New System.Drawing.Point(412, 134)
         Me.ComboBoxSemester.Name = "ComboBoxSemester"
-        Me.ComboBoxSemester.Size = New System.Drawing.Size(260, 31)
+        Me.ComboBoxSemester.Size = New System.Drawing.Size(286, 31)
         Me.ComboBoxSemester.TabIndex = 14
         '
         'LabelSemester
         '
         Me.LabelSemester.AutoSize = True
         Me.LabelSemester.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSemester.Location = New System.Drawing.Point(344, 98)
+        Me.LabelSemester.Location = New System.Drawing.Point(406, 98)
         Me.LabelSemester.Name = "LabelSemester"
         Me.LabelSemester.Size = New System.Drawing.Size(87, 25)
         Me.LabelSemester.TabIndex = 13
@@ -246,7 +250,7 @@ Partial Class FormAddResultCriteria
         Me.ComboBoxSession.FormattingEnabled = True
         Me.ComboBoxSession.Location = New System.Drawing.Point(42, 134)
         Me.ComboBoxSession.Name = "ComboBoxSession"
-        Me.ComboBoxSession.Size = New System.Drawing.Size(260, 31)
+        Me.ComboBoxSession.Size = New System.Drawing.Size(286, 31)
         Me.ComboBoxSession.TabIndex = 12
         '
         'LabelSession
@@ -266,7 +270,7 @@ Partial Class FormAddResultCriteria
         Me.ComboBoxUniversity.FormattingEnabled = True
         Me.ComboBoxUniversity.Location = New System.Drawing.Point(42, 222)
         Me.ComboBoxUniversity.Name = "ComboBoxUniversity"
-        Me.ComboBoxUniversity.Size = New System.Drawing.Size(568, 31)
+        Me.ComboBoxUniversity.Size = New System.Drawing.Size(286, 31)
         Me.ComboBoxUniversity.TabIndex = 10
         '
         'LabelInternalMarks
@@ -283,7 +287,7 @@ Partial Class FormAddResultCriteria
         '
         Me.ButtonAddResultCriteria.AutoSize = True
         Me.ButtonAddResultCriteria.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddResultCriteria.Location = New System.Drawing.Point(200, 465)
+        Me.ButtonAddResultCriteria.Location = New System.Drawing.Point(246, 465)
         Me.ButtonAddResultCriteria.Name = "ButtonAddResultCriteria"
         Me.ButtonAddResultCriteria.Size = New System.Drawing.Size(253, 36)
         Me.ButtonAddResultCriteria.TabIndex = 7
@@ -297,14 +301,14 @@ Partial Class FormAddResultCriteria
         Me.PanelAddResultCriteriaLabel.Controls.Add(Me.LabelResultCriteria)
         Me.PanelAddResultCriteriaLabel.Location = New System.Drawing.Point(-1, -1)
         Me.PanelAddResultCriteriaLabel.Name = "PanelAddResultCriteriaLabel"
-        Me.PanelAddResultCriteriaLabel.Size = New System.Drawing.Size(655, 78)
+        Me.PanelAddResultCriteriaLabel.Size = New System.Drawing.Size(746, 78)
         Me.PanelAddResultCriteriaLabel.TabIndex = 4
         '
         'LabelResultCriteria
         '
         Me.LabelResultCriteria.AutoSize = True
         Me.LabelResultCriteria.Font = New System.Drawing.Font("Alegreya Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelResultCriteria.Location = New System.Drawing.Point(200, 15)
+        Me.LabelResultCriteria.Location = New System.Drawing.Point(246, 15)
         Me.LabelResultCriteria.Name = "LabelResultCriteria"
         Me.LabelResultCriteria.Size = New System.Drawing.Size(252, 46)
         Me.LabelResultCriteria.TabIndex = 3
@@ -323,6 +327,26 @@ Partial Class FormAddResultCriteria
         'ErrorProviderCriteria
         '
         Me.ErrorProviderCriteria.ContainerControl = Me
+        '
+        'ComboBoxCourse
+        '
+        Me.ComboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxCourse.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxCourse.FormattingEnabled = True
+        Me.ComboBoxCourse.Location = New System.Drawing.Point(412, 222)
+        Me.ComboBoxCourse.Name = "ComboBoxCourse"
+        Me.ComboBoxCourse.Size = New System.Drawing.Size(286, 31)
+        Me.ComboBoxCourse.TabIndex = 23
+        '
+        'LabelCourse
+        '
+        Me.LabelCourse.AutoSize = True
+        Me.LabelCourse.Font = New System.Drawing.Font("Acme", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourse.Location = New System.Drawing.Point(406, 186)
+        Me.LabelCourse.Name = "LabelCourse"
+        Me.LabelCourse.Size = New System.Drawing.Size(67, 25)
+        Me.LabelCourse.TabIndex = 22
+        Me.LabelCourse.Text = "Course"
         '
         'FormAddResultCriteria
         '
@@ -373,4 +397,6 @@ Partial Class FormAddResultCriteria
     Friend WithEvents ErrorProviderCriteria As ErrorProvider
     Friend WithEvents TextTheory As TextBox
     Friend WithEvents LabelTheory As Label
+    Friend WithEvents ComboBoxCourse As ComboBox
+    Friend WithEvents LabelCourse As Label
 End Class

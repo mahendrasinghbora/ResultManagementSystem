@@ -5,6 +5,11 @@ Public Class FormAddMarksII
     Dim Command As MySqlCommand   ' Command Variable
     Dim CountCollege As Integer = 0
     Dim CountStudent As Integer = 0
+    Dim MaximumInternalMarks As Integer
+    Dim MaximumExternalMarks As Integer
+    Dim PassingMarks As Integer
+    Dim PassingMarksTheory As Integer
+    Dim TotalSubjects As Integer
 
     Private Sub FormAddMarksII_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FormStyles(CallingForm:=Me, Text:="RMS | Add Marks Information")   ' Form Styles
@@ -19,6 +24,53 @@ Public Class FormAddMarksII
         FillData()   ' To fill session and semester
         SetMaximum()   ' To set maximum length of textboxes
         FillSubjects()   ' To fill subjects
+        GetResultCriteria()   ' To get result criteria
+    End Sub
+
+    Private Sub GetResultCriteria()
+        Con = New MySqlConnection With {
+           .ConnectionString = "server=localhost;userid=root;database=rms"
+       }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT * FROM result_criteria WHERE UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' 
+AND SESSIONWISE_SEMESTER_ID = '{SessionwiseSemesterID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            MaximumInternalMarks = Reader.GetInt16(column:="MAXIMUM_INTERNAL_MARKS")
+            MaximumExternalMarks = Reader.GetInt16(column:="MAXIMUM_EXTERNAL_MARKS")
+            PassingMarks = Reader.GetInt16("PASSING_MARKS")
+            PassingMarksTheory = Reader.GetInt16("PASSING_MARKS_THEORY")
+            Con.Close()
+            Reader.Dispose()
+            TextInternal1.Text = MaximumInternalMarks
+            TextInternal2.Text = MaximumInternalMarks
+            TextInternal3.Text = MaximumInternalMarks
+            TextInternal4.Text = MaximumInternalMarks
+            TextInternal5.Text = MaximumInternalMarks
+            TextInternal6.Text = MaximumInternalMarks
+            TextInternal7.Text = MaximumInternalMarks
+            TextInternal8.Text = MaximumInternalMarks
+            TextInternal9.Text = MaximumInternalMarks
+            TextInternal10.Text = MaximumInternalMarks
+            TextExternal1.Text = MaximumExternalMarks
+            TextExternal2.Text = MaximumExternalMarks
+            TextExternal3.Text = MaximumExternalMarks
+            TextExternal4.Text = MaximumExternalMarks
+            TextExternal5.Text = MaximumExternalMarks
+            TextExternal6.Text = MaximumExternalMarks
+            TextExternal7.Text = MaximumExternalMarks
+            TextExternal8.Text = MaximumExternalMarks
+            TextExternal9.Text = MaximumExternalMarks
+            TextExternal10.Text = MaximumExternalMarks
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
     End Sub
 
     Private Sub FillSubjects()
@@ -35,7 +87,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            Dim TotalSubjects As Integer = Reader.GetString(column:="COUNT(SUBJECT_NAME)")
+            TotalSubjects = Reader.GetString(column:="COUNT(SUBJECT_NAME)")
             Reader.Dispose()
             If TotalSubjects = 1 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
@@ -756,5 +808,325 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         Finally
             Con.Dispose()
         End Try
+    End Sub
+
+    Private Sub TextMarksInternal1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal1.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal1.Text.Insert(TextMarksInternal1.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal2.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal2.Text.Insert(TextMarksInternal2.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal3.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal3.Text.Insert(TextMarksInternal3.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal4.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal4.Text.Insert(TextMarksInternal4.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal5.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal5.Text.Insert(TextMarksInternal5.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal6.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal6.Text.Insert(TextMarksInternal6.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal7.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal7.Text.Insert(TextMarksInternal7.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal8.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal8.Text.Insert(TextMarksInternal8.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal9_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal9.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal9.Text.Insert(TextMarksInternal9.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal10_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksInternal10.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksInternal10.Text.Insert(TextMarksInternal10.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumInternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal1.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal1.Text.Insert(TextMarksExternal1.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal2.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal2.Text.Insert(TextMarksExternal2.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal3.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal3.Text.Insert(TextMarksExternal3.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal4.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal4.Text.Insert(TextMarksExternal4.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal5.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal5.Text.Insert(TextMarksExternal5.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal6.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal6.Text.Insert(TextMarksExternal6.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal7.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal7.Text.Insert(TextMarksExternal7.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal8.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal8.Text.Insert(TextMarksExternal8.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal9_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal9.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal9.Text.Insert(TextMarksExternal9.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksExternal10_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextMarksExternal10.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+        If Char.IsNumber(e.KeyChar) Then
+            Dim MarksText As String = TextMarksExternal10.Text.Insert(TextMarksExternal10.SelectionStart, e.KeyChar.ToString)
+            If Not IsNumeric(MarksText) OrElse CInt(MarksText) > MaximumExternalMarks OrElse CInt(MarksText) < 0 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TextMarksInternal1_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal1.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal2_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal2.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal3_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal3.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal4_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal4.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal5_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal5.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal6_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal6.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal7_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal7.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal8_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal8.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal9_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal9.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksInternal10_Enter(sender As Object, e As EventArgs) Handles TextMarksInternal10.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal1_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal1.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal2_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal2.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal3_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal3.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal4_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal4.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal5_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal5.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal6_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal6.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal7_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal7.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal8_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal8.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal9_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal9.Enter
+        Clipboard.Clear()
+    End Sub
+
+    Private Sub TextMarksExternal10_Enter(sender As Object, e As EventArgs) Handles TextMarksExternal10.Enter
+        Clipboard.Clear()
     End Sub
 End Class

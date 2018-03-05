@@ -6,6 +6,7 @@ Public Class FormAddResultCriteria
     Dim CountSemester As Integer = 0
     Dim CountSession As Integer = 0
     Dim CountUniversity As Integer = 0
+    Dim CountCourse As Integer = 0
 
     Private Sub FormAddResultCriteria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FormStyles(CallingForm:=Me, Text:="RMS | Add Students")   ' Form Styles
@@ -116,7 +117,7 @@ Public Class FormAddResultCriteria
             Else
                 If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
                     ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextExternalMarks.Text <> "" And
-                    TextPassingMarks.Text <> "" Then
+                    TextPassingMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
                     ButtonAddResultCriteria.Enabled = True
                 End If
                 ErrorProviderCriteria.Dispose()
@@ -143,7 +144,7 @@ Public Class FormAddResultCriteria
             Else
                 If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
                     ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-                    TextPassingMarks.Text <> "" Then
+                    TextPassingMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
                     ButtonAddResultCriteria.Enabled = True
                 End If
                 ErrorProviderCriteria.Dispose()
@@ -175,7 +176,7 @@ Public Class FormAddResultCriteria
                     Else
                         If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
                     ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-                    TextExternalMarks.Text <> "" Then
+                    TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
                             ButtonAddResultCriteria.Enabled = True
                         End If
                         ErrorProviderCriteria.Dispose()
@@ -201,30 +202,8 @@ Public Class FormAddResultCriteria
     End Sub
 
     Private Sub ComboBoxUniversity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxUniversity.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And TextPassingMarks.Text <> "" And
-        ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" Then
-            ButtonAddResultCriteria.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-        TextPassingMarks.Text <> "" And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" Then
-            ButtonAddResultCriteria.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-        ComboBoxSession.SelectedItem <> Nothing And TextPassingMarks.Text <> "" And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" Then
-            ButtonAddResultCriteria.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ButtonAddResultCriteria_Click(sender As Object, e As EventArgs) Handles ButtonAddResultCriteria.Click
+        ComboBoxCourse.Items.Clear()
+        CountCourse = 0
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
         }
@@ -238,11 +217,77 @@ Public Class FormAddResultCriteria
             Reader.Read()
             Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
             Reader.Dispose()
+            Query = $"SELECT COURSE_NAME FROM universitywise_courses, courses WHERE
+universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UNIVERSITY_ID='{UniversityID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            While Reader.Read()
+                CountCourse = CountCourse + 1
+                ComboBoxCourse.Items.Add(Reader.GetString(column:="COURSE_NAME"))
+            End While
+            Con.Close()
+            Reader.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
+        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And TextPassingMarks.Text <> "" And
+        ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+            ButtonAddResultCriteria.Enabled = True
+        Else
+            ButtonAddResultCriteria.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
+        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
+        TextPassingMarks.Text <> "" And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+            ButtonAddResultCriteria.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
+        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
+        ComboBoxSession.SelectedItem <> Nothing And TextPassingMarks.Text <> "" And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+            ButtonAddResultCriteria.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ButtonAddResultCriteria_Click(sender As Object, e As EventArgs) Handles ButtonAddResultCriteria.Click
+        Con = New MySqlConnection With {
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT * FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}';"
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            CourseID = Reader.GetString(column:="COURSE_ID")
+            Reader.Dispose()
+            Query = $"SELECT * FROM universities WHERE UNIVERSITY_NAME = '{ComboBoxUniversity.SelectedItem}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
+            Reader.Dispose()
             Query = $"SELECT * FROM semesters WHERE SEMESTER = '{ComboBoxSemester.SelectedItem}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim SemesterID As String = Reader.GetString(column:="SEMESTER_ID")
+            Reader.Dispose()
+            Query = $"SELECT * FROM universitywise_courses WHERE UNIVERSITY_ID = '{UniversityID}' AND COURSE_ID = '{CourseID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            UniversitywiseCourseID = Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM sessionwise_semesters WHERE SESSION_ID = '{ComboBoxSession.SelectedItem}' AND SEMESTER_ID = '{SemesterID}';"
             Command = New MySqlCommand(Query, Con)
@@ -250,9 +295,9 @@ Public Class FormAddResultCriteria
             Reader.Read()
             Dim SessionwiseSemesterID As String = Reader.GetString(column:="SESSIONWISE_SEMESTER_ID")
             Reader.Dispose()
-            Query = $"INSERT INTO result_criteria (`MAXIMUM_INTERNAL_MARKS`, `MAXIMUM_EXTERNAL_MARKS`, `PASSING_MARKS`, `PASSING_MARKS_THEORY`, `UNIVERSITY_ID`,
-`SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES ('{TextInternalMarks.Text}', '{TextExternalMarks.Text}', '{TextPassingMarks.Text}', '{TextTheory.Text}',
-'{UniversityID}', '{SessionwiseSemesterID}', '{Username}');"
+            Query = $"INSERT INTO result_criteria (`MAXIMUM_INTERNAL_MARKS`, `MAXIMUM_EXTERNAL_MARKS`, `PASSING_MARKS`, `PASSING_MARKS_THEORY`, `UNIVERSITY_ID`, 
+`UNIVERSITYWISE_COURSE_ID`, `SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES ('{TextInternalMarks.Text}', '{TextExternalMarks.Text}', 
+'{TextPassingMarks.Text}', '{TextTheory.Text}', '{UniversityID}', '{UniversitywiseCourseID}', '{SessionwiseSemesterID}', '{Username}');"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Con.Close()
@@ -304,13 +349,23 @@ Public Class FormAddResultCriteria
                     Else
                         If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
                     ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-                    TextExternalMarks.Text <> "" Then
+                    TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
                             ButtonAddResultCriteria.Enabled = True
                         End If
                         ErrorProviderCriteria.Dispose()
                     End If
                 End If
             End If
+        End If
+    End Sub
+
+    Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
+        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And TextPassingMarks.Text <> "" And
+        ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+            ButtonAddResultCriteria.Enabled = True
+        Else
+            ButtonAddResultCriteria.Enabled = False
         End If
     End Sub
 End Class

@@ -382,6 +382,7 @@ Partial Class FormAddMarksII
         Me.TextResult10.ReadOnly = True
         Me.TextResult10.Size = New System.Drawing.Size(102, 27)
         Me.TextResult10.TabIndex = 88
+        Me.TextResult10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult8
         '
@@ -391,6 +392,7 @@ Partial Class FormAddMarksII
         Me.TextResult8.ReadOnly = True
         Me.TextResult8.Size = New System.Drawing.Size(102, 27)
         Me.TextResult8.TabIndex = 87
+        Me.TextResult8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult9
         '
@@ -400,6 +402,7 @@ Partial Class FormAddMarksII
         Me.TextResult9.ReadOnly = True
         Me.TextResult9.Size = New System.Drawing.Size(102, 27)
         Me.TextResult9.TabIndex = 86
+        Me.TextResult9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult7
         '
@@ -409,6 +412,7 @@ Partial Class FormAddMarksII
         Me.TextResult7.ReadOnly = True
         Me.TextResult7.Size = New System.Drawing.Size(102, 27)
         Me.TextResult7.TabIndex = 85
+        Me.TextResult7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult5
         '
@@ -418,6 +422,7 @@ Partial Class FormAddMarksII
         Me.TextResult5.ReadOnly = True
         Me.TextResult5.Size = New System.Drawing.Size(102, 27)
         Me.TextResult5.TabIndex = 84
+        Me.TextResult5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult6
         '
@@ -427,6 +432,7 @@ Partial Class FormAddMarksII
         Me.TextResult6.ReadOnly = True
         Me.TextResult6.Size = New System.Drawing.Size(102, 27)
         Me.TextResult6.TabIndex = 83
+        Me.TextResult6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult4
         '
@@ -436,6 +442,7 @@ Partial Class FormAddMarksII
         Me.TextResult4.ReadOnly = True
         Me.TextResult4.Size = New System.Drawing.Size(102, 27)
         Me.TextResult4.TabIndex = 82
+        Me.TextResult4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult2
         '
@@ -445,6 +452,7 @@ Partial Class FormAddMarksII
         Me.TextResult2.ReadOnly = True
         Me.TextResult2.Size = New System.Drawing.Size(102, 27)
         Me.TextResult2.TabIndex = 81
+        Me.TextResult2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult3
         '
@@ -454,6 +462,7 @@ Partial Class FormAddMarksII
         Me.TextResult3.ReadOnly = True
         Me.TextResult3.Size = New System.Drawing.Size(102, 27)
         Me.TextResult3.TabIndex = 80
+        Me.TextResult3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextResult1
         '
@@ -463,6 +472,7 @@ Partial Class FormAddMarksII
         Me.TextResult1.ReadOnly = True
         Me.TextResult1.Size = New System.Drawing.Size(102, 27)
         Me.TextResult1.TabIndex = 79
+        Me.TextResult1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LabelResult
         '
@@ -482,6 +492,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks10.ReadOnly = True
         Me.TextTotalMarks10.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks10.TabIndex = 77
+        Me.TextTotalMarks10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks9
         '
@@ -491,6 +502,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks9.ReadOnly = True
         Me.TextTotalMarks9.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks9.TabIndex = 76
+        Me.TextTotalMarks9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks8
         '
@@ -500,6 +512,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks8.ReadOnly = True
         Me.TextTotalMarks8.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks8.TabIndex = 75
+        Me.TextTotalMarks8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks7
         '
@@ -509,6 +522,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks7.ReadOnly = True
         Me.TextTotalMarks7.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks7.TabIndex = 74
+        Me.TextTotalMarks7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks6
         '
@@ -518,6 +532,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks6.ReadOnly = True
         Me.TextTotalMarks6.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks6.TabIndex = 73
+        Me.TextTotalMarks6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks5
         '
@@ -527,6 +542,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks5.ReadOnly = True
         Me.TextTotalMarks5.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks5.TabIndex = 72
+        Me.TextTotalMarks5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks4
         '
@@ -536,6 +552,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks4.ReadOnly = True
         Me.TextTotalMarks4.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks4.TabIndex = 71
+        Me.TextTotalMarks4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks2
         '
@@ -545,6 +562,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks2.ReadOnly = True
         Me.TextTotalMarks2.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks2.TabIndex = 70
+        Me.TextTotalMarks2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks3
         '
@@ -554,6 +572,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks3.ReadOnly = True
         Me.TextTotalMarks3.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks3.TabIndex = 69
+        Me.TextTotalMarks3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextTotalMarks1
         '
@@ -563,6 +582,7 @@ Partial Class FormAddMarksII
         Me.TextTotalMarks1.ReadOnly = True
         Me.TextTotalMarks1.Size = New System.Drawing.Size(61, 27)
         Me.TextTotalMarks1.TabIndex = 68
+        Me.TextTotalMarks1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LabelTotalMarks
         '
@@ -580,6 +600,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal10.Name = "TextMarksExternal10"
         Me.TextMarksExternal10.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal10.TabIndex = 66
+        Me.TextMarksExternal10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal9
         '
@@ -587,6 +608,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal9.Name = "TextMarksExternal9"
         Me.TextMarksExternal9.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal9.TabIndex = 65
+        Me.TextMarksExternal9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal7
         '
@@ -594,6 +616,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal7.Name = "TextMarksExternal7"
         Me.TextMarksExternal7.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal7.TabIndex = 64
+        Me.TextMarksExternal7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal8
         '
@@ -601,6 +624,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal8.Name = "TextMarksExternal8"
         Me.TextMarksExternal8.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal8.TabIndex = 63
+        Me.TextMarksExternal8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal4
         '
@@ -608,6 +632,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal4.Name = "TextMarksExternal4"
         Me.TextMarksExternal4.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal4.TabIndex = 62
+        Me.TextMarksExternal4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal5
         '
@@ -615,6 +640,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal5.Name = "TextMarksExternal5"
         Me.TextMarksExternal5.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal5.TabIndex = 61
+        Me.TextMarksExternal5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal6
         '
@@ -622,6 +648,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal6.Name = "TextMarksExternal6"
         Me.TextMarksExternal6.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal6.TabIndex = 60
+        Me.TextMarksExternal6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal2
         '
@@ -629,6 +656,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal2.Name = "TextMarksExternal2"
         Me.TextMarksExternal2.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal2.TabIndex = 59
+        Me.TextMarksExternal2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal3
         '
@@ -636,6 +664,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal3.Name = "TextMarksExternal3"
         Me.TextMarksExternal3.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal3.TabIndex = 58
+        Me.TextMarksExternal3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksExternal1
         '
@@ -643,6 +672,7 @@ Partial Class FormAddMarksII
         Me.TextMarksExternal1.Name = "TextMarksExternal1"
         Me.TextMarksExternal1.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksExternal1.TabIndex = 57
+        Me.TextMarksExternal1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LabelMarksObtainedExternal
         '
@@ -660,6 +690,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal10.Name = "TextMarksInternal10"
         Me.TextMarksInternal10.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal10.TabIndex = 55
+        Me.TextMarksInternal10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal9
         '
@@ -667,6 +698,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal9.Name = "TextMarksInternal9"
         Me.TextMarksInternal9.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal9.TabIndex = 54
+        Me.TextMarksInternal9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal7
         '
@@ -674,6 +706,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal7.Name = "TextMarksInternal7"
         Me.TextMarksInternal7.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal7.TabIndex = 53
+        Me.TextMarksInternal7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal8
         '
@@ -681,6 +714,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal8.Name = "TextMarksInternal8"
         Me.TextMarksInternal8.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal8.TabIndex = 52
+        Me.TextMarksInternal8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal4
         '
@@ -688,6 +722,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal4.Name = "TextMarksInternal4"
         Me.TextMarksInternal4.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal4.TabIndex = 51
+        Me.TextMarksInternal4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal5
         '
@@ -695,6 +730,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal5.Name = "TextMarksInternal5"
         Me.TextMarksInternal5.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal5.TabIndex = 50
+        Me.TextMarksInternal5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal6
         '
@@ -702,6 +738,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal6.Name = "TextMarksInternal6"
         Me.TextMarksInternal6.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal6.TabIndex = 49
+        Me.TextMarksInternal6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal2
         '
@@ -709,6 +746,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal2.Name = "TextMarksInternal2"
         Me.TextMarksInternal2.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal2.TabIndex = 48
+        Me.TextMarksInternal2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal3
         '
@@ -716,6 +754,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal3.Name = "TextMarksInternal3"
         Me.TextMarksInternal3.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal3.TabIndex = 47
+        Me.TextMarksInternal3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextMarksInternal1
         '
@@ -723,6 +762,7 @@ Partial Class FormAddMarksII
         Me.TextMarksInternal1.Name = "TextMarksInternal1"
         Me.TextMarksInternal1.Size = New System.Drawing.Size(61, 27)
         Me.TextMarksInternal1.TabIndex = 46
+        Me.TextMarksInternal1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LabelMarksObtainedInternal
         '
@@ -742,6 +782,7 @@ Partial Class FormAddMarksII
         Me.TextExternal10.ReadOnly = True
         Me.TextExternal10.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal10.TabIndex = 44
+        Me.TextExternal10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal9
         '
@@ -751,6 +792,7 @@ Partial Class FormAddMarksII
         Me.TextExternal9.ReadOnly = True
         Me.TextExternal9.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal9.TabIndex = 43
+        Me.TextExternal9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal8
         '
@@ -760,6 +802,7 @@ Partial Class FormAddMarksII
         Me.TextExternal8.ReadOnly = True
         Me.TextExternal8.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal8.TabIndex = 42
+        Me.TextExternal8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal7
         '
@@ -769,6 +812,7 @@ Partial Class FormAddMarksII
         Me.TextExternal7.ReadOnly = True
         Me.TextExternal7.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal7.TabIndex = 41
+        Me.TextExternal7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal6
         '
@@ -778,6 +822,7 @@ Partial Class FormAddMarksII
         Me.TextExternal6.ReadOnly = True
         Me.TextExternal6.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal6.TabIndex = 40
+        Me.TextExternal6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal5
         '
@@ -787,6 +832,7 @@ Partial Class FormAddMarksII
         Me.TextExternal5.ReadOnly = True
         Me.TextExternal5.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal5.TabIndex = 39
+        Me.TextExternal5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal4
         '
@@ -796,6 +842,7 @@ Partial Class FormAddMarksII
         Me.TextExternal4.ReadOnly = True
         Me.TextExternal4.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal4.TabIndex = 38
+        Me.TextExternal4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal2
         '
@@ -805,6 +852,7 @@ Partial Class FormAddMarksII
         Me.TextExternal2.ReadOnly = True
         Me.TextExternal2.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal2.TabIndex = 37
+        Me.TextExternal2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal3
         '
@@ -814,6 +862,7 @@ Partial Class FormAddMarksII
         Me.TextExternal3.ReadOnly = True
         Me.TextExternal3.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal3.TabIndex = 36
+        Me.TextExternal3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextExternal1
         '
@@ -823,6 +872,7 @@ Partial Class FormAddMarksII
         Me.TextExternal1.ReadOnly = True
         Me.TextExternal1.Size = New System.Drawing.Size(61, 27)
         Me.TextExternal1.TabIndex = 35
+        Me.TextExternal1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal10
         '
@@ -832,6 +882,7 @@ Partial Class FormAddMarksII
         Me.TextInternal10.ReadOnly = True
         Me.TextInternal10.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal10.TabIndex = 34
+        Me.TextInternal10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal9
         '
@@ -841,6 +892,7 @@ Partial Class FormAddMarksII
         Me.TextInternal9.ReadOnly = True
         Me.TextInternal9.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal9.TabIndex = 33
+        Me.TextInternal9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal8
         '
@@ -850,6 +902,7 @@ Partial Class FormAddMarksII
         Me.TextInternal8.ReadOnly = True
         Me.TextInternal8.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal8.TabIndex = 32
+        Me.TextInternal8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal7
         '
@@ -859,6 +912,7 @@ Partial Class FormAddMarksII
         Me.TextInternal7.ReadOnly = True
         Me.TextInternal7.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal7.TabIndex = 31
+        Me.TextInternal7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal6
         '
@@ -868,6 +922,7 @@ Partial Class FormAddMarksII
         Me.TextInternal6.ReadOnly = True
         Me.TextInternal6.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal6.TabIndex = 30
+        Me.TextInternal6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal5
         '
@@ -877,6 +932,7 @@ Partial Class FormAddMarksII
         Me.TextInternal5.ReadOnly = True
         Me.TextInternal5.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal5.TabIndex = 29
+        Me.TextInternal5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal4
         '
@@ -886,6 +942,7 @@ Partial Class FormAddMarksII
         Me.TextInternal4.ReadOnly = True
         Me.TextInternal4.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal4.TabIndex = 28
+        Me.TextInternal4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal2
         '
@@ -895,6 +952,7 @@ Partial Class FormAddMarksII
         Me.TextInternal2.ReadOnly = True
         Me.TextInternal2.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal2.TabIndex = 27
+        Me.TextInternal2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal3
         '
@@ -904,6 +962,7 @@ Partial Class FormAddMarksII
         Me.TextInternal3.ReadOnly = True
         Me.TextInternal3.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal3.TabIndex = 26
+        Me.TextInternal3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextInternal1
         '
@@ -913,6 +972,7 @@ Partial Class FormAddMarksII
         Me.TextInternal1.ReadOnly = True
         Me.TextInternal1.Size = New System.Drawing.Size(61, 27)
         Me.TextInternal1.TabIndex = 21
+        Me.TextInternal1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LabelMaximumExternalMarks
         '

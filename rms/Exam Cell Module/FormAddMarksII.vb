@@ -1149,11 +1149,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksInternal1.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal1.Text <> "" And TextMarksExternal1.Text <> "" Then
+            TextTotalMarks1.Text = CInt(TextMarksInternal1.Text) + CInt(TextMarksExternal1.Text)
+            If CInt(TextTotalMarks1.Text) >= PassingMarks And CInt(TextMarksExternal1.Text) >= PassingMarksTheory Then
+                TextResult1.Text = "Pass"
+            Else
+                TextResult1.Text = "Back"
+            End If
+        Else
+            TextResult1.Text = ""
+            TextTotalMarks1.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksInternal2_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal2.TextChanged
         If TextMarksInternal2.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal2.Text <> "" And TextMarksExternal2.Text <> "" Then
+            TextTotalMarks2.Text = CInt(TextMarksInternal2.Text) + CInt(TextMarksExternal2.Text)
+            If CInt(TextTotalMarks2.Text) >= PassingMarks And CInt(TextMarksExternal2.Text) >= PassingMarksTheory Then
+                TextResult2.Text = "Pass"
+            Else
+                TextResult2.Text = "Back"
+            End If
+        Else
+            TextResult2.Text = ""
+            TextTotalMarks2.Text = ""
         End If
     End Sub
 
@@ -1161,11 +1183,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksInternal3.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal3.Text <> "" And TextMarksExternal3.Text <> "" Then
+            TextTotalMarks3.Text = CInt(TextMarksInternal3.Text) + CInt(TextMarksExternal3.Text)
+            If CInt(TextTotalMarks3.Text) >= PassingMarks And CInt(TextMarksExternal3.Text) >= PassingMarksTheory Then
+                TextResult3.Text = "Pass"
+            Else
+                TextResult3.Text = "Back"
+            End If
+        Else
+            TextResult3.Text = ""
+            TextTotalMarks3.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksInternal4_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal4.TextChanged
         If TextMarksInternal4.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal4.Text <> "" And TextMarksExternal4.Text <> "" Then
+            TextTotalMarks4.Text = CInt(TextMarksInternal4.Text) + CInt(TextMarksExternal4.Text)
+            If CInt(TextTotalMarks4.Text) >= PassingMarks And CInt(TextMarksExternal4.Text) >= PassingMarksTheory Then
+                TextResult4.Text = "Pass"
+            Else
+                TextResult4.Text = "Back"
+            End If
+        Else
+            TextResult4.Text = ""
+            TextTotalMarks4.Text = ""
         End If
     End Sub
 
@@ -1173,11 +1217,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksInternal5.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal5.Text <> "" And TextMarksExternal5.Text <> "" Then
+            TextTotalMarks5.Text = CInt(TextMarksInternal5.Text) + CInt(TextMarksExternal5.Text)
+            If CInt(TextTotalMarks5.Text) >= PassingMarks And CInt(TextMarksExternal5.Text) >= PassingMarksTheory Then
+                TextResult5.Text = "Pass"
+            Else
+                TextResult5.Text = "Back"
+            End If
+        Else
+            TextResult5.Text = ""
+            TextTotalMarks5.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksInternal6_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal6.TextChanged
         If TextMarksInternal6.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal6.Text <> "" And TextMarksExternal6.Text <> "" Then
+            TextTotalMarks6.Text = CInt(TextMarksInternal6.Text) + CInt(TextMarksExternal6.Text)
+            If CInt(TextTotalMarks6.Text) >= PassingMarks And CInt(TextMarksExternal6.Text) >= PassingMarksTheory Then
+                TextResult6.Text = "Pass"
+            Else
+                TextResult6.Text = "Back"
+            End If
+        Else
+            TextResult6.Text = ""
+            TextTotalMarks6.Text = ""
         End If
     End Sub
 
@@ -1185,11 +1251,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksInternal7.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal7.Text <> "" And TextMarksExternal7.Text <> "" Then
+            TextTotalMarks7.Text = CInt(TextMarksInternal7.Text) + CInt(TextMarksExternal7.Text)
+            If CInt(TextTotalMarks7.Text) >= PassingMarks And CInt(TextMarksExternal7.Text) >= PassingMarksTheory Then
+                TextResult7.Text = "Pass"
+            Else
+                TextResult7.Text = "Back"
+            End If
+        Else
+            TextResult7.Text = ""
+            TextTotalMarks7.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksInternal8_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal8.TextChanged
         If TextMarksInternal8.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal8.Text <> "" And TextMarksExternal8.Text <> "" Then
+            TextTotalMarks8.Text = CInt(TextMarksInternal8.Text) + CInt(TextMarksExternal8.Text)
+            If CInt(TextTotalMarks8.Text) >= PassingMarks And CInt(TextMarksExternal8.Text) >= PassingMarksTheory Then
+                TextResult8.Text = "Pass"
+            Else
+                TextResult8.Text = "Back"
+            End If
+        Else
+            TextResult8.Text = ""
+            TextTotalMarks8.Text = ""
         End If
     End Sub
 
@@ -1197,11 +1285,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksInternal9.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal9.Text <> "" And TextMarksExternal9.Text <> "" Then
+            TextTotalMarks9.Text = CInt(TextMarksInternal9.Text) + CInt(TextMarksExternal9.Text)
+            If CInt(TextTotalMarks9.Text) >= PassingMarks And CInt(TextMarksExternal9.Text) >= PassingMarksTheory Then
+                TextResult9.Text = "Pass"
+            Else
+                TextResult9.Text = "Back"
+            End If
+        Else
+            TextResult9.Text = ""
+            TextTotalMarks9.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksInternal10_TextChanged(sender As Object, e As EventArgs) Handles TextMarksInternal10.TextChanged
         If TextMarksInternal10.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal10.Text <> "" And TextMarksExternal10.Text <> "" Then
+            TextTotalMarks10.Text = CInt(TextMarksInternal10.Text) + CInt(TextMarksExternal10.Text)
+            If CInt(TextTotalMarks10.Text) >= PassingMarks And CInt(TextMarksExternal10.Text) >= PassingMarksTheory Then
+                TextResult10.Text = "Pass"
+            Else
+                TextResult10.Text = "Back"
+            End If
+        Else
+            TextResult10.Text = ""
+            TextTotalMarks10.Text = ""
         End If
     End Sub
 
@@ -1209,11 +1319,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksExternal1.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal1.Text <> "" And TextMarksExternal1.Text <> "" Then
+            TextTotalMarks1.Text = CInt(TextMarksInternal1.Text) + CInt(TextMarksExternal1.Text)
+            If CInt(TextTotalMarks1.Text) >= PassingMarks And CInt(TextMarksExternal1.Text) >= PassingMarksTheory Then
+                TextResult1.Text = "Pass"
+            Else
+                TextResult1.Text = "Back"
+            End If
+        Else
+            TextResult1.Text = ""
+            TextTotalMarks1.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksExternal2_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal2.TextChanged
         If TextMarksExternal2.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal2.Text <> "" And TextMarksExternal2.Text <> "" Then
+            TextTotalMarks2.Text = CInt(TextMarksInternal2.Text) + CInt(TextMarksExternal2.Text)
+            If CInt(TextTotalMarks2.Text) >= PassingMarks And CInt(TextMarksExternal2.Text) >= PassingMarksTheory Then
+                TextResult2.Text = "Pass"
+            Else
+                TextResult2.Text = "Back"
+            End If
+        Else
+            TextResult2.Text = ""
+            TextTotalMarks2.Text = ""
         End If
     End Sub
 
@@ -1221,11 +1353,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksExternal3.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal3.Text <> "" And TextMarksExternal3.Text <> "" Then
+            TextTotalMarks3.Text = CInt(TextMarksInternal3.Text) + CInt(TextMarksExternal3.Text)
+            If CInt(TextTotalMarks3.Text) >= PassingMarks And CInt(TextMarksExternal3.Text) >= PassingMarksTheory Then
+                TextResult3.Text = "Pass"
+            Else
+                TextResult3.Text = "Back"
+            End If
+        Else
+            TextResult3.Text = ""
+            TextTotalMarks3.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksExternal4_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal4.TextChanged
         If TextMarksExternal4.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal4.Text <> "" And TextMarksExternal4.Text <> "" Then
+            TextTotalMarks4.Text = CInt(TextMarksInternal4.Text) + CInt(TextMarksExternal4.Text)
+            If CInt(TextTotalMarks4.Text) >= PassingMarks And CInt(TextMarksExternal4.Text) >= PassingMarksTheory Then
+                TextResult4.Text = "Pass"
+            Else
+                TextResult4.Text = "Back"
+            End If
+        Else
+            TextResult4.Text = ""
+            TextTotalMarks4.Text = ""
         End If
     End Sub
 
@@ -1233,11 +1387,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksExternal5.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal5.Text <> "" And TextMarksExternal5.Text <> "" Then
+            TextTotalMarks5.Text = CInt(TextMarksInternal5.Text) + CInt(TextMarksExternal5.Text)
+            If CInt(TextTotalMarks5.Text) >= PassingMarks And CInt(TextMarksExternal5.Text) >= PassingMarksTheory Then
+                TextResult5.Text = "Pass"
+            Else
+                TextResult5.Text = "Back"
+            End If
+        Else
+            TextResult5.Text = ""
+            TextTotalMarks5.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksExternal6_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal6.TextChanged
         If TextMarksExternal6.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal6.Text <> "" And TextMarksExternal6.Text <> "" Then
+            TextTotalMarks6.Text = CInt(TextMarksInternal6.Text) + CInt(TextMarksExternal6.Text)
+            If CInt(TextTotalMarks6.Text) >= PassingMarks And CInt(TextMarksExternal6.Text) >= PassingMarksTheory Then
+                TextResult6.Text = "Pass"
+            Else
+                TextResult6.Text = "Back"
+            End If
+        Else
+            TextResult6.Text = ""
+            TextTotalMarks6.Text = ""
         End If
     End Sub
 
@@ -1245,11 +1421,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksExternal7.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal7.Text <> "" And TextMarksExternal7.Text <> "" Then
+            TextTotalMarks7.Text = CInt(TextMarksInternal7.Text) + CInt(TextMarksExternal7.Text)
+            If CInt(TextTotalMarks7.Text) >= PassingMarks And CInt(TextMarksExternal7.Text) >= PassingMarksTheory Then
+                TextResult7.Text = "Pass"
+            Else
+                TextResult7.Text = "Back"
+            End If
+        Else
+            TextResult7.Text = ""
+            TextTotalMarks7.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksExternal8_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal8.TextChanged
         If TextMarksExternal8.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal8.Text <> "" And TextMarksExternal8.Text <> "" Then
+            TextTotalMarks8.Text = CInt(TextMarksInternal8.Text) + CInt(TextMarksExternal8.Text)
+            If CInt(TextTotalMarks8.Text) >= PassingMarks And CInt(TextMarksExternal8.Text) >= PassingMarksTheory Then
+                TextResult8.Text = "Pass"
+            Else
+                TextResult8.Text = "Back"
+            End If
+        Else
+            TextResult8.Text = ""
+            TextTotalMarks8.Text = ""
         End If
     End Sub
 
@@ -1257,11 +1455,33 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         If TextMarksExternal9.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
         End If
+        If TextMarksInternal9.Text <> "" And TextMarksExternal9.Text <> "" Then
+            TextTotalMarks9.Text = CInt(TextMarksInternal9.Text) + CInt(TextMarksExternal9.Text)
+            If CInt(TextTotalMarks9.Text) >= PassingMarks And CInt(TextMarksExternal9.Text) >= PassingMarksTheory Then
+                TextResult9.Text = "Pass"
+            Else
+                TextResult9.Text = "Back"
+            End If
+        Else
+            TextResult9.Text = ""
+            TextTotalMarks9.Text = ""
+        End If
     End Sub
 
     Private Sub TextMarksExternal10_TextChanged(sender As Object, e As EventArgs) Handles TextMarksExternal10.TextChanged
         If TextMarksExternal10.Text <> "" Then
             ErrorProviderAddInformation.Dispose()
+        End If
+        If TextMarksInternal10.Text <> "" And TextMarksExternal10.Text <> "" Then
+            TextTotalMarks10.Text = CInt(TextMarksInternal10.Text) + CInt(TextMarksExternal10.Text)
+            If CInt(TextTotalMarks10.Text) >= PassingMarks And CInt(TextMarksExternal10.Text) >= PassingMarksTheory Then
+                TextResult10.Text = "Pass"
+            Else
+                TextResult10.Text = "Back"
+            End If
+        Else
+            TextResult10.Text = ""
+            TextTotalMarks10.Text = ""
         End If
     End Sub
 

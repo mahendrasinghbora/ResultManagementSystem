@@ -1288,6 +1288,334 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
                 ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
                 TextMarksExternal2.Focus()
             End If
+        ElseIf TotalSubjects = 3 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            End If
+        ElseIf TotalSubjects = 4 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            End If
+        ElseIf TotalSubjects = 5 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            ElseIf TextMarksInternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal5, value:="Marks can't be empty.")
+                TextMarksInternal5.Focus()
+            ElseIf TextMarksExternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal5, value:="Marks can't be empty.")
+                TextMarksExternal5.Focus()
+            End If
+        ElseIf TotalSubjects = 6 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            ElseIf TextMarksInternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal5, value:="Marks can't be empty.")
+                TextMarksInternal5.Focus()
+            ElseIf TextMarksExternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal5, value:="Marks can't be empty.")
+                TextMarksExternal5.Focus()
+            ElseIf TextMarksInternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal6, value:="Marks can't be empty.")
+                TextMarksInternal6.Focus()
+            ElseIf TextMarksExternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal6, value:="Marks can't be empty.")
+                TextMarksExternal6.Focus()
+            End If
+        ElseIf TotalSubjects = 7 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            ElseIf TextMarksInternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal5, value:="Marks can't be empty.")
+                TextMarksInternal5.Focus()
+            ElseIf TextMarksExternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal5, value:="Marks can't be empty.")
+                TextMarksExternal5.Focus()
+            ElseIf TextMarksInternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal6, value:="Marks can't be empty.")
+                TextMarksInternal6.Focus()
+            ElseIf TextMarksExternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal6, value:="Marks can't be empty.")
+                TextMarksExternal6.Focus()
+            ElseIf TextMarksInternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal7, value:="Marks can't be empty.")
+                TextMarksInternal7.Focus()
+            ElseIf TextMarksExternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal7, value:="Marks can't be empty.")
+                TextMarksExternal7.Focus()
+            End If
+        ElseIf TotalSubjects = 8 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            ElseIf TextMarksInternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal5, value:="Marks can't be empty.")
+                TextMarksInternal5.Focus()
+            ElseIf TextMarksExternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal5, value:="Marks can't be empty.")
+                TextMarksExternal5.Focus()
+            ElseIf TextMarksInternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal6, value:="Marks can't be empty.")
+                TextMarksInternal6.Focus()
+            ElseIf TextMarksExternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal6, value:="Marks can't be empty.")
+                TextMarksExternal6.Focus()
+            ElseIf TextMarksInternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal7, value:="Marks can't be empty.")
+                TextMarksInternal7.Focus()
+            ElseIf TextMarksExternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal7, value:="Marks can't be empty.")
+                TextMarksExternal7.Focus()
+            ElseIf TextMarksInternal8.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal8, value:="Marks can't be empty.")
+                TextMarksInternal8.Focus()
+            ElseIf TextMarksExternal8.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal8, value:="Marks can't be empty.")
+                TextMarksExternal8.Focus()
+            End If
+        ElseIf TotalSubjects = 9 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            ElseIf TextMarksInternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal5, value:="Marks can't be empty.")
+                TextMarksInternal5.Focus()
+            ElseIf TextMarksExternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal5, value:="Marks can't be empty.")
+                TextMarksExternal5.Focus()
+            ElseIf TextMarksInternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal6, value:="Marks can't be empty.")
+                TextMarksInternal6.Focus()
+            ElseIf TextMarksExternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal6, value:="Marks can't be empty.")
+                TextMarksExternal6.Focus()
+            ElseIf TextMarksInternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal7, value:="Marks can't be empty.")
+                TextMarksInternal7.Focus()
+            ElseIf TextMarksExternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal7, value:="Marks can't be empty.")
+                TextMarksExternal7.Focus()
+            ElseIf TextMarksInternal8.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal8, value:="Marks can't be empty.")
+                TextMarksInternal8.Focus()
+            ElseIf TextMarksExternal8.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal8, value:="Marks can't be empty.")
+                TextMarksExternal8.Focus()
+            ElseIf TextMarksInternal9.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal9, value:="Marks can't be empty.")
+                TextMarksInternal9.Focus()
+            ElseIf TextMarksExternal9.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal9, value:="Marks can't be empty.")
+                TextMarksExternal9.Focus()
+            End If
+        ElseIf TotalSubjects = 10 Then
+            If TextMarksInternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal1, value:="Marks can't be empty.")
+                TextMarksInternal1.Focus()
+            ElseIf TextMarksExternal1.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal1, value:="Marks can't be empty.")
+                TextMarksExternal1.Focus()
+            ElseIf TextMarksInternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal2, value:="Marks can't be empty.")
+                TextMarksInternal2.Focus()
+            ElseIf TextMarksExternal2.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal2, value:="Marks can't be empty.")
+                TextMarksExternal2.Focus()
+            ElseIf TextMarksInternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal3, value:="Marks can't be empty.")
+                TextMarksInternal3.Focus()
+            ElseIf TextMarksExternal3.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal3, value:="Marks can't be empty.")
+                TextMarksExternal3.Focus()
+            ElseIf TextMarksInternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal4, value:="Marks can't be empty.")
+                TextMarksInternal4.Focus()
+            ElseIf TextMarksExternal4.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal4, value:="Marks can't be empty.")
+                TextMarksExternal4.Focus()
+            ElseIf TextMarksInternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal5, value:="Marks can't be empty.")
+                TextMarksInternal5.Focus()
+            ElseIf TextMarksExternal5.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal5, value:="Marks can't be empty.")
+                TextMarksExternal5.Focus()
+            ElseIf TextMarksInternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal6, value:="Marks can't be empty.")
+                TextMarksInternal6.Focus()
+            ElseIf TextMarksExternal6.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal6, value:="Marks can't be empty.")
+                TextMarksExternal6.Focus()
+            ElseIf TextMarksInternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal7, value:="Marks can't be empty.")
+                TextMarksInternal7.Focus()
+            ElseIf TextMarksExternal7.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal7, value:="Marks can't be empty.")
+                TextMarksExternal7.Focus()
+            ElseIf TextMarksInternal8.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal8, value:="Marks can't be empty.")
+                TextMarksInternal8.Focus()
+            ElseIf TextMarksExternal8.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal8, value:="Marks can't be empty.")
+                TextMarksExternal8.Focus()
+            ElseIf TextMarksInternal9.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal9, value:="Marks can't be empty.")
+                TextMarksInternal9.Focus()
+            ElseIf TextMarksExternal9.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal9, value:="Marks can't be empty.")
+                TextMarksExternal9.Focus()
+            ElseIf TextMarksInternal10.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksInternal10, value:="Marks can't be empty.")
+                TextMarksInternal10.Focus()
+            ElseIf TextMarksExternal10.Text = "" Then
+                ErrorProviderAddInformation.SetError(control:=TextMarksExternal10, value:="Marks can't be empty.")
+                TextMarksExternal10.Focus()
+            End If
         End If
     End Sub
 End Class

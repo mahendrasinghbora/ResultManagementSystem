@@ -666,8 +666,8 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
         Try
             Con.Open()
             Dim Query As String
-            Query = $"SELECT COLLEGE_NAME FROM collegewise_courses, colleges WHERE collegewise_courses.COURSE_ID='{CourseID}' AND
-collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND colleges.UNIVERSITY_ID='{UniversityID}';"
+            Query = $"SELECT COLLEGE_NAME FROM collegewise_courses, colleges WHERE
+collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVERSITYWISE_COURSE_ID='{UniversitywiseCourseID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()

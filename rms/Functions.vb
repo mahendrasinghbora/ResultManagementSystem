@@ -9,6 +9,7 @@ Module Functions
     Public SessionwiseSemesterID As String
     Public UniversityID As String
     Public SessionID As String
+    Public UniversitywiseCourseID As Integer
 
     ' CallingForm- reference of the form from which the procedure is being called.
     Public Sub LogOut(CallingForm As Form)

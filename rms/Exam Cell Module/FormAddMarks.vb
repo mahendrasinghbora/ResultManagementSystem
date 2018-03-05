@@ -196,6 +196,12 @@ Public Class FormAddMarks
             Reader.Read()
             UniversityID = Reader.GetString(column:="UNIVERSITY_ID")
             Reader.Dispose()
+            Query = $"SELECT * FROM universitywise_courses WHERE UNIVERSITY_ID = '{UniversityID}' AND COURSE_ID = '{CourseID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            UniversitywiseCourseID = Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID")
+            Reader.Dispose()
             Con.Close()
             Dim NewFormAddMarksII As FormAddMarksII
             NewFormAddMarksII = New FormAddMarksII()

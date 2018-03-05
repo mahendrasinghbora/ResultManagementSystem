@@ -172,8 +172,8 @@ Public Class FormAddStudents
             Reader.Read()
             Dim CollegeID As String = Reader.GetString(column:="COLLEGE_ID")
             Reader.Dispose()
-            Query = $"SELECT COURSE_NAME FROM collegewise_courses, courses WHERE collegewise_courses.COURSE_ID=courses.COURSE_ID
-AND collegewise_courses.COLLEGE_ID='{CollegeID}';"
+            Query = $"SELECT COURSE_NAME FROM collegewise_courses, courses, universitywise_courses WHERE universitywise_courses.COURSE_ID=courses.COURSE_ID AND
+collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWISE_COURSE_ID AND collegewise_courses.COLLEGE_ID='{CollegeID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()
@@ -190,6 +190,8 @@ AND collegewise_courses.COLLEGE_ID='{CollegeID}';"
         If TextFirstName.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") And TextFirstName.Text <> "" And
             CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
             ButtonAddStudent.Enabled = True
+        Else
+            ButtonAddStudent.Enabled = False
         End If
     End Sub
 
@@ -206,12 +208,25 @@ AND collegewise_courses.COLLEGE_ID='{CollegeID}';"
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim CollegeID As String = Reader.GetString(column:="COLLEGE_ID")
+            Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
             Dim CourseID As String = Reader.GetString(column:="COURSE_ID")
+            Reader.Dispose()
+            Query = $"SELECT * FROM universitywise_courses WHERE COURSE_ID = '{CourseID}' AND UNIVERSITY_ID = '{UniversityID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim UniversitywiseCourseID As String = Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID")
+            Reader.Dispose()
+            Query = $"SELECT * FROM collegewise_courses WHERE COLLEGE_ID = '{CollegeID}' AND UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Dim CollegewiseCourseID As String = Reader.GetString(column:="COLLEGEWISE_COURSE_ID")
             Reader.Dispose()
             Dim Gender As String
             If RadioButtonGender1.Checked() Then
@@ -222,8 +237,8 @@ AND collegewise_courses.COLLEGE_ID='{CollegeID}';"
                 Gender = "O"
             End If
             Dim DOB As Date = DateTimePickerDOB.Value.Date()
-            Query = $"INSERT INTO students (`COLLEGE_ID`, `COURSE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `D_O_B`, `FATHER_NAME`,
-`MOTHER_NAME`, `ADDRESS`, `EMAIL`, `MOBILE_NUMBER`, `USERNAME`) VALUES ('{CollegeID}', '{CourseID}', '{TextFirstName.Text}', '{TextLastName.Text}', '{Gender}',
+            Query = $"INSERT INTO students (`COLLEGE_ID`, `COLLEGEWISE_COURSE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `D_O_B`, `FATHER_NAME`,
+`MOTHER_NAME`, `ADDRESS`, `EMAIL`, `MOBILE_NUMBER`, `USERNAME`) VALUES ('{CollegeID}', '{CollegewiseCourseID}', '{TextFirstName.Text}', '{TextLastName.Text}', '{Gender}',
 '{DOB.ToString("yyyy-MM-dd")}', '{TextFather.Text}', '{TextMother.Text}', '{TextAddress.Text}', '{TextEmail.Text}', '{TextMobile.Text}', '{Username}');"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()

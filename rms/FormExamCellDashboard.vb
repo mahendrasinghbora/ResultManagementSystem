@@ -25,4 +25,11 @@
         NewFromAddMarks.Show()
         Dispose()
     End Sub
+
+    Private Sub ButtonOption2_Click(sender As Object, e As EventArgs) Handles ButtonOption2.Click
+        Dim NewFormPrintMarksheets As FormPrintMarksheets
+        NewFormPrintMarksheets = New FormPrintMarksheets()
+        NewFormPrintMarksheets.Show()
+        Dispose()
+    End Sub
 End Class

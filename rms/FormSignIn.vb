@@ -74,6 +74,9 @@ Public Class FormSignIn
         If TextUsername.Text = "" Then
             ErrorProviderSignIn.SetError(control:=TextUsername, value:="Username can't be empty.")
             TextUsername.Focus()
+        ElseIf System.Text.RegularExpressions.Regex.IsMatch(input:=TextUsername.Text, pattern:="[^a-zA-Z0-9\._]") Then
+            ErrorProviderSignIn.SetError(TextUsername, "Username can only contain letters, digits, dot and underscore.")
+            TextUsername.Focus()
         Else
             ErrorProviderSignIn.Dispose()
         End If
@@ -114,6 +117,9 @@ Public Class FormSignIn
                     TextUsername.Focus()
                 Else
                     ErrorProviderSignIn.Dispose()
+                    If TextPassword.Text <> "" Then
+                        ButtonSignIn.Enabled = True
+                    End If
                 End If
             End If
         End If

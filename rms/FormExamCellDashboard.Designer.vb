@@ -104,7 +104,7 @@ Partial Class FormExamCellDashboard
         Me.ButtonOption2.Name = "ButtonOption2"
         Me.ButtonOption2.Size = New System.Drawing.Size(180, 40)
         Me.ButtonOption2.TabIndex = 5
-        Me.ButtonOption2.Text = "Add Universities"
+        Me.ButtonOption2.Text = "Print Marksheets"
         Me.ButtonOption2.UseVisualStyleBackColor = True
         '
         'LabelOption2
@@ -116,7 +116,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption2.Name = "LabelOption2"
         Me.LabelOption2.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption2.TabIndex = 4
-        Me.LabelOption2.Text = "Add new universities to the system."
+        Me.LabelOption2.Text = "Print marksheets of students."
         Me.LabelOption2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ButtonOption4

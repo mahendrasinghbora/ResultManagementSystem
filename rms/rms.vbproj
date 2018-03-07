@@ -199,6 +199,18 @@
     <Compile Include="Exam Cell Module\FormAddMarksII.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Exam Cell Module\FormPrintMarksheets.Designer.vb">
+      <DependentUpon>FormPrintMarksheets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormPrintMarksheets.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormPrintMarksheetsII.Designer.vb">
+      <DependentUpon>FormPrintMarksheetsII.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormPrintMarksheetsII.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditProfile.Designer.vb">
       <DependentUpon>FormEditProfile.vb</DependentUpon>
     </Compile>
@@ -310,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exam Cell Module\FormAddMarksII.resx">
       <DependentUpon>FormAddMarksII.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Cell Module\FormPrintMarksheets.resx">
+      <DependentUpon>FormPrintMarksheets.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Cell Module\FormPrintMarksheetsII.resx">
+      <DependentUpon>FormPrintMarksheetsII.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfile.resx">
       <DependentUpon>FormEditProfile.vb</DependentUpon>

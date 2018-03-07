@@ -186,8 +186,7 @@ Partial Class FormEditProfileExamCell
         '
         'PictureBoxThumbnail
         '
-        Me.PictureBoxThumbnail.BackColor = System.Drawing.Color.Azure
-        Me.PictureBoxThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBoxThumbnail.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PictureBoxThumbnail.Image = CType(resources.GetObject("PictureBoxThumbnail.Image"), System.Drawing.Image)
         Me.PictureBoxThumbnail.Location = New System.Drawing.Point(562, 177)
         Me.PictureBoxThumbnail.Name = "PictureBoxThumbnail"

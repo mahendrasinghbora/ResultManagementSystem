@@ -43,14 +43,12 @@ Partial Class FormSignIn
         Me.ToolTipSignIn = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelDescription = New System.Windows.Forms.Panel()
         Me.LabelDescription = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ErrorProviderSignIn = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelSignIn.SuspendLayout()
         Me.PanelSignInLabel.SuspendLayout()
         Me.PanelCopyright.SuspendLayout()
         Me.PanelRms.SuspendLayout()
         Me.PanelDescription.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProviderSignIn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -231,7 +229,6 @@ Partial Class FormSignIn
         'PanelDescription
         '
         Me.PanelDescription.Controls.Add(Me.LabelDescription)
-        Me.PanelDescription.Controls.Add(Me.PictureBox1)
         Me.PanelDescription.Location = New System.Drawing.Point(-5, 212)
         Me.PanelDescription.Name = "PanelDescription"
         Me.PanelDescription.Size = New System.Drawing.Size(906, 346)
@@ -240,20 +237,11 @@ Partial Class FormSignIn
         'LabelDescription
         '
         Me.LabelDescription.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDescription.Location = New System.Drawing.Point(176, 16)
+        Me.LabelDescription.Location = New System.Drawing.Point(41, 2)
         Me.LabelDescription.Name = "LabelDescription"
-        Me.LabelDescription.Size = New System.Drawing.Size(727, 201)
+        Me.LabelDescription.Size = New System.Drawing.Size(861, 236)
         Me.LabelDescription.TabIndex = 1
         Me.LabelDescription.Text = resources.GetString("LabelDescription.Text")
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(41, 16)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(129, 201)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'ErrorProviderSignIn
         '
@@ -282,7 +270,6 @@ Partial Class FormSignIn
         Me.PanelRms.ResumeLayout(False)
         Me.PanelRms.PerformLayout()
         Me.PanelDescription.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProviderSignIn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -306,7 +293,6 @@ Partial Class FormSignIn
     Friend WithEvents LabelRmsFull As Label
     Friend WithEvents ToolTipSignIn As ToolTip
     Friend WithEvents PanelDescription As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LabelDescription As Label
     Friend WithEvents ErrorProviderSignIn As ErrorProvider
 End Class

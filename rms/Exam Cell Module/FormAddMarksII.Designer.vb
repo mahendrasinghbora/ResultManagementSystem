@@ -35,6 +35,7 @@ Partial Class FormAddMarksII
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.ButtonAddMarks = New System.Windows.Forms.Button()
         Me.PanelAddMarksLabel = New System.Windows.Forms.Panel()
+        Me.LabelCourse = New System.Windows.Forms.Label()
         Me.LabelAddMarks = New System.Windows.Forms.Label()
         Me.LabelCollege = New System.Windows.Forms.Label()
         Me.ContextMenuStripUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -126,7 +127,6 @@ Partial Class FormAddMarksII
         Me.PanelPage = New System.Windows.Forms.Panel()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.ErrorProviderAddInformation = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.LabelCourse = New System.Windows.Forms.Label()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAddMarksLabel.SuspendLayout()
         Me.ContextMenuStripUsers.SuspendLayout()
@@ -241,6 +241,16 @@ Partial Class FormAddMarksII
         Me.PanelAddMarksLabel.Name = "PanelAddMarksLabel"
         Me.PanelAddMarksLabel.Size = New System.Drawing.Size(1295, 78)
         Me.PanelAddMarksLabel.TabIndex = 4
+        '
+        'LabelCourse
+        '
+        Me.LabelCourse.Font = New System.Drawing.Font("Alegreya Sans", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCourse.Location = New System.Drawing.Point(-1, 35)
+        Me.LabelCourse.Name = "LabelCourse"
+        Me.LabelCourse.Size = New System.Drawing.Size(1295, 35)
+        Me.LabelCourse.TabIndex = 4
+        Me.LabelCourse.Text = "Course"
+        Me.LabelCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LabelAddMarks
         '
@@ -1168,7 +1178,7 @@ Partial Class FormAddMarksII
         'PanelPage
         '
         Me.PanelPage.Controls.Add(Me.PanelAddMarks)
-        Me.PanelPage.Location = New System.Drawing.Point(-12, 66)
+        Me.PanelPage.Location = New System.Drawing.Point(-8, 66)
         Me.PanelPage.Name = "PanelPage"
         Me.PanelPage.Size = New System.Drawing.Size(1366, 662)
         Me.PanelPage.TabIndex = 6
@@ -1187,16 +1197,6 @@ Partial Class FormAddMarksII
         'ErrorProviderAddInformation
         '
         Me.ErrorProviderAddInformation.ContainerControl = Me
-        '
-        'LabelCourse
-        '
-        Me.LabelCourse.Font = New System.Drawing.Font("Alegreya Sans", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCourse.Location = New System.Drawing.Point(-1, 35)
-        Me.LabelCourse.Name = "LabelCourse"
-        Me.LabelCourse.Size = New System.Drawing.Size(1295, 35)
-        Me.LabelCourse.TabIndex = 4
-        Me.LabelCourse.Text = "Course"
-        Me.LabelCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormAddMarksII
         '

@@ -32,4 +32,11 @@
         NewFormPrintMarksheets.Show()
         Dispose()
     End Sub
+
+    Private Sub ButtonOption3_Click(sender As Object, e As EventArgs) Handles ButtonOption3.Click
+        Dim NewFormReportI As FormReportI
+        NewFormReportI = New FormReportI()
+        NewFormReportI.Show()
+        Dispose()
+    End Sub
 End Class

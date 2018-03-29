@@ -68,11 +68,11 @@ Partial Class FormExamCellDashboard
         'ButtonOption3
         '
         Me.ButtonOption3.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption3.Location = New System.Drawing.Point(771, 139)
+        Me.ButtonOption3.Location = New System.Drawing.Point(760, 139)
         Me.ButtonOption3.Name = "ButtonOption3"
-        Me.ButtonOption3.Size = New System.Drawing.Size(180, 40)
+        Me.ButtonOption3.Size = New System.Drawing.Size(202, 40)
         Me.ButtonOption3.TabIndex = 27
-        Me.ButtonOption3.Text = "Add Colleges"
+        Me.ButtonOption3.Text = "Universitywise Back"
         Me.ButtonOption3.UseVisualStyleBackColor = True
         '
         'LabelOption3
@@ -84,7 +84,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption3.Name = "LabelOption3"
         Me.LabelOption3.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption3.TabIndex = 26
-        Me.LabelOption3.Text = "Add new colleges to the system."
+        Me.LabelOption3.Text = "View list of students with back in a particular subject universitywise."
         Me.LabelOption3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'LabelDashboard

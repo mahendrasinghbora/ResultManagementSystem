@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ROLL_x0020_NUMBER" type="xs:int" minOccurs="0" />
+                <xs:element name="NAME_x0020_OF_x0020_THE_x0020_STUDENT" type="xs:string" minOccurs="0" />
+                <xs:element name="NAME_x0020_OF_x0020_THE_x0020_COLLEGE" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <ROLL_x0020_NUMBER>1561330007</ROLL_x0020_NUMBER>
+    <NAME_x0020_OF_x0020_THE_x0020_STUDENT>Avinash Singh</NAME_x0020_OF_x0020_THE_x0020_STUDENT>
+    <NAME_x0020_OF_x0020_THE_x0020_COLLEGE>D.S.B. Campus College, Nainital</NAME_x0020_OF_x0020_THE_x0020_COLLEGE>
+  </Table>
+  <Table>
+    <ROLL_x0020_NUMBER>1561330077</ROLL_x0020_NUMBER>
+    <NAME_x0020_OF_x0020_THE_x0020_STUDENT>Vimal Kumar</NAME_x0020_OF_x0020_THE_x0020_STUDENT>
+    <NAME_x0020_OF_x0020_THE_x0020_COLLEGE>Amrapali Institue of Applied Sciences, Haldwani</NAME_x0020_OF_x0020_THE_x0020_COLLEGE>
+  </Table>
+</NewDataSet>

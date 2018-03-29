@@ -95,7 +95,7 @@ Module Functions
         CallingForm.MaximumSize = New Size(1366, 768)   ' Maximum Size- 1366x768 px
         CallingForm.MinimumSize = New Size(1366, 768)   ' Minimum Size- 1366x768 px
         CallingForm.StartPosition = FormStartPosition.CenterScreen   ' Default Start Position- CenterScreen
-        CallingForm.WindowState = FormWindowState.Maximized   ' Default Window State- Maximized
+        CallingForm.WindowState = FormWindowState.Normal   ' Default Window State- Normal
     End Sub
 
     Public Sub EditProfile(CallingForm As Form)

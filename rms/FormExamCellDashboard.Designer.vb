@@ -72,7 +72,7 @@ Partial Class FormExamCellDashboard
         Me.ButtonOption3.Name = "ButtonOption3"
         Me.ButtonOption3.Size = New System.Drawing.Size(202, 40)
         Me.ButtonOption3.TabIndex = 27
-        Me.ButtonOption3.Text = "Universitywise Back"
+        Me.ButtonOption3.Text = "View Report-I"
         Me.ButtonOption3.UseVisualStyleBackColor = True
         '
         'LabelOption3
@@ -84,7 +84,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption3.Name = "LabelOption3"
         Me.LabelOption3.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption3.TabIndex = 26
-        Me.LabelOption3.Text = "View list of students with back in a particular subject universitywise."
+        Me.LabelOption3.Text = "View universitywise list of students with back in a particular subject."
         Me.LabelOption3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'LabelDashboard
@@ -126,7 +126,7 @@ Partial Class FormExamCellDashboard
         Me.ButtonOption4.Name = "ButtonOption4"
         Me.ButtonOption4.Size = New System.Drawing.Size(180, 40)
         Me.ButtonOption4.TabIndex = 3
-        Me.ButtonOption4.Text = "Add Sessions"
+        Me.ButtonOption4.Text = "View Report-II"
         Me.ButtonOption4.UseVisualStyleBackColor = True
         '
         'LabelOption4
@@ -138,7 +138,7 @@ Partial Class FormExamCellDashboard
         Me.LabelOption4.Name = "LabelOption4"
         Me.LabelOption4.Size = New System.Drawing.Size(300, 170)
         Me.LabelOption4.TabIndex = 2
-        Me.LabelOption4.Text = "Add new sessions (for example 2017-18, 2018-19, etcetera) to the system."
+        Me.LabelOption4.Text = "View collegewise list of students with back in a particular subject."
         Me.LabelOption4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ButtonOption1

@@ -34,7 +34,7 @@ From students, colleges Where UNIVERSITY_ROLL_NUMBER In (Select UNIVERSITY_ROLL_
 WHERE COURSEWISE_SUBJECT_ID = (SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects, subjects 
 WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID And coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' 
 And SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=
-(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) AND colleges.COLLEGE_ID=students.COLLEGE_ID;"
+(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) AND colleges.COLLEGE_ID=students.COLLEGE_ID ORDER BY COLLEGE_NAME, UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
@@ -71,7 +71,7 @@ FROM students, colleges WHERE UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_
 WHERE COURSEWISE_SUBJECT_ID=(SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects, subjects 
 WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' 
 AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=
-(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) AND colleges.COLLEGE_ID=students.COLLEGE_ID;"
+(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) AND colleges.COLLEGE_ID=students.COLLEGE_ID ORDER BY COLLEGE_NAME, UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
@@ -289,7 +289,8 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Con.Close()
             Reader.Dispose()
         Catch ex As Exception
-            MessageBox.Show(text:=ex.Message)
+            MessageBox.Show(text:="Selected semester is not available for selected session. Please, add the semester to the session.",
+                            caption:="Semester unavailable alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
         Finally
             Con.Dispose()
         End Try

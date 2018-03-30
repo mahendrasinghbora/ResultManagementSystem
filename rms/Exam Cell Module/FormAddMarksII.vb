@@ -1513,13 +1513,11 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -1527,8 +1525,8 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -1571,13 +1569,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -1585,27 +1581,25 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -1654,13 +1648,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -1668,46 +1660,42 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -1762,13 +1750,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -1776,65 +1762,59 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -1895,13 +1875,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -1909,84 +1887,76 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject5.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject5.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult5.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -2053,13 +2023,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -2067,103 +2035,93 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject5.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject5.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult5.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject6.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject6.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult6.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -2236,13 +2194,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -2250,122 +2206,110 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject5.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject5.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult5.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject6.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject6.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult6.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject7.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject7.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult7.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -2444,13 +2388,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -2458,141 +2400,127 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject5.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject5.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult5.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject6.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject6.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult6.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject7.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject7.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult7.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject8.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject8.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult8.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -2677,13 +2605,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -2691,160 +2617,144 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject5.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject5.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult5.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject6.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject6.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult6.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject7.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject7.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult7.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject8.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject8.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult8.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject9.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject9.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult9.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal9.Text}', '{TextExternal9.Text}', '{TextTotalMarks9.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
@@ -2935,13 +2845,11 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                 Try
                     Con.Open()
                     Dim Query As String
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject1.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    Dim CoursewiseSubjectID As String = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    Dim SubjectID As String = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     Dim ResultStatusID As Integer
                     If TextResult1.Text = "Pass" Then
@@ -2949,179 +2857,161 @@ SUBJECT_NAME = '{LabelSubject1.Text}';"
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject2.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject2.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult2.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject3.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject3.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult3.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject4.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject4.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult4.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject5.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject5.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult5.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject6.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject6.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult6.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject7.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject7.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult7.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject8.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject8.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult8.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject9.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject9.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult9.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal9.Text}', '{TextExternal9.Text}', '{TextTotalMarks9.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
-                    Query = $"SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects,
-subjects WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' AND
-SUBJECT_NAME = '{LabelSubject10.Text}';"
+                    Query = $"SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME = '{LabelSubject10.Text}';"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Read()
-                    CoursewiseSubjectID = Reader.GetString(column:="COURSEWISE_SUBJECT_ID")
+                    SubjectID = Reader.GetString(column:="SUBJECT_ID")
                     Reader.Dispose()
                     If TextResult10.Text = "Pass" Then
                         ResultStatusID = 1
                     Else
                         ResultStatusID = 2
                     End If
-                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `COURSEWISE_SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
-`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{CoursewiseSubjectID}', '{CourseID}',
+                    Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+`INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
 '{SessionwiseSemesterID}', '{TextMarksInternal10.Text}', '{TextExternal10.Text}', '{TextTotalMarks10.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()

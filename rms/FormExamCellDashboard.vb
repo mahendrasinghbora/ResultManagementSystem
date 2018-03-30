@@ -46,4 +46,11 @@
         NewFormReportII.Show()
         Dispose()
     End Sub
+
+    Private Sub ButtonOption5_Click(sender As Object, e As EventArgs) Handles ButtonOption5.Click
+        Dim NewFormReportIII As FormReportIII
+        NewFormReportIII = New FormReportIII()
+        NewFormReportIII.Show()
+        Dispose()
+    End Sub
 End Class

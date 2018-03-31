@@ -1527,7 +1527,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1583,7 +1583,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1600,7 +1600,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1662,7 +1662,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1679,7 +1679,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1696,7 +1696,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1764,7 +1764,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1781,7 +1781,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1798,7 +1798,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1815,7 +1815,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1889,7 +1889,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1906,7 +1906,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1923,7 +1923,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1940,7 +1940,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -1957,7 +1957,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextMarksExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2037,7 +2037,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2054,7 +2054,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2071,7 +2071,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2088,7 +2088,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2105,7 +2105,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextMarksExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2122,7 +2122,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextMarksExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2208,7 +2208,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2225,7 +2225,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2242,7 +2242,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2259,7 +2259,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2276,7 +2276,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextMarksExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2293,7 +2293,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextMarksExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2310,7 +2310,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextMarksExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2402,7 +2402,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2419,7 +2419,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2436,7 +2436,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2453,7 +2453,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2470,7 +2470,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextMarksExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2487,7 +2487,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextMarksExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2504,7 +2504,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextMarksExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2521,7 +2521,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextMarksExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2619,7 +2619,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2636,7 +2636,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2653,7 +2653,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2670,7 +2670,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2687,7 +2687,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextMarksExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2704,7 +2704,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextMarksExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2721,7 +2721,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextMarksExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2738,7 +2738,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextMarksExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2755,7 +2755,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal9.Text}', '{TextExternal9.Text}', '{TextTotalMarks9.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal9.Text}', '{TextMarksExternal9.Text}', '{TextTotalMarks9.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2859,7 +2859,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal1.Text}', '{TextMarksExternal1.Text}', '{TextTotalMarks1.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2876,7 +2876,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal2.Text}', '{TextMarksExternal2.Text}', '{TextTotalMarks2.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2893,7 +2893,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal3.Text}', '{TextMarksExternal3.Text}', '{TextTotalMarks3.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2910,7 +2910,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal4.Text}', '{TextMarksExternal4.Text}', '{TextTotalMarks4.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2927,7 +2927,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal5.Text}', '{TextMarksExternal5.Text}', '{TextTotalMarks5.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2944,7 +2944,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal6.Text}', '{TextMarksExternal6.Text}', '{TextTotalMarks6.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2961,7 +2961,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal7.Text}', '{TextMarksExternal7.Text}', '{TextTotalMarks7.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2978,7 +2978,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal8.Text}', '{TextMarksExternal8.Text}', '{TextTotalMarks8.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -2995,7 +2995,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal9.Text}', '{TextExternal9.Text}', '{TextTotalMarks9.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal9.Text}', '{TextMarksExternal9.Text}', '{TextTotalMarks9.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()
@@ -3012,7 +3012,7 @@ VALUES ('{ComboBoxRoll.Text}', '{SessionwiseSemesterID}', '{Username}');"
                     End If
                     Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
 `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES ('{ComboBoxRoll.SelectedItem}', '{SubjectID}', '{CourseID}',
-'{SessionwiseSemesterID}', '{TextMarksInternal10.Text}', '{TextExternal10.Text}', '{TextTotalMarks10.Text}', '{ResultStatusID}', '{Username}');"
+'{SessionwiseSemesterID}', '{TextMarksInternal10.Text}', '{TextMarksExternal10.Text}', '{TextTotalMarks10.Text}', '{ResultStatusID}', '{Username}');"
                     Command = New MySqlCommand(Query, Con)
                     Reader = Command.ExecuteReader()
                     Reader.Dispose()

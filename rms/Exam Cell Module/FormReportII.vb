@@ -236,13 +236,12 @@ WHERE SESSION_ID = '{ComboBoxSession.SelectedItem}' AND SEMESTER_ID = (SELECT SE
         Try
             Con.Open()
             Dim Query As String
-            Query = $"SELECT COUNT(UNIVERSITY_ROLL_NUMBER) From students, colleges Where UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_NUMBER
-    FROM marksheets WHERE COURSEWISE_SUBJECT_ID = (SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects, subjects
-        WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID AND coursewise_subjects.UNIVERSITYWISE_COURSE_ID = (SELECT UNIVERSITYWISE_COURSE_ID
-            FROM universitywise_courses WHERE UNIVERSITY_ID = (SELECT UNIVERSITY_ID FROM colleges WHERE COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}') AND
-                COURSE_ID = (SELECT COURSE_ID FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}'))
-            AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status
-        WHERE RESULT_STATUS='Back')) AND colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}';"
+            Query = $"SELECT COUNT(UNIVERSITY_ROLL_NUMBER) FROM students, colleges WHERE UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_NUMBER
+FROM marksheets WHERE SUBJECT_ID = (SELECT SUBJECT_ID FROM subjects WHERE subjects.SUBJECT_ID = marksheets.SUBJECT_ID AND SUBJECT_NAME =
+'{ComboBoxSubject.SelectedItem}') AND COURSE_ID = (SELECT COURSE_ID FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}') AND
+RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back') AND SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID FROM
+sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND
+SESSION_ID='{ComboBoxSession.SelectedItem}')) AND colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -278,14 +277,12 @@ WHERE SESSION_ID = '{ComboBoxSession.SelectedItem}' AND SEMESTER_ID = (SELECT SE
             conn.Open()
 
             cmd.CommandText = $"SELECT UNIVERSITY_ROLL_NUMBER AS 'ROLL NUMBER', CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'NAME OF THE STUDENT'
-From students, colleges Where UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_NUMBER FROM marksheets
-WHERE COURSEWISE_SUBJECT_ID = (SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects, subjects
-WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID And coursewise_subjects.UNIVERSITYWISE_COURSE_ID = 
-(SELECT UNIVERSITYWISE_COURSE_ID FROM universitywise_courses
-WHERE UNIVERSITY_ID = (SELECT UNIVERSITY_ID FROM colleges WHERE COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}') AND
-COURSE_ID = (SELECT COURSE_ID FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}'))
-And SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) 
-AND colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}' ORDER BY UNIVERSITY_ROLL_NUMBER;"
+FROM students, colleges WHERE UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_NUMBER FROM marksheets WHERE SUBJECT_ID =
+(SELECT SUBJECT_ID FROM subjects WHERE subjects.SUBJECT_ID = marksheets.SUBJECT_ID AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}')
+AND COURSE_ID = (SELECT COURSE_ID FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}') AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID
+FROM result_status WHERE RESULT_STATUS='Back') AND SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID FROM sessionwise_semesters WHERE 
+SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND SESSION_ID='{ComboBoxSession.SelectedItem}')) AND
+colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}' ORDER BY UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
@@ -319,14 +316,12 @@ AND colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege
         Try
             conn.Open()
             cmd.CommandText = $"SELECT UNIVERSITY_ROLL_NUMBER AS 'ROLL NUMBER', CONCAT(FIRST_NAME, ' ', LAST_NAME) AS 'NAME OF THE STUDENT'
-From students, colleges Where UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_NUMBER FROM marksheets
-WHERE COURSEWISE_SUBJECT_ID = (SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects, subjects
-WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID And coursewise_subjects.UNIVERSITYWISE_COURSE_ID = 
-(SELECT UNIVERSITYWISE_COURSE_ID FROM universitywise_courses
-WHERE UNIVERSITY_ID = (SELECT UNIVERSITY_ID FROM colleges WHERE COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}') AND
-COURSE_ID = (SELECT COURSE_ID FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}'))
-And SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) 
-AND colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}' ORDER BY UNIVERSITY_ROLL_NUMBER;"
+FROM students, colleges WHERE UNIVERSITY_ROLL_NUMBER IN (SELECT UNIVERSITY_ROLL_NUMBER FROM marksheets WHERE SUBJECT_ID =
+(SELECT SUBJECT_ID FROM subjects WHERE subjects.SUBJECT_ID = marksheets.SUBJECT_ID AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}')
+AND COURSE_ID = (SELECT COURSE_ID FROM courses WHERE COURSE_NAME = '{ComboBoxCourse.SelectedItem}') AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID
+FROM result_status WHERE RESULT_STATUS='Back') AND SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID FROM sessionwise_semesters WHERE 
+SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND SESSION_ID='{ComboBoxSession.SelectedItem}')) AND
+colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}' ORDER BY UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd

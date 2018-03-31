@@ -38,10 +38,12 @@ Partial Class FormExamCellDashboard
         Me.LabelOption1 = New System.Windows.Forms.Label()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.ButtonOption5 = New System.Windows.Forms.Button()
+        Me.LabelOption5 = New System.Windows.Forms.Label()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
-        Me.LabelOption5 = New System.Windows.Forms.Label()
-        Me.ButtonOption5 = New System.Windows.Forms.Button()
+        Me.LabelOption6 = New System.Windows.Forms.Label()
+        Me.ButtonOption6 = New System.Windows.Forms.Button()
         Me.ContextMenuStripUser.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
@@ -181,6 +183,8 @@ Partial Class FormExamCellDashboard
         '
         'PanelMenu
         '
+        Me.PanelMenu.Controls.Add(Me.ButtonOption6)
+        Me.PanelMenu.Controls.Add(Me.LabelOption6)
         Me.PanelMenu.Controls.Add(Me.ButtonOption5)
         Me.PanelMenu.Controls.Add(Me.LabelOption5)
         Me.PanelMenu.Controls.Add(Me.ButtonOption3)
@@ -195,6 +199,29 @@ Partial Class FormExamCellDashboard
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(1366, 643)
         Me.PanelMenu.TabIndex = 3
+        '
+        'ButtonOption5
+        '
+        Me.ButtonOption5.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOption5.Location = New System.Drawing.Point(106, 354)
+        Me.ButtonOption5.Name = "ButtonOption5"
+        Me.ButtonOption5.Size = New System.Drawing.Size(202, 40)
+        Me.ButtonOption5.TabIndex = 32
+        Me.ButtonOption5.Text = "View Report-III"
+        Me.ButtonOption5.UseVisualStyleBackColor = True
+        '
+        'LabelOption5
+        '
+        Me.LabelOption5.BackColor = System.Drawing.Color.White
+        Me.LabelOption5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelOption5.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOption5.Location = New System.Drawing.Point(57, 236)
+        Me.LabelOption5.Name = "LabelOption5"
+        Me.LabelOption5.Size = New System.Drawing.Size(300, 170)
+        Me.LabelOption5.TabIndex = 28
+        Me.LabelOption5.Text = "View universitywise list of students with back in a particular course in a select" &
+    "ed session and semester."
+        Me.LabelOption5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PanelNavigation
         '
@@ -215,28 +242,28 @@ Partial Class FormExamCellDashboard
         Me.PictureBoxUser.TabIndex = 4
         Me.PictureBoxUser.TabStop = False
         '
-        'LabelOption5
+        'LabelOption6
         '
-        Me.LabelOption5.BackColor = System.Drawing.Color.White
-        Me.LabelOption5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LabelOption5.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption5.Location = New System.Drawing.Point(57, 236)
-        Me.LabelOption5.Name = "LabelOption5"
-        Me.LabelOption5.Size = New System.Drawing.Size(300, 170)
-        Me.LabelOption5.TabIndex = 28
-        Me.LabelOption5.Text = "View universitywise list of students with back in a particular course in a select" &
-    "ed session and semester."
-        Me.LabelOption5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LabelOption6.BackColor = System.Drawing.Color.White
+        Me.LabelOption6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelOption6.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOption6.Location = New System.Drawing.Point(382, 236)
+        Me.LabelOption6.Name = "LabelOption6"
+        Me.LabelOption6.Size = New System.Drawing.Size(300, 170)
+        Me.LabelOption6.TabIndex = 33
+        Me.LabelOption6.Text = "View collegewise list of students with back in a particular course in a selected " &
+    "session and semester."
+        Me.LabelOption6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'ButtonOption5
+        'ButtonOption6
         '
-        Me.ButtonOption5.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption5.Location = New System.Drawing.Point(106, 354)
-        Me.ButtonOption5.Name = "ButtonOption5"
-        Me.ButtonOption5.Size = New System.Drawing.Size(202, 40)
-        Me.ButtonOption5.TabIndex = 32
-        Me.ButtonOption5.Text = "View Report-III"
-        Me.ButtonOption5.UseVisualStyleBackColor = True
+        Me.ButtonOption6.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOption6.Location = New System.Drawing.Point(431, 354)
+        Me.ButtonOption6.Name = "ButtonOption6"
+        Me.ButtonOption6.Size = New System.Drawing.Size(202, 40)
+        Me.ButtonOption6.TabIndex = 34
+        Me.ButtonOption6.Text = "View Report-IV"
+        Me.ButtonOption6.UseVisualStyleBackColor = True
         '
         'FormExamCellDashboard
         '
@@ -274,4 +301,6 @@ Partial Class FormExamCellDashboard
     Friend WithEvents PictureBoxUser As PictureBox
     Friend WithEvents LabelOption5 As Label
     Friend WithEvents ButtonOption5 As Button
+    Friend WithEvents ButtonOption6 As Button
+    Friend WithEvents LabelOption6 As Label
 End Class

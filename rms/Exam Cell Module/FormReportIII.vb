@@ -179,41 +179,109 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
         End If
     End Sub
 
-    '    Private Sub ButtonGenerateReport_Click(sender As Object, e As EventArgs) Handles ButtonGenerateReport.Click
-    '        Con = New MySqlConnection With {
-    '            .ConnectionString = "server=localhost;userid=root;database=rms"
-    '        }
-    '        Dim Reader As MySqlDataReader
-    '        Dim Flag As Integer
-    '        Try
-    '            Con.Open()
-    '            Dim Query As String
-    '            Query = $"SELECT COUNT(UNIVERSITY_ROLL_NUMBER)
-    'From students, colleges Where UNIVERSITY_ROLL_NUMBER In (Select UNIVERSITY_ROLL_NUMBER FROM marksheets
-    'WHERE COURSEWISE_SUBJECT_ID = (SELECT COURSEWISE_SUBJECT_ID FROM coursewise_subjects, subjects 
-    'WHERE coursewise_subjects.SUBJECT_ID = subjects.SUBJECT_ID And coursewise_subjects.UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}' 
-    'And SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=
-    '(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')) AND colleges.COLLEGE_ID=students.COLLEGE_ID;"
-    '            Command = New MySqlCommand(Query, Con)
-    '            Reader = Command.ExecuteReader()
-    '            Reader.Read()
-    '            Flag = Reader.GetInt16(column:="COUNT(UNIVERSITY_ROLL_NUMBER)")
-    '            Reader.Dispose()
-    '            Con.Close()
-    '        Catch ex As Exception
-    '            MessageBox.Show(text:=ex.Message)
-    '        Finally
-    '            Con.Dispose()
-    '        End Try
-    '        If Flag = 0 Then
-    '            MessageBox.Show(text:="No students have back in the selected course.", caption:="No Students alert",
-    '                            buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
-    '            CrystalReportViewer1.Visible = False
-    '        Else
-    '            CrystalReportViewer1.Visible = True
-    '            CreateDataSet()   ' To create a dataset on which the report 
-    '            will be based.
-    '            ShowReport()   ' To show the report.
-    '        End If
-    '    End Sub
+    Private Sub ButtonGenerateReport_Click(sender As Object, e As EventArgs) Handles ButtonGenerateReport.Click
+        Con = New MySqlConnection With {
+            .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Dim Flag As Integer
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"SELECT COUNT(marksheets.UNIVERSITY_ROLL_NUMBER) FROM students,
+colleges, universities, subjects, marksheets WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')
+AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
+FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
+SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
+UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
+marksheets.UNIVERSITY_ROLL_NUMBER;"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            Flag = Reader.GetInt16(column:="COUNT(marksheets.UNIVERSITY_ROLL_NUMBER)")
+            Reader.Dispose()
+            Con.Close()
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
+        If Flag = 0 Then
+            MessageBox.Show(text:="No students have back in the selected course.", caption:="No Students alert",
+                            buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
+            CrystalReportViewer1.Visible = False
+        Else
+            CrystalReportViewer1.Visible = True
+            CreateDataSet()   ' To create a dataset on which the report will be based.
+            ShowReport()   ' To show the report.
+        End If
+    End Sub
+
+    Private Sub ShowReport()
+        Dim myReport As New ReportDocument
+        Dim myData As New DataSet
+        Dim conn As New MySqlConnection
+        Dim cmd As New MySqlCommand
+        Dim myAdapter As New MySqlDataAdapter
+        conn = New MySqlConnection With {
+           .ConnectionString = "server=localhost;userid=root;database=rms;Allow User Variables=True"
+        }
+        Try
+            conn.Open()
+
+            cmd.CommandText = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), COLLEGE_NAME , SUBJECT_NAME FROM students,
+colleges, universities, subjects, marksheets WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')
+AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
+FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
+SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
+UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
+marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+            cmd.Connection = conn
+
+            myAdapter.SelectCommand = cmd
+            myAdapter.Fill(myData)
+
+            myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport3.rpt")
+            myReport.SetDataSource(myData)
+
+            myReport.SetParameterValue(name:="university", val:=$"{ComboBoxCourse.SelectedItem} ({ComboBoxUniversity.SelectedItem})")
+            myReport.SetParameterValue(name:="session", val:=$"{ComboBoxSession.SelectedItem} ({ComboBoxSemester.SelectedItem}-Semester)")
+            myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
+            myReport.SetParameterValue(name:="header", val:=$"List of students with back in any subject")
+
+            CrystalReportViewer1.ReportSource = myReport
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message, caption:="Report could not be created.", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub CreateDataSet()
+        Dim myData As New DataSet
+        Dim conn As New MySqlConnection
+        Dim cmd As New MySqlCommand
+        Dim myAdapter As New MySqlDataAdapter
+
+        conn = New MySqlConnection With {
+           .ConnectionString = "server=localhost;userid=root;database=rms;Allow User Variables=True"
+        }
+
+        Try
+            conn.Open()
+            cmd.CommandText = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), COLLEGE_NAME , SUBJECT_NAME FROM students,
+colleges, universities, subjects, marksheets WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')
+AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
+FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
+SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
+UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
+marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+            cmd.Connection = conn
+
+            myAdapter.SelectCommand = cmd
+            myAdapter.Fill(myData)
+
+            myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset3.xml", XmlWriteMode.WriteSchema)
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message, caption:="Report could not be created.", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

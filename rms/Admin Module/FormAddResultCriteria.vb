@@ -308,7 +308,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             MessageBox.Show(text:="Criteria successfully added.", caption:="Success alert", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show(text:="Criteria already added or selected semester is not available for selected session.",
-                            caption:="Duplicate entry alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
+            caption:="Duplicate entry alert", buttons:=MessageBoxButtons.OKCancel, icon:=MessageBoxIcon.Error)
         Finally
             Con.Dispose()
         End Try

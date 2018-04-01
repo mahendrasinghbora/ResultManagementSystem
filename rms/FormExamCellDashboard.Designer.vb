@@ -46,6 +46,8 @@ Partial Class FormExamCellDashboard
         Me.LabelOption5 = New System.Windows.Forms.Label()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
+        Me.LabelOption8 = New System.Windows.Forms.Label()
+        Me.ButtonOption8 = New System.Windows.Forms.Button()
         Me.ContextMenuStripUser.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
@@ -185,6 +187,8 @@ Partial Class FormExamCellDashboard
         '
         'PanelMenu
         '
+        Me.PanelMenu.Controls.Add(Me.ButtonOption8)
+        Me.PanelMenu.Controls.Add(Me.LabelOption8)
         Me.PanelMenu.Controls.Add(Me.ButtonOption7)
         Me.PanelMenu.Controls.Add(Me.LabelOption7)
         Me.PanelMenu.Controls.Add(Me.ButtonOption6)
@@ -291,6 +295,28 @@ Partial Class FormExamCellDashboard
         Me.PictureBoxUser.TabIndex = 4
         Me.PictureBoxUser.TabStop = False
         '
+        'LabelOption8
+        '
+        Me.LabelOption8.BackColor = System.Drawing.Color.White
+        Me.LabelOption8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelOption8.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOption8.Location = New System.Drawing.Point(1036, 236)
+        Me.LabelOption8.Name = "LabelOption8"
+        Me.LabelOption8.Size = New System.Drawing.Size(300, 170)
+        Me.LabelOption8.TabIndex = 37
+        Me.LabelOption8.Text = "View complete back-log record of a particular student."
+        Me.LabelOption8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'ButtonOption8
+        '
+        Me.ButtonOption8.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOption8.Location = New System.Drawing.Point(1085, 354)
+        Me.ButtonOption8.Name = "ButtonOption8"
+        Me.ButtonOption8.Size = New System.Drawing.Size(202, 40)
+        Me.ButtonOption8.TabIndex = 38
+        Me.ButtonOption8.Text = "View Report-VI"
+        Me.ButtonOption8.UseVisualStyleBackColor = True
+        '
         'FormExamCellDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,4 +357,6 @@ Partial Class FormExamCellDashboard
     Friend WithEvents LabelOption6 As Label
     Friend WithEvents LabelOption7 As Label
     Friend WithEvents ButtonOption7 As Button
+    Friend WithEvents ButtonOption8 As Button
+    Friend WithEvents LabelOption8 As Label
 End Class

@@ -266,6 +266,12 @@
     <Compile Include="Exam Cell Module\FormReportV.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Exam Cell Module\FormReportVI.Designer.vb">
+      <DependentUpon>FormReportVI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormReportVI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditProfile.Designer.vb">
       <DependentUpon>FormEditProfile.vb</DependentUpon>
     </Compile>
@@ -341,6 +347,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReport6.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport6.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\CrystalReportMarksheet.vb">
@@ -435,6 +447,9 @@
     <EmbeddedResource Include="Exam Cell Module\FormReportV.resx">
       <DependentUpon>FormReportV.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Exam Cell Module\FormReportVI.resx">
+      <DependentUpon>FormReportVI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfile.resx">
       <DependentUpon>FormEditProfile.vb</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +491,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport5.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReport6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport6.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReportMarksheet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportMarksheet.vb</LastGenOutput>
@@ -515,6 +534,7 @@
     <Content Include="Reports\dataset3.xml" />
     <Content Include="Reports\dataset4.xml" />
     <Content Include="Reports\dataset5.xml" />
+    <Content Include="Reports\dataset6.xml" />
     <Content Include="Reports\datasetMarksheet.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

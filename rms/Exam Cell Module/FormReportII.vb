@@ -1,5 +1,4 @@
 ﻿Imports CrystalDecisions.CrystalReports.Engine
-Imports System.Data
 Imports MySql.Data.MySqlClient
 
 Public Class FormReportII

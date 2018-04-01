@@ -1,16 +1,15 @@
 ﻿Imports CrystalDecisions.CrystalReports.Engine
 Imports MySql.Data.MySqlClient
 
-Public Class FormReportIII
+Public Class FormReportIV
     Dim Con As MySqlConnection   ' Connection Variable
     Dim Command As MySqlCommand   ' Command Variable
     Dim CountSession As Integer = 0
     Dim CountSemester As Integer = 0
     Dim CountCourse As Integer = 0
-    Dim CountUniversity As Integer = 0
-
-    Private Sub FormReportIII_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FormStyles(CallingForm:=Me, Text:="RMS | Universitywise Back Report in a Particular Course")   ' Form Styles
+    Dim CountCollege As Integer = 0
+    Private Sub FormReportIV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormStyles(CallingForm:=Me, Text:="RMS | Collegewise Back Report in a Particular Course")   ' Form Styles
         PanelNavigation.BackColor = Color.FromArgb(52, 58, 64)   ' Navigation Panel Color
         LabelPrintMarksheets.ForeColor = Color.FromArgb(255, 255, 255)
         UserImage(PictureBoxUser:=PictureBoxUser, LabelUsername:=LabelUsername)   ' User's Thumbnail and Name
@@ -21,7 +20,7 @@ Public Class FormReportIII
         CrystalReportViewer1.Visible = False
         FillSessions()   ' To fill combobox with sessions
         FillSemesters()   ' To fill combobox with semesters
-        FillUniversities()   ' To fill combobox with universities
+        FillColleges()   ' To fill combobox with colleges
     End Sub
 
     Private Sub ButtonDashboard_Click(sender As Object, e As EventArgs) Handles ButtonDashboard.Click
@@ -88,7 +87,7 @@ Public Class FormReportIII
         End Try
     End Sub
 
-    Private Sub FillUniversities()
+    Private Sub FillColleges()
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
         }
@@ -96,12 +95,12 @@ Public Class FormReportIII
         Try
             Con.Open()
             Dim Query As String
-            Query = "SELECT * FROM universities;"
+            Query = "SELECT * FROM colleges;"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()
-                CountUniversity = CountUniversity + 1
-                ComboBoxUniversity.Items.Add(Reader.GetString(column:="UNIVERSITY_NAME"))
+                CountCollege = CountCollege + 1
+                ComboBoxCollege.Items.Add(Reader.GetString(column:="COLLEGE_NAME"))
             End While
             Con.Close()
             Reader.Dispose()
@@ -112,9 +111,8 @@ Public Class FormReportIII
         End Try
     End Sub
 
-    Private Sub ComboBoxUniversity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxUniversity.SelectedIndexChanged
+    Private Sub ComboBoxCollege_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCollege.SelectedIndexChanged
         ComboBoxCourse.Items.Clear()
-        CountCourse = 0
         Con = New MySqlConnection With {
             .ConnectionString = "server=localhost;userid=root;database=rms"
         }
@@ -122,15 +120,15 @@ Public Class FormReportIII
         Try
             Con.Open()
             Dim Query As String
-            Query = $"SELECT * FROM universities WHERE UNIVERSITY_NAME = '{ComboBoxUniversity.SelectedItem}';"
+            Query = $"SELECT * FROM colleges WHERE COLLEGE_NAME = '{ComboBoxCollege.SelectedItem}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            Dim UniversityID As String = Reader.GetString(column:="UNIVERSITY_ID")
+            Dim CollegeID As String = Reader.GetString(column:="COLLEGE_ID")
             Reader.Dispose()
-            Query = $"SELECT COURSE_NAME FROM universitywise_courses, courses WHERE
-universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UNIVERSITY_ID='{UniversityID}';"
-            Command = New MySqlCommand(Query, Con)
+            Query = $"SELECT COURSE_NAME FROM collegewise_courses, courses, universitywise_courses WHERE universitywise_courses.COURSE_ID=courses.COURSE_ID AND
+collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWISE_COURSE_ID AND collegewise_courses.COLLEGE_ID='{CollegeID}';"
+            Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()
                 CountCourse = CountCourse + 1
@@ -152,7 +150,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountUniversity <> 0 And CountCourse <> 0 And CountSemester <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
+        If CountCollege <> 0 And CountCourse <> 0 And CountSemester <> 0 And ComboBoxCollege.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
               ComboBoxSemester.SelectedItem <> Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
@@ -161,7 +159,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountUniversity <> 0 And CountCourse <> 0 And CountSession <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
+        If CountCollege <> 0 And CountCourse <> 0 And CountSession <> 0 And ComboBoxCollege.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
              ComboBoxSession.SelectedItem <> Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
@@ -170,7 +168,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     End Sub
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
-        If CountUniversity <> 0 And CountSession <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
+        If CountCollege <> 0 And CountSession <> 0 And ComboBoxCollege.SelectedItem <> Nothing And
              ComboBoxSession.SelectedItem <> Nothing And CountSemester <> 0 And ComboBoxSemester.SelectedItem <> Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
@@ -192,7 +190,7 @@ colleges, universities, subjects, marksheets WHERE marksheets.RESULT_STATUS_ID=(
 AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
 FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
 SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
-UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
+COLLEGE_NAME='{ComboBoxCollege.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
 marksheets.UNIVERSITY_ROLL_NUMBER;"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
@@ -228,22 +226,23 @@ marksheets.UNIVERSITY_ROLL_NUMBER;"
         Try
             conn.Open()
 
-            cmd.CommandText = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), COLLEGE_NAME , SUBJECT_NAME FROM students,
+            cmd.CommandText = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), SUBJECT_NAME FROM students,
 colleges, universities, subjects, marksheets WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')
 AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
 FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
 SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
-UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
-marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+COLLEGE_NAME='{ComboBoxCollege.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
+marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport3.rpt")
+            myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport4.rpt")
             myReport.SetDataSource(myData)
 
-            myReport.SetParameterValue(name:="university", val:=$"{ComboBoxCourse.SelectedItem} ({ComboBoxUniversity.SelectedItem})")
+            myReport.SetParameterValue(name:="college", val:=$"{ComboBoxCollege.SelectedItem}")
+            myReport.SetParameterValue(name:="course", val:=$"{ComboBoxCourse.SelectedItem}")
             myReport.SetParameterValue(name:="session", val:=$"{ComboBoxSession.SelectedItem} ({ComboBoxSemester.SelectedItem}-Semester)")
             myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
             myReport.SetParameterValue(name:="header", val:=$"List of students with back in any subject")
@@ -266,19 +265,19 @@ marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.
 
         Try
             conn.Open()
-            cmd.CommandText = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), COLLEGE_NAME , SUBJECT_NAME FROM students,
+            cmd.CommandText = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), SUBJECT_NAME FROM students,
 colleges, universities, subjects, marksheets WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')
 AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
 FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
 SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
-UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
-marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+COLLEGE_NAME='{ComboBoxCollege.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
+marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset3.xml", XmlWriteMode.WriteSchema)
+            myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset4.xml", XmlWriteMode.WriteSchema)
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message, caption:="Report could not be created.", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         End Try

@@ -269,7 +269,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            CourseID = Reader.GetString(column:="COURSE_ID")
+            Dim CourseID As String = Reader.GetString(column:="COURSE_ID")
             Reader.Dispose()
             Query = $"SELECT * FROM universities WHERE UNIVERSITY_NAME = '{ComboBoxUniversity.SelectedItem}';"
             Command = New MySqlCommand(Query, Con)
@@ -283,12 +283,6 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Reader.Read()
             Dim SemesterID As String = Reader.GetString(column:="SEMESTER_ID")
             Reader.Dispose()
-            Query = $"SELECT * FROM universitywise_courses WHERE UNIVERSITY_ID = '{UniversityID}' AND COURSE_ID = '{CourseID}';"
-            Command = New MySqlCommand(Query, Con)
-            Reader = Command.ExecuteReader()
-            Reader.Read()
-            UniversitywiseCourseID = Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID")
-            Reader.Dispose()
             Query = $"SELECT * FROM sessionwise_semesters WHERE SESSION_ID = '{ComboBoxSession.SelectedItem}' AND SEMESTER_ID = '{SemesterID}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
@@ -296,8 +290,8 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Dim SessionwiseSemesterID As String = Reader.GetString(column:="SESSIONWISE_SEMESTER_ID")
             Reader.Dispose()
             Query = $"INSERT INTO result_criteria (`MAXIMUM_INTERNAL_MARKS`, `MAXIMUM_EXTERNAL_MARKS`, `PASSING_MARKS`, `PASSING_MARKS_THEORY`, `UNIVERSITY_ID`, 
-`UNIVERSITYWISE_COURSE_ID`, `SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES ('{TextInternalMarks.Text}', '{TextExternalMarks.Text}', 
-'{TextPassingMarks.Text}', '{TextTheory.Text}', '{UniversityID}', '{UniversitywiseCourseID}', '{SessionwiseSemesterID}', '{Username}');"
+`COURSE_ID`, `SESSIONWISE_SEMESTER_ID`, `USERNAME`) VALUES ('{TextInternalMarks.Text}', '{TextExternalMarks.Text}', 
+'{TextPassingMarks.Text}', '{TextTheory.Text}', '{UniversityID}', '{CourseID}', '{SessionwiseSemesterID}', '{Username}');"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Con.Close()

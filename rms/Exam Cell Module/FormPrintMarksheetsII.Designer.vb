@@ -24,7 +24,6 @@ Partial Class FormPrintMarksheetsII
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrintMarksheetsII))
-        Me.ErrorProviderAddInformation = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
@@ -36,13 +35,13 @@ Partial Class FormPrintMarksheetsII
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelPage = New System.Windows.Forms.Panel()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.PanelAddMarks = New System.Windows.Forms.Panel()
-        Me.PanelMarksheet = New System.Windows.Forms.Panel()
         Me.PanelData = New System.Windows.Forms.Panel()
+        Me.ButtonGenerateMarksheet = New System.Windows.Forms.Button()
         Me.LabelCollege = New System.Windows.Forms.Label()
         Me.LabelCourse = New System.Windows.Forms.Label()
         Me.ContextMenuStripUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        CType(Me.ErrorProviderAddInformation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelPage.SuspendLayout()
@@ -50,10 +49,6 @@ Partial Class FormPrintMarksheetsII
         Me.PanelData.SuspendLayout()
         Me.ContextMenuStripUsers.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ErrorProviderAddInformation
-        '
-        Me.ErrorProviderAddInformation.ContainerControl = Me
         '
         'PanelNavigation
         '
@@ -112,7 +107,7 @@ Partial Class FormPrintMarksheetsII
         Me.ComboBoxRoll.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxRoll.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxRoll.FormattingEnabled = True
-        Me.ComboBoxRoll.Location = New System.Drawing.Point(900, 3)
+        Me.ComboBoxRoll.Location = New System.Drawing.Point(900, 7)
         Me.ComboBoxRoll.Name = "ComboBoxRoll"
         Me.ComboBoxRoll.Size = New System.Drawing.Size(330, 31)
         Me.ComboBoxRoll.TabIndex = 13
@@ -121,18 +116,18 @@ Partial Class FormPrintMarksheetsII
         '
         Me.LabelRoll.AutoSize = True
         Me.LabelRoll.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelRoll.Location = New System.Drawing.Point(677, 4)
+        Me.LabelRoll.Location = New System.Drawing.Point(753, 8)
         Me.LabelRoll.Name = "LabelRoll"
-        Me.LabelRoll.Size = New System.Drawing.Size(218, 28)
+        Me.LabelRoll.Size = New System.Drawing.Size(124, 28)
         Me.LabelRoll.TabIndex = 12
-        Me.LabelRoll.Text = "University Roll Number"
+        Me.LabelRoll.Text = "Roll Number"
         '
         'ComboBoxCollege
         '
         Me.ComboBoxCollege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCollege.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCollege.FormattingEnabled = True
-        Me.ComboBoxCollege.Location = New System.Drawing.Point(139, 7)
+        Me.ComboBoxCollege.Location = New System.Drawing.Point(151, 7)
         Me.ComboBoxCollege.Name = "ComboBoxCollege"
         Me.ComboBoxCollege.Size = New System.Drawing.Size(330, 31)
         Me.ComboBoxCollege.TabIndex = 11
@@ -151,44 +146,58 @@ Partial Class FormPrintMarksheetsII
         '
         'PanelPage
         '
+        Me.PanelPage.Controls.Add(Me.CrystalReportViewer1)
         Me.PanelPage.Controls.Add(Me.PanelAddMarks)
         Me.PanelPage.Location = New System.Drawing.Point(-8, 66)
         Me.PanelPage.Name = "PanelPage"
         Me.PanelPage.Size = New System.Drawing.Size(1366, 662)
         Me.PanelPage.TabIndex = 8
         '
+        'CrystalReportViewer1
+        '
+        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(24, 141)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1319, 520)
+        Me.CrystalReportViewer1.TabIndex = 10
+        '
         'PanelAddMarks
         '
         Me.PanelAddMarks.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PanelAddMarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelAddMarks.Controls.Add(Me.PanelMarksheet)
         Me.PanelAddMarks.Controls.Add(Me.PanelData)
         Me.PanelAddMarks.Controls.Add(Me.LabelCourse)
         Me.PanelAddMarks.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelAddMarks.Location = New System.Drawing.Point(43, 3)
         Me.PanelAddMarks.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelAddMarks.Name = "PanelAddMarks"
-        Me.PanelAddMarks.Size = New System.Drawing.Size(1280, 630)
+        Me.PanelAddMarks.Size = New System.Drawing.Size(1280, 132)
         Me.PanelAddMarks.TabIndex = 1
-        '
-        'PanelMarksheet
-        '
-        Me.PanelMarksheet.Location = New System.Drawing.Point(12, 85)
-        Me.PanelMarksheet.Name = "PanelMarksheet"
-        Me.PanelMarksheet.Size = New System.Drawing.Size(1254, 543)
-        Me.PanelMarksheet.TabIndex = 15
         '
         'PanelData
         '
         Me.PanelData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelData.Controls.Add(Me.ButtonGenerateMarksheet)
         Me.PanelData.Controls.Add(Me.LabelCollege)
         Me.PanelData.Controls.Add(Me.ComboBoxCollege)
         Me.PanelData.Controls.Add(Me.ComboBoxRoll)
         Me.PanelData.Controls.Add(Me.LabelRoll)
         Me.PanelData.Location = New System.Drawing.Point(-8, 37)
         Me.PanelData.Name = "PanelData"
-        Me.PanelData.Size = New System.Drawing.Size(1295, 41)
+        Me.PanelData.Size = New System.Drawing.Size(1295, 94)
         Me.PanelData.TabIndex = 14
+        '
+        'ButtonGenerateMarksheet
+        '
+        Me.ButtonGenerateMarksheet.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonGenerateMarksheet.Location = New System.Drawing.Point(531, 50)
+        Me.ButtonGenerateMarksheet.Name = "ButtonGenerateMarksheet"
+        Me.ButtonGenerateMarksheet.Size = New System.Drawing.Size(231, 39)
+        Me.ButtonGenerateMarksheet.TabIndex = 2
+        Me.ButtonGenerateMarksheet.Text = "Generate Marksheet"
+        Me.ButtonGenerateMarksheet.UseVisualStyleBackColor = True
         '
         'LabelCollege
         '
@@ -227,7 +236,6 @@ Partial Class FormPrintMarksheetsII
         Me.Controls.Add(Me.PanelPage)
         Me.Name = "FormPrintMarksheetsII"
         Me.ShowIcon = False
-        CType(Me.ErrorProviderAddInformation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
@@ -239,8 +247,6 @@ Partial Class FormPrintMarksheetsII
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents ErrorProviderAddInformation As ErrorProvider
     Friend WithEvents PanelNavigation As Panel
     Friend WithEvents PictureBoxUser As PictureBox
     Friend WithEvents LabelUsername As Label
@@ -257,5 +263,6 @@ Partial Class FormPrintMarksheetsII
     Friend WithEvents ContextMenuStripUsers As ContextMenuStrip
     Friend WithEvents LabelCourse As Label
     Friend WithEvents PanelData As Panel
-    Friend WithEvents PanelMarksheet As Panel
+    Friend WithEvents ButtonGenerateMarksheet As Button
+    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
 End Class

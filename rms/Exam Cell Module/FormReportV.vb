@@ -131,7 +131,7 @@ SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
 
             myReport.SetParameterValue(name:="college", val:=$"{StudentCollege}")
             myReport.SetParameterValue(name:="course", val:=$"{StudentCourse}")
-            myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
+            myReport.SetParameterValue(name:="date", val:=$"({DateTime.Today.ToString("d")})")
             myReport.SetParameterValue(name:="header", val:=$"Complete back-log of {StudentName} ({TextRollNumber.Text})")
 
             CrystalReportViewer1.ReportSource = myReport

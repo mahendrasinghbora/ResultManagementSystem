@@ -293,7 +293,7 @@ colleges.COLLEGE_ID=students.COLLEGE_ID AND COLLEGE_NAME = '{ComboBoxCollege.Sel
             myReport.SetParameterValue(name:="college", val:=$"{ComboBoxCollege.SelectedItem}")
             myReport.SetParameterValue(name:="course", val:=$"{ComboBoxCourse.SelectedItem}")
             myReport.SetParameterValue(name:="session", val:=$"{ComboBoxSession.SelectedItem} ({ComboBoxSemester.SelectedItem}-Semester)")
-            myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
+            myReport.SetParameterValue(name:="date", val:=$"({DateTime.Today.ToString("d")})")
             myReport.SetParameterValue(name:="header", val:=$"List of students with back in {ComboBoxSubject.SelectedItem}")
 
             CrystalReportViewer1.ReportSource = myReport

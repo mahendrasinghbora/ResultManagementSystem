@@ -45,7 +45,7 @@ universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID ORDER BY COLLEGE_NAME, UNIVERS
 
             myReport.SetParameterValue(name:="university", val:=$"{ComboBoxCourse.SelectedItem} ({ComboBoxUniversity.SelectedItem})")
             myReport.SetParameterValue(name:="session", val:=$"{ComboBoxSession.SelectedItem} ({ComboBoxSemester.SelectedItem}-Semester)")
-            myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
+            myReport.SetParameterValue(name:="date", val:=$"({DateTime.Today.ToString("d")})")
             myReport.SetParameterValue(name:="header", val:=$"List of students with back in {ComboBoxSubject.SelectedItem}")
 
             CrystalReportViewer1.ReportSource = myReport

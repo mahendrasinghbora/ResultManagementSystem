@@ -248,7 +248,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
 
             myReport.SetParameterValue(name:="university", val:=$"{ComboBoxCourse.SelectedItem} ({ComboBoxUniversity.SelectedItem})")
             myReport.SetParameterValue(name:="session", val:=$"{ComboBoxSession.SelectedItem} ({ComboBoxSemester.SelectedItem}-Semester)")
-            myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
+            myReport.SetParameterValue(name:="date", val:=$"({DateTime.Today.ToString("d")})")
             myReport.SetParameterValue(name:="header", val:=$"Merit-list of students")
 
             CrystalReportViewer1.ReportSource = myReport

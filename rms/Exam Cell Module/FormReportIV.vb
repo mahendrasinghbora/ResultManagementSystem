@@ -244,7 +244,7 @@ marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUBJECT_NAME, students.UNIVERSITY_ROL
             myReport.SetParameterValue(name:="college", val:=$"{ComboBoxCollege.SelectedItem}")
             myReport.SetParameterValue(name:="course", val:=$"{ComboBoxCourse.SelectedItem}")
             myReport.SetParameterValue(name:="session", val:=$"{ComboBoxSession.SelectedItem} ({ComboBoxSemester.SelectedItem}-Semester)")
-            myReport.SetParameterValue(name:="date", val:=$"({Date.Now()})")
+            myReport.SetParameterValue(name:="date", val:=$"({DateTime.Today.ToString("d")})")
             myReport.SetParameterValue(name:="header", val:=$"List of students with back in any subject")
 
             CrystalReportViewer1.ReportSource = myReport

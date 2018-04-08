@@ -381,7 +381,6 @@ result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=marksheets
                 ")
             Next
             file.WriteLine("
-                    <script src=''></script>
                 </body>
 
             </html>

@@ -193,7 +193,7 @@ AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.S
 FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
 SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
 UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
-marksheets.UNIVERSITY_ROLL_NUMBER;"
+marksheets.UNIVERSITY_ROLL_NUMBER AND marksheets.STATUS='1';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -234,7 +234,7 @@ AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.S
 FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
 SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
 UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
-marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+marksheets.UNIVERSITY_ROLL_NUMBER AND marksheets.STATUS='1' ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
@@ -272,7 +272,7 @@ AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.S
 FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
 SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
 UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
-marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+marksheets.UNIVERSITY_ROLL_NUMBER AND marksheets.STATUS='1' ORDER BY COLLEGE_NAME, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd

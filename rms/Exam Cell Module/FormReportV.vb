@@ -64,7 +64,7 @@ Public Class FormReportV
 colleges, universities, subjects, marksheets, semesters, sessionwise_semesters WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status 
 WHERE RESULT_STATUS='Back') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.UNIVERSITY_ROLL_NUMBER=
 '{TextRollNumber.Text}' AND universities.UNIVERSITY_ID = colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER = marksheets.UNIVERSITY_ROLL_NUMBER AND
-sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID;"
+sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID AND marksheets.STATUS='1';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -76,8 +76,8 @@ FROM students, colleges, universities, subjects, marksheets, semesters, sessionw
 FROM result_status WHERE RESULT_STATUS='Back') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND
 marksheets.UNIVERSITY_ROLL_NUMBER='{TextRollNumber.Text}' AND universities.UNIVERSITY_ID = colleges.UNIVERSITY_ID AND
 students.UNIVERSITY_ROLL_NUMBER=marksheets.UNIVERSITY_ROLL_NUMBER AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND
-semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID AND courses.COURSE_ID=marksheets.COURSE_ID ORDER BY SESSION_ID, SEMESTER, SUBJECT_NAME,
-students.UNIVERSITY_ROLL_NUMBER;"
+semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID AND courses.COURSE_ID=marksheets.COURSE_ID  AND marksheets.STATUS='1' ORDER BY SESSION_ID, SEMESTER,
+SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
                 Command = New MySqlCommand(Query, Con)
                 Reader = Command.ExecuteReader()
                 Reader.Read()
@@ -119,8 +119,8 @@ students.UNIVERSITY_ROLL_NUMBER;"
 colleges, universities, subjects, marksheets, semesters, sessionwise_semesters WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status 
 WHERE RESULT_STATUS='Back') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.UNIVERSITY_ROLL_NUMBER=
 '{TextRollNumber.Text}' AND universities.UNIVERSITY_ID = colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER = marksheets.UNIVERSITY_ROLL_NUMBER AND
-sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID ORDER BY SESSION_ID,
-SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID AND marksheets.STATUS='1'
+ORDER BY SESSION_ID, SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
@@ -156,8 +156,8 @@ SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
 colleges, universities, subjects, marksheets, semesters, sessionwise_semesters WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status 
 WHERE RESULT_STATUS='Back') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND marksheets.UNIVERSITY_ROLL_NUMBER=
 '{TextRollNumber.Text}' AND universities.UNIVERSITY_ID = colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER = marksheets.UNIVERSITY_ROLL_NUMBER AND
-sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID ORDER BY SESSION_ID,
-SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
+sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID AND marksheets.STATUS='1'
+ORDER BY SESSION_ID, SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd

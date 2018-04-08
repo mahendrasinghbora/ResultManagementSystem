@@ -219,8 +219,8 @@ subjects.SUBJECT_ID = marksheets.SUBJECT_ID AND marksheets.SESSIONWISE_SEMESTER_
 =colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER = marksheets.UNIVERSITY_ROLL_NUMBER AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=
 marksheets.SESSIONWISE_SEMESTER_ID AND sessionwise_semesters.SEMESTER_ID = semesters.SEMESTER_ID AND universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND
 marksheets.SESSIONWISE_SEMESTER_ID = result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID = marksheets.COURSE_ID AND courses.COURSE_ID=
-marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}' ORDER BY marksheets.UNIVERSITY_ROLL_NUMBER,
-SUBJECT_NAME;"
+marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}' AND marksheets.STATUS='1'
+ORDER BY marksheets.UNIVERSITY_ROLL_NUMBER, SUBJECT_NAME;"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -242,7 +242,8 @@ result_criteria, courses WHERE colleges.COLLEGE_ID=students.COLLEGE_ID AND subje
 SESSION_ID='{ComboBoxSession.SelectedItem}') AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=marksheets.UNIVERSITY_ROLL_NUMBER
 AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND sessionwise_semesters.SEMESTER_ID=semesters.SEMESTER_ID AND
 universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID = result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=
-marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}';"
+marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}'
+AND marksheets.STATUS='1';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -257,7 +258,7 @@ SESSION_ID='{ComboBoxSession.SelectedItem}') AND universities.UNIVERSITY_ID=coll
 AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND sessionwise_semesters.SEMESTER_ID=semesters.SEMESTER_ID AND
 universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID = result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=
 marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}'
-ORDER BY marksheets.UNIVERSITY_ROLL_NUMBER;"
+AND marksheets.STATUS='1' ORDER BY marksheets.UNIVERSITY_ROLL_NUMBER;"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             While Reader.Read()
@@ -312,7 +313,7 @@ sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID
 universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID = result_criteria.SESSIONWISE_SEMESTER_ID AND
 result_criteria.COURSE_ID=marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND
 COLLEGE_NAME='{ComboBoxCollege.SelectedItem}' AND marksheets.RESULT_STATUS_ID=result_status.RESULT_STATUS_ID AND marksheets.UNIVERSITY_ROLL_NUMBER=
-'{Roll}' ORDER BY marksheets.UNIVERSITY_ROLL_NUMBER, SUBJECT_NAME;"
+'{Roll}' AND marksheets.STATUS='1' ORDER BY marksheets.UNIVERSITY_ROLL_NUMBER, SUBJECT_NAME;"
                 Command = New MySqlCommand(Query, Con)
                 Reader = Command.ExecuteReader()
                 While Reader.Read()
@@ -340,7 +341,8 @@ FROM sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters 
                 students.UNIVERSITY_ROLL_NUMBER=marksheets.UNIVERSITY_ROLL_NUMBER AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND
                 sessionwise_semesters.SEMESTER_ID=semesters.SEMESTER_ID AND marksheets.UNIVERSITY_ROLL_NUMBER='{Roll}' AND universities.UNIVERSITY_ID=
                 result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID=result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=marksheets.COURSE_ID AND
-                courses.COURSE_ID=marksheets.COURSE_ID AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back');"
+                courses.COURSE_ID=marksheets.COURSE_ID AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back')
+                AND marksheets.STATUS='1';"
                 Command = New MySqlCommand(Query, Con)
                 Reader = Command.ExecuteReader()
                 Reader.Read()
@@ -358,7 +360,7 @@ FROM sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters 
 '{ComboBoxSession.SelectedItem}') AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=marksheets.UNIVERSITY_ROLL_NUMBER AND
 sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND sessionwise_semesters.SEMESTER_ID=semesters.SEMESTER_ID AND
 marksheets.UNIVERSITY_ROLL_NUMBER='{Roll}' AND universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID=
-result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID;"
+result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND marksheets.STATUS='1';"
                 Command = New MySqlCommand(Query, Con)
                 Reader = Command.ExecuteReader()
                 Reader.Read()
@@ -408,7 +410,8 @@ result_criteria, courses WHERE colleges.COLLEGE_ID=students.COLLEGE_ID AND subje
 SESSION_ID='{ComboBoxSession.SelectedItem}') AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=marksheets.UNIVERSITY_ROLL_NUMBER
 AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND sessionwise_semesters.SEMESTER_ID=semesters.SEMESTER_ID AND
 universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID = result_criteria.SESSIONWISE_SEMESTER_ID AND result_criteria.COURSE_ID=
-marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}';"
+marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND COURSE_NAME='{ComboBoxCourse.SelectedItem}' AND COLLEGE_NAME='{ComboBoxCollege.SelectedItem}'
+AND marksheets.STATUS='1';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()

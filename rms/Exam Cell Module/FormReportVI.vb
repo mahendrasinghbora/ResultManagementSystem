@@ -193,7 +193,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
         FROM sessionwise_semesters WHERE SESSION_ID='{ComboBoxSession.SelectedItem}' AND SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE
         SEMESTER='{ComboBoxSemester.SelectedItem}')) AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND
         UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID AND students.UNIVERSITY_ROLL_NUMBER=
-        marksheets.UNIVERSITY_ROLL_NUMBER;"
+        marksheets.UNIVERSITY_ROLL_NUMBER AND marksheets.STATUS='1';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
@@ -237,7 +237,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID=result_criteria.SESSIONWISE_SEMESTER_ID AND
     result_criteria.COURSE_ID=marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND universities.UNIVERSITY_ID=(SELECT UNIVERSITY_ID FROM
     universities WHERE UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}') AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE 
-    COURSE_NAME='{ComboBoxCourse.SelectedItem}') GROUP BY marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUM((EXTERNAL_MARKS+INTERNAL_MARKS)) DESC;"
+    COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND marksheets.STATUS='1' GROUP BY marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUM((EXTERNAL_MARKS+INTERNAL_MARKS)) DESC;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd
@@ -278,7 +278,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     universities.UNIVERSITY_ID=result_criteria.UNIVERSITY_ID AND marksheets.SESSIONWISE_SEMESTER_ID=result_criteria.SESSIONWISE_SEMESTER_ID AND
     result_criteria.COURSE_ID=marksheets.COURSE_ID AND courses.COURSE_ID=marksheets.COURSE_ID AND universities.UNIVERSITY_ID=(SELECT UNIVERSITY_ID FROM
     universities WHERE UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}') AND marksheets.COURSE_ID=(SELECT COURSE_ID FROM courses WHERE 
-    COURSE_NAME='{ComboBoxCourse.SelectedItem}') GROUP BY marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUM((EXTERNAL_MARKS+INTERNAL_MARKS)) DESC;"
+    COURSE_NAME='{ComboBoxCourse.SelectedItem}') AND marksheets.STATUS='1' GROUP BY marksheets.UNIVERSITY_ROLL_NUMBER ORDER BY SUM((EXTERNAL_MARKS+INTERNAL_MARKS)) DESC;"
             cmd.Connection = conn
 
             myAdapter.SelectCommand = cmd

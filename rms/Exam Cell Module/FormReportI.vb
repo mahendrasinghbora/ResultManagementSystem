@@ -33,7 +33,7 @@ COLLEGE_NAME AS 'NAME OF THE COLLEGE' FROM students, colleges, universities WHER
 WHERE SUBJECT_ID = (SELECT SUBJECT_ID FROM subjects WHERE marksheets.SUBJECT_ID = subjects.SUBJECT_ID AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}')
 AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back') AND SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
 FROM sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND 
-SESSION_ID='{ComboBoxSession.SelectedItem}')) AND colleges.COLLEGE_ID=students.COLLEGE_ID AND UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND
+SESSION_ID='{ComboBoxSession.SelectedItem}') AND STATUS='1') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND
 universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID ORDER BY COLLEGE_NAME, UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
@@ -71,7 +71,7 @@ COLLEGE_NAME AS 'NAME OF THE COLLEGE' FROM students, colleges, universities WHER
 WHERE SUBJECT_ID = (SELECT SUBJECT_ID FROM subjects WHERE marksheets.SUBJECT_ID = subjects.SUBJECT_ID AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}')
 AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='Back') AND SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID
 FROM sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND 
-SESSION_ID='{ComboBoxSession.SelectedItem}')) AND colleges.COLLEGE_ID=students.COLLEGE_ID AND UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND
+SESSION_ID='{ComboBoxSession.SelectedItem}') AND STATUS='1') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND
 universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID ORDER BY COLLEGE_NAME, UNIVERSITY_ROLL_NUMBER;"
             cmd.Connection = conn
 
@@ -343,8 +343,8 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
 (SELECT UNIVERSITY_ROLL_NUMBER FROM marksheets WHERE SUBJECT_ID = (SELECT SUBJECT_ID FROM subjects WHERE marksheets.SUBJECT_ID
 = subjects.SUBJECT_ID AND SUBJECT_NAME = '{ComboBoxSubject.SelectedItem}') AND RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID FROM result_status
 WHERE RESULT_STATUS='Back') AND SESSIONWISE_SEMESTER_ID=(SELECT SESSIONWISE_SEMESTER_ID FROM sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID
-FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND SESSION_ID='{ComboBoxSession.SelectedItem}')) AND colleges.COLLEGE_ID=students.COLLEGE_ID AND
-UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID;"
+FROM semesters WHERE SEMESTER='{ComboBoxSemester.SelectedItem}') AND SESSION_ID='{ComboBoxSession.SelectedItem}') AND STATUS='1') AND colleges.COLLEGE_ID=
+students.COLLEGE_ID AND UNIVERSITY_NAME='{ComboBoxUniversity.SelectedItem}' AND universities.UNIVERSITY_ID=colleges.UNIVERSITY_ID;"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormReportIV
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormCompleteList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,18 @@ Partial Class FormReportIV
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormReportIV))
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCompleteList))
+        Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.ButtonDashboard = New System.Windows.Forms.Button()
         Me.LabelPrintMarksheets = New System.Windows.Forms.Label()
-        Me.ContextMenuStripUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStripUsers = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.PanelReport = New System.Windows.Forms.Panel()
         Me.ButtonGenerateReport = New System.Windows.Forms.Button()
         Me.ComboBoxSemester = New System.Windows.Forms.ComboBox()
@@ -44,23 +44,27 @@ Partial Class FormReportIV
         Me.PanelReportLabel = New System.Windows.Forms.Panel()
         Me.LabelReport = New System.Windows.Forms.Label()
         Me.LabelUniversity = New System.Windows.Forms.Label()
-        Me.PanelNavigation = New System.Windows.Forms.Panel()
+        Me.PanelBrowser = New System.Windows.Forms.Panel()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.ButtonPrintReport = New System.Windows.Forms.Button()
+        Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStripUsers.SuspendLayout()
         Me.PanelReport.SuspendLayout()
         Me.PanelReportLabel.SuspendLayout()
-        Me.PanelNavigation.SuspendLayout()
+        Me.PanelBrowser.SuspendLayout()
         Me.SuspendLayout()
         '
-        'CrystalReportViewer1
+        'PanelNavigation
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(16, 250)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1319, 476)
-        Me.CrystalReportViewer1.TabIndex = 15
+        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
+        Me.PanelNavigation.Controls.Add(Me.LabelUsername)
+        Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
+        Me.PanelNavigation.Controls.Add(Me.LabelPrintMarksheets)
+        Me.PanelNavigation.Location = New System.Drawing.Point(-15, 2)
+        Me.PanelNavigation.Name = "PanelNavigation"
+        Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
+        Me.PanelNavigation.TabIndex = 16
         '
         'PictureBoxUser
         '
@@ -86,7 +90,7 @@ Partial Class FormReportIV
         'ButtonDashboard
         '
         Me.ButtonDashboard.Font = New System.Drawing.Font("Acme", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDashboard.Location = New System.Drawing.Point(204, 9)
+        Me.ButtonDashboard.Location = New System.Drawing.Point(208, 9)
         Me.ButtonDashboard.Name = "ButtonDashboard"
         Me.ButtonDashboard.Size = New System.Drawing.Size(102, 39)
         Me.ButtonDashboard.TabIndex = 1
@@ -99,16 +103,15 @@ Partial Class FormReportIV
         Me.LabelPrintMarksheets.Font = New System.Drawing.Font("Alegreya", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPrintMarksheets.Location = New System.Drawing.Point(33, 9)
         Me.LabelPrintMarksheets.Name = "LabelPrintMarksheets"
-        Me.LabelPrintMarksheets.Size = New System.Drawing.Size(169, 39)
+        Me.LabelPrintMarksheets.Size = New System.Drawing.Size(177, 39)
         Me.LabelPrintMarksheets.TabIndex = 0
-        Me.LabelPrintMarksheets.Text = "View Report-IV"
+        Me.LabelPrintMarksheets.Text = "View Report-VII"
         '
-        'ContextMenuStripUsers
+        'LogOutToolStripMenuItem
         '
-        Me.ContextMenuStripUsers.Font = New System.Drawing.Font("Alegreya Sans", 16.0!)
-        Me.ContextMenuStripUsers.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditProfileToolStripMenuItem, Me.LogOutToolStripMenuItem})
-        Me.ContextMenuStripUsers.Name = "ContextMenuStripUser"
-        Me.ContextMenuStripUsers.Size = New System.Drawing.Size(184, 76)
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
+        Me.LogOutToolStripMenuItem.Text = "Log out"
         '
         'EditProfileToolStripMenuItem
         '
@@ -116,11 +119,12 @@ Partial Class FormReportIV
         Me.EditProfileToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
         Me.EditProfileToolStripMenuItem.Text = "Edit Profile"
         '
-        'LogOutToolStripMenuItem
+        'ContextMenuStripUsers
         '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(183, 36)
-        Me.LogOutToolStripMenuItem.Text = "Log out"
+        Me.ContextMenuStripUsers.Font = New System.Drawing.Font("Alegreya Sans", 16.0!)
+        Me.ContextMenuStripUsers.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditProfileToolStripMenuItem, Me.LogOutToolStripMenuItem})
+        Me.ContextMenuStripUsers.Name = "ContextMenuStripUser"
+        Me.ContextMenuStripUsers.Size = New System.Drawing.Size(184, 76)
         '
         'PanelReport
         '
@@ -137,11 +141,11 @@ Partial Class FormReportIV
         Me.PanelReport.Controls.Add(Me.PanelReportLabel)
         Me.PanelReport.Controls.Add(Me.LabelUniversity)
         Me.PanelReport.Font = New System.Drawing.Font("Roboto", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelReport.Location = New System.Drawing.Point(16, 69)
+        Me.PanelReport.Location = New System.Drawing.Point(16, 66)
         Me.PanelReport.Margin = New System.Windows.Forms.Padding(150, 3, 150, 3)
         Me.PanelReport.Name = "PanelReport"
-        Me.PanelReport.Size = New System.Drawing.Size(1319, 175)
-        Me.PanelReport.TabIndex = 14
+        Me.PanelReport.Size = New System.Drawing.Size(1319, 170)
+        Me.PanelReport.TabIndex = 19
         '
         'ButtonGenerateReport
         '
@@ -254,47 +258,69 @@ Partial Class FormReportIV
         Me.LabelUniversity.TabIndex = 1
         Me.LabelUniversity.Text = "College"
         '
-        'PanelNavigation
+        'PanelBrowser
         '
-        Me.PanelNavigation.Controls.Add(Me.PictureBoxUser)
-        Me.PanelNavigation.Controls.Add(Me.LabelUsername)
-        Me.PanelNavigation.Controls.Add(Me.ButtonDashboard)
-        Me.PanelNavigation.Controls.Add(Me.LabelPrintMarksheets)
-        Me.PanelNavigation.Location = New System.Drawing.Point(-15, 2)
-        Me.PanelNavigation.Name = "PanelNavigation"
-        Me.PanelNavigation.Size = New System.Drawing.Size(1381, 60)
-        Me.PanelNavigation.TabIndex = 13
+        Me.PanelBrowser.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.PanelBrowser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelBrowser.Controls.Add(Me.WebBrowser1)
+        Me.PanelBrowser.Location = New System.Drawing.Point(16, 287)
+        Me.PanelBrowser.Name = "PanelBrowser"
+        Me.PanelBrowser.Size = New System.Drawing.Size(1319, 441)
+        Me.PanelBrowser.TabIndex = 20
         '
-        'FormReportIV
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(1317, 439)
+        Me.WebBrowser1.TabIndex = 19
+        '
+        'ButtonPrintReport
+        '
+        Me.ButtonPrintReport.AutoSize = True
+        Me.ButtonPrintReport.Font = New System.Drawing.Font("Acme", 16.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPrintReport.Location = New System.Drawing.Point(587, 242)
+        Me.ButtonPrintReport.Name = "ButtonPrintReport"
+        Me.ButtonPrintReport.Size = New System.Drawing.Size(177, 39)
+        Me.ButtonPrintReport.TabIndex = 21
+        Me.ButtonPrintReport.Text = "Print Report"
+        Me.ButtonPrintReport.UseVisualStyleBackColor = True
+        '
+        'FormCompleteList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.Controls.Add(Me.ButtonPrintReport)
+        Me.Controls.Add(Me.PanelBrowser)
         Me.Controls.Add(Me.PanelReport)
         Me.Controls.Add(Me.PanelNavigation)
-        Me.Name = "FormReportIV"
+        Me.Name = "FormCompleteList"
         Me.ShowIcon = False
+        Me.PanelNavigation.ResumeLayout(False)
+        Me.PanelNavigation.PerformLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStripUsers.ResumeLayout(False)
         Me.PanelReport.ResumeLayout(False)
         Me.PanelReport.PerformLayout()
         Me.PanelReportLabel.ResumeLayout(False)
         Me.PanelReportLabel.PerformLayout()
-        Me.PanelNavigation.ResumeLayout(False)
-        Me.PanelNavigation.PerformLayout()
+        Me.PanelBrowser.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents PanelNavigation As Panel
     Friend WithEvents PictureBoxUser As PictureBox
     Friend WithEvents LabelUsername As Label
     Friend WithEvents ButtonDashboard As Button
     Friend WithEvents LabelPrintMarksheets As Label
-    Friend WithEvents ContextMenuStripUsers As ContextMenuStrip
-    Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStripUsers As ContextMenuStrip
     Friend WithEvents PanelReport As Panel
     Friend WithEvents ButtonGenerateReport As Button
     Friend WithEvents ComboBoxSemester As ComboBox
@@ -307,5 +333,7 @@ Partial Class FormReportIV
     Friend WithEvents PanelReportLabel As Panel
     Friend WithEvents LabelReport As Label
     Friend WithEvents LabelUniversity As Label
-    Friend WithEvents PanelNavigation As Panel
+    Friend WithEvents PanelBrowser As Panel
+    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents ButtonPrintReport As Button
 End Class

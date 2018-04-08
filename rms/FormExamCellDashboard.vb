@@ -74,4 +74,11 @@
         NewFormReportVI.Show()
         Dispose()
     End Sub
+
+    Private Sub ButtonOption9_Click(sender As Object, e As EventArgs) Handles ButtonOption9.Click
+        Dim NewFormCompleteList As FormCompleteList
+        NewFormCompleteList = New FormCompleteList()
+        NewFormCompleteList.Show()
+        Dispose()
+    End Sub
 End Class

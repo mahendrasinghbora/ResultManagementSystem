@@ -70,20 +70,22 @@ sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID
             Reader.Read()
             Flag = Reader.GetInt16(column:="COUNT(marksheets.UNIVERSITY_ROLL_NUMBER)")
             Reader.Dispose()
-            Query = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), SUBJECT_NAME, SESSION_ID, SEMESTER, COLLEGE_NAME, COURSE_NAME
+            If Flag <> 0 Then
+                Query = $"SELECT marksheets.UNIVERSITY_ROLL_NUMBER, CONCAT(FIRST_NAME, ' ', LAST_NAME), SUBJECT_NAME, SESSION_ID, SEMESTER, COLLEGE_NAME, COURSE_NAME
 FROM students, colleges, universities, subjects, marksheets, semesters, sessionwise_semesters, courses WHERE marksheets.RESULT_STATUS_ID=(SELECT RESULT_STATUS_ID
 FROM result_status WHERE RESULT_STATUS='Back') AND colleges.COLLEGE_ID=students.COLLEGE_ID AND subjects.SUBJECT_ID=marksheets.SUBJECT_ID AND
 marksheets.UNIVERSITY_ROLL_NUMBER='{TextRollNumber.Text}' AND universities.UNIVERSITY_ID = colleges.UNIVERSITY_ID AND
 students.UNIVERSITY_ROLL_NUMBER=marksheets.UNIVERSITY_ROLL_NUMBER AND sessionwise_semesters.SESSIONWISE_SEMESTER_ID=marksheets.SESSIONWISE_SEMESTER_ID AND
 semesters.SEMESTER_ID=sessionwise_semesters.SEMESTER_ID AND courses.COURSE_ID=marksheets.COURSE_ID ORDER BY SESSION_ID, SEMESTER, SUBJECT_NAME,
 students.UNIVERSITY_ROLL_NUMBER;"
-            Command = New MySqlCommand(Query, Con)
-            Reader = Command.ExecuteReader()
-            Reader.Read()
-            StudentCollege = Reader.GetString(column:="COLLEGE_NAME")
-            StudentCourse = Reader.GetString(column:="COURSE_NAME")
-            StudentName = Reader.GetString(column:="CONCAT(FIRST_NAME, ' ', LAST_NAME)")
-            Reader.Dispose()
+                Command = New MySqlCommand(Query, Con)
+                Reader = Command.ExecuteReader()
+                Reader.Read()
+                StudentCollege = Reader.GetString(column:="COLLEGE_NAME")
+                StudentCourse = Reader.GetString(column:="COURSE_NAME")
+                StudentName = Reader.GetString(column:="CONCAT(FIRST_NAME, ' ', LAST_NAME)")
+                Reader.Dispose()
+            End If
             Con.Close()
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message)

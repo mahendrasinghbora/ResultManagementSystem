@@ -36,7 +36,7 @@ Public Class FormAddMarksII
         Try
             Con.Open()
             Dim Query As String
-            Query = $"SELECT * FROM result_criteria WHERE UNIVERSITYWISE_COURSE_ID = '{UniversitywiseCourseID}'
+            Query = $"SELECT * FROM result_criteria WHERE UNIVERSITY_ID = '{UniversityID}' AND COURSE_ID = '{CourseID}'
 AND SESSIONWISE_SEMESTER_ID = '{SessionwiseSemesterID}';"
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()

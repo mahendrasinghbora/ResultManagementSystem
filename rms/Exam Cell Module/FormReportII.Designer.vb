@@ -82,9 +82,9 @@ Partial Class FormReportII
         Me.ComboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSubject.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSubject.FormattingEnabled = True
-        Me.ComboBoxSubject.Location = New System.Drawing.Point(979, 84)
+        Me.ComboBoxSubject.Location = New System.Drawing.Point(1002, 84)
         Me.ComboBoxSubject.Name = "ComboBoxSubject"
-        Me.ComboBoxSubject.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxSubject.Size = New System.Drawing.Size(302, 31)
         Me.ComboBoxSubject.TabIndex = 19
         '
         'ButtonGenerateReport
@@ -102,7 +102,7 @@ Partial Class FormReportII
         '
         Me.LabelSubject.AutoSize = True
         Me.LabelSubject.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSubject.Location = New System.Drawing.Point(975, 43)
+        Me.LabelSubject.Location = New System.Drawing.Point(998, 43)
         Me.LabelSubject.Name = "LabelSubject"
         Me.LabelSubject.Size = New System.Drawing.Size(76, 28)
         Me.LabelSubject.TabIndex = 18
@@ -113,7 +113,7 @@ Partial Class FormReportII
         Me.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSemester.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSemester.FormattingEnabled = True
-        Me.ComboBoxSemester.Location = New System.Drawing.Point(499, 84)
+        Me.ComboBoxSemester.Location = New System.Drawing.Point(544, 84)
         Me.ComboBoxSemester.Name = "ComboBoxSemester"
         Me.ComboBoxSemester.Size = New System.Drawing.Size(108, 31)
         Me.ComboBoxSemester.TabIndex = 17
@@ -122,7 +122,7 @@ Partial Class FormReportII
         '
         Me.LabelSemester.AutoSize = True
         Me.LabelSemester.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSemester.Location = New System.Drawing.Point(495, 43)
+        Me.LabelSemester.Location = New System.Drawing.Point(536, 43)
         Me.LabelSemester.Name = "LabelSemester"
         Me.LabelSemester.Size = New System.Drawing.Size(96, 28)
         Me.LabelSemester.TabIndex = 16
@@ -133,7 +133,7 @@ Partial Class FormReportII
         Me.ComboBoxSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSession.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSession.FormattingEnabled = True
-        Me.ComboBoxSession.Location = New System.Drawing.Point(362, 84)
+        Me.ComboBoxSession.Location = New System.Drawing.Point(412, 84)
         Me.ComboBoxSession.Name = "ComboBoxSession"
         Me.ComboBoxSession.Size = New System.Drawing.Size(108, 31)
         Me.ComboBoxSession.TabIndex = 15
@@ -142,7 +142,7 @@ Partial Class FormReportII
         '
         Me.LabelSession.AutoSize = True
         Me.LabelSession.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSession.Location = New System.Drawing.Point(358, 43)
+        Me.LabelSession.Location = New System.Drawing.Point(406, 43)
         Me.LabelSession.Name = "LabelSession"
         Me.LabelSession.Size = New System.Drawing.Size(79, 28)
         Me.LabelSession.TabIndex = 14
@@ -153,16 +153,16 @@ Partial Class FormReportII
         Me.ComboBoxCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCourse.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCourse.FormattingEnabled = True
-        Me.ComboBoxCourse.Location = New System.Drawing.Point(636, 84)
+        Me.ComboBoxCourse.Location = New System.Drawing.Point(676, 84)
         Me.ComboBoxCourse.Name = "ComboBoxCourse"
-        Me.ComboBoxCourse.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxCourse.Size = New System.Drawing.Size(302, 31)
         Me.ComboBoxCourse.TabIndex = 13
         '
         'LabelCourse
         '
         Me.LabelCourse.AutoSize = True
         Me.LabelCourse.Font = New System.Drawing.Font("Acme", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCourse.Location = New System.Drawing.Point(632, 43)
+        Me.LabelCourse.Location = New System.Drawing.Point(675, 43)
         Me.LabelCourse.Name = "LabelCourse"
         Me.LabelCourse.Size = New System.Drawing.Size(73, 28)
         Me.LabelCourse.TabIndex = 12
@@ -173,9 +173,9 @@ Partial Class FormReportII
         Me.ComboBoxCollege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxCollege.Font = New System.Drawing.Font("Alegreya Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxCollege.FormattingEnabled = True
-        Me.ComboBoxCollege.Location = New System.Drawing.Point(19, 84)
+        Me.ComboBoxCollege.Location = New System.Drawing.Point(18, 84)
         Me.ComboBoxCollege.Name = "ComboBoxCollege"
-        Me.ComboBoxCollege.Size = New System.Drawing.Size(314, 31)
+        Me.ComboBoxCollege.Size = New System.Drawing.Size(369, 31)
         Me.ComboBoxCollege.TabIndex = 11
         '
         'PanelReportLabel

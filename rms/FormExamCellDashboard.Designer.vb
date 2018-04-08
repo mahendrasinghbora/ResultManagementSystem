@@ -38,6 +38,10 @@ Partial Class FormExamCellDashboard
         Me.LabelOption1 = New System.Windows.Forms.Label()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.ButtonOption9 = New System.Windows.Forms.Button()
+        Me.LabelOption9 = New System.Windows.Forms.Label()
+        Me.ButtonOption8 = New System.Windows.Forms.Button()
+        Me.LabelOption8 = New System.Windows.Forms.Label()
         Me.ButtonOption7 = New System.Windows.Forms.Button()
         Me.LabelOption7 = New System.Windows.Forms.Label()
         Me.ButtonOption6 = New System.Windows.Forms.Button()
@@ -46,8 +50,6 @@ Partial Class FormExamCellDashboard
         Me.LabelOption5 = New System.Windows.Forms.Label()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
-        Me.LabelOption8 = New System.Windows.Forms.Label()
-        Me.ButtonOption8 = New System.Windows.Forms.Button()
         Me.ContextMenuStripUser.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
@@ -187,6 +189,8 @@ Partial Class FormExamCellDashboard
         '
         'PanelMenu
         '
+        Me.PanelMenu.Controls.Add(Me.ButtonOption9)
+        Me.PanelMenu.Controls.Add(Me.LabelOption9)
         Me.PanelMenu.Controls.Add(Me.ButtonOption8)
         Me.PanelMenu.Controls.Add(Me.LabelOption8)
         Me.PanelMenu.Controls.Add(Me.ButtonOption7)
@@ -207,6 +211,52 @@ Partial Class FormExamCellDashboard
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(1366, 643)
         Me.PanelMenu.TabIndex = 3
+        '
+        'ButtonOption9
+        '
+        Me.ButtonOption9.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOption9.Location = New System.Drawing.Point(106, 567)
+        Me.ButtonOption9.Name = "ButtonOption9"
+        Me.ButtonOption9.Size = New System.Drawing.Size(202, 40)
+        Me.ButtonOption9.TabIndex = 40
+        Me.ButtonOption9.Text = "View Report-VII"
+        Me.ButtonOption9.UseVisualStyleBackColor = True
+        '
+        'LabelOption9
+        '
+        Me.LabelOption9.BackColor = System.Drawing.Color.White
+        Me.LabelOption9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelOption9.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOption9.Location = New System.Drawing.Point(57, 452)
+        Me.LabelOption9.Name = "LabelOption9"
+        Me.LabelOption9.Size = New System.Drawing.Size(300, 170)
+        Me.LabelOption9.TabIndex = 39
+        Me.LabelOption9.Text = "View collegewise statement of marks in a particular course in a selected session " &
+    "and semester."
+        Me.LabelOption9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'ButtonOption8
+        '
+        Me.ButtonOption8.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOption8.Location = New System.Drawing.Point(1085, 354)
+        Me.ButtonOption8.Name = "ButtonOption8"
+        Me.ButtonOption8.Size = New System.Drawing.Size(202, 40)
+        Me.ButtonOption8.TabIndex = 38
+        Me.ButtonOption8.Text = "View Report-VI"
+        Me.ButtonOption8.UseVisualStyleBackColor = True
+        '
+        'LabelOption8
+        '
+        Me.LabelOption8.BackColor = System.Drawing.Color.White
+        Me.LabelOption8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelOption8.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOption8.Location = New System.Drawing.Point(1036, 236)
+        Me.LabelOption8.Name = "LabelOption8"
+        Me.LabelOption8.Size = New System.Drawing.Size(300, 170)
+        Me.LabelOption8.TabIndex = 37
+        Me.LabelOption8.Text = "View universitywise merit-list of students in a particular course in a selected s" &
+    "ession and semester."
+        Me.LabelOption8.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'ButtonOption7
         '
@@ -295,28 +345,6 @@ Partial Class FormExamCellDashboard
         Me.PictureBoxUser.TabIndex = 4
         Me.PictureBoxUser.TabStop = False
         '
-        'LabelOption8
-        '
-        Me.LabelOption8.BackColor = System.Drawing.Color.White
-        Me.LabelOption8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LabelOption8.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption8.Location = New System.Drawing.Point(1036, 236)
-        Me.LabelOption8.Name = "LabelOption8"
-        Me.LabelOption8.Size = New System.Drawing.Size(300, 170)
-        Me.LabelOption8.TabIndex = 37
-        Me.LabelOption8.Text = "View complete back-log record of a particular student."
-        Me.LabelOption8.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'ButtonOption8
-        '
-        Me.ButtonOption8.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption8.Location = New System.Drawing.Point(1085, 354)
-        Me.ButtonOption8.Name = "ButtonOption8"
-        Me.ButtonOption8.Size = New System.Drawing.Size(202, 40)
-        Me.ButtonOption8.TabIndex = 38
-        Me.ButtonOption8.Text = "View Report-VI"
-        Me.ButtonOption8.UseVisualStyleBackColor = True
-        '
         'FormExamCellDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -359,4 +387,6 @@ Partial Class FormExamCellDashboard
     Friend WithEvents ButtonOption7 As Button
     Friend WithEvents ButtonOption8 As Button
     Friend WithEvents LabelOption8 As Label
+    Friend WithEvents ButtonOption9 As Button
+    Friend WithEvents LabelOption9 As Label
 End Class

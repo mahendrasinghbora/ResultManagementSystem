@@ -81,4 +81,11 @@
         NewFormCompleteList.Show()
         Dispose()
     End Sub
+
+    Private Sub ButtonOption10_Click(sender As Object, e As EventArgs) Handles ButtonOption10.Click
+        Dim NewFormReportVIII As FormReportVIII
+        NewFormReportVIII = New FormReportVIII()
+        NewFormReportVIII.Show()
+        Dispose()
+    End Sub
 End Class

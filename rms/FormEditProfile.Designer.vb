@@ -48,6 +48,7 @@ Partial Class FormEditProfile
         Me.PanelPage = New System.Windows.Forms.Panel()
         Me.OpenFileDialogEditProfile = New System.Windows.Forms.OpenFileDialog()
         Me.ErrorProviderEditProfile = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ButtonChangePassword = New System.Windows.Forms.Button()
         CType(Me.PictureBoxThumbnail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelEditProfileLabel.SuspendLayout()
         Me.PanelEditProfile.SuspendLayout()
@@ -270,6 +271,7 @@ Partial Class FormEditProfile
         '
         'PanelPage
         '
+        Me.PanelPage.Controls.Add(Me.ButtonChangePassword)
         Me.PanelPage.Controls.Add(Me.PanelEditProfile)
         Me.PanelPage.Location = New System.Drawing.Point(-8, 65)
         Me.PanelPage.Name = "PanelPage"
@@ -283,6 +285,17 @@ Partial Class FormEditProfile
         'ErrorProviderEditProfile
         '
         Me.ErrorProviderEditProfile.ContainerControl = Me
+        '
+        'ButtonChangePassword
+        '
+        Me.ButtonChangePassword.AutoSize = True
+        Me.ButtonChangePassword.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonChangePassword.Location = New System.Drawing.Point(909, 36)
+        Me.ButtonChangePassword.Name = "ButtonChangePassword"
+        Me.ButtonChangePassword.Size = New System.Drawing.Size(169, 36)
+        Me.ButtonChangePassword.TabIndex = 22
+        Me.ButtonChangePassword.Text = "Change Password"
+        Me.ButtonChangePassword.UseVisualStyleBackColor = True
         '
         'FormEditProfile
         '
@@ -303,6 +316,7 @@ Partial Class FormEditProfile
         Me.PanelNavigation.ResumeLayout(False)
         Me.PanelNavigation.PerformLayout()
         Me.PanelPage.ResumeLayout(False)
+        Me.PanelPage.PerformLayout()
         CType(Me.ErrorProviderEditProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -331,4 +345,5 @@ Partial Class FormEditProfile
     Friend WithEvents ButtonSelectImage As Button
     Friend WithEvents OpenFileDialogEditProfile As OpenFileDialog
     Friend WithEvents ErrorProviderEditProfile As ErrorProvider
+    Friend WithEvents ButtonChangePassword As Button
 End Class

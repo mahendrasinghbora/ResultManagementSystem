@@ -314,6 +314,18 @@
     <Compile Include="Exam Cell Module\FormReportVIII.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormChangePassword.Designer.vb">
+      <DependentUpon>FormChangePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangePasswordExamCell.Designer.vb">
+      <DependentUpon>FormChangePasswordExamCell.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangePasswordExamCell.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditProfile.Designer.vb">
       <DependentUpon>FormEditProfile.vb</DependentUpon>
     </Compile>
@@ -500,6 +512,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exam Cell Module\FormReportVIII.resx">
       <DependentUpon>FormReportVIII.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangePasswordExamCell.resx">
+      <DependentUpon>FormChangePasswordExamCell.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfile.resx">
       <DependentUpon>FormEditProfile.vb</DependentUpon>

@@ -168,4 +168,11 @@ THUMBNAIL=@THUMBNAIL WHERE USERNAME='{Username}';"
             Con.Dispose()
         End Try
     End Sub
+
+    Private Sub ButtonChangePassword_Click(sender As Object, e As EventArgs) Handles ButtonChangePassword.Click
+        Dim NewFormChangePasswordExamCell As FormChangePasswordExamCell
+        NewFormChangePasswordExamCell = New FormChangePasswordExamCell()
+        NewFormChangePasswordExamCell.Show()
+        Dispose()
+    End Sub
 End Class

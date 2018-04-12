@@ -48,6 +48,7 @@ Partial Class FormEditProfileExamCell
         Me.LabelAddUsername = New System.Windows.Forms.Label()
         Me.OpenFileDialogEditProfile = New System.Windows.Forms.OpenFileDialog()
         Me.PanelPage = New System.Windows.Forms.Panel()
+        Me.ButtonChangePassword = New System.Windows.Forms.Button()
         CType(Me.ErrorProviderEditProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelNavigation.SuspendLayout()
         CType(Me.PictureBoxUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -278,11 +279,23 @@ Partial Class FormEditProfileExamCell
         '
         'PanelPage
         '
+        Me.PanelPage.Controls.Add(Me.ButtonChangePassword)
         Me.PanelPage.Controls.Add(Me.PanelEditProfile)
         Me.PanelPage.Location = New System.Drawing.Point(-8, 65)
         Me.PanelPage.Name = "PanelPage"
         Me.PanelPage.Size = New System.Drawing.Size(1366, 664)
         Me.PanelPage.TabIndex = 7
+        '
+        'ButtonChangePassword
+        '
+        Me.ButtonChangePassword.AutoSize = True
+        Me.ButtonChangePassword.Font = New System.Drawing.Font("Acme", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonChangePassword.Location = New System.Drawing.Point(909, 36)
+        Me.ButtonChangePassword.Name = "ButtonChangePassword"
+        Me.ButtonChangePassword.Size = New System.Drawing.Size(169, 36)
+        Me.ButtonChangePassword.TabIndex = 23
+        Me.ButtonChangePassword.Text = "Change Password"
+        Me.ButtonChangePassword.UseVisualStyleBackColor = True
         '
         'FormEditProfileExamCell
         '
@@ -304,6 +317,7 @@ Partial Class FormEditProfileExamCell
         Me.PanelEditProfileLabel.ResumeLayout(False)
         Me.PanelEditProfileLabel.PerformLayout()
         Me.PanelPage.ResumeLayout(False)
+        Me.PanelPage.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -332,4 +346,5 @@ Partial Class FormEditProfileExamCell
     Friend WithEvents EditProfileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialogEditProfile As OpenFileDialog
+    Friend WithEvents ButtonChangePassword As Button
 End Class

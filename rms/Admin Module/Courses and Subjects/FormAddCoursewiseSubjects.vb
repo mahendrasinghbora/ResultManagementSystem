@@ -133,9 +133,9 @@ Public Class FormAddCoursewiseSubjects
     End Sub
 
     Private Sub ComboBoxSubject_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSubject.SelectedIndexChanged
-        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountSemester <> 0 And CountSession <> 0 And
+            ComboBoxSemester.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
         End If
     End Sub
@@ -203,9 +203,9 @@ Public Class FormAddCoursewiseSubjects
     End Sub
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
-        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxSubject.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxSubject.SelectedItem IsNot Nothing And CountSemester <> 0 And CountSession <> 0 And
+            ComboBoxSemester.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
         Else
             ButtonAddCoursewiseSubject.Enabled = False
@@ -213,9 +213,9 @@ Public Class FormAddCoursewiseSubjects
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSubject.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountSemester <> 0 And CountSession <> 0 And
+            ComboBoxSubject.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
         Else
             ButtonAddCoursewiseSubject.Enabled = False
@@ -223,9 +223,9 @@ Public Class FormAddCoursewiseSubjects
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSubject.SelectedItem <> Nothing And
-            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountSemester <> 0 And CountSession <> 0 And
+            ComboBoxSemester.SelectedItem IsNot Nothing And ComboBoxSubject.SelectedItem IsNot Nothing And
+            CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
         Else
             ButtonAddCoursewiseSubject.Enabled = False
@@ -267,9 +267,9 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
         Finally
             Con.Dispose()
         End Try
-        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxSubject.SelectedItem <> Nothing And CountSemester <> 0 And CountSession <> 0 And
-            ComboBoxSemester.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-            CountUniversity <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        If CountSubject <> 0 And CountCourse <> 0 And ComboBoxSubject.SelectedItem IsNot Nothing And CountSemester <> 0 And CountSession <> 0 And
+            ComboBoxSemester.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot Nothing And
+            CountUniversity <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddCoursewiseSubject.Enabled = True
         Else
             ButtonAddCoursewiseSubject.Enabled = False

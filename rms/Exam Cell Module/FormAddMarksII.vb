@@ -31,7 +31,7 @@ Public Class FormAddMarksII
     Private Sub GetResultCriteria()
         Con = New MySqlConnection With {
            .ConnectionString = "server=localhost;userid=root;database=rms"
-       }
+        }
         Dim Reader As MySqlDataReader
         Try
             Con.Open()
@@ -90,7 +90,7 @@ coursewise_subjects.SESSIONWISE_SEMESTER_ID='{SessionwiseSemesterID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            TotalSubjects = Reader.GetString(column:="COUNT(SUBJECT_NAME)")
+            TotalSubjects = CInt(Reader.GetString(column:="COUNT(SUBJECT_NAME)"))
             Reader.Dispose()
             If TotalSubjects = 1 Then
                 Query = $"SELECT SUBJECT_NAME FROM coursewise_subjects, subjects WHERE
@@ -803,7 +803,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         Finally
             Con.Dispose()
         End Try
-        If ComboBoxCollege.SelectedItem <> Nothing And ComboBoxRoll.SelectedItem <> Nothing And CountStudent <> 0 Then
+        If ComboBoxCollege.SelectedItem IsNot Nothing And ComboBoxRoll.SelectedItem IsNot Nothing And CountStudent <> 0 Then
             ButtonAddMarks.Enabled = True
         Else
             ButtonAddMarks.Enabled = False
@@ -830,7 +830,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
         Finally
             Con.Dispose()
         End Try
-        If ComboBoxCollege.SelectedItem <> Nothing And ComboBoxRoll.SelectedItem <> Nothing And CountCollege <> 0 Then
+        If ComboBoxCollege.SelectedItem IsNot Nothing And ComboBoxRoll.SelectedItem IsNot Nothing And CountCollege <> 0 Then
             ButtonAddMarks.Enabled = True
         Else
             ButtonAddMarks.Enabled = False
@@ -1162,7 +1162,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal1.Text <> "" And TextMarksExternal1.Text <> "" Then
-            TextTotalMarks1.Text = CInt(TextMarksInternal1.Text) + CInt(TextMarksExternal1.Text)
+            TextTotalMarks1.Text = CType(CInt(TextMarksInternal1.Text) + CInt(TextMarksExternal1.Text), String)
             If CInt(TextTotalMarks1.Text) >= PassingMarks And CInt(TextMarksExternal1.Text) >= PassingMarksTheory Then
                 TextResult1.Text = "Pass"
             Else
@@ -1179,7 +1179,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal2.Text <> "" And TextMarksExternal2.Text <> "" Then
-            TextTotalMarks2.Text = CInt(TextMarksInternal2.Text) + CInt(TextMarksExternal2.Text)
+            TextTotalMarks2.Text = CType(CInt(TextMarksInternal2.Text) + CInt(TextMarksExternal2.Text), String)
             If CInt(TextTotalMarks2.Text) >= PassingMarks And CInt(TextMarksExternal2.Text) >= PassingMarksTheory Then
                 TextResult2.Text = "Pass"
             Else
@@ -1196,7 +1196,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal3.Text <> "" And TextMarksExternal3.Text <> "" Then
-            TextTotalMarks3.Text = CInt(TextMarksInternal3.Text) + CInt(TextMarksExternal3.Text)
+            TextTotalMarks3.Text = CType(CInt(TextMarksInternal3.Text) + CInt(TextMarksExternal3.Text), String)
             If CInt(TextTotalMarks3.Text) >= PassingMarks And CInt(TextMarksExternal3.Text) >= PassingMarksTheory Then
                 TextResult3.Text = "Pass"
             Else
@@ -1213,7 +1213,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal4.Text <> "" And TextMarksExternal4.Text <> "" Then
-            TextTotalMarks4.Text = CInt(TextMarksInternal4.Text) + CInt(TextMarksExternal4.Text)
+            TextTotalMarks4.Text = CType(CInt(TextMarksInternal4.Text) + CInt(TextMarksExternal4.Text), String)
             If CInt(TextTotalMarks4.Text) >= PassingMarks And CInt(TextMarksExternal4.Text) >= PassingMarksTheory Then
                 TextResult4.Text = "Pass"
             Else
@@ -1230,7 +1230,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal5.Text <> "" And TextMarksExternal5.Text <> "" Then
-            TextTotalMarks5.Text = CInt(TextMarksInternal5.Text) + CInt(TextMarksExternal5.Text)
+            TextTotalMarks5.Text = CType(CInt(TextMarksInternal5.Text) + CInt(TextMarksExternal5.Text), String)
             If CInt(TextTotalMarks5.Text) >= PassingMarks And CInt(TextMarksExternal5.Text) >= PassingMarksTheory Then
                 TextResult5.Text = "Pass"
             Else
@@ -1247,7 +1247,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal6.Text <> "" And TextMarksExternal6.Text <> "" Then
-            TextTotalMarks6.Text = CInt(TextMarksInternal6.Text) + CInt(TextMarksExternal6.Text)
+            TextTotalMarks6.Text = CType(CInt(TextMarksInternal6.Text) + CInt(TextMarksExternal6.Text), String)
             If CInt(TextTotalMarks6.Text) >= PassingMarks And CInt(TextMarksExternal6.Text) >= PassingMarksTheory Then
                 TextResult6.Text = "Pass"
             Else
@@ -1264,7 +1264,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal7.Text <> "" And TextMarksExternal7.Text <> "" Then
-            TextTotalMarks7.Text = CInt(TextMarksInternal7.Text) + CInt(TextMarksExternal7.Text)
+            TextTotalMarks7.Text = CType(CInt(TextMarksInternal7.Text) + CInt(TextMarksExternal7.Text), String)
             If CInt(TextTotalMarks7.Text) >= PassingMarks And CInt(TextMarksExternal7.Text) >= PassingMarksTheory Then
                 TextResult7.Text = "Pass"
             Else
@@ -1281,7 +1281,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal8.Text <> "" And TextMarksExternal8.Text <> "" Then
-            TextTotalMarks8.Text = CInt(TextMarksInternal8.Text) + CInt(TextMarksExternal8.Text)
+            TextTotalMarks8.Text = CType(CInt(TextMarksInternal8.Text) + CInt(TextMarksExternal8.Text), String)
             If CInt(TextTotalMarks8.Text) >= PassingMarks And CInt(TextMarksExternal8.Text) >= PassingMarksTheory Then
                 TextResult8.Text = "Pass"
             Else
@@ -1298,7 +1298,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal9.Text <> "" And TextMarksExternal9.Text <> "" Then
-            TextTotalMarks9.Text = CInt(TextMarksInternal9.Text) + CInt(TextMarksExternal9.Text)
+            TextTotalMarks9.Text = CType(CInt(TextMarksInternal9.Text) + CInt(TextMarksExternal9.Text), String)
             If CInt(TextTotalMarks9.Text) >= PassingMarks And CInt(TextMarksExternal9.Text) >= PassingMarksTheory Then
                 TextResult9.Text = "Pass"
             Else
@@ -1315,7 +1315,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal10.Text <> "" And TextMarksExternal10.Text <> "" Then
-            TextTotalMarks10.Text = CInt(TextMarksInternal10.Text) + CInt(TextMarksExternal10.Text)
+            TextTotalMarks10.Text = CType(CInt(TextMarksInternal10.Text) + CInt(TextMarksExternal10.Text), String)
             If CInt(TextTotalMarks10.Text) >= PassingMarks And CInt(TextMarksExternal10.Text) >= PassingMarksTheory Then
                 TextResult10.Text = "Pass"
             Else
@@ -1332,7 +1332,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal1.Text <> "" And TextMarksExternal1.Text <> "" Then
-            TextTotalMarks1.Text = CInt(TextMarksInternal1.Text) + CInt(TextMarksExternal1.Text)
+            TextTotalMarks1.Text = CType(CInt(TextMarksInternal1.Text) + CInt(TextMarksExternal1.Text), String)
             If CInt(TextTotalMarks1.Text) >= PassingMarks And CInt(TextMarksExternal1.Text) >= PassingMarksTheory Then
                 TextResult1.Text = "Pass"
             Else
@@ -1349,7 +1349,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal2.Text <> "" And TextMarksExternal2.Text <> "" Then
-            TextTotalMarks2.Text = CInt(TextMarksInternal2.Text) + CInt(TextMarksExternal2.Text)
+            TextTotalMarks2.Text = CType(CInt(TextMarksInternal2.Text) + CInt(TextMarksExternal2.Text), String)
             If CInt(TextTotalMarks2.Text) >= PassingMarks And CInt(TextMarksExternal2.Text) >= PassingMarksTheory Then
                 TextResult2.Text = "Pass"
             Else
@@ -1366,7 +1366,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal3.Text <> "" And TextMarksExternal3.Text <> "" Then
-            TextTotalMarks3.Text = CInt(TextMarksInternal3.Text) + CInt(TextMarksExternal3.Text)
+            TextTotalMarks3.Text = CType(CInt(TextMarksInternal3.Text) + CInt(TextMarksExternal3.Text), String)
             If CInt(TextTotalMarks3.Text) >= PassingMarks And CInt(TextMarksExternal3.Text) >= PassingMarksTheory Then
                 TextResult3.Text = "Pass"
             Else
@@ -1383,7 +1383,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal4.Text <> "" And TextMarksExternal4.Text <> "" Then
-            TextTotalMarks4.Text = CInt(TextMarksInternal4.Text) + CInt(TextMarksExternal4.Text)
+            TextTotalMarks4.Text = CType(CInt(TextMarksInternal4.Text) + CInt(TextMarksExternal4.Text), String)
             If CInt(TextTotalMarks4.Text) >= PassingMarks And CInt(TextMarksExternal4.Text) >= PassingMarksTheory Then
                 TextResult4.Text = "Pass"
             Else
@@ -1400,7 +1400,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal5.Text <> "" And TextMarksExternal5.Text <> "" Then
-            TextTotalMarks5.Text = CInt(TextMarksInternal5.Text) + CInt(TextMarksExternal5.Text)
+            TextTotalMarks5.Text = CType(CInt(TextMarksInternal5.Text) + CInt(TextMarksExternal5.Text), String)
             If CInt(TextTotalMarks5.Text) >= PassingMarks And CInt(TextMarksExternal5.Text) >= PassingMarksTheory Then
                 TextResult5.Text = "Pass"
             Else
@@ -1417,7 +1417,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal6.Text <> "" And TextMarksExternal6.Text <> "" Then
-            TextTotalMarks6.Text = CInt(TextMarksInternal6.Text) + CInt(TextMarksExternal6.Text)
+            TextTotalMarks6.Text = CType(CInt(TextMarksInternal6.Text) + CInt(TextMarksExternal6.Text), String)
             If CInt(TextTotalMarks6.Text) >= PassingMarks And CInt(TextMarksExternal6.Text) >= PassingMarksTheory Then
                 TextResult6.Text = "Pass"
             Else
@@ -1434,7 +1434,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal7.Text <> "" And TextMarksExternal7.Text <> "" Then
-            TextTotalMarks7.Text = CInt(TextMarksInternal7.Text) + CInt(TextMarksExternal7.Text)
+            TextTotalMarks7.Text = CType(CInt(TextMarksInternal7.Text) + CInt(TextMarksExternal7.Text), String)
             If CInt(TextTotalMarks7.Text) >= PassingMarks And CInt(TextMarksExternal7.Text) >= PassingMarksTheory Then
                 TextResult7.Text = "Pass"
             Else
@@ -1451,7 +1451,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal8.Text <> "" And TextMarksExternal8.Text <> "" Then
-            TextTotalMarks8.Text = CInt(TextMarksInternal8.Text) + CInt(TextMarksExternal8.Text)
+            TextTotalMarks8.Text = CType(CInt(TextMarksInternal8.Text) + CInt(TextMarksExternal8.Text), String)
             If CInt(TextTotalMarks8.Text) >= PassingMarks And CInt(TextMarksExternal8.Text) >= PassingMarksTheory Then
                 TextResult8.Text = "Pass"
             Else
@@ -1468,7 +1468,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal9.Text <> "" And TextMarksExternal9.Text <> "" Then
-            TextTotalMarks9.Text = CInt(TextMarksInternal9.Text) + CInt(TextMarksExternal9.Text)
+            TextTotalMarks9.Text = CType(CInt(TextMarksInternal9.Text) + CInt(TextMarksExternal9.Text), String)
             If CInt(TextTotalMarks9.Text) >= PassingMarks And CInt(TextMarksExternal9.Text) >= PassingMarksTheory Then
                 TextResult9.Text = "Pass"
             Else
@@ -1485,7 +1485,7 @@ collegewise_courses.COLLEGE_ID=colleges.COLLEGE_ID AND collegewise_courses.UNIVE
             ErrorProviderAddInformation.Dispose()
         End If
         If TextMarksInternal10.Text <> "" And TextMarksExternal10.Text <> "" Then
-            TextTotalMarks10.Text = CInt(TextMarksInternal10.Text) + CInt(TextMarksExternal10.Text)
+            TextTotalMarks10.Text = CType(CInt(TextMarksInternal10.Text) + CInt(TextMarksExternal10.Text), String)
             If CInt(TextTotalMarks10.Text) >= PassingMarks And CInt(TextMarksExternal10.Text) >= PassingMarksTheory Then
                 TextResult10.Text = "Pass"
             Else

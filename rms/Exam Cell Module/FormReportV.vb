@@ -38,7 +38,7 @@ Public Class FormReportV
 
     Private Sub TextRollNumber_TextChanged(sender As Object, e As EventArgs) Handles TextRollNumber.TextChanged
         If TextRollNumber.Text = "" Then
-            ErrorProviderReportV.SetError(control:=TextRollNumber, value:="Internal marks can't be empty.")
+            ErrorProviderReportV.SetError(control:=TextRollNumber, value:="University Roll Number can't be empty.")
             ButtonGenerateReport.Enabled = False
         Else
             If Not System.Text.RegularExpressions.Regex.IsMatch(TextRollNumber.Text, "^(\d)+$") Then

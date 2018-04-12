@@ -141,8 +141,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
         Finally
             Con.Dispose()
         End Try
-        If CountCourse <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxCourse.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-                ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountCourse <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot Nothing And
+                ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
             ButtonGenerateReport.Enabled = False
@@ -150,8 +150,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountCollege <> 0 And CountCourse <> 0 And CountSemester <> 0 And ComboBoxCollege.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
-              ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountCollege <> 0 And CountCourse <> 0 And CountSemester <> 0 And ComboBoxCollege.SelectedItem IsNot Nothing And ComboBoxCourse.SelectedItem IsNot Nothing And
+              ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
             ButtonGenerateReport.Enabled = False
@@ -159,8 +159,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountCollege <> 0 And CountCourse <> 0 And CountSession <> 0 And ComboBoxCollege.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
-             ComboBoxSession.SelectedItem <> Nothing Then
+        If CountCollege <> 0 And CountCourse <> 0 And CountSession <> 0 And ComboBoxCollege.SelectedItem IsNot Nothing And ComboBoxCourse.SelectedItem IsNot Nothing And
+             ComboBoxSession.SelectedItem IsNot Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
             ButtonGenerateReport.Enabled = False
@@ -168,8 +168,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
-        If CountCollege <> 0 And CountSession <> 0 And ComboBoxCollege.SelectedItem <> Nothing And
-             ComboBoxSession.SelectedItem <> Nothing And CountSemester <> 0 And ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountCollege <> 0 And CountSession <> 0 And ComboBoxCollege.SelectedItem IsNot Nothing And
+             ComboBoxSession.SelectedItem IsNot Nothing And CountSemester <> 0 And ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonGenerateReport.Enabled = True
         Else
             ButtonGenerateReport.Enabled = False

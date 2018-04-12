@@ -76,7 +76,7 @@ Module Functions
             Command = New MySqlCommand(Query, Con)
             Adapter = New MySqlDataAdapter(Command)
             Adapter.Fill(Table)
-            ImageByte = Table(0)(5)
+            ImageByte = CType(Table(0)(5), Byte())
             Stream = New MemoryStream(ImageByte)
             PictureBoxUser.Image = Image.FromStream(stream:=Stream)
             Con.Close()

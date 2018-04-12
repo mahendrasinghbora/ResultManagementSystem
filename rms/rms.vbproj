@@ -13,6 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\Mahendra Singh Bora\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,10 +24,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -60,6 +61,41 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>88E561E2F96A85FAB619CCF2CC1987176329573A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>rms_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>rms.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>rms.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -170,18 +206,6 @@
     <Compile Include="Admin Module\Universities and Colleges\FormAddUniversities.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Module\Universities and Colleges\FormEditColleges.Designer.vb">
-      <DependentUpon>FormEditColleges.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Module\Universities and Colleges\FormEditColleges.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Module\Universities and Colleges\FormEditUniversities.Designer.vb">
-      <DependentUpon>FormEditUniversities.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Module\Universities and Colleges\FormEditUniversities.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Admin Module\Users\FormAddUsers.Designer.vb">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </Compile>
@@ -210,6 +234,12 @@
       <DependentUpon>FormEditUsers.vb</DependentUpon>
     </Compile>
     <Compile Include="Admin Module\Users\FormEditUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormAddBackInformation.Designer.vb">
+      <DependentUpon>FormAddBackInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Cell Module\FormAddBackInformation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Exam Cell Module\FormAddMarks.Designer.vb">
@@ -417,12 +447,6 @@
     <EmbeddedResource Include="Admin Module\Universities and Colleges\FormAddUniversities.resx">
       <DependentUpon>FormAddUniversities.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\Universities and Colleges\FormEditColleges.resx">
-      <DependentUpon>FormEditColleges.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin Module\Universities and Colleges\FormEditUniversities.resx">
-      <DependentUpon>FormEditUniversities.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\Users\FormAddUsers.resx">
       <DependentUpon>FormAddUsers.vb</DependentUpon>
     </EmbeddedResource>
@@ -437,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Module\Users\FormEditUsers.resx">
       <DependentUpon>FormEditUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exam Cell Module\FormAddBackInformation.resx">
+      <DependentUpon>FormAddBackInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exam Cell Module\FormAddMarks.resx">
       <DependentUpon>FormAddMarks.vb</DependentUpon>

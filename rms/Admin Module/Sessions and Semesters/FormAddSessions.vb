@@ -40,7 +40,7 @@ Public Class FormAddSessions
                 ButtonAddSession.Enabled = False
             Else
                 ErrorProviderSession.Dispose()
-                TextEndYear.Text = TextStartYear.Text + 1
+                TextEndYear.Text = CType(CInt(TextStartYear.Text) + 1, String)
                 ButtonAddSession.Enabled = True
             End If
         End If

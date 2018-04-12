@@ -141,8 +141,8 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
         Finally
             Con.Dispose()
         End Try
-        If CountCourse <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxCourse.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-                ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountCourse <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot Nothing And
+                ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonAddMarks.Enabled = True
         Else
             ButtonAddMarks.Enabled = False
@@ -150,22 +150,22 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     End Sub
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
-        If CountUniversity <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And ComboBoxSession.SelectedItem <> Nothing And
-                ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountUniversity <> 0 And CountSession <> 0 And CountSemester <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And ComboBoxSession.SelectedItem IsNot
+            Nothing And ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonAddMarks.Enabled = True
         End If
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountUniversity <> 0 And CountCourse <> 0 And CountSemester <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
-              ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountUniversity <> 0 And CountCourse <> 0 And CountSemester <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And ComboBoxCourse.SelectedItem IsNot
+            Nothing And ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonAddMarks.Enabled = True
         End If
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountUniversity <> 0 And CountCourse <> 0 And CountSession <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And ComboBoxCourse.SelectedItem <> Nothing And
-             ComboBoxSession.SelectedItem <> Nothing Then
+        If CountUniversity <> 0 And CountCourse <> 0 And CountSession <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And ComboBoxCourse.SelectedItem IsNot
+            Nothing And ComboBoxSession.SelectedItem IsNot Nothing Then
             ButtonAddMarks.Enabled = True
         End If
     End Sub
@@ -190,7 +190,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Reader.Read()
             SemesterID = Reader.GetString(column:="SEMESTER_ID")
             Reader.Dispose()
-            SessionID = ComboBoxSession.SelectedItem
+            SessionID = CType(ComboBoxSession.SelectedItem, String)
             Query = $"SELECT * FROM sessionwise_semesters WHERE SESSION_ID = '{ComboBoxSession.SelectedItem}' AND SEMESTER_ID = '{SemesterID}';"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Reader = Command.ExecuteReader()
@@ -207,7 +207,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            UniversitywiseCourseID = Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID")
+            UniversitywiseCourseID = CInt(Reader.GetString(column:="UNIVERSITYWISE_COURSE_ID"))
             Reader.Dispose()
             Con.Close()
             Dim NewFormAddMarksII As FormAddMarksII

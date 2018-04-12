@@ -80,7 +80,7 @@ Public Class FormAddStudents
 
     Private Sub TextFirstName_TextChanged(sender As Object, e As EventArgs) Handles TextFirstName.TextChanged
         If TextFirstName.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") And
-            ComboBoxCollege.SelectedItem <> Nothing And CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 Then
+            ComboBoxCollege.SelectedItem IsNot Nothing And CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 Then
             ErrorProviderStudent.Dispose()
             ButtonAddStudent.Enabled = True
         Else
@@ -95,8 +95,8 @@ Public Class FormAddStudents
             ButtonAddStudent.Enabled = False
         Else
             ErrorProviderStudent.Dispose()
-            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-                CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 Then
+            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+                CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 Then
                 ButtonAddStudent.Enabled = True
             End If
         End If
@@ -109,8 +109,8 @@ Public Class FormAddStudents
             ButtonAddStudent.Enabled = False
         Else
             ErrorProviderStudent.Dispose()
-            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-                CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 Then
+            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+                CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 Then
                 ButtonAddStudent.Enabled = True
             End If
         End If
@@ -123,8 +123,8 @@ Public Class FormAddStudents
             ButtonAddStudent.Enabled = False
         Else
             ErrorProviderStudent.Dispose()
-            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-                CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 Then
+            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+                CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 Then
                 ButtonAddStudent.Enabled = True
             End If
         End If
@@ -138,8 +138,8 @@ Public Class FormAddStudents
             ButtonAddStudent.Enabled = False
         Else
             ErrorProviderStudent.Dispose()
-            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-                CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 Then
+            If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+                CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 Then
                 ButtonAddStudent.Enabled = True
             End If
         End If
@@ -188,7 +188,7 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
             Con.Dispose()
         End Try
         If TextFirstName.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") And TextFirstName.Text <> "" And
-            CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+            CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddStudent.Enabled = True
         Else
             ButtonAddStudent.Enabled = False
@@ -260,8 +260,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub TextMobile_TextChanged(sender As Object, e As EventArgs) Handles TextMobile.TextChanged
-        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-                CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 And
+        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+                CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 And
                 (System.Text.RegularExpressions.Regex.IsMatch(input:=TextMobile.Text, pattern:="^(\+\d{1,3}[- ]?)?\d{10}$") Or
                 TextMobile.Text = "") Then
             ButtonAddStudent.Enabled = True
@@ -272,8 +272,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub TextEmail_TextChanged(sender As Object, e As EventArgs) Handles TextEmail.TextChanged
-        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-                CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 And
+        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+                CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 And
                 (System.Text.RegularExpressions.Regex.IsMatch(input:=TextEmail.Text, pattern:="^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$") Or
                 TextEmail.Text = "") Then
             ButtonAddStudent.Enabled = True
@@ -284,8 +284,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub TextLastName_TextChanged(sender As Object, e As EventArgs) Handles TextLastName.TextChanged
-        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-              CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 And
+        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+              CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 And
               Not System.Text.RegularExpressions.Regex.IsMatch(TextLastName.Text, "\d+") Then
             ButtonAddStudent.Enabled = True
             ErrorProviderStudent.Dispose()
@@ -295,8 +295,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub TextFather_TextChanged(sender As Object, e As EventArgs) Handles TextFather.TextChanged
-        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-              CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 And
+        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+              CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 And
               Not System.Text.RegularExpressions.Regex.IsMatch(TextFather.Text, "\d+") Then
             ButtonAddStudent.Enabled = True
             ErrorProviderStudent.Dispose()
@@ -306,8 +306,8 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub TextMother_TextChanged(sender As Object, e As EventArgs) Handles TextMother.TextChanged
-        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem <> Nothing And
-              CountCollege <> 0 And ComboBoxCourse.SelectedItem <> Nothing And CountCourse <> 0 And
+        If TextFirstName.Text <> "" And ComboBoxCollege.SelectedItem IsNot Nothing And
+              CountCollege <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing And CountCourse <> 0 And
               Not System.Text.RegularExpressions.Regex.IsMatch(TextMother.Text, "\d+") Then
             ButtonAddStudent.Enabled = True
             ErrorProviderStudent.Dispose()
@@ -318,7 +318,7 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
         If TextFirstName.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextFirstName.Text, "\d+") And TextFirstName.Text <> "" And
-            CountCollege <> 0 And ComboBoxCollege.SelectedItem <> Nothing Then
+            CountCollege <> 0 And ComboBoxCollege.SelectedItem IsNot Nothing Then
             ButtonAddStudent.Enabled = True
         End If
     End Sub

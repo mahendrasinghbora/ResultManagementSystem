@@ -331,7 +331,7 @@ ORDER BY SUBJECT_NAME;"
     End Sub
 
     Private Sub ComboBoxRoll_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxRoll.SelectedIndexChanged
-        If CountCollege <> 0 And ComboBoxCollege.SelectedItem <> Nothing Then
+        If CountCollege <> 0 And ComboBoxCollege.SelectedItem IsNot Nothing Then
             ButtonGenerateMarksheet.Enabled = True
         Else
             ButtonGenerateMarksheet.Enabled = False

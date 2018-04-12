@@ -67,7 +67,7 @@ Public Class FormAddColleges
         End If
         If TextCollege.Text <> "" And Not System.Text.RegularExpressions.Regex.IsMatch(TextCollege.Text, "[^a-zA-Z\.,\s]") Then
             ErrorProviderCollege.Dispose()
-            If Count <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+            If Count <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
                 ButtonAddCollege.Enabled = True
             End If
         End If
@@ -94,7 +94,7 @@ Public Class FormAddColleges
             Command = New MySqlCommand(Query, Con)
             Reader = Command.ExecuteReader()
             Reader.Read()
-            UniversityID = Reader.GetInt64(column:="UNIVERSITY_ID")
+            UniversityID = Reader.GetInt16(column:="UNIVERSITY_ID")
             Reader.Dispose()
             Query = $"INSERT INTO colleges (`COLLEGE_NAME`, `UNIVERSITY_ID`, `USERNAME`) VALUES ('{TextCollege.Text}', '{UniversityID}', '{Username}');"
             Command = New MySqlCommand(Query, Con)

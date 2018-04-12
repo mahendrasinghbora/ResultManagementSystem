@@ -115,9 +115,9 @@ Public Class FormAddResultCriteria
                 ErrorProviderCriteria.SetError(control:=TextInternalMarks, value:="Internal marks can only contain digits.")
                 ButtonAddResultCriteria.Enabled = False
             Else
-                If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-                    ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextExternalMarks.Text <> "" And
-                    TextPassingMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+                If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And
+                    ComboBoxSession.SelectedItem IsNot Nothing And ComboBoxSemester.SelectedItem IsNot Nothing And TextExternalMarks.Text <> "" And
+                    TextPassingMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
                     ButtonAddResultCriteria.Enabled = True
                 End If
                 ErrorProviderCriteria.Dispose()
@@ -142,9 +142,9 @@ Public Class FormAddResultCriteria
                 ErrorProviderCriteria.SetError(control:=TextExternalMarks, value:="External marks can only contain digits.")
                 ButtonAddResultCriteria.Enabled = False
             Else
-                If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-                    ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-                    TextPassingMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+                If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And
+                    ComboBoxSession.SelectedItem IsNot Nothing And ComboBoxSemester.SelectedItem IsNot Nothing And TextInternalMarks.Text <> "" And
+                    TextPassingMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
                     ButtonAddResultCriteria.Enabled = True
                 End If
                 ErrorProviderCriteria.Dispose()
@@ -174,9 +174,9 @@ Public Class FormAddResultCriteria
                         ErrorProviderCriteria.SetError(control:=TextPassingMarks, value:="Passing marks must be less than total marks.")
                         ButtonAddResultCriteria.Enabled = False
                     Else
-                        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-                    ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-                    TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+                        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And
+                    ComboBoxSession.SelectedItem IsNot Nothing And ComboBoxSemester.SelectedItem IsNot Nothing And TextInternalMarks.Text <> "" And
+                    TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
                             ButtonAddResultCriteria.Enabled = True
                         End If
                         ErrorProviderCriteria.Dispose()
@@ -233,8 +233,8 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             Con.Dispose()
         End Try
         If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And TextPassingMarks.Text <> "" And
-        ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        ComboBoxSession.SelectedItem IsNot Nothing And ComboBoxSemester.SelectedItem IsNot Nothing And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddResultCriteria.Enabled = True
         Else
             ButtonAddResultCriteria.Enabled = False
@@ -242,17 +242,17 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-        TextPassingMarks.Text <> "" And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And
+        TextPassingMarks.Text <> "" And ComboBoxSemester.SelectedItem IsNot Nothing And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddResultCriteria.Enabled = True
         End If
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-        ComboBoxSession.SelectedItem <> Nothing And TextPassingMarks.Text <> "" And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And
+        ComboBoxSession.SelectedItem IsNot Nothing And TextPassingMarks.Text <> "" And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddResultCriteria.Enabled = True
         End If
     End Sub
@@ -341,9 +341,9 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
                         ErrorProviderCriteria.SetError(control:=TextTheory, value:="Passing marks (Theory) must be less than external marks.")
                         ButtonAddResultCriteria.Enabled = False
                     Else
-                        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem <> Nothing And
-                    ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-                    TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+                        If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing And
+                    ComboBoxSession.SelectedItem IsNot Nothing And ComboBoxSemester.SelectedItem IsNot Nothing And TextInternalMarks.Text <> "" And
+                    TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
                             ButtonAddResultCriteria.Enabled = True
                         End If
                         ErrorProviderCriteria.Dispose()
@@ -355,8 +355,8 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
         If CountSemester <> 0 And CountSession <> 0 And CountUniversity <> 0 And TextPassingMarks.Text <> "" And
-        ComboBoxSession.SelectedItem <> Nothing And ComboBoxSemester.SelectedItem <> Nothing And TextInternalMarks.Text <> "" And
-        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+        ComboBoxSession.SelectedItem IsNot Nothing And ComboBoxSemester.SelectedItem IsNot Nothing And TextInternalMarks.Text <> "" And
+        TextExternalMarks.Text <> "" And CountCourse <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
             ButtonAddResultCriteria.Enabled = True
         Else
             ButtonAddResultCriteria.Enabled = False

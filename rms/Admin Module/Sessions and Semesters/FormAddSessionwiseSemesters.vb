@@ -80,7 +80,7 @@ Public Class FormAddSessionwiseSemesters
     End Sub
 
     Private Sub ComboBoxSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSemester.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And ComboBoxSession.SelectedItem <> Nothing Then
+        If CountSemester <> 0 And CountSession <> 0 And ComboBoxSession.SelectedItem IsNot Nothing Then
             ButtonAddSessionwiseSemester.Enabled = True
         End If
     End Sub
@@ -117,7 +117,7 @@ Public Class FormAddSessionwiseSemesters
     End Sub
 
     Private Sub ComboBoxSession_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSession.SelectedIndexChanged
-        If CountSemester <> 0 And CountSession <> 0 And ComboBoxSemester.SelectedItem <> Nothing Then
+        If CountSemester <> 0 And CountSession <> 0 And ComboBoxSemester.SelectedItem IsNot Nothing Then
             ButtonAddSessionwiseSemester.Enabled = True
         End If
     End Sub

@@ -84,13 +84,13 @@ Public Class FormAddUniversitywiseCourses
     End Sub
 
     Private Sub ComboBoxUniversity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxUniversity.SelectedIndexChanged
-        If CountUniversity <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        If CountUniversity <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddUniversitywiseCourses.Enabled = True
         End If
     End Sub
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
-        If CountUniversity <> 0 And CountCourse <> 0 And ComboBoxUniversity.SelectedItem <> Nothing Then
+        If CountUniversity <> 0 And CountCourse <> 0 And ComboBoxUniversity.SelectedItem IsNot Nothing Then
             ButtonAddUniversitywiseCourses.Enabled = True
         End If
     End Sub

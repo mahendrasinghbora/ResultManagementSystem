@@ -73,7 +73,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
         Finally
             Con.Dispose()
         End Try
-        If CountCollege <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        If CountCollege <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddCollegewiseCourses.Enabled = True
         Else
             ButtonAddCollegewiseCourses.Enabled = False
@@ -81,7 +81,7 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
     End Sub
 
     Private Sub ComboBoxCourse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxCourse.SelectedIndexChanged
-        If CountCollege <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem <> Nothing Then
+        If CountCollege <> 0 And CountCourse <> 0 And ComboBoxCourse.SelectedItem IsNot Nothing Then
             ButtonAddCollegewiseCourses.Enabled = True
         Else
             ButtonAddCollegewiseCourses.Enabled = False

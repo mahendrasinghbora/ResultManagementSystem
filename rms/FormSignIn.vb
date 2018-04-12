@@ -124,4 +124,12 @@ Public Class FormSignIn
             End If
         End If
     End Sub
+
+    Private Sub ButtonAbout_Click(sender As Object, e As EventArgs) Handles ButtonAbout.Click
+        Process.Start("https://github.com/mahendrasinghbora/ResultManagementSystem")
+    End Sub
+
+    Private Sub ButtonDevelopers_Click(sender As Object, e As EventArgs) Handles ButtonDevelopers.Click
+        Process.Start("https://github.com/mahendrasinghbora/ResultManagementSystem")
+    End Sub
 End Class

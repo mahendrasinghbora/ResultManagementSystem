@@ -158,6 +158,49 @@ WHERE SUBJECT_NAME='{ComboBoxSubject.SelectedItem}') AND STATUS='1';"
     End Sub
 
     Private Sub ButtonAddBackInformation_Click(sender As Object, e As EventArgs) Handles ButtonAddBackInformation.Click
-
+        Dim Result As String
+        If TextNewMarks.Text >= PassingMarksTheory And (TextNewMarks.Text + MarksInternal) >= PassingMarks Then
+            Result = "Pass"
+        Else
+            Result = "Back"
+        End If
+        Con = New MySqlConnection With {
+           .ConnectionString = "server=localhost;userid=root;database=rms"
+        }
+        Dim Reader As MySqlDataReader
+        Try
+            Con.Open()
+            Dim Query As String
+            Query = $"UPDATE marksheets SET STATUS='0' WHERE UNIVERSITY_ROLL_NUMBER='{TextRollNumber.Text}' AND SESSIONWISE_SEMESTER_ID=
+            (SELECT SESSIONWISE_SEMESTER_ID FROM sessionwise_semesters WHERE SEMESTER_ID=(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{TextSemester.Text}')
+            AND SESSION_ID='{TextSession.Text}') AND SUBJECT_ID=(SELECT SUBJECT_ID FROM subjects WHERE SUBJECT_NAME='{ComboBoxSubject.SelectedItem}');"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Dispose()
+            Query = $"SELECT DISTINCT COURSE_ID FROM marksheets WHERE UNIVERSITY_ROLL_NUMBER='{TextRollNumber.Text}';"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Reader.Read()
+            CourseID = Reader.GetString(column:="COURSE_ID")
+            Reader.Dispose()
+            Query = $"INSERT INTO marksheets (`UNIVERSITY_ROLL_NUMBER`, `SUBJECT_ID`, `COURSE_ID`, `SESSIONWISE_SEMESTER_ID`,
+            `INTERNAL_MARKS`, `EXTERNAL_MARKS`, `TOTAL`, `RESULT_STATUS_ID`, `USERNAME`) VALUES('{TextRollNumber.Text}', (SELECT SUBJECT_ID FROM subjects
+            WHERE SUBJECT_NAME='{ComboBoxSubject.SelectedItem}'), '{CourseID}', (SELECT SESSIONWISE_SEMESTER_ID FROM sessionwise_semesters WHERE SEMESTER_ID
+            =(SELECT SEMESTER_ID FROM semesters WHERE SEMESTER='{TextSemester.Text}') AND SESSION_ID='{TextSession.Text}'), '{MarksInternal}', '{TextNewMarks.Text}',
+            '{MarksInternal + TextNewMarks.Text}', (SELECT RESULT_STATUS_ID FROM result_status WHERE RESULT_STATUS='{Result}'), '{Username}');"
+            Command = New MySqlCommand(Query, Con)
+            Reader = Command.ExecuteReader()
+            Con.Close()
+            Reader.Dispose()
+            Dim NewFormAddBackInformation As FormAddBackInformation
+            NewFormAddBackInformation = New FormAddBackInformation()
+            NewFormAddBackInformation.Show()
+            Dispose()
+            MessageBox.Show(text:="Information successfully added.", caption:="Success alert", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(text:=ex.Message)
+        Finally
+            Con.Dispose()
+        End Try
     End Sub
 End Class

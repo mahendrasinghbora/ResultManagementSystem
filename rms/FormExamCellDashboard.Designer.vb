@@ -38,6 +38,8 @@ Partial Class FormExamCellDashboard
         Me.LabelOption1 = New System.Windows.Forms.Label()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.ButtonOption11 = New System.Windows.Forms.Button()
+        Me.LabelOption11 = New System.Windows.Forms.Label()
         Me.ButtonOption10 = New System.Windows.Forms.Button()
         Me.LabelOption10 = New System.Windows.Forms.Label()
         Me.ButtonOption9 = New System.Windows.Forms.Button()
@@ -52,8 +54,6 @@ Partial Class FormExamCellDashboard
         Me.LabelOption5 = New System.Windows.Forms.Label()
         Me.PanelNavigation = New System.Windows.Forms.Panel()
         Me.PictureBoxUser = New System.Windows.Forms.PictureBox()
-        Me.LabelOption11 = New System.Windows.Forms.Label()
-        Me.ButtonOption11 = New System.Windows.Forms.Button()
         Me.ContextMenuStripUser.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelNavigation.SuspendLayout()
@@ -220,6 +220,28 @@ Partial Class FormExamCellDashboard
         Me.PanelMenu.Size = New System.Drawing.Size(1366, 643)
         Me.PanelMenu.TabIndex = 3
         '
+        'ButtonOption11
+        '
+        Me.ButtonOption11.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonOption11.Location = New System.Drawing.Point(750, 567)
+        Me.ButtonOption11.Name = "ButtonOption11"
+        Me.ButtonOption11.Size = New System.Drawing.Size(222, 40)
+        Me.ButtonOption11.TabIndex = 44
+        Me.ButtonOption11.Text = "Add Back Information"
+        Me.ButtonOption11.UseVisualStyleBackColor = True
+        '
+        'LabelOption11
+        '
+        Me.LabelOption11.BackColor = System.Drawing.Color.White
+        Me.LabelOption11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LabelOption11.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOption11.Location = New System.Drawing.Point(711, 452)
+        Me.LabelOption11.Name = "LabelOption11"
+        Me.LabelOption11.Size = New System.Drawing.Size(300, 170)
+        Me.LabelOption11.TabIndex = 43
+        Me.LabelOption11.Text = "Add information related to the back-log of students." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.LabelOption11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'ButtonOption10
         '
         Me.ButtonOption10.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -375,29 +397,6 @@ Partial Class FormExamCellDashboard
         Me.PictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBoxUser.TabIndex = 4
         Me.PictureBoxUser.TabStop = False
-        '
-        'LabelOption11
-        '
-        Me.LabelOption11.BackColor = System.Drawing.Color.White
-        Me.LabelOption11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LabelOption11.Font = New System.Drawing.Font("Alegreya Sans", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOption11.Location = New System.Drawing.Point(711, 452)
-        Me.LabelOption11.Name = "LabelOption11"
-        Me.LabelOption11.Size = New System.Drawing.Size(300, 170)
-        Me.LabelOption11.TabIndex = 43
-        Me.LabelOption11.Text = "View collegewise merit-list of students in a particular course in a selected sess" &
-    "ion and semester."
-        Me.LabelOption11.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'ButtonOption11
-        '
-        Me.ButtonOption11.Font = New System.Drawing.Font("Alegreya", 16.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonOption11.Location = New System.Drawing.Point(760, 567)
-        Me.ButtonOption11.Name = "ButtonOption11"
-        Me.ButtonOption11.Size = New System.Drawing.Size(202, 40)
-        Me.ButtonOption11.TabIndex = 44
-        Me.ButtonOption11.Text = "View Report-VIII"
-        Me.ButtonOption11.UseVisualStyleBackColor = True
         '
         'FormExamCellDashboard
         '

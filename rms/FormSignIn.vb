@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class FormSignIn
     Dim Con As MySqlConnection   ' Connection Variable

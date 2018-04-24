@@ -126,7 +126,8 @@ ORDER BY SESSION_ID, SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport5.rpt")
+            'myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport5.rpt")
+            myReport.Load(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\CrystalReport5.rpt"))
             myReport.SetDataSource(myData)
 
             myReport.SetParameterValue(name:="college", val:=$"{StudentCollege}")
@@ -163,7 +164,8 @@ ORDER BY SESSION_ID, SEMESTER, SUBJECT_NAME, students.UNIVERSITY_ROLL_NUMBER;"
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset5.xml", XmlWriteMode.WriteSchema)
+            'myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset5.xml", XmlWriteMode.WriteSchema)
+            myData.WriteXml(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\dataset5.xml"), XmlWriteMode.WriteSchema)
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message, caption:="Report could not be created.", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         End Try

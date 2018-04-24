@@ -243,7 +243,8 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport6.rpt")
+            'myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReport6.rpt")
+            myReport.Load(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\CrystalReport6.rpt"))
             myReport.SetDataSource(myData)
 
             myReport.SetParameterValue(name:="university", val:=$"{ComboBoxCourse.SelectedItem} ({ComboBoxUniversity.SelectedItem})")
@@ -284,7 +285,8 @@ universitywise_courses.COURSE_ID=courses.COURSE_ID AND universitywise_courses.UN
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset6.xml", XmlWriteMode.WriteSchema)
+            'myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\dataset6.xml", XmlWriteMode.WriteSchema)
+            myData.WriteXml(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\dataset6.xml"), XmlWriteMode.WriteSchema)
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message, caption:="Report could not be created.", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         End Try

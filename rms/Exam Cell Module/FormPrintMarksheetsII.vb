@@ -276,7 +276,8 @@ ORDER BY SUBJECT_NAME;"
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReportMarksheet.rpt")
+            'myReport.Load("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\CrystalReportMarksheet.rpt")
+            myReport.Load(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\CrystalReportMarksheet.rpt"))
             myReport.SetDataSource(myData)
 
             myReport.SetParameterValue(name:="college", val:=$"{CollegeName}")
@@ -324,7 +325,8 @@ ORDER BY SUBJECT_NAME;"
             myAdapter.SelectCommand = cmd
             myAdapter.Fill(myData)
 
-            myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\datasetMarksheet.xml", XmlWriteMode.WriteSchema)
+            'myData.WriteXml("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\datasetMarksheet.xml", XmlWriteMode.WriteSchema)
+            myData.WriteXml(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\datasetMarksheet.xml"), XmlWriteMode.WriteSchema)
         Catch ex As Exception
             MessageBox.Show(text:=ex.Message, caption:="Report could not be created.", buttons:=MessageBoxButtons.OK, icon:=MessageBoxIcon.Error)
         End Try

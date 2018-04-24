@@ -182,7 +182,7 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
     End Sub
 
     Private Sub WriteNewDocument()
-        file = My.Computer.FileSystem.OpenTextFileWriter("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\Marksheets.html", False)
+        file = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\Marksheets.html"), False)
         file.WriteLine($"
         <!doctype html>
         <html lang='en'>
@@ -191,9 +191,9 @@ collegewise_courses.UNIVERSITYWISE_COURSE_ID=universitywise_courses.UNIVERSITYWI
             <!-- Required meta tags -->
             <meta charset='utf-8'>
             <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-            <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
             <!-- Bootstrap CSS -->
-            <link rel='stylesheet' href='C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\bootstrap.css'>
+            <link rel='stylesheet' href='{Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\bootstrap.css")}'>
 
             <title>Collegewise-Marksheets</title>
         </head>
@@ -434,7 +434,7 @@ AND marksheets.STATUS='1';"
             WebBrowser1.Visible = True
             ButtonPrintReport.Visible = True
             WriteNewDocument()
-            WebBrowser1.Navigate("C:\Users\Mahendra Singh Bora\Documents\VBprojects\rms\rms\Reports\Marksheets.html")
+            WebBrowser1.Navigate(Application.StartupPath.Replace("\bin\x64\Debug", "\Reports\Marksheets.html"))
         End If
     End Sub
 

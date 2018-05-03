@@ -137,8 +137,8 @@ Public Class FormAddUsers
         Try
             Con.Open()
             Dim Query As String
-            ' Default Password- 123456
-            Query = $"INSERT INTO users VALUES ('{TextUsername.Text}', '{TextFirstName.Text}', '{TextLastName.Text}', '123456', '{UserType}', @THUMBNAIL, '1');"
+            ' Default Password- username
+            Query = $"INSERT INTO users VALUES ('{TextUsername.Text}', '{TextFirstName.Text}', '{TextLastName.Text}', '{TextUsername.Text}', '{UserType}', @THUMBNAIL, '1');"
             Command = New MySqlCommand(cmdText:=Query, connection:=Con)
             Command.Parameters.Add("@THUMBNAIL", MySqlDbType.Blob).Value = Stream.ToArray()
             Dim Reader As MySqlDataReader = Command.ExecuteReader()

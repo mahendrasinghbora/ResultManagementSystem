@@ -1,5 +1,5 @@
 # ResultManagementSystem
-“Result Management System (RMS)” is a desktop application that can be used by any
+__“Result Management System (RMS)” is a desktop application that can be used by any
 university, college or institute that wants to update their manual or existing automated
 result management and generation system.
 It is designed to facilitate the universities or colleges (at more ease) with customized
@@ -16,4 +16,4 @@ It also reduces the amount of paper work involved in the manual result managemen
 and generation hence avoiding data redundancies and inconsistencies, thus making data
 storage more easy and efficient. The organization can maintain computerized records
 without redundant entries. That means one need not be distracted by information that
-is not relevant, while being able to reach the required information.
+is not relevant, while being able to reach the required information.__
